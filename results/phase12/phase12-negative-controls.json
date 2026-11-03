@@ -1,0 +1,18 @@
+[
+  {
+    "setting": {
+      "MINIMAL_NOTTU": "1"
+    },
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/hzx/gpu-engine/ttu-bench/run_minimal.py\", line 127, in <module>\n    main()\n  File \"/home/hzx/gpu-engine/ttu-bench/run_minimal.py\", line 112, in main\n    raise RuntimeError(f'expected hit t={expected_t}, got {result[72:74]}')\nRuntimeError: expected hit t=6.875, got (16711680, 0)\n"
+  },
+  {
+    "setting": {
+      "MINIMAL_ZERO": "50,51"
+    },
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/hzx/gpu-engine/ttu-bench/run_minimal.py\", line 127, in <module>\n    main()\n  File \"/home/hzx/gpu-engine/ttu-bench/run_minimal.py\", line 112, in main\n    raise RuntimeError(f'expected hit t={expected_t}, got {result[72:74]}')\nRuntimeError: expected hit t=6.875, got (4294967295, 4294967295)\n"
+  }
+]

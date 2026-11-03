@@ -1,0 +1,1711 @@
+{
+  "date": "2026-11-03T12:18:39.305339+00:00",
+  "contract": "Original result bytes are preserved. Published gzip hashes refer to both stored and decompressed bytes. Embedded report paths/commands remain historical; resolve their original results-relative suffix using this catalog. Local archives are ignored and not present in a clone.",
+  "summary": {
+    "original_files": 205,
+    "original_bytes": 153010348,
+    "published_files": 106,
+    "published_bytes": 4300493,
+    "local_only_files": 99
+  },
+  "files": [
+    {
+      "original_path": "cleanup-functional.json",
+      "published_path": "maintenance/cleanup-functional.json",
+      "encoding": "identity",
+      "original_bytes": 21819,
+      "sha256": "7e619a32d9307c07973cbbc5cf04d1f9be41323e87ecb93cf1be0fec1a7aaf13",
+      "stored_bytes": 21819,
+      "stored_sha256": "7e619a32d9307c07973cbbc5cf04d1f9be41323e87ecb93cf1be0fec1a7aaf13"
+    },
+    {
+      "original_path": "eoss-basic-final.json",
+      "published_path": "eoss/eoss-basic-final.json",
+      "encoding": "identity",
+      "original_bytes": 39538,
+      "sha256": "eafd5401ec29b3f5d933cbd3b4dade13814a6482c7480cac28748171afe8c50d",
+      "stored_bytes": 39538,
+      "stored_sha256": "eafd5401ec29b3f5d933cbd3b4dade13814a6482c7480cac28748171afe8c50d"
+    },
+    {
+      "original_path": "eoss-cctl-ivall-wr0-nowait.json",
+      "published_path": "eoss/eoss-cctl-ivall-wr0-nowait.json",
+      "encoding": "identity",
+      "original_bytes": 1779,
+      "sha256": "0a503086c21fb2a5a3870aa2df6f96e6e4454990ac43102ecc67187a621d7a91",
+      "stored_bytes": 1779,
+      "stored_sha256": "0a503086c21fb2a5a3870aa2df6f96e6e4454990ac43102ecc67187a621d7a91"
+    },
+    {
+      "original_path": "eoss-reconstructed-sm86-lane1.json",
+      "published_path": "eoss/eoss-reconstructed-sm86-lane1.json",
+      "encoding": "identity",
+      "original_bytes": 32001,
+      "sha256": "bbbe57e564cfc18aa1c06c8a4ba89c871e990528b11f07159c3f45b6d65cd3de",
+      "stored_bytes": 32001,
+      "stored_sha256": "bbbe57e564cfc18aa1c06c8a4ba89c871e990528b11f07159c3f45b6d65cd3de"
+    },
+    {
+      "original_path": "eoss-reconstructed-sm86-nowait.json",
+      "published_path": "eoss/eoss-reconstructed-sm86-nowait.json",
+      "encoding": "identity",
+      "original_bytes": 38101,
+      "sha256": "f2bb2e9554094d30ec344eea7628a5d5408c781fdb4e072a0114bceadf20e2a0",
+      "stored_bytes": 38101,
+      "stored_sha256": "f2bb2e9554094d30ec344eea7628a5d5408c781fdb4e072a0114bceadf20e2a0"
+    },
+    {
+      "original_path": "helpers-functional.json",
+      "published_path": "maintenance/helpers-functional.json",
+      "encoding": "identity",
+      "original_bytes": 10911,
+      "sha256": "b74d0b3f2f3facb20e4a342ba517768beb7fd668606e793928aa42772e4c8b75",
+      "stored_bytes": 10911,
+      "stored_sha256": "b74d0b3f2f3facb20e4a342ba517768beb7fd668606e793928aa42772e4c8b75"
+    },
+    {
+      "original_path": "local-device-instance-first.json",
+      "local_archive_path": "archive/local/local-device-instance-first.json",
+      "original_bytes": 22886,
+      "sha256": "826e2dc0b1a359a5e68a98581db701776c5311dbdbbd05527c18cf337a9d8171",
+      "reason": "local scratch run"
+    },
+    {
+      "original_path": "local-device-instance-identity.json",
+      "local_archive_path": "archive/local/local-device-instance-identity.json",
+      "original_bytes": 728620,
+      "sha256": "ba01c7c1dbca6f556e8b17007339e2aa231740853aa39a53ffe3323d94580c8d",
+      "reason": "local scratch run"
+    },
+    {
+      "original_path": "phase12-artifact.json",
+      "published_path": "phase12/phase12-artifact.json",
+      "encoding": "identity",
+      "original_bytes": 531,
+      "sha256": "13c7f5bbec3b39f8639807c5466904b18635cae1611b9f5bcc16faf22473eeec",
+      "stored_bytes": 531,
+      "stored_sha256": "13c7f5bbec3b39f8639807c5466904b18635cae1611b9f5bcc16faf22473eeec"
+    },
+    {
+      "original_path": "phase12-functional.json",
+      "published_path": "phase12/phase12-functional.json",
+      "encoding": "identity",
+      "original_bytes": 21819,
+      "sha256": "06aedeef6e5bf1e0e62f79526326a9c46773471bc7ccddc5458e8a02e182594f",
+      "stored_bytes": 21819,
+      "stored_sha256": "06aedeef6e5bf1e0e62f79526326a9c46773471bc7ccddc5458e8a02e182594f"
+    },
+    {
+      "original_path": "phase12-gpus.csv",
+      "published_path": "phase12/phase12-gpus.csv",
+      "encoding": "identity",
+      "original_bytes": 735,
+      "sha256": "3178269a75ae2a7b89a9db73578c5a18d8b35282b7c20a13fc3180c0198c69c8",
+      "stored_bytes": 735,
+      "stored_sha256": "3178269a75ae2a7b89a9db73578c5a18d8b35282b7c20a13fc3180c0198c69c8"
+    },
+    {
+      "original_path": "phase12-negative-controls.json",
+      "published_path": "phase12/phase12-negative-controls.json",
+      "encoding": "identity",
+      "original_bytes": 925,
+      "sha256": "5704a792588eb9d79dc68a56240375b8e0d593d35dd3175e84ad4ed2bd1ad7d0",
+      "stored_bytes": 925,
+      "stored_sha256": "5704a792588eb9d79dc68a56240375b8e0d593d35dd3175e84ad4ed2bd1ad7d0"
+    },
+    {
+      "original_path": "phase12-resource-usage.txt",
+      "published_path": "phase12/phase12-resource-usage.txt",
+      "encoding": "identity",
+      "original_bytes": 140,
+      "sha256": "f64256e450c8de2492216e151a44fec772b58d71c68783aefffa84b44e081c0e",
+      "stored_bytes": 140,
+      "stored_sha256": "f64256e450c8de2492216e151a44fec772b58d71c68783aefffa84b44e081c0e"
+    },
+    {
+      "original_path": "phase13-baseline-regression.json",
+      "published_path": "phase13/phase13-baseline-regression.json",
+      "encoding": "identity",
+      "original_bytes": 21819,
+      "sha256": "b6ccdef931521b17a9905d75aaed67cc31d4b8ae5204fb644fc009885ac07dff",
+      "stored_bytes": 21819,
+      "stored_sha256": "b6ccdef931521b17a9905d75aaed67cc31d4b8ae5204fb644fc009885ac07dff"
+    },
+    {
+      "original_path": "phase13-decoder-a-only-negative.json",
+      "published_path": "phase13/phase13-decoder-a-only-negative.json",
+      "encoding": "identity",
+      "original_bytes": 192579,
+      "sha256": "7a978748e4f9530500563fab9cb03c611c0e9c8218a7857a3b1a35846f029aa2",
+      "stored_bytes": 192579,
+      "stored_sha256": "7a978748e4f9530500563fab9cb03c611c0e9c8218a7857a3b1a35846f029aa2"
+    },
+    {
+      "original_path": "phase13-full-predicated-negative.json",
+      "published_path": "phase13/phase13-full-predicated-negative.json",
+      "encoding": "identity",
+      "original_bytes": 10022,
+      "sha256": "8943050a9c67bc1ab14364d54b9e661bdd64beac3b1e010fa4d25e8322d4278b",
+      "stored_bytes": 10022,
+      "stored_sha256": "8943050a9c67bc1ab14364d54b9e661bdd64beac3b1e010fa4d25e8322d4278b"
+    },
+    {
+      "original_path": "phase13-opaque-flag-negative.json",
+      "published_path": "phase13/phase13-opaque-flag-negative.json",
+      "encoding": "identity",
+      "original_bytes": 40974,
+      "sha256": "1820dd98647724493ada35531adc236de4c38c7453e358ec51991212be0e34d2",
+      "stored_bytes": 40974,
+      "stored_sha256": "1820dd98647724493ada35531adc236de4c38c7453e358ec51991212be0e34d2"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu5-grid1024.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu5-grid1024.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 331423,
+      "sha256": "5a589d7ff4e301c62d3e32ccf1f7fb781262bf8833230a2314c86ac7d41a83b4",
+      "stored_bytes": 12880,
+      "stored_sha256": "27f688bd3ff5fee6ef73532d5e2b5ac42a1803cd114dabd556b9c528c4f54757",
+      "local_original_path": "archive/originals/phase13-scenes-cases/gpu5-grid1024.json"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu5-grid16.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu5-grid16.json",
+      "encoding": "identity",
+      "original_bytes": 147523,
+      "sha256": "f1ec38d711aa28dcb004a3c4c637571a4c5b4caa3c5ff07bdfa3418a6299f9f6",
+      "stored_bytes": 147523,
+      "stored_sha256": "f1ec38d711aa28dcb004a3c4c637571a4c5b4caa3c5ff07bdfa3418a6299f9f6"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu5-grid257.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu5-grid257.json",
+      "encoding": "identity",
+      "original_bytes": 191396,
+      "sha256": "e822d97e6ac86bb746cfc3bbcef31aa50b9e18d6e95089ed4be46d00727e0beb",
+      "stored_bytes": 191396,
+      "stored_sha256": "e822d97e6ac86bb746cfc3bbcef31aa50b9e18d6e95089ed4be46d00727e0beb"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu5-grid64.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu5-grid64.json",
+      "encoding": "identity",
+      "original_bytes": 156234,
+      "sha256": "065321d22403e1f73af64352dd36e92a8331297f3fe2f795fa022c88a09cf5f7",
+      "stored_bytes": 156234,
+      "stored_sha256": "065321d22403e1f73af64352dd36e92a8331297f3fe2f795fa022c88a09cf5f7"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu5-overlap-reversed.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu5-overlap-reversed.json",
+      "encoding": "identity",
+      "original_bytes": 104111,
+      "sha256": "0bdb238960d43a6e82aa1222865a3b418e5c9f17eadeb4c053517bfea340a63a",
+      "stored_bytes": 104111,
+      "stored_sha256": "0bdb238960d43a6e82aa1222865a3b418e5c9f17eadeb4c053517bfea340a63a"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu5-overlap.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu5-overlap.json",
+      "encoding": "identity",
+      "original_bytes": 104102,
+      "sha256": "9085d6d9cd5966fc6b9e06d4f43487e73bdc0e709f666cccbcce0876b5d78717",
+      "stored_bytes": 104102,
+      "stored_sha256": "9085d6d9cd5966fc6b9e06d4f43487e73bdc0e709f666cccbcce0876b5d78717"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu5-separated.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu5-separated.json",
+      "encoding": "identity",
+      "original_bytes": 124567,
+      "sha256": "407d235a35f5cb88c9249d4b28d6f9350f28852299948a7cd1b14f15529d0ccd",
+      "stored_bytes": 124567,
+      "stored_sha256": "407d235a35f5cb88c9249d4b28d6f9350f28852299948a7cd1b14f15529d0ccd"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu5-single.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu5-single.json",
+      "encoding": "identity",
+      "original_bytes": 103924,
+      "sha256": "cf131db18b5bf8f6b32fa42eca5fce4052f5b12319d84de34a3ebee183c644c8",
+      "stored_bytes": 103924,
+      "stored_sha256": "cf131db18b5bf8f6b32fa42eca5fce4052f5b12319d84de34a3ebee183c644c8"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu7-grid1024.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu7-grid1024.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 331423,
+      "sha256": "499f91e2977fd4afbe6db087c2f93c6845384bc2745f3ce594e5c3177afd6bfa",
+      "stored_bytes": 12827,
+      "stored_sha256": "2234388a6958ff2d071352c4cf0448fcef22f61a8e63ec8ce2268743f630df37",
+      "local_original_path": "archive/originals/phase13-scenes-cases/gpu7-grid1024.json"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu7-grid16.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu7-grid16.json",
+      "encoding": "identity",
+      "original_bytes": 147523,
+      "sha256": "66bee5034f24e0c4e1815b4fa9dba088dc10c7d70bbdc65471a7679033c6f636",
+      "stored_bytes": 147523,
+      "stored_sha256": "66bee5034f24e0c4e1815b4fa9dba088dc10c7d70bbdc65471a7679033c6f636"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu7-grid257.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu7-grid257.json",
+      "encoding": "identity",
+      "original_bytes": 191396,
+      "sha256": "0b8bde3e11503fe75b44d8764e62fea0ea401dd968e405797bcbf65abafc2cb7",
+      "stored_bytes": 191396,
+      "stored_sha256": "0b8bde3e11503fe75b44d8764e62fea0ea401dd968e405797bcbf65abafc2cb7"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu7-grid64.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu7-grid64.json",
+      "encoding": "identity",
+      "original_bytes": 156234,
+      "sha256": "be3a11e11cfb7c7a04ff0b6ffb4586f59ebea4d888d68230a64e403868269229",
+      "stored_bytes": 156234,
+      "stored_sha256": "be3a11e11cfb7c7a04ff0b6ffb4586f59ebea4d888d68230a64e403868269229"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu7-overlap-reversed.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu7-overlap-reversed.json",
+      "encoding": "identity",
+      "original_bytes": 104111,
+      "sha256": "ae106460394b4ddb6a81ab04fc71b18f8e60164df236f696ce31801e79e3784f",
+      "stored_bytes": 104111,
+      "stored_sha256": "ae106460394b4ddb6a81ab04fc71b18f8e60164df236f696ce31801e79e3784f"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu7-overlap.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu7-overlap.json",
+      "encoding": "identity",
+      "original_bytes": 104102,
+      "sha256": "91f8760facdc75387c701a15b715094a0e023f2bad4529517bc8a9d6331b44ca",
+      "stored_bytes": 104102,
+      "stored_sha256": "91f8760facdc75387c701a15b715094a0e023f2bad4529517bc8a9d6331b44ca"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu7-separated.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu7-separated.json",
+      "encoding": "identity",
+      "original_bytes": 124567,
+      "sha256": "349588eb5eea9dd0605be2b5a4e5c49f3125819feb9f0a02794eccddd0f8a214",
+      "stored_bytes": 124567,
+      "stored_sha256": "349588eb5eea9dd0605be2b5a4e5c49f3125819feb9f0a02794eccddd0f8a214"
+    },
+    {
+      "original_path": "phase13-scenes-cases/gpu7-single.json",
+      "published_path": "phase13/phase13-scenes-cases/gpu7-single.json",
+      "encoding": "identity",
+      "original_bytes": 103924,
+      "sha256": "8a227c5d939b9787fa54dc988a8a3a0151e2cd9ba0bb222678f8bdf20f7a4265",
+      "stored_bytes": 103924,
+      "stored_sha256": "8a227c5d939b9787fa54dc988a8a3a0151e2cd9ba0bb222678f8bdf20f7a4265"
+    },
+    {
+      "original_path": "phase13-scenes.json",
+      "published_path": "phase13/phase13-scenes.json",
+      "encoding": "identity",
+      "original_bytes": 12346,
+      "sha256": "d439b6bf7cc06e45ab0f056f5760f69339956992c49675b9762ee3da21dd1ece",
+      "stored_bytes": 12346,
+      "stored_sha256": "d439b6bf7cc06e45ab0f056f5760f69339956992c49675b9762ee3da21dd1ece"
+    },
+    {
+      "original_path": "phase14-cross-group-check.json",
+      "published_path": "phase14/phase14-cross-group-check.json",
+      "encoding": "identity",
+      "original_bytes": 615,
+      "sha256": "35cb851231c861291952a763d9e3e9fcbb6a46095ded6e8f25ac59f6bc089001",
+      "stored_bytes": 615,
+      "stored_sha256": "35cb851231c861291952a763d9e3e9fcbb6a46095ded6e8f25ac59f6bc089001"
+    },
+    {
+      "original_path": "phase14-fixture-regression.json",
+      "published_path": "phase14/phase14-fixture-regression.json",
+      "encoding": "identity",
+      "original_bytes": 10911,
+      "sha256": "da579f6e97446453e4a7e534b3e45439d6f5a9855808f8752e442cd75073a700",
+      "stored_bytes": 10911,
+      "stored_sha256": "da579f6e97446453e4a7e534b3e45439d6f5a9855808f8752e442cd75073a700"
+    },
+    {
+      "original_path": "phase14-flags-winding.json",
+      "local_archive_path": "archive/exploratory/phase14-flags-winding.json",
+      "original_bytes": 1185474,
+      "sha256": "e8e7a627c6a18cbb22e1d4989113caa82c6945ed103660c91b1fbcfb71e4cd25",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-full-opaque-request.json",
+      "published_path": "phase14/phase14-full-opaque-request.json",
+      "encoding": "identity",
+      "original_bytes": 11606,
+      "sha256": "b499704b8b7c69e35f358c4fa5fad78e2386ae562fd0cadd9d1ce84577cb315d",
+      "stored_bytes": 11606,
+      "stored_sha256": "b499704b8b7c69e35f358c4fa5fad78e2386ae562fd0cadd9d1ce84577cb315d"
+    },
+    {
+      "original_path": "phase14-general-cases/gpu0-grid16.json",
+      "local_archive_path": "archive/exploratory/phase14-general-cases/gpu0-grid16.json",
+      "original_bytes": 1768062,
+      "sha256": "4a97f4885f7f5c76f780d7f732fcfddb0d73546b056e1ad31d1635c746231675",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-cases/gpu0-overlap-reversed.json",
+      "local_archive_path": "archive/exploratory/phase14-general-cases/gpu0-overlap-reversed.json",
+      "original_bytes": 1191543,
+      "sha256": "728b5bd59f3c9978f85878cf66d1f9a13cf2e43423946caf5f58b0536f85c729",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-cases/gpu0-overlap.json",
+      "local_archive_path": "archive/exploratory/phase14-general-cases/gpu0-overlap.json",
+      "original_bytes": 1191534,
+      "sha256": "5266f4519f6348d2ba7ef9d41a0b2d3d57de81e3ff7dbda4b84bd5698dee34da",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-cases/gpu0-separated.json",
+      "local_archive_path": "archive/exploratory/phase14-general-cases/gpu0-separated.json",
+      "original_bytes": 1190416,
+      "sha256": "e4c5cd1cb6032e33d0fc54a340acf09baf31780c9ffc160bfe3ee24f71005695",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-cases/gpu0-single.json",
+      "local_archive_path": "archive/exploratory/phase14-general-cases/gpu0-single.json",
+      "original_bytes": 621480,
+      "sha256": "ceac59ec07346fb490ae768be18e907edf405aa9ab73a42660f36a3baf0d274b",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu0-grid1024.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu0-grid1024.json",
+      "original_bytes": 1949376,
+      "sha256": "8bd5bd72529835b92582fc48241054db23fe334fa944f4a099357216b69e3326",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu0-grid16.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu0-grid16.json",
+      "original_bytes": 1763992,
+      "sha256": "d91e82a2dc7ae219d853798281ffa07b505e338fbccf8b2157adef7c0486056b",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu0-grid257.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu0-grid257.json",
+      "original_bytes": 1809625,
+      "sha256": "fe0ea2b8ae76a6f336af7ae42ef4cf138dca07d13cb6fc29192c2eefb383474d",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu0-grid64.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu0-grid64.json",
+      "original_bytes": 1773567,
+      "sha256": "ab60fbb99c45f09c3870801715bd059189c1591d976ed171053b6fd2036ba972",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu0-overlap-reversed.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu0-overlap-reversed.json",
+      "original_bytes": 1191543,
+      "sha256": "4bcc8d617dabe33fdd1581abeb2a02099a99c1deae6d1d01d0f93c82817c2aa3",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu0-overlap.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu0-overlap.json",
+      "original_bytes": 1191534,
+      "sha256": "24a41e80bbabd13fafd70a80de493544df785e286d71bce45d0cd4ee13299ece",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu0-separated.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu0-separated.json",
+      "original_bytes": 1190416,
+      "sha256": "5c86f3eca08c6ce47727b445bf454981f3c1b1166f02775bcbb0d86f5f4eadbb",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu0-single.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu0-single.json",
+      "original_bytes": 621480,
+      "sha256": "8cf37e64a0221b45f31c2ea9ed35e128c5e7504273fb30a137853501b5555a3b",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu5-grid1024.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu5-grid1024.json",
+      "original_bytes": 1949376,
+      "sha256": "01ecf8cca11e5187ebe673feb924feac36170de858158c7b8aa7c0a69994757c",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu5-grid16.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu5-grid16.json",
+      "original_bytes": 1763992,
+      "sha256": "e80411d888f0aa0924202b8367d7c710e6813418c60295947587461c587d022b",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu5-grid257.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu5-grid257.json",
+      "original_bytes": 1809625,
+      "sha256": "67c51a553cf47cf874c0f2bbdbfdd2d7ac09e82b7f902304a400143679d80230",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu5-grid64.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu5-grid64.json",
+      "original_bytes": 1773567,
+      "sha256": "0d3556c15126820f6984e1f04212a8d2c2a82d1ae7390bdf0274b20ad61754b9",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu5-overlap-reversed.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu5-overlap-reversed.json",
+      "original_bytes": 1191543,
+      "sha256": "6874a8c18baff27c69c74b06f5e5fabd071563e6077cb87229301e10d5ed6863",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu5-overlap.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu5-overlap.json",
+      "original_bytes": 1191534,
+      "sha256": "0c1f73ce927252f18c0feae765f7963490118e40045d54db572ca34ef7bba89d",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu5-separated.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu5-separated.json",
+      "original_bytes": 1190416,
+      "sha256": "f96242195bd93e00be538c5365cfa44514f4e639b712064d429e99a641039de8",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest-cases/gpu5-single.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest-cases/gpu5-single.json",
+      "original_bytes": 621480,
+      "sha256": "d41cfc9115769e2f097c2ce0d6ddde51d62864f4dc136192cfa885d1e938271f",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-closest.json",
+      "local_archive_path": "archive/exploratory/phase14-general-closest.json",
+      "original_bytes": 13940,
+      "sha256": "f8553a82b738f4e12bce1b04f5777f0c6d0aad74cf3bd93a05707dc19165e239",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu2-grid1024.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu2-grid1024.json",
+      "original_bytes": 2219929,
+      "sha256": "6c40b69e33c47a96b4451f8e6ad4ba4c9d674ec2a0da9569f6c2191d77e61c68",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu2-grid16.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu2-grid16.json",
+      "original_bytes": 1850672,
+      "sha256": "44ae100a5c95affd3c70f579752f771a36f4956bc8688d48b1ce41c3e2fd28bf",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu2-grid257.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu2-grid257.json",
+      "original_bytes": 1940211,
+      "sha256": "eb13a7dc12743d7eb85aa74771becd8974723a43e5f76fb52d1335994a5be8b5",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu2-grid64.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu2-grid64.json",
+      "original_bytes": 1868967,
+      "sha256": "dbc3747eb300ba5a7a9df43e168bb26f3b02f44e1c562006ec467435ac6760c6",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu2-overlap-reversed.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu2-overlap-reversed.json",
+      "original_bytes": 1248665,
+      "sha256": "8cd4f11a07b9c03d84505b77b29bb07e17705910e55e7bde10f66bc087cc67bc",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu2-overlap.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu2-overlap.json",
+      "original_bytes": 1248656,
+      "sha256": "a617832a3cda28c3afd0bca7d30c5ed3a4a173f387978436a003bfd5d2aee09b",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu2-separated.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu2-separated.json",
+      "original_bytes": 1247418,
+      "sha256": "e2d6f7b7049e733d1614f22886ec496223c18a4ceaf3e10cc5abe9b392dbe87b",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu2-single.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu2-single.json",
+      "original_bytes": 651281,
+      "sha256": "5e3d647b52e77b44742d7fdc97f1799c9b9315367c8835862781a9fd9384f831",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu6-grid1024.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu6-grid1024.json",
+      "original_bytes": 2219929,
+      "sha256": "10f535a21ac06644da05cda46bf5f7026dc2f8f02ad59d9337a22e0433b1f182",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu6-grid16.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu6-grid16.json",
+      "original_bytes": 1850672,
+      "sha256": "d68a8fbb6f3206c1d3d9dcd6c78f26c7fe6de53310d317710b00dbae0b9c80c2",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu6-grid257.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu6-grid257.json",
+      "original_bytes": 1940211,
+      "sha256": "494eb9462bfdf08a15dc33d0bda53e6cfa83b3df0981c0c14b7acfc5ac84b7a3",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu6-grid64.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu6-grid64.json",
+      "original_bytes": 1868967,
+      "sha256": "6d4f1f2dc99ff3c403591b424d4231d0a52a323391d7ab7c0f190e000e4779bf",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu6-overlap-reversed.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu6-overlap-reversed.json",
+      "original_bytes": 1248665,
+      "sha256": "ddba51edb9734f6ed8d1246a60004118550d2e03abe89250b75c8733a8d36f53",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu6-overlap.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu6-overlap.json",
+      "original_bytes": 1248656,
+      "sha256": "9b42071d669c934216bf8c084b20182b86144cdce611df48922d908491a7428e",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu6-separated.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu6-separated.json",
+      "original_bytes": 1247418,
+      "sha256": "d96db2feb128f9e4b1edd4a99f8156aa2c714d546632be016dcbf37de93106fc",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final-cases/gpu6-single.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final-cases/gpu6-single.json",
+      "original_bytes": 651281,
+      "sha256": "dd842e238f89a438d75644d7350327961dc2b03de2f3f129b4297a69fb6d71f0",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-final.json",
+      "local_archive_path": "archive/exploratory/phase14-general-final.json",
+      "original_bytes": 14228,
+      "sha256": "7172d9c1f87e90b9073ead77760eaf9fc7bdbfbebd5a704f468491b529ec6571",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-initial.json",
+      "published_path": "phase14/phase14-general-initial.json",
+      "encoding": "identity",
+      "original_bytes": 209613,
+      "sha256": "770af62d6e557a76d584d01533d92e48e4b67159b25608628f8307ba47b18493",
+      "stored_bytes": 209613,
+      "stored_sha256": "770af62d6e557a76d584d01533d92e48e4b67159b25608628f8307ba47b18493"
+    },
+    {
+      "original_path": "phase14-general-sign-check.json",
+      "local_archive_path": "archive/exploratory/phase14-general-sign-check.json",
+      "original_bytes": 219990,
+      "sha256": "61240d900f503a9c08a6ec9697fa6ec485826e0c6d0b620114cd2822bc8a2333",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu2-grid1024.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu2-grid1024.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 2219929,
+      "sha256": "211b079e4af0f5d3d3882057900c9a5ddafe9551f5013daf6610c78e91e7cdaf",
+      "stored_bytes": 56642,
+      "stored_sha256": "7ed4804bb46d9dd24798a79ce22490d9441e6a44b0670c0feb74ee9d1b911660",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu2-grid1024.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu2-grid16.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu2-grid16.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1850672,
+      "sha256": "85469248af546b9c1fd2ad0c3fa761d66d2d2bf591b3009896eb1820d871af9a",
+      "stored_bytes": 34851,
+      "stored_sha256": "42a4c13a7d497d10cee829cba6d720eaecba1a30a5123a373f63233a88545555",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu2-grid16.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu2-grid257.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu2-grid257.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1940211,
+      "sha256": "82865bda76aa383955c5b601482cc54736ed72d3b93a8d451663b2a3f294f75e",
+      "stored_bytes": 43925,
+      "stored_sha256": "4772e82bdc23314d204d7041218b206c5f222ca2d293ecd7c3f5f63b3df114c9",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu2-grid257.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu2-grid64.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu2-grid64.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1868967,
+      "sha256": "910bb839f6077fc7372fc8ca193e80c4efc85be4717ca187100716430cc665a1",
+      "stored_bytes": 37797,
+      "stored_sha256": "27d6ac64cea837ef431280b6cf07054c4266115ba775f54ba8e8cf33cd66e271",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu2-grid64.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu2-overlap-reversed.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu2-overlap-reversed.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1248665,
+      "sha256": "e7aad0d1782b6870ee6ebc5fb94c839f0cea979de918f7d8486a6421bc707f43",
+      "stored_bytes": 23534,
+      "stored_sha256": "39b4fe3a34d86a8c8d10a58248b9d23ecd07f9008bdd7bc4120d35dfa4af3dfc",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu2-overlap-reversed.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu2-overlap.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu2-overlap.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1248656,
+      "sha256": "056325978f668e9af86a7b2b613472bf17b9656e0c16a11572bb4884612087d6",
+      "stored_bytes": 23452,
+      "stored_sha256": "4b06d0b0c3cd499d11b459955f1864c637c4b788f9277b1bd27413d26453f995",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu2-overlap.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu2-separated.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu2-separated.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1247418,
+      "sha256": "5d462673e0df3487c32c6028554a21903f022a147cbc59018a3098033f2da160",
+      "stored_bytes": 23196,
+      "stored_sha256": "93f8690031e12d3e45645ccea48764d84ec3757f6d204376c2fa8cdeb67fee13",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu2-separated.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu2-single.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu2-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 651281,
+      "sha256": "5bcaf2105ddc026f6f958a117ee69636f70154939190f30d34e6a6c159291282",
+      "stored_bytes": 13004,
+      "stored_sha256": "c60b2956e1c35a66cbcc4fb93efa20d4070796d3563a93a4bfabae0344009713",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu2-single.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu6-grid1024.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu6-grid1024.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 2219929,
+      "sha256": "6e89ffc5baa2e568316471d32db3df7d3ed86a996daf1354e5d61ea05be8ecd0",
+      "stored_bytes": 56640,
+      "stored_sha256": "a878885b55cba3609e4ef357111e7b5dea74465e2476189b59c50aaa9d61e123",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu6-grid1024.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu6-grid16.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu6-grid16.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1850672,
+      "sha256": "d75eb970ead4af73132bbdddcc603c97c3f7b633258c1642dee1b63f1f73f083",
+      "stored_bytes": 34852,
+      "stored_sha256": "47fe5c46baa6457dad2f26a6cc6f1720cb283171f4dbc03b52e934aa330f3704",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu6-grid16.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu6-grid257.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu6-grid257.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1940211,
+      "sha256": "b2d8fbb4101b46b05a252112ce5868237128345ff65619b81d1fdcbdeb1b6d31",
+      "stored_bytes": 43935,
+      "stored_sha256": "e09195959bf177c14ecd2093b6cfb3f0442bea99350b23f55a8b3db301a0d659",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu6-grid257.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu6-grid64.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu6-grid64.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1868967,
+      "sha256": "f42e171a539fb68545affa874ff510dfeb9b938ab35f1ec371cb8df0285e42be",
+      "stored_bytes": 37771,
+      "stored_sha256": "a3bd02ac3e9b7505dd80438ade442f8ad4aa251970d50f90538e907b4f33505a",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu6-grid64.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu6-overlap-reversed.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu6-overlap-reversed.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1248665,
+      "sha256": "2f4b999cb08ecfd98dc518a3e6551d95c472aa2c18a0d5796b07a59bac6fa881",
+      "stored_bytes": 23538,
+      "stored_sha256": "dd44f47c791d86802fe052e1e80a23c49fa98b7cae6daccba86f74c6618388b9",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu6-overlap-reversed.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu6-overlap.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu6-overlap.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1248656,
+      "sha256": "2a9e4e8dffb414f73e9bfd8980abe78416a09ed79d1ad9ce3a7d10088b270390",
+      "stored_bytes": 23464,
+      "stored_sha256": "5e4482ecdf1203e0d4e39e352f0e0fa778da2ab3fbeae7afd903cadc5a44f251",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu6-overlap.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu6-separated.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu6-separated.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1247418,
+      "sha256": "8e36bc9f4e4b13f9ad3ba7819612c601ebd65cde422e18b65cd59d27f8794e00",
+      "stored_bytes": 23197,
+      "stored_sha256": "7074510f7c9efc2e0ce6207499b49ef9dc6e1aceec3732dce99063c822515bbe",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu6-separated.json"
+    },
+    {
+      "original_path": "phase14-general-v2-cases/gpu6-single.json",
+      "published_path": "phase14/phase14-general-v2-cases/gpu6-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 651281,
+      "sha256": "f98a0c001f3011160cbebd72c90dfa7261125a9f3c029b6759617bb208ff5b3a",
+      "stored_bytes": 12992,
+      "stored_sha256": "63dd166cbbc38139296500b055784a57ccfa1bdf5193b20c32d6872886731b7c",
+      "local_original_path": "archive/originals/phase14-general-v2-cases/gpu6-single.json"
+    },
+    {
+      "original_path": "phase14-general-v2.json",
+      "published_path": "phase14/phase14-general-v2.json",
+      "encoding": "identity",
+      "original_bytes": 14132,
+      "sha256": "188ac4a9db45ab58870289da453ce81899dfa8d21d017ba786e1054faf9ff695",
+      "stored_bytes": 14132,
+      "stored_sha256": "188ac4a9db45ab58870289da453ce81899dfa8d21d017ba786e1054faf9ff695"
+    },
+    {
+      "original_path": "phase14-general.json",
+      "local_archive_path": "archive/exploratory/phase14-general.json",
+      "original_bytes": 8178,
+      "sha256": "679bb8e9a9912ca39d69e9f8270ad52ebc24fbb5dbeaf8adefb86aaaeefd8360",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ias-event-final.json",
+      "published_path": "phase14/phase14-ias-event-final.json",
+      "encoding": "identity",
+      "original_bytes": 17344,
+      "sha256": "a94347fbeec7c86148aa77c91c7cf562532b58b8ba9654b7b904f0d92268ff6c",
+      "stored_bytes": 17344,
+      "stored_sha256": "a94347fbeec7c86148aa77c91c7cf562532b58b8ba9654b7b904f0d92268ff6c"
+    },
+    {
+      "original_path": "phase14-ias-event.json",
+      "local_archive_path": "archive/exploratory/phase14-ias-event.json",
+      "original_bytes": 5810,
+      "sha256": "6f569882ef5a5443f57773b0e430805ef0c48f417d052751bfeae526611c5ccb",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ias-identity-final.bin",
+      "published_path": "phase14/phase14-ias-identity-final.bin",
+      "encoding": "identity",
+      "original_bytes": 1152,
+      "sha256": "2477dad93b388be426d92f9db080321ec0a95581cee50833e82f6894efd61f6b",
+      "stored_bytes": 1152,
+      "stored_sha256": "2477dad93b388be426d92f9db080321ec0a95581cee50833e82f6894efd61f6b"
+    },
+    {
+      "original_path": "phase14-ias-identity.bin",
+      "local_archive_path": "archive/exploratory/phase14-ias-identity.bin",
+      "original_bytes": 1152,
+      "sha256": "e87ea3a5d8803b5809fc45590c09bd42250af83f0805071f50fc74e78a0d5238",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-instance-identity-initial.json",
+      "local_archive_path": "archive/exploratory/phase14-instance-identity-initial.json",
+      "original_bytes": 239466,
+      "sha256": "ff66533da7b5a897fc508ae616cdb85972b030e6ded020e71e5d87e95dc8c05b",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-instance-identity-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-instance-identity-oracle.json",
+      "original_bytes": 22343,
+      "sha256": "4f85e86903354d046765202cbc00361b1dfa6ed61d8442177468b5ebb6960f4f",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-instance-identity-root-header.json",
+      "local_archive_path": "archive/exploratory/phase14-instance-identity-root-header.json",
+      "original_bytes": 241776,
+      "sha256": "046f1301b24d4576d87b1d671c44fdabeaa4aeed8c885e06bc254fc9d964292c",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-instance-pair-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-instance-pair-oracle.json",
+      "original_bytes": 40626,
+      "sha256": "a634e9ff097aa6899e9f135eb049620dbf0ce0414ce434dfef72483e831eaffa",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-instance-translate-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-instance-translate-oracle.json",
+      "original_bytes": 22415,
+      "sha256": "323f7d745ba46d55e078e2ed1b3e45bb797f807077a4bdfc4c7224e7a74a0bef",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-multihit-disable-anyhit.json",
+      "local_archive_path": "archive/exploratory/phase14-multihit-disable-anyhit.json",
+      "original_bytes": 1763992,
+      "sha256": "ae65640c3877b9c1c9c14753acbfbb2699668d721b65af166699e02834f338ee",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-multihit-geometry-opaque.json",
+      "local_archive_path": "archive/exploratory/phase14-multihit-geometry-opaque.json",
+      "original_bytes": 1763992,
+      "sha256": "2ba2fe4a11e6e82455045072b1815d11d399c9b07f2c826f345f8fd4ce1edf17",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-nonopaque-candidate.json",
+      "published_path": "phase14/phase14-nonopaque-candidate.json",
+      "encoding": "identity",
+      "original_bytes": 22567,
+      "sha256": "091065c325912df960589e17c0d3cf6cc9a7b2d29392b589315713e648e67f5c",
+      "stored_bytes": 22567,
+      "stored_sha256": "091065c325912df960589e17c0d3cf6cc9a7b2d29392b589315713e648e67f5c"
+    },
+    {
+      "original_path": "phase14-opaque-reversed-sign-check.json",
+      "local_archive_path": "archive/exploratory/phase14-opaque-reversed-sign-check.json",
+      "original_bytes": 806210,
+      "sha256": "2247c0598d1ff166f5eab978674eb301e5548ac28fe67ef2dbbb44ab4a9b79e2",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-flags-check.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-flags-check.json",
+      "original_bytes": 218665,
+      "sha256": "ec7bf1d5338563bc3f828d5c7c5694c9ca00997c6343f415d84fc7aeab603ef4",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-flags-0-geometry-1-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-flags-0-geometry-1-winding-0.json",
+      "original_bytes": 1273403,
+      "sha256": "ccad56b455e8ec25010e98d408c400d8aed1f3fe501642e85bd1117a491152e5",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-flags-1-geometry-0-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-flags-1-geometry-0-winding-0.json",
+      "original_bytes": 1273403,
+      "sha256": "2c53757eb6692381f51ee39a6cca0b7eb8ba75a86994a9a7bc991052e1abc4d0",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-flags-1-geometry-1-winding-1.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-flags-1-geometry-1-winding-1.json",
+      "original_bytes": 1272526,
+      "sha256": "a91ec7612191b9c3f503b0843c08ff6801e304ddabed005c097c993ac58f80d4",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-flags-10-geometry-1-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-flags-10-geometry-1-winding-0.json",
+      "original_bytes": 1264418,
+      "sha256": "aaf238310b85a148dae2f11cd96cbafac971c7cf3343f9353066cc7da0a80b18",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-flags-11-geometry-0-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-flags-11-geometry-0-winding-0.json",
+      "original_bytes": 1264418,
+      "sha256": "3d5e52d956fdcf086ab80a3390a7726c7d1f737f0f0cee272eacb56c53885d89",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-flags-11-geometry-0-winding-1.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-flags-11-geometry-0-winding-1.json",
+      "original_bytes": 1265891,
+      "sha256": "e548a7e08b534c3443347b74c006e8d096162073b5813792c6f9b228d3cb6320",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-flags-20-geometry-1-winding-1.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-flags-20-geometry-1-winding-1.json",
+      "original_bytes": 1264703,
+      "sha256": "0771ad844795ac6094d2b634c8db6b7ad819b777d25cf630d9f867f1039707b8",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-flags-21-geometry-0-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-flags-21-geometry-0-winding-0.json",
+      "original_bytes": 1266984,
+      "sha256": "fbb70aadd95a0843ee38da17d49592dcda503ec30ae1bc6eb6dd11621d47329f",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-flags-21-geometry-0-winding-1.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-flags-21-geometry-0-winding-1.json",
+      "original_bytes": 1264703,
+      "sha256": "edb9fca408a7e5af17872a809a07247950982ac84a27ea72f9a488f546db4cdc",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-instance-identity-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-instance-identity-oracle.json",
+      "original_bytes": 22439,
+      "sha256": "eabed3188542f3298938f151cc0b65c12d9668b0815136be10c2e61ceedacf0c",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-instance-pair-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-instance-pair-oracle.json",
+      "original_bytes": 40669,
+      "sha256": "432f6fba426b9470c0996556dd6920f4d879a0674a507d162cb4da64dd248794",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-instance-rotate-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-instance-rotate-oracle.json",
+      "original_bytes": 22473,
+      "sha256": "430baa9e3f25d638983c706a3de535beb05fa61f3592bd6517eee33a4d2cfcac",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-instance-scale-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-instance-scale-oracle.json",
+      "original_bytes": 22689,
+      "sha256": "d5463791fe8bc06424245cafd5b1bc044020883e509457394fd637b9443b92d0",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu0-instance-translate-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu0-instance-translate-oracle.json",
+      "original_bytes": 22458,
+      "sha256": "6c98a20db99e2e5e3cc8d0a54239f60532a1f511e96fb9a2f23b37a1f3616e67",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-flags-0-geometry-1-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-flags-0-geometry-1-winding-0.json",
+      "original_bytes": 1273403,
+      "sha256": "9dbc67c12a6748caa3d644d01406616cec361af29b29a16f400952a56cb2b863",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-flags-1-geometry-0-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-flags-1-geometry-0-winding-0.json",
+      "original_bytes": 1273403,
+      "sha256": "5177cc2ef15b6697decad65f36feb2f78678ed27cb700bb8ad49b22798ca153d",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-flags-1-geometry-1-winding-1.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-flags-1-geometry-1-winding-1.json",
+      "original_bytes": 1272526,
+      "sha256": "79247ca6353119ae77ed695b2e55e54d2c39d7b447d2349e9ed4cd1c40677adf",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-flags-10-geometry-1-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-flags-10-geometry-1-winding-0.json",
+      "original_bytes": 1264418,
+      "sha256": "26f390d71fdc3919c4bc928891cebe0259f9697b58e2c95504add28e17d49561",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-flags-11-geometry-0-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-flags-11-geometry-0-winding-0.json",
+      "original_bytes": 1264418,
+      "sha256": "bc6c65672823dab6e519b5a33d2784be9465ecbbbbfb31d41c5998bb549ffb6e",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-flags-11-geometry-0-winding-1.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-flags-11-geometry-0-winding-1.json",
+      "original_bytes": 1265891,
+      "sha256": "51d1517bfe2067e1d6470442e2939827e1d29e42c0cd9dea8ddcaba3c065062d",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-flags-20-geometry-1-winding-1.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-flags-20-geometry-1-winding-1.json",
+      "original_bytes": 1264703,
+      "sha256": "7d39a7eabc7bf3de91f983da495bdd30182899aab8200e12c2263989c1e75056",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-flags-21-geometry-0-winding-0.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-flags-21-geometry-0-winding-0.json",
+      "original_bytes": 1266984,
+      "sha256": "44c5d8685ebdec62947d4911799e31d78f5d69a2cf8c8386488e0630ff7db436",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-flags-21-geometry-0-winding-1.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-flags-21-geometry-0-winding-1.json",
+      "original_bytes": 1264703,
+      "sha256": "43fcdb2d7a59ec01dff7107ed2ade23475220e50adda95fb9d997c7afc391b56",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-instance-identity-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-instance-identity-oracle.json",
+      "original_bytes": 22439,
+      "sha256": "3517f12546a94e4685ecb9a10f1c207db7f407987526f7f37fd70019123ee278",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-instance-pair-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-instance-pair-oracle.json",
+      "original_bytes": 40669,
+      "sha256": "7eb59b1e835890d59375913deaa9cedb586b1685a84bebb9b06c143f3f11b2c9",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-instance-rotate-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-instance-rotate-oracle.json",
+      "original_bytes": 22473,
+      "sha256": "bbd7c257489969d57cdafc03bc4441c6188829c699b82a96c58e21a513309087",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-instance-scale-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-instance-scale-oracle.json",
+      "original_bytes": 22689,
+      "sha256": "6675cff84c73230d0cc98a67cb6a42926f941649397f873293019493315d4311",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-cases/gpu5-instance-translate-oracle.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol-cases/gpu5-instance-translate-oracle.json",
+      "original_bytes": 22458,
+      "sha256": "d1ad572053c9078820bb54df695c62e872a60ea63adb6c43f8e23137eeaa2980",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-flags-0-geometry-1-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-flags-0-geometry-1-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1273403,
+      "sha256": "13111b6a72434d3c1a67738ea036ed45a2641548a5354d0ff25c411a0e3d2142",
+      "stored_bytes": 28094,
+      "stored_sha256": "aa775da91783d8e2cf2fd37927624143d61e64ffc20c2c1b04f2e7c3545352a6",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu0-flags-0-geometry-1-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-flags-1-geometry-0-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-flags-1-geometry-0-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1273403,
+      "sha256": "9cfa56dc26082851b3504092025f03a8c671ef1453aa8c4d7c3d03f054574bd1",
+      "stored_bytes": 28709,
+      "stored_sha256": "0ab53999f3774ad710fce83ed0f48374c363132a3ad2491d66782915583c4144",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu0-flags-1-geometry-0-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-flags-1-geometry-1-winding-1.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-flags-1-geometry-1-winding-1.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1272526,
+      "sha256": "e4bf717a30ef9fb8578d8bca2fa81dfe2f27c4ec9c4c88cb2e5e7fe45f2d2981",
+      "stored_bytes": 27760,
+      "stored_sha256": "70c358b65fa4a99bf504643bd24fe95d5db9022b315e418ab2dcd7487bc6a0e7",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu0-flags-1-geometry-1-winding-1.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-flags-10-geometry-1-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-flags-10-geometry-1-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1264418,
+      "sha256": "eb34850571569145735bcac3376e6064e236b59fcb319c2a7a10d0a487984eee",
+      "stored_bytes": 26113,
+      "stored_sha256": "1a731e25f39f21924a1536b61c474bdd3216118e4d2de20981877981725973a2",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu0-flags-10-geometry-1-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-flags-11-geometry-0-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-flags-11-geometry-0-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1264418,
+      "sha256": "dcc1f41440d907cb91bc576ce54dc1533ef49763def1a4e37d5b84e2502ffd2f",
+      "stored_bytes": 26808,
+      "stored_sha256": "e6208ab57d8cc8fddc86cdd2f56df925bcf5acaec9b99108fc954819f668b7d8",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu0-flags-11-geometry-0-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-flags-11-geometry-0-winding-1.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-flags-11-geometry-0-winding-1.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1265891,
+      "sha256": "f1efa9c0ba5601c7ad49203d98f0bd4f0a83d3575b714459754d01116ad1f5ab",
+      "stored_bytes": 27243,
+      "stored_sha256": "27441ac19a7453e1f37dba5c8e9f7a48a5247550d10d9dd97526c8b16fa54ea5",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu0-flags-11-geometry-0-winding-1.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-flags-20-geometry-1-winding-1.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-flags-20-geometry-1-winding-1.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1264703,
+      "sha256": "a3be8943349bf317eabf30bbafd64862f4123828a6b6087f5030baaba249b3dc",
+      "stored_bytes": 26130,
+      "stored_sha256": "635eeeaa18b1118aefb3f7e3bda118b26ab3601a9f94f0aa51a93aafcbbc498e",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu0-flags-20-geometry-1-winding-1.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-flags-21-geometry-0-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-flags-21-geometry-0-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1266984,
+      "sha256": "af1311b6d535fd4d3fa628b3fdcf1c5bcea5c5c6ef0bb91c97e2e9f1a3e868f4",
+      "stored_bytes": 27570,
+      "stored_sha256": "113fdaa03638effaf1d266a9b922f23129b06987d420f8eafd8f5e114b4b3c01",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu0-flags-21-geometry-0-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-flags-21-geometry-0-winding-1.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-flags-21-geometry-0-winding-1.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1264703,
+      "sha256": "2a4528d32584849ee93b354897b9307ecffa27ec5f0dddf6acae375542b92c20",
+      "stored_bytes": 26810,
+      "stored_sha256": "c024982f3590f4a4f7bb5f2cec3006ec8350f43c31febf2d8596bee31aae78ca",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu0-flags-21-geometry-0-winding-1.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-instance-identity-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-instance-identity-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 22439,
+      "sha256": "e71d4dcfd5cce33d8c2e9897734db71cdf18bb9fde41fa1ce6d072c4572a9152",
+      "stored_bytes": 22439,
+      "stored_sha256": "e71d4dcfd5cce33d8c2e9897734db71cdf18bb9fde41fa1ce6d072c4572a9152"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-instance-pair-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-instance-pair-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 40669,
+      "sha256": "f7cd8e9063b5ee316b96c07785e7080133d579d72f1859e9456f464b0ba3621f",
+      "stored_bytes": 40669,
+      "stored_sha256": "f7cd8e9063b5ee316b96c07785e7080133d579d72f1859e9456f464b0ba3621f"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-instance-rotate-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-instance-rotate-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 22473,
+      "sha256": "ced2447ff0673c1e538805606f2bd702403297ca69583250433f62488ceca258",
+      "stored_bytes": 22473,
+      "stored_sha256": "ced2447ff0673c1e538805606f2bd702403297ca69583250433f62488ceca258"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-instance-scale-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-instance-scale-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 22689,
+      "sha256": "025b642eb49eea123d967c61d732924c09fe9276aafa81a36bdf72f18e9669fc",
+      "stored_bytes": 22689,
+      "stored_sha256": "025b642eb49eea123d967c61d732924c09fe9276aafa81a36bdf72f18e9669fc"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu0-instance-translate-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu0-instance-translate-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 22458,
+      "sha256": "2d791d1334022911fcb14937b52ab1a1228fe0e997d6768803ba5b0881dfdb9f",
+      "stored_bytes": 22458,
+      "stored_sha256": "2d791d1334022911fcb14937b52ab1a1228fe0e997d6768803ba5b0881dfdb9f"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-flags-0-geometry-1-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-flags-0-geometry-1-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1273403,
+      "sha256": "ea72e46eb1b7ce87cd1079aa86af11427dcba9ecae70ea73667e1ad8f42a3c19",
+      "stored_bytes": 28086,
+      "stored_sha256": "a6ec3f5bbbb45d448878f62e985496c29c3fa2855820a7cd9d7dfea3f296924b",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu5-flags-0-geometry-1-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-flags-1-geometry-0-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-flags-1-geometry-0-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1273403,
+      "sha256": "391629fb9ed1f68370216cf6be3296fe68611fcb81dfb283b306101271b44501",
+      "stored_bytes": 28716,
+      "stored_sha256": "a314018e1c59cf925c81bdcb16966267efecf2b9d7fbdf394941598312699bf5",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu5-flags-1-geometry-0-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-flags-1-geometry-1-winding-1.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-flags-1-geometry-1-winding-1.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1272526,
+      "sha256": "44603173c47631e1302a886e9a6beaa8abda54aaf2c3d53119e61ca0098bf6e2",
+      "stored_bytes": 27766,
+      "stored_sha256": "2f09808b31f0f0e4623a59ee976893741b810850e99596fa5d0d50a090bf771b",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu5-flags-1-geometry-1-winding-1.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-flags-10-geometry-1-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-flags-10-geometry-1-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1264418,
+      "sha256": "de7f525ec8cacfab761e9dae9a8c8682b51e369ab518496e57f2789655d1955a",
+      "stored_bytes": 26095,
+      "stored_sha256": "346b175f169476e95b3111e6c688821fa234244088429e1f17e943214ddbbb73",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu5-flags-10-geometry-1-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-flags-11-geometry-0-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-flags-11-geometry-0-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1264418,
+      "sha256": "b4c92726916c2bb001820a924bff58ff5e05a58b4a096bd179acf0dd8da20ab4",
+      "stored_bytes": 26814,
+      "stored_sha256": "b6e34c41d023bb16cc5706ef3623964879245622ed115e5c76e709bfbce513bd",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu5-flags-11-geometry-0-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-flags-11-geometry-0-winding-1.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-flags-11-geometry-0-winding-1.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1265891,
+      "sha256": "fd79e04583bffc91e4e27d562de573cfc6fa137617d34e01b3731b487ee0baad",
+      "stored_bytes": 27268,
+      "stored_sha256": "f55af91f4ac9236791fdb332e917e111aa034c7c1832bdcd712e582b71490add",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu5-flags-11-geometry-0-winding-1.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-flags-20-geometry-1-winding-1.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-flags-20-geometry-1-winding-1.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1264703,
+      "sha256": "2f79ce39b34193d3310988e531eb72b9fd61418522ce17babb48f6a0c58e3f55",
+      "stored_bytes": 26155,
+      "stored_sha256": "9b0483ddcd8ea726f606325c13992e4abff5e56bc28df383c154e6b6588ff452",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu5-flags-20-geometry-1-winding-1.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-flags-21-geometry-0-winding-0.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-flags-21-geometry-0-winding-0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1266984,
+      "sha256": "68f6d21b2c5fcff3d4ca3361af1d79bf4b77faf29f94e3b73e6eb1122a39ea9a",
+      "stored_bytes": 27542,
+      "stored_sha256": "9e869b3e7060f63f258ff1a840d90cba4f9f417e2f9659ab24f756bc01343668",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu5-flags-21-geometry-0-winding-0.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-flags-21-geometry-0-winding-1.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-flags-21-geometry-0-winding-1.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1264703,
+      "sha256": "91c9f3288a136f97c3b6352b5edcfc6160540e8889c7084c0ea72bf8cc2e04d8",
+      "stored_bytes": 26842,
+      "stored_sha256": "8ba681f53539525cdae4859a892f21b1888fe5e728c5f08c4049a9c16e44be04",
+      "local_original_path": "archive/originals/phase14-ray-protocol-v2-cases/gpu5-flags-21-geometry-0-winding-1.json"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-instance-identity-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-instance-identity-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 22439,
+      "sha256": "773ff00e51a9dbe7607f4bd5a15a8d98f9515c5fbaace3e9c863ef077b2fb71d",
+      "stored_bytes": 22439,
+      "stored_sha256": "773ff00e51a9dbe7607f4bd5a15a8d98f9515c5fbaace3e9c863ef077b2fb71d"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-instance-pair-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-instance-pair-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 40669,
+      "sha256": "65c8f46ba607197772a39bcfdd35741f10430a4f9b61fafaff32f3a9d5a814ad",
+      "stored_bytes": 40669,
+      "stored_sha256": "65c8f46ba607197772a39bcfdd35741f10430a4f9b61fafaff32f3a9d5a814ad"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-instance-rotate-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-instance-rotate-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 22473,
+      "sha256": "fe3f66501dd287c4816a23e215d0eb97f703dc069c7b50002ffd6f2cbcc9cf81",
+      "stored_bytes": 22473,
+      "stored_sha256": "fe3f66501dd287c4816a23e215d0eb97f703dc069c7b50002ffd6f2cbcc9cf81"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-instance-scale-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-instance-scale-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 22689,
+      "sha256": "4080a95f09c0a6ea07201b216a43ee685937581a036bd7b88d6ed01a42bc55d4",
+      "stored_bytes": 22689,
+      "stored_sha256": "4080a95f09c0a6ea07201b216a43ee685937581a036bd7b88d6ed01a42bc55d4"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2-cases/gpu5-instance-translate-oracle.json",
+      "published_path": "phase14/phase14-ray-protocol-v2-cases/gpu5-instance-translate-oracle.json",
+      "encoding": "identity",
+      "original_bytes": 22458,
+      "sha256": "5c0d7605491defc7bea765e3cdca6a2ecb8a025cdb0394b313e9cf7d2860a4fa",
+      "stored_bytes": 22458,
+      "stored_sha256": "5c0d7605491defc7bea765e3cdca6a2ecb8a025cdb0394b313e9cf7d2860a4fa"
+    },
+    {
+      "original_path": "phase14-ray-protocol-v2.json",
+      "published_path": "phase14/phase14-ray-protocol-v2.json",
+      "encoding": "identity",
+      "original_bytes": 28786,
+      "sha256": "bc194ff3bfdf5e314e8cb5c880de510cf307c58180126d64b026a5622dca03f3",
+      "stored_bytes": 28786,
+      "stored_sha256": "bc194ff3bfdf5e314e8cb5c880de510cf307c58180126d64b026a5622dca03f3"
+    },
+    {
+      "original_path": "phase14-ray-protocol.json",
+      "local_archive_path": "archive/exploratory/phase14-ray-protocol.json",
+      "original_bytes": 28618,
+      "sha256": "4e89795d4a30bb651741bb65f49100eb5b7a731324f9c253254719eb6485ac48",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase15-fixture-regression.json",
+      "published_path": "phase15/phase15-fixture-regression.json",
+      "encoding": "identity",
+      "original_bytes": 10911,
+      "sha256": "5ea06064757c38188ccc30c05c36b84a8930333d82e8512e0ba64d96920f04a6",
+      "stored_bytes": 10911,
+      "stored_sha256": "5ea06064757c38188ccc30c05c36b84a8930333d82e8512e0ba64d96920f04a6"
+    },
+    {
+      "original_path": "phase15-gpu1-identity-single-id17.json",
+      "published_path": "phase15/phase15-gpu1-identity-single-id17.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 506281,
+      "sha256": "0526db13e14ae179cedb0d4ba073569d5214cb83785fc7c0647402f1a4076dcf",
+      "stored_bytes": 13871,
+      "stored_sha256": "3e3cc0285142f2097a6c1acd6087a3f85e9e6129c96200e4143c5c043d7e72b1",
+      "local_original_path": "archive/originals/phase15-gpu1-identity-single-id17.json"
+    },
+    {
+      "original_path": "phase15-gpu1-rotate-single-id0.json",
+      "published_path": "phase15/phase15-gpu1-rotate-single-id0.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 494964,
+      "sha256": "aeb67185ed077d58d7745487206677ddc52abd7de5cea96bec3e91e20f62dbb3",
+      "stored_bytes": 15116,
+      "stored_sha256": "68521be932f886dd7f59bad021e8ee3cab42e1ada0022bfb954769cc57830416",
+      "local_original_path": "archive/originals/phase15-gpu1-rotate-single-id0.json"
+    },
+    {
+      "original_path": "phase15-gpu1-scale-single-id16777215.json",
+      "published_path": "phase15/phase15-gpu1-scale-single-id16777215.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 501974,
+      "sha256": "cc960ce79d65dcb73a8729d736e8479bef36bd14712ff2be3945019681377dbc",
+      "stored_bytes": 17002,
+      "stored_sha256": "a9dd504e465ae6349694007d31142c1dcbcae086b7431c4b8af9093b7e660e2c",
+      "local_original_path": "archive/originals/phase15-gpu1-scale-single-id16777215.json"
+    },
+    {
+      "original_path": "phase15-gpu1-translate-single-id41.json",
+      "published_path": "phase15/phase15-gpu1-translate-single-id41.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 495017,
+      "sha256": "e1c568a6c583dfe3899343dfb773cfa5108271f27d1e9ef2385228aaa532439d",
+      "stored_bytes": 14706,
+      "stored_sha256": "ae36ae53ff9e9d59d47ae9f45f3ded3355e6a98f1956e6b37eb01b6cc0f58fb5",
+      "local_original_path": "archive/originals/phase15-gpu1-translate-single-id41.json"
+    },
+    {
+      "original_path": "phase15-gpu2-identity-grid-id41.json",
+      "published_path": "phase15/phase15-gpu2-identity-grid-id41.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1468890,
+      "sha256": "8dc0c0c8bacb4ae10a9240b8ca302c5fda195f72f5ee183096d9117e79643fea",
+      "stored_bytes": 31592,
+      "stored_sha256": "637ff9b32fb3da1f4f7771466e3fc24a1083efcb5f1b31eea19ef13df5dfc632",
+      "local_original_path": "archive/originals/phase15-gpu2-identity-grid-id41.json"
+    },
+    {
+      "original_path": "phase15-gpu2-scale-grid-id17.json",
+      "published_path": "phase15/phase15-gpu2-scale-grid-id17.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1481561,
+      "sha256": "d10d1f1fb3af2a3d19c4618ce404bdf8f56f000c4c08306f995bd8984647944e",
+      "stored_bytes": 40751,
+      "stored_sha256": "507fced4dcb5de2e21e7c4ba6fe9268e25b23855259949f319d094255f01e1b1",
+      "local_original_path": "archive/originals/phase15-gpu2-scale-grid-id17.json"
+    },
+    {
+      "original_path": "phase15-grid4096.json",
+      "published_path": "phase15/phase15-grid4096.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 2174947,
+      "sha256": "cc6b147ab82aa27ca297d591049b7829dc1bf6cfbd0c5fcc121c94372289cfe5",
+      "stored_bytes": 82476,
+      "stored_sha256": "76dc75f5b2f04f2e3ae424fada0b25b2c77afb2e6178ef121157bdbe1a50f2d2",
+      "local_original_path": "archive/originals/phase15-grid4096.json"
+    },
+    {
+      "original_path": "phase15-instance-identity-grid.json",
+      "local_archive_path": "archive/exploratory/phase15-instance-identity-grid.json",
+      "original_bytes": 1468869,
+      "sha256": "642a160ddbb736d26ebad05b91957e79fa74fd0f6b143a28542370ce21f7e309",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase15-instance-identity-initial.json",
+      "local_archive_path": "archive/exploratory/phase15-instance-identity-initial.json",
+      "original_bytes": 506170,
+      "sha256": "e1eb839dcaad7d3b329bc5d87e711a09b811fcac163bd79b36f2e892c3dc170c",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase15-instance-identity.json",
+      "local_archive_path": "archive/exploratory/phase15-instance-identity.json",
+      "original_bytes": 506260,
+      "sha256": "51cd7ca3468fc72c2f71050907a5be534009740ae23cb8408d70eff1c2d827e6",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase15-instance-matrix-initial.json",
+      "local_archive_path": "archive/exploratory/phase15-instance-matrix-initial.json",
+      "original_bytes": 2128,
+      "sha256": "be024767fe7845bb69642d07563356f7e07701991cfca5a63d7718b605593dc2",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase15-instance-matrix.json",
+      "published_path": "phase15/phase15-instance-matrix.json",
+      "encoding": "identity",
+      "original_bytes": 3886,
+      "sha256": "eb36ec32763c823e41166f5cb3af321f85f82fd0bd040df35c6395f7f022c3f3",
+      "stored_bytes": 3886,
+      "stored_sha256": "eb36ec32763c823e41166f5cb3af321f85f82fd0bd040df35c6395f7f022c3f3"
+    },
+    {
+      "original_path": "phase15-instance-rotate-single.json",
+      "local_archive_path": "archive/exploratory/phase15-instance-rotate-single.json",
+      "original_bytes": 495205,
+      "sha256": "3a7ef2123df077a2661b96726adf8563365528939cf96d030bacb26a9e7f3a39",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase15-instance-scale-single.json",
+      "local_archive_path": "archive/exploratory/phase15-instance-scale-single.json",
+      "original_bytes": 500381,
+      "sha256": "37df6cdb55bdf33f74c2573948364185bc35572ab17a22fba710bb5aa8cf7330",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase15-instance-translate-single.json",
+      "local_archive_path": "archive/exploratory/phase15-instance-translate-single.json",
+      "original_bytes": 494996,
+      "sha256": "9bc7ad201795f8e3f5bbd6581e5c8d1d84d275d09605d2e09d40bca60dd0d890",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "phase16-device-identity-grid.json",
+      "published_path": "phase16/phase16-device-identity-grid.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1419720,
+      "sha256": "fbec647d2620db34f2b6baae28f6021ffcfeb9a52f1bc58747ca2e66038db9df",
+      "stored_bytes": 21815,
+      "stored_sha256": "5869c487269ae0143a7ed156fe09e54acb5ab79483171365814f8eb4da1af8ad",
+      "local_original_path": "archive/originals/phase16-device-identity-grid.json"
+    },
+    {
+      "original_path": "phase16-device-identity-overlap.json",
+      "published_path": "phase16/phase16-device-identity-overlap.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 952723,
+      "sha256": "3805140839eef5d8de774a3bc598f37f51e29015886755ce4fe2a700762a627d",
+      "stored_bytes": 14971,
+      "stored_sha256": "4c2146050055c965464361a171785d690731922556e02f1e93e62a798a80a90f",
+      "local_original_path": "archive/originals/phase16-device-identity-overlap.json"
+    },
+    {
+      "original_path": "phase16-device-identity-single.json",
+      "published_path": "phase16/phase16-device-identity-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 729293,
+      "sha256": "6de771842287b184c9b41ab4bf55c2ec17080d048102659e805b5ff0c4c5b664",
+      "stored_bytes": 10691,
+      "stored_sha256": "b51f84bf07af235deb6ca9e21499bf6f8273bbcac7b2a602b871ad5aeced010e",
+      "local_original_path": "archive/originals/phase16-device-identity-single.json"
+    },
+    {
+      "original_path": "phase16-device-matrix.json",
+      "published_path": "phase16/phase16-device-matrix.json",
+      "encoding": "identity",
+      "original_bytes": 3281,
+      "sha256": "d07263fb27fd75764c810b23f28afaf7a85cf6be90f127c48610e30fec7de005",
+      "stored_bytes": 3281,
+      "stored_sha256": "d07263fb27fd75764c810b23f28afaf7a85cf6be90f127c48610e30fec7de005"
+    },
+    {
+      "original_path": "phase16-device-resource-usage.txt",
+      "published_path": "phase16/phase16-device-resource-usage.txt",
+      "encoding": "identity",
+      "original_bytes": 1039,
+      "sha256": "f49bc740d9ab20d33b1cb64da1dda159455c6597f7a3fd39bed4e6e0d3570372",
+      "stored_bytes": 1039,
+      "stored_sha256": "f49bc740d9ab20d33b1cb64da1dda159455c6597f7a3fd39bed4e6e0d3570372"
+    },
+    {
+      "original_path": "phase16-device-rotate-separated.json",
+      "published_path": "phase16/phase16-device-rotate-separated.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 946297,
+      "sha256": "e5c0491231802b76be3beb8ebf7547260914e2d3015c1f28f793a27ffdc06013",
+      "stored_bytes": 15075,
+      "stored_sha256": "1490b0549600cbb44853325a18259c14d06b88746e94227a64597375201e651e",
+      "local_original_path": "archive/originals/phase16-device-rotate-separated.json"
+    },
+    {
+      "original_path": "phase16-device-rotate-single.json",
+      "published_path": "phase16/phase16-device-rotate-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 488781,
+      "sha256": "82f18da4c3faca947adf10449c32eb94d2928f303981d1e053e58504afb956c1",
+      "stored_bytes": 9030,
+      "stored_sha256": "654372f77da96cbefa0369d9d2568ee84df724893a395ad802e1f262efab45c0",
+      "local_original_path": "archive/originals/phase16-device-rotate-single.json"
+    },
+    {
+      "original_path": "phase16-device-scale-grid.json",
+      "published_path": "phase16/phase16-device-scale-grid.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1430577,
+      "sha256": "194356ddcc99e039ef49b7c274b495558fefb477657a0b398255ccfbfe87a624",
+      "stored_bytes": 24566,
+      "stored_sha256": "8baa2320eaaaf107733b11516b30e6cf6bf1831e4c44f301f298c2a5743da995",
+      "local_original_path": "archive/originals/phase16-device-scale-grid.json"
+    },
+    {
+      "original_path": "phase16-device-scale-single.json",
+      "published_path": "phase16/phase16-device-scale-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 495212,
+      "sha256": "476bcf65f17dadb0790e26d244752cc4713f769f4a163bb63f6ae89660bc580d",
+      "stored_bytes": 9757,
+      "stored_sha256": "d1853d26395539fe8bce0fc2e8415c0df16710513fdd98ba975d31bd764da994",
+      "local_original_path": "archive/originals/phase16-device-scale-single.json"
+    },
+    {
+      "original_path": "phase16-device-translate-single.json",
+      "published_path": "phase16/phase16-device-translate-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 488919,
+      "sha256": "c342f7a46e3e040d86cf81c2dbe35fe4b195f53378674e7cf0729a6936c5e3ed",
+      "stored_bytes": 9049,
+      "stored_sha256": "a2a4a89d0d354cfa671206cfec7b3b5de46ec852d5a6cb3da5e31315fda77e31",
+      "local_original_path": "archive/originals/phase16-device-translate-single.json"
+    },
+    {
+      "original_path": "phase16-fixture-regression.json",
+      "published_path": "phase16/phase16-fixture-regression.json",
+      "encoding": "identity",
+      "original_bytes": 10911,
+      "sha256": "38dd3fc3ba3215a57c86faeb388dc085e57d4c7e69c2ba2118dc690ca7330f2e",
+      "stored_bytes": 10911,
+      "stored_sha256": "38dd3fc3ba3215a57c86faeb388dc085e57d4c7e69c2ba2118dc690ca7330f2e"
+    },
+    {
+      "original_path": "scene-overlap-reversed.json",
+      "local_archive_path": "archive/exploratory/scene-overlap-reversed.json",
+      "original_bytes": 8481,
+      "sha256": "73dd53da68d5274c09c8b8170166a0b2a389acafca676c379bed0e94700f0af3",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "scene-overlap.json",
+      "local_archive_path": "archive/exploratory/scene-overlap.json",
+      "original_bytes": 8472,
+      "sha256": "6c0d5bf2b441b3cff8fa7552d78f420d8fe2c26675243dfbebf086b996d495e0",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "scene-separated-oracle.json",
+      "local_archive_path": "archive/exploratory/scene-separated-oracle.json",
+      "original_bytes": 3506,
+      "sha256": "5fc3a78bd81bccf4a699bfe446727a2757407845293a0db7a67bfbf155754e7e",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "scene-separated-ray1-full.json",
+      "local_archive_path": "archive/exploratory/scene-separated-ray1-full.json",
+      "original_bytes": 5289,
+      "sha256": "0021838fa789065ac87857fb69ccd0e20304aecf5a490176c3b45f1aa52f59e4",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "scene-separated-ray1-reduced.json",
+      "local_archive_path": "archive/exploratory/scene-separated-ray1-reduced.json",
+      "original_bytes": 5292,
+      "sha256": "d526ea299d9566488bba83fb888f5da7c81d958b029c5b42415194242efc581f",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "scene-separated.json",
+      "local_archive_path": "archive/exploratory/scene-separated.json",
+      "original_bytes": 8681,
+      "sha256": "78fd60c195053dfbae69350490a495c0c877c910c553c16d782bc7e38aa182ca",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "scene-single-flags0.json",
+      "local_archive_path": "archive/exploratory/scene-single-flags0.json",
+      "original_bytes": 13697,
+      "sha256": "10ce9bc8b19210c56d698bb19d60aa9c1a8a13f0527cbddf9f830d0847d49fa1",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "scene-single-oracle.json",
+      "local_archive_path": "archive/exploratory/scene-single-oracle.json",
+      "original_bytes": 2982,
+      "sha256": "550fadfc34925fa7409d36705f6c33e693698f12769c3bd69ce53a6af2ebbb78",
+      "reason": "intermediate/exploratory version; final matrices and distinct counterexamples retained separately"
+    },
+    {
+      "original_path": "ttu-sm86-sm120-layout.json",
+      "published_path": "eoss/ttu-sm86-sm120-layout.json",
+      "encoding": "identity",
+      "original_bytes": 23044,
+      "sha256": "8c556a030208390a5734528f002d974b7aa4e776a1a6d78e2778adfe4bd68231",
+      "stored_bytes": 23044,
+      "stored_sha256": "8c556a030208390a5734528f002d974b7aa4e776a1a6d78e2778adfe4bd68231"
+    }
+  ]
+}

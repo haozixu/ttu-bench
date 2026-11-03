@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-03",
+  "scope": "ttu-bench Markdown only; research bibliography and upstream documentation stay in place",
+  "working_directory": "ttu-bench; commands and inline asset/code paths retain that convention",
+  "files": [
+    {
+      "old": "ttu-bench/AS_ROADMAP.md",
+      "new": "ttu-bench/docs/AS_ROADMAP.md",
+      "sha256_before": "d5d450cfdd14fa99c9cfd620bd3ae88ebb31e4a55c5b15504e3a88caea10136f",
+      "archived_byte_preserved": false,
+      "sha256_after": "16c9e6924833aca2a1d349ba42ecc884c5f4fce21d18d29aff4d4d9b80e7cc24"
+    },
+    {
+      "old": "ttu-bench/CLEANUP.md",
+      "new": "ttu-bench/docs/CLEANUP.md",
+      "sha256_before": "4375a2fac6c3489334ce36b9c124a871fda13b53142b3e08905a974b9a4458bc",
+      "archived_byte_preserved": false,
+      "sha256_after": "4375a2fac6c3489334ce36b9c124a871fda13b53142b3e08905a974b9a4458bc"
+    },
+    {
+      "old": "ttu-bench/EOSS_REPRO.md",
+      "new": "ttu-bench/docs/EOSS_REPRO.md",
+      "sha256_before": "0cdf43188e73adc34c6f8e06d3556944693f7b257a10ff89c2fbe1b659c892e0",
+      "archived_byte_preserved": false,
+      "sha256_after": "0286838bc01041ffd38a49bfd9ca808739748ac040e5099027161877e99aa09d"
+    },
+    {
+      "old": "ttu-bench/HANDOFF.md",
+      "new": "ttu-bench/docs/HANDOFF.md",
+      "sha256_before": "2f8bfde7303ede6fcca21de3b7c58b181d94f3fca15732bdc3a348688891dc9a",
+      "archived_byte_preserved": false,
+      "sha256_after": "68d5b73d9d6c7902d9108276892d7f56a70e9cabee12bc2c21cc2d7d68441de7"
+    },
+    {
+      "old": "ttu-bench/INDEX.md",
+      "new": "ttu-bench/docs/INDEX.md",
+      "sha256_before": "1f4ab9808c9d7c8ec2905681da027699682a81f9c54d75e15d72c33178128959",
+      "archived_byte_preserved": false,
+      "sha256_after": "aaeb8855b234771c1e79894e0d26de51f65ae60f0a55728164afcb99d1eb46d8"
+    },
+    {
+      "old": "ttu-bench/NEXT_PROMPT.md",
+      "new": "ttu-bench/docs/NEXT_PROMPT.md",
+      "sha256_before": "eed6cf32b6d1d614613d815c24e8b224e4e5534d4cc0b5951bb959421918f03d",
+      "archived_byte_preserved": false,
+      "sha256_after": "a24901c2475a194f4326d7e62c9af54966ef5dc315159adda90c96bb1e41a17f"
+    },
+    {
+      "old": "ttu-bench/PHASE12.md",
+      "new": "ttu-bench/docs/PHASE12.md",
+      "sha256_before": "548924ceaf31c193e3340165bd63e06240eb3bdaa31339cb5514a976622c43db",
+      "archived_byte_preserved": false,
+      "sha256_after": "5dfb0e116a74cf3b9abcffab17561138c1a5c54267939337843f35c35c0dae23"
+    },
+    {
+      "old": "ttu-bench/PHASE13.md",
+      "new": "ttu-bench/docs/PHASE13.md",
+      "sha256_before": "ff94880c196822dcbd6ee736a77ff4ff694c257ecfbee3dd248fe3591b834f0f",
+      "archived_byte_preserved": false,
+      "sha256_after": "dbca8cb560e7dc2aed0fb9f9ffed1835ed13e11d8cb59f48488be18a76e0ca5a"
+    },
+    {
+      "old": "ttu-bench/PHASE14.md",
+      "new": "ttu-bench/docs/PHASE14.md",
+      "sha256_before": "59132b038bd6d7dfdb9bbb0e6924fcba0c90da1cdc06e0ba1a2613a882a238b9",
+      "archived_byte_preserved": false,
+      "sha256_after": "689e53fc5d51a9f32567f9aae02b5387fdbd15bc7b745c2664380692261bcc73"
+    },
+    {
+      "old": "ttu-bench/README.md",
+      "new": "ttu-bench/docs/README.md",
+      "sha256_before": "4b933fb8f5ff500d7d5a054e16c321f39e13ddbb9ea3c87dc66c31f3b533dd4f",
+      "archived_byte_preserved": false,
+      "sha256_after": "13f4902ac1c2bc444e2376c5efd7b3a1f253eb7be76d56c819b61fc8be227707"
+    },
+    {
+      "old": "ttu-bench/reference/README.md",
+      "new": "ttu-bench/docs/reference/README.md",
+      "sha256_before": "541c1dcae48f53abe3c038c96eadbd3fcddad571068f2a695f41a06b2b7e481a",
+      "archived_byte_preserved": false,
+      "sha256_after": "eb98c4debbb06791bcb0dc39b9444e93c033c39722c6a32cf49a4c3536aec741"
+    },
+    {
+      "old": "ttu-bench/reference/history/HANDOFF.pre-cleanup.md",
+      "new": "ttu-bench/docs/reference/history/HANDOFF.pre-cleanup.md",
+      "sha256_before": "11c82c20a6660a63e1695fdde2b37e495f4cd85db722968ac03d64e83cc3ee06",
+      "archived_byte_preserved": true,
+      "sha256_after": "11c82c20a6660a63e1695fdde2b37e495f4cd85db722968ac03d64e83cc3ee06"
+    },
+    {
+      "old": "ttu-bench/reference/history/INDEX.pre-cleanup.md",
+      "new": "ttu-bench/docs/reference/history/INDEX.pre-cleanup.md",
+      "sha256_before": "816f403ee4771e484eb80446364fbcebbccca438f8568d00dcbab72485be908a",
+      "archived_byte_preserved": true,
+      "sha256_after": "816f403ee4771e484eb80446364fbcebbccca438f8568d00dcbab72485be908a"
+    },
+    {
+      "old": "ttu-bench/reference/history/NEXT_PROMPT.pre-cleanup.md",
+      "new": "ttu-bench/docs/reference/history/NEXT_PROMPT.pre-cleanup.md",
+      "sha256_before": "e472fb957190825811fe638680918df1639287c6ed1241633d4c1264a24214d7",
+      "archived_byte_preserved": true,
+      "sha256_after": "e472fb957190825811fe638680918df1639287c6ed1241633d4c1264a24214d7"
+    },
+    {
+      "old": "ttu-bench/reference/history/README.md",
+      "new": "ttu-bench/docs/reference/history/README.md",
+      "sha256_before": "5cf1ff9f5e941d5c874271460de4447804dbf3dd4e387002bdca70c93175ca71",
+      "archived_byte_preserved": false,
+      "sha256_after": "bed4a97c93c2f85d013e1be3d433ac63d6f29d44809a36a3b11cdad0c60b74ac"
+    },
+    {
+      "old": "ttu-bench/reference/history/README.pre-cleanup.md",
+      "new": "ttu-bench/docs/reference/history/README.pre-cleanup.md",
+      "sha256_before": "6cde2905e427273a2bf70ed3120db941069bc420decf7770232da00da6dbccab",
+      "archived_byte_preserved": true,
+      "sha256_after": "6cde2905e427273a2bf70ed3120db941069bc420decf7770232da00da6dbccab"
+    }
+  ],
+  "new_documents": [
+    "ttu-bench/docs/TTU_PROTOCOL_GUIDE.md"
+  ],
+  "followup_migrations": [
+    {
+      "date": "2026-11-03",
+      "old": "ttu-bench/docs/README.md",
+      "new": "ttu-bench/README.md",
+      "reason": "Restore the repository landing page at the project root; prior migration hashes describe the historical migration only."
+    }
+  ]
+}

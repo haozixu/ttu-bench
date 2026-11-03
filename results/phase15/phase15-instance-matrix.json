@@ -1,0 +1,134 @@
+[
+  {
+    "gpu": "1",
+    "command": [
+      "/home/hzx/miniconda3/bin/python3",
+      "run_instance_probe.py",
+      "--instance",
+      "identity",
+      "--scene",
+      "single",
+      "--count",
+      "16",
+      "--instance-id",
+      "17",
+      "--output",
+      "results/phase15-gpu1-identity-single-id17.json",
+      "--check"
+    ],
+    "report": "results/phase15-gpu1-identity-single-id17.json",
+    "returncode": 0,
+    "stdout": "{\"instance\": \"identity\", \"scene\": \"single\", \"triangles\": 1, \"cases\": 96, \"independent_child_queries\": 90, \"failures\": [], \"failure_count\": 0, \"fatal_error\": null}\n",
+    "stderr": ""
+  },
+  {
+    "gpu": "1",
+    "command": [
+      "/home/hzx/miniconda3/bin/python3",
+      "run_instance_probe.py",
+      "--instance",
+      "translate",
+      "--scene",
+      "single",
+      "--count",
+      "16",
+      "--instance-id",
+      "41",
+      "--output",
+      "results/phase15-gpu1-translate-single-id41.json",
+      "--check"
+    ],
+    "report": "results/phase15-gpu1-translate-single-id41.json",
+    "returncode": 0,
+    "stdout": "{\"instance\": \"translate\", \"scene\": \"single\", \"triangles\": 1, \"cases\": 96, \"independent_child_queries\": 86, \"failures\": [], \"failure_count\": 0, \"fatal_error\": null}\n",
+    "stderr": ""
+  },
+  {
+    "gpu": "1",
+    "command": [
+      "/home/hzx/miniconda3/bin/python3",
+      "run_instance_probe.py",
+      "--instance",
+      "rotate",
+      "--scene",
+      "single",
+      "--count",
+      "16",
+      "--instance-id",
+      "0",
+      "--output",
+      "results/phase15-gpu1-rotate-single-id0.json",
+      "--check"
+    ],
+    "report": "results/phase15-gpu1-rotate-single-id0.json",
+    "returncode": 0,
+    "stdout": "{\"instance\": \"rotate\", \"scene\": \"single\", \"triangles\": 1, \"cases\": 96, \"independent_child_queries\": 86, \"failures\": [], \"failure_count\": 0, \"fatal_error\": null}\n",
+    "stderr": ""
+  },
+  {
+    "gpu": "1",
+    "command": [
+      "/home/hzx/miniconda3/bin/python3",
+      "run_instance_probe.py",
+      "--instance",
+      "scale",
+      "--scene",
+      "single",
+      "--count",
+      "16",
+      "--instance-id",
+      "16777215",
+      "--output",
+      "results/phase15-gpu1-scale-single-id16777215.json",
+      "--check"
+    ],
+    "report": "results/phase15-gpu1-scale-single-id16777215.json",
+    "returncode": 0,
+    "stdout": "{\"instance\": \"scale\", \"scene\": \"single\", \"triangles\": 1, \"cases\": 96, \"independent_child_queries\": 86, \"failures\": [], \"failure_count\": 0, \"fatal_error\": null}\n",
+    "stderr": ""
+  },
+  {
+    "gpu": "2",
+    "command": [
+      "/home/hzx/miniconda3/bin/python3",
+      "run_instance_probe.py",
+      "--instance",
+      "identity",
+      "--scene",
+      "grid",
+      "--count",
+      "64",
+      "--instance-id",
+      "41",
+      "--output",
+      "results/phase15-gpu2-identity-grid-id41.json",
+      "--check"
+    ],
+    "report": "results/phase15-gpu2-identity-grid-id41.json",
+    "returncode": 0,
+    "stdout": "{\"instance\": \"identity\", \"scene\": \"grid\", \"triangles\": 64, \"cases\": 272, \"independent_child_queries\": 264, \"failures\": [], \"failure_count\": 0, \"fatal_error\": null}\n",
+    "stderr": ""
+  },
+  {
+    "gpu": "2",
+    "command": [
+      "/home/hzx/miniconda3/bin/python3",
+      "run_instance_probe.py",
+      "--instance",
+      "scale",
+      "--scene",
+      "grid",
+      "--count",
+      "64",
+      "--instance-id",
+      "17",
+      "--output",
+      "results/phase15-gpu2-scale-grid-id17.json",
+      "--check"
+    ],
+    "report": "results/phase15-gpu2-scale-grid-id17.json",
+    "returncode": 0,
+    "stdout": "{\"instance\": \"scale\", \"scene\": \"grid\", \"triangles\": 64, \"cases\": 272, \"independent_child_queries\": 262, \"failures\": [], \"failure_count\": 0, \"fatal_error\": null}\n",
+    "stderr": ""
+  }
+]

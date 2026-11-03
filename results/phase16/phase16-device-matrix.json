@@ -1,0 +1,117 @@
+{
+  "timestamp": "2026-11-03T12:06:10.486308+00:00",
+  "contract": "single static instance; device-side independent child query; NOT parent resume; no timing",
+  "validator_sha256": "b42dcfdd1379269cedb4e30b2464e4034bef70d15c5ee906cbc9f697be4c2add",
+  "cases": [
+    {
+      "file": "phase16-device-identity-single.json",
+      "sha256": "6de771842287b184c9b41ab4bf55c2ec17080d048102659e805b5ff0c4c5b664",
+      "instance": "identity",
+      "scene": "single",
+      "triangles": 1,
+      "instance_id": 17,
+      "gpu": "1",
+      "launches": 144,
+      "requests": 279,
+      "ias_misses": 9,
+      "child_misses": 69
+    },
+    {
+      "file": "phase16-device-translate-single.json",
+      "sha256": "c342f7a46e3e040d86cf81c2dbe35fe4b195f53378674e7cf0729a6936c5e3ed",
+      "instance": "translate",
+      "scene": "single",
+      "triangles": 1,
+      "instance_id": 41,
+      "gpu": "1",
+      "launches": 96,
+      "requests": 182,
+      "ias_misses": 10,
+      "child_misses": 42
+    },
+    {
+      "file": "phase16-device-rotate-single.json",
+      "sha256": "82f18da4c3faca947adf10449c32eb94d2928f303981d1e053e58504afb956c1",
+      "instance": "rotate",
+      "scene": "single",
+      "triangles": 1,
+      "instance_id": 0,
+      "gpu": "1",
+      "launches": 96,
+      "requests": 182,
+      "ias_misses": 10,
+      "child_misses": 42
+    },
+    {
+      "file": "phase16-device-scale-single.json",
+      "sha256": "476bcf65f17dadb0790e26d244752cc4713f769f4a163bb63f6ae89660bc580d",
+      "instance": "scale",
+      "scene": "single",
+      "triangles": 1,
+      "instance_id": 16777215,
+      "gpu": "1",
+      "launches": 96,
+      "requests": 182,
+      "ias_misses": 10,
+      "child_misses": 42
+    },
+    {
+      "file": "phase16-device-identity-grid.json",
+      "sha256": "fbec647d2620db34f2b6baae28f6021ffcfeb9a52f1bc58747ca2e66038db9df",
+      "instance": "identity",
+      "scene": "grid",
+      "triangles": 64,
+      "instance_id": 41,
+      "gpu": "2",
+      "launches": 272,
+      "requests": 536,
+      "ias_misses": 8,
+      "child_misses": 100
+    },
+    {
+      "file": "phase16-device-scale-grid.json",
+      "sha256": "194356ddcc99e039ef49b7c274b495558fefb477657a0b398255ccfbfe87a624",
+      "instance": "scale",
+      "scene": "grid",
+      "triangles": 64,
+      "instance_id": 17,
+      "gpu": "2",
+      "launches": 272,
+      "requests": 534,
+      "ias_misses": 10,
+      "child_misses": 96
+    },
+    {
+      "file": "phase16-device-identity-overlap.json",
+      "sha256": "3805140839eef5d8de774a3bc598f37f51e29015886755ce4fe2a700762a627d",
+      "instance": "identity",
+      "scene": "overlap",
+      "triangles": 2,
+      "instance_id": 17,
+      "gpu": "2",
+      "launches": 184,
+      "requests": 362,
+      "ias_misses": 6,
+      "child_misses": 72
+    },
+    {
+      "file": "phase16-device-rotate-separated.json",
+      "sha256": "e5c0491231802b76be3beb8ebf7547260914e2d3015c1f28f793a27ffdc06013",
+      "instance": "rotate",
+      "scene": "separated",
+      "triangles": 2,
+      "instance_id": 41,
+      "gpu": "2",
+      "launches": 184,
+      "requests": 358,
+      "ias_misses": 10,
+      "child_misses": 78
+    }
+  ],
+  "totals": {
+    "launches": 1344,
+    "requests": 2615,
+    "ias_misses": 73,
+    "child_misses": 541
+  }
+}

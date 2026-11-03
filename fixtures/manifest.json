@@ -1,0 +1,18 @@
+{
+  "recorded": "2026-11-02",
+  "device": "RTX 3090 / SM86",
+  "files": [
+    {
+      "file": "jit_16.elf",
+      "bytes": 64112,
+      "sha256": "e44b1cc31ca2c736c414161bf338076fff333da512e0851ce07320346272e139",
+      "source": "Saved OptiX 8 / NVIDIA driver 535.309.01 JIT snapshot; read as bytes, never launched by current runner"
+    },
+    {
+      "file": "optix_as.bin",
+      "bytes": 2432,
+      "sha256": "715c99ef42c84709f9d0f91b6b458e253895981dec2ea4fa16a51cf56c7ab269",
+      "source": "Saved single-triangle OptiX GAS, vertices (1,0,0),(0,2,0),(0,0,3); copied then relocated at runtime"
+    }
+  ]
+}

@@ -1,0 +1,1050 @@
+{
+  "date": "2026-11-02",
+  "scope": "Static Rosetta comparison only; no SM120 hardware run. Keys may change while operand aliases and layouts stay identical.",
+  "sources": {
+    "86": {
+      "path": "research/community/eoss-framework/JSON/SM86/json_86_with_conditions.json",
+      "sha256": "140a77aba6bce7bd3c7a4384d19494c723abe087a3a07f7c6557a247fd4b5954"
+    },
+    "120": {
+      "path": "research/community/eoss-framework/JSON/SM120/json_120_with_conditions.json",
+      "sha256": "51dd9e973cc2d5c1db7a93946d66e846df0f7f2e5bb0d2bd79138c573185a731"
+    }
+  },
+  "classes": [
+    {
+      "class": "ttucctl_",
+      "opcode_equal": true,
+      "opcode": "0b1111010101",
+      "fields_equal_after_alias_normalization": true,
+      "condition_expressions_equal": true,
+      "sm86_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "ftz": {
+          "bits": "80",
+          "alias": "ivall",
+          "width": 1
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "req_bit_set",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_0(batch_t,usched_info)",
+          "width": 8
+        }
+      },
+      "sm120_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "ftz": {
+          "bits": "80",
+          "alias": "ivall",
+          "width": 1
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "req_bit_set",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_0(batch_t,usched_info)",
+          "width": 8
+        }
+      }
+    },
+    {
+      "class": "ttuclose_",
+      "opcode_equal": true,
+      "opcode": "0b1111010010",
+      "fields_equal_after_alias_normalization": true,
+      "condition_expressions_equal": true,
+      "sm86_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "Sc_absolute": {
+          "bits": "74",
+          "alias": "1",
+          "width": 1
+        },
+        "Pu": {
+          "bits": "83_81",
+          "alias": "Pu",
+          "width": 3
+        },
+        "Rc": {
+          "bits": "71_64",
+          "alias": "*255",
+          "width": 8
+        },
+        "Rd": {
+          "bits": "23_16",
+          "alias": "*255",
+          "width": 8
+        },
+        "Ra_offset": {
+          "bits": "55_40",
+          "alias": "*768",
+          "width": 16
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "VarLatOperandEnc(dst_wr_sb)",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      },
+      "sm120_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "watch": {
+          "bits": "74",
+          "alias": "1",
+          "width": 1
+        },
+        "Pu": {
+          "bits": "83_81",
+          "alias": "Pu",
+          "width": 3
+        },
+        "Ra_URc": {
+          "bits": "71_64",
+          "alias": "*255",
+          "width": 8
+        },
+        "Rd": {
+          "bits": "23_16",
+          "alias": "*255",
+          "width": 8
+        },
+        "Ra_offset": {
+          "bits": "55_40",
+          "alias": "*768",
+          "width": 16
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "VarLatOperandEnc(dst_wr_sb)",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      }
+    },
+    {
+      "class": "ttugo_",
+      "opcode_equal": true,
+      "opcode": "0b1111010011",
+      "fields_equal_after_alias_normalization": true,
+      "condition_expressions_equal": true,
+      "sm86_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      },
+      "sm120_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      }
+    },
+    {
+      "class": "ttuld__close",
+      "opcode_equal": true,
+      "opcode": "0b1111010010",
+      "fields_equal_after_alias_normalization": true,
+      "condition_expressions_equal": true,
+      "sm86_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "Sc_absolute": {
+          "bits": "74",
+          "alias": "*close",
+          "width": 1
+        },
+        "Pu": {
+          "bits": "83_81",
+          "alias": "Pu",
+          "width": 3
+        },
+        "Rc": {
+          "bits": "71_64",
+          "alias": "Rd2",
+          "width": 8
+        },
+        "Rd": {
+          "bits": "23_16",
+          "alias": "Rd",
+          "width": 8
+        },
+        "Ra_offset": {
+          "bits": "55_40",
+          "alias": "ImmU16",
+          "width": 16
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "VarLatOperandEnc(dst_wr_sb)",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      },
+      "sm120_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "watch": {
+          "bits": "74",
+          "alias": "*close",
+          "width": 1
+        },
+        "Pu": {
+          "bits": "83_81",
+          "alias": "Pu",
+          "width": 3
+        },
+        "Ra_URc": {
+          "bits": "71_64",
+          "alias": "Rd2",
+          "width": 8
+        },
+        "Rd": {
+          "bits": "23_16",
+          "alias": "Rd",
+          "width": 8
+        },
+        "Ra_offset": {
+          "bits": "55_40",
+          "alias": "ImmU16",
+          "width": 16
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "VarLatOperandEnc(dst_wr_sb)",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      }
+    },
+    {
+      "class": "ttuld__no_close",
+      "opcode_equal": true,
+      "opcode": "0b1111010010",
+      "fields_equal_after_alias_normalization": true,
+      "condition_expressions_equal": true,
+      "sm86_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "Sc_absolute": {
+          "bits": "74",
+          "alias": "0",
+          "width": 1
+        },
+        "Pu": {
+          "bits": "83_81",
+          "alias": "Pu",
+          "width": 3
+        },
+        "Rc": {
+          "bits": "71_64",
+          "alias": "Rd2",
+          "width": 8
+        },
+        "Rd": {
+          "bits": "23_16",
+          "alias": "Rd",
+          "width": 8
+        },
+        "Ra_offset": {
+          "bits": "55_40",
+          "alias": "ImmU16",
+          "width": 16
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "VarLatOperandEnc(dst_wr_sb)",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      },
+      "sm120_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "watch": {
+          "bits": "74",
+          "alias": "0",
+          "width": 1
+        },
+        "Pu": {
+          "bits": "83_81",
+          "alias": "Pu",
+          "width": 3
+        },
+        "Ra_URc": {
+          "bits": "71_64",
+          "alias": "Rd2",
+          "width": 8
+        },
+        "Rd": {
+          "bits": "23_16",
+          "alias": "Rd",
+          "width": 8
+        },
+        "Ra_offset": {
+          "bits": "55_40",
+          "alias": "ImmU16",
+          "width": 16
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "VarLatOperandEnc(dst_wr_sb)",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      }
+    },
+    {
+      "class": "ttumacrofuse_",
+      "opcode_equal": true,
+      "opcode": "0b100111010100",
+      "fields_equal_after_alias_normalization": true,
+      "condition_expressions_equal": true,
+      "sm86_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "Sb": {
+          "bits": "44_40",
+          "alias": "Sb",
+          "width": 5
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "req_bit_set",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "*7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "*7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_11(batch_t,usched_info)",
+          "width": 8
+        }
+      },
+      "sm120_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "Sb": {
+          "bits": "44_40",
+          "alias": "Sb",
+          "width": 5
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "req_bit_set",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "*7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "*7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_11(batch_t,usched_info)",
+          "width": 8
+        }
+      }
+    },
+    {
+      "class": "ttuopen_",
+      "opcode_equal": true,
+      "opcode": "0b1111010000",
+      "fields_equal_after_alias_normalization": true,
+      "condition_expressions_equal": true,
+      "sm86_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "e": {
+          "bits": "72",
+          "alias": "dual",
+          "width": 1
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "req_bit_set",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_0(batch_t,usched_info)",
+          "width": 8
+        }
+      },
+      "sm120_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "e": {
+          "bits": "72",
+          "alias": "dual",
+          "width": 1
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "req_bit_set",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "7",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_0(batch_t,usched_info)",
+          "width": 8
+        }
+      }
+    },
+    {
+      "class": "ttust_",
+      "opcode_equal": true,
+      "opcode": "0b1111010001",
+      "fields_equal_after_alias_normalization": true,
+      "condition_expressions_equal": true,
+      "sm86_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "Ra_offset": {
+          "bits": "55_40",
+          "alias": "ImmU16",
+          "width": 16
+        },
+        "Rb": {
+          "bits": "39_32",
+          "alias": "Rb",
+          "width": 8
+        },
+        "Rc": {
+          "bits": "71_64",
+          "alias": "Rc",
+          "width": 8
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "VarLatOperandEnc(src_rel_sb)",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      },
+      "sm120_arguments": {
+        "Pg": {
+          "bits": "14_12",
+          "alias": "Pg",
+          "width": 3
+        },
+        "Pg_not": {
+          "bits": "15",
+          "alias": "Pg@not",
+          "width": 1
+        },
+        "opcode": {
+          "bits": [
+            "91",
+            "11_0"
+          ],
+          "alias": "Opcode",
+          "width": 13
+        },
+        "Ra_offset": {
+          "bits": "55_40",
+          "alias": "ImmU16",
+          "width": 16
+        },
+        "Rb": {
+          "bits": "39_32",
+          "alias": "Rb",
+          "width": 8
+        },
+        "Ra_URc": {
+          "bits": "71_64",
+          "alias": "Rc",
+          "width": 8
+        },
+        "req_bit_set": {
+          "bits": "121_116",
+          "alias": "0",
+          "width": 6
+        },
+        "src_rel_sb": {
+          "bits": "115_113",
+          "alias": "VarLatOperandEnc(src_rel_sb)",
+          "width": 3
+        },
+        "dst_wr_sb": {
+          "bits": "112_110",
+          "alias": "7",
+          "width": 3
+        },
+        "pm_pred": {
+          "bits": "103_102",
+          "alias": "pm_pred",
+          "width": 2
+        },
+        "opex": {
+          "bits": [
+            "124_122",
+            "109_105"
+          ],
+          "alias": "TABLES_opex_10(batch_t,usched_info)",
+          "width": 8
+        }
+      }
+    }
+  ]
+}

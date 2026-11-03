@@ -1,0 +1,35 @@
+Separate build for resource inspection; no timing measurement.
+{
+  "source_sha256": "fbb75d09134ff9df1b67ab0e9d1447815a0960125326e83330826779aae2a017",
+  "cubin_sha256": "637905576c9329caee1d7c7357c84567648983e9cbf6e9933cb1b8e2f7044655",
+  "register_map": {
+    "42": 44,
+    "52": 52,
+    "12": 50,
+    "66": 48,
+    "16": 46,
+    "14": 16,
+    "72": 18,
+    "40": 22,
+    "36": 24,
+    "24": 26,
+    "32": 28,
+    "2": 30,
+    "34": 32,
+    "50": 34,
+    "56": 36,
+    "54": 38,
+    "60": 40,
+    "58": 42
+  },
+  "patch_file_offset": 50448,
+  "group_sha256": "125788bc29532a2a09c0dd563fe1e7039451108e84df3a2242e89dca3cf694b1",
+  "compiler_output": "",
+  "compiler_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Tue_Feb__7_19:32:13_PST_2023\nCuda compilation tools, release 12.1, V12.1.66\nBuild cuda_12.1.r12.1/compiler.32415258_0\n"
+}
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function instance_probe:
+  REG:59 STACK:288 SHARED:0 LOCAL:0 CONSTANT[0]:368 TEXTURE:0 SURFACE:0 SAMPLER:0

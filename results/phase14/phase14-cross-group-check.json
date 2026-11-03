@@ -1,0 +1,34 @@
+[
+  {
+    "matrix": "phase14-general-v2.json",
+    "cases": 16,
+    "launches": 10416,
+    "passed": true,
+    "raw_primary_cross_group_pairs": 5208,
+    "hit_records": 6060,
+    "t_sign_counts": {
+      "0": 6060
+    },
+    "front_face_values": [
+      false,
+      true
+    ],
+    "other_events": 0
+  },
+  {
+    "matrix": "phase14-ray-protocol-v2.json",
+    "cases": 28,
+    "launches": 9792,
+    "passed": true,
+    "raw_primary_cross_group_pairs": 4896,
+    "hit_records": 3824,
+    "t_sign_counts": {
+      "0": 3824
+    },
+    "front_face_values": [
+      false,
+      true
+    ],
+    "other_events": 0
+  }
+]
