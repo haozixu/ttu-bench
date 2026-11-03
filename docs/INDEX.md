@@ -4,7 +4,7 @@
 
 入口README位于 `ttu-bench/` 根目录，详细文档集中在 `docs/`。下表源码、数据和结果的行内路径以 `ttu-bench/` 为基准；所有复现命令也从该目录执行。文档点击链接已按新位置更新。
 
-最新 [Phase16](PHASE16.md)：设备端instance事件处理、ray变换及独立child查询的8项矩阵通过；还不是父级IAS续遍历。[Phase15](PHASE15.md)保留记录解码、host参考实现及4096三角形GAS单GO测试。
+最新 [Phase17](PHASE17.md)：保存并重新提交硬件返回引用，已测平坦1–3静态instance的父IAS续遍历通过两GPU的30项矩阵；仍限共享GAS及0x21引用类型。单instance相邻ID/handle规则已撤回，改用事件索引查IAS表。[Phase15](PHASE15.md)保留记录解码、host参考实现及4096三角形GAS单GO测试。
 
 ## 可执行代码
 
@@ -33,6 +33,9 @@
 | `instance_template.cu` | 设备端IAS事件分派、记录边界检查、逆变换及独立child查询；不恢复父级 |
 | `run_device_instance.py` | 单静态instance设备功能入口，保存两个请求的raw返回并核对CPU/OptiX及host事件解码 |
 | `validate_device_instance.py` | 8项device-instance回归，逐项新进程/context、40秒timeout、报告hash |
+| `parent_resume.py` / `parent_template.cu` | raw state transport与受限父IAS设备续遍历，显式pending软件栈；单active thread，非计时核 |
+| `run_parent_resume.py` / `validate_parent_resume.py` | 最终及逐事件CPU/OptiX检查；30项正矩阵与两个first-child-only负对照 |
+| `run_parent_probe.py` | host控制raw状态的none/copy/promote/pop诊断；不是通用算法或正式closest-hit入口 |
 | `disassemble_ttu.py` | 保存源hash/原TTU字节，将TTU换NOP后反汇编普通指令片段；输出不可运行 |
 | `result_store.py` | 按manifest读取原始/新路径的结果、校验压缩及原始SHA256、恢复原始目录结构；标准库 |
 
@@ -46,19 +49,22 @@
 |---|---|
 | `fixtures/optix_as.bin` | 2432B 单三角形 AS；每次运行修正 +0xd0 自指针；runner 校验原文件 SHA256 |
 | `fixtures/jit_16.elf` | 取 traversal_mttu+0xe70 的 320B TTU 组，以及 .nv.global.init 前 128B 的 dummy root；整个镜像不被加载执行 |
+| `fixtures/phase17-parent-cases.json` | 静态instance变换、反例ray及输入顺序变体；报告保存文件hash |
 | `fixtures/manifest.json` | 原始文件大小、SHA256、获取背景与已验证用途 |
 
 固定输入并非通用 AS builder。更换几何或驱动镜像，需要重新验证布局、root 打包和功能 oracle，不能仅移除 SHA256 检查。
 
 ## 实验证据
 
-结果已按 `results/phase12/` 至 `results/phase16/`、`results/eoss/`、`results/maintenance/` 分类。大型JSON无损gzip保存；内部路径/command及hash仍为原始记录，不改写历史结果。用 [manifest](../results/manifest.json) 或 `result_store.load_result()`解析旧路径。中间版本保存在被ignore的 `results/archive/`，clone不含这些本地归档；正式结论依赖的矩阵、逐case数据和关键反例均在发布集。见 [RESULTS.md](RESULTS.md)。
+结果已按 `results/phase12/` 至 `results/phase17/`、`results/eoss/`、`results/maintenance/` 分类。大型JSON无损gzip保存；内部路径/command及hash仍为原始记录，不改写历史结果。用 [manifest](../results/manifest.json) 或 `result_store.load_result()`解析旧路径。中间版本保存在被ignore的 `results/archive/`，clone不含这些本地归档；正式结论依赖的矩阵、逐case数据和关键反例均在发布集。见 [RESULTS.md](RESULTS.md)。
 
-最新 [Phase16](PHASE16.md)：[device矩阵](../results/phase16/phase16-device-matrix.json)及同目录下`phase16-device-{instance}-{scene}.json.gz`保存8项、1344次kernel launch/2615次TTU请求，全通过；[代表性事件](../results/phase16/example-events.json)为方便阅读的派生样例。`phase16-device-resource-usage.txt`为单独构建的资源报告；`phase16-fixture-regression.json`为8case/40launch固定fixture回归。设备端独立child查询不是父级resume。
+最新 [Phase17](PHASE17.md)：[parent矩阵](../results/phase17/final-parent-matrix.json)保存30项、4,768次launch、11,492次请求及两个负对照，逐case报告同目录发布。另有单instance/fixture回归、资源、代表事件、四实例与等距边界记录；全部加入manifest。
 
-最新增量为 [Phase15](PHASE15.md)：[instance矩阵](../results/phase15/phase15-instance-matrix.json)包含6场景、928次IAS查询和874次独立child查询，全通过；[4096三角形GAS](../results/phase15/phase15-grid4096.json.gz)为136条ray×13/19组，共272次launch通过。实例host处理与独立查询不计作裸TTU续遍历成功。
+此前 [Phase16](PHASE16.md)：[device矩阵](../results/phase16/phase16-device-matrix.json)及同目录下`phase16-device-{instance}-{scene}.json.gz`保存8项、1344次kernel launch/2615次TTU请求，全通过；[代表性事件](../results/phase16/example-events.json)为方便阅读的派生样例。`phase16-device-resource-usage.txt`为单独构建的资源报告；`phase16-fixture-regression.json`为8case/40launch固定fixture回归。设备端独立child查询不是父级resume。
 
-最新为 [Phase14](PHASE14.md)：`results/phase14/phase14-general-v2.json`及对应cases目录保存16case/10416launch；`results/phase14/phase14-ray-protocol-v2.json`保存18个flags/winding TTU case、9792launch，另10个IAS oracle-only case。`results/phase14/phase14-cross-group-check.json`记录10104对主要返回逐位相同。`phase14-*-v2`是最终源码矩阵；早期initial/sign-check等记录按自身源码hash理解。
+此前 [Phase15](PHASE15.md)：[instance矩阵](../results/phase15/phase15-instance-matrix.json)包含6场景、928次IAS查询和874次独立child查询，全通过；[4096三角形GAS](../results/phase15/phase15-grid4096.json.gz)为136条ray×13/19组，共272次launch通过。实例host处理与独立查询不计作裸TTU续遍历成功。
+
+此前 [Phase14](PHASE14.md)：`results/phase14/phase14-general-v2.json`及对应cases目录保存16case/10416launch；`results/phase14/phase14-ray-protocol-v2.json`保存18个flags/winding TTU case、9792launch，另10个IAS oracle-only case。`results/phase14/phase14-cross-group-check.json`记录10104对主要返回逐位相同。`phase14-*-v2`是最终源码矩阵；早期initial/sign-check等记录按自身源码hash理解。
 
 负结果：`phase14-nonopaque-candidate.json`为flags0较远候选反例；`phase14-ias-event-final.json`与`phase14-ias-identity-final.bin`配套，保存root0x380下的instance相关事件；`phase14-full-opaque-request.json`表明ray flag1仍不能修复20条组。`phase14-fixture-regression.json`为8case/40launch固定fixture回归。
 
@@ -85,6 +91,8 @@
 `--artifact PATH` 生成的 cubin 含当次进程 VA，只能核验编码/资源，不能在另一进程直接重放。已删除此前保存的这种 cubin；需要时由 runner 重新生成。
 
 ## 参考资产
+
+Phase17新增 `reference/jit/jit16-parent-ordinary.sass` / `jit16-parent-disassembly.json`，补齐返回引用、软件栈保存/恢复及重新提交分支。仅供分析，不可运行。
 
 新增`reference/jit/jit16-protocol-ordinary.sass`与`jit16-protocol-disassembly.json`：ray/flags构造和返回分支的普通SASS片段、源hash与移除TTU的manifest。仅供反汇编分析，不可运行。
 

@@ -2,10 +2,10 @@
   "date": "2026-11-03T12:18:39.305339+00:00",
   "contract": "Original result bytes are preserved. Published gzip hashes refer to both stored and decompressed bytes. Embedded report paths/commands remain historical; resolve their original results-relative suffix using this catalog. Local archives are ignored and not present in a clone.",
   "summary": {
-    "original_files": 205,
-    "original_bytes": 153010348,
-    "published_files": 106,
-    "published_bytes": 4300493,
+    "original_files": 252,
+    "original_bytes": 213206893,
+    "published_files": 153,
+    "published_bytes": 5690492,
     "local_only_files": 99
   },
   "files": [
@@ -1706,6 +1706,543 @@
       "sha256": "8c556a030208390a5734528f002d974b7aa4e776a1a6d78e2778adfe4bd68231",
       "stored_bytes": 23044,
       "stored_sha256": "8c556a030208390a5734528f002d974b7aa4e776a1a6d78e2778adfe4bd68231"
+    },
+    {
+      "original_path": "final-parent-matrix.json",
+      "published_path": "phase17/final-parent-matrix.json",
+      "encoding": "identity",
+      "original_bytes": 11649,
+      "sha256": "42cac5e0bef09081117272129a779cc5159356460d74b92d03b0e62ca6594cb9",
+      "stored_bytes": 11649,
+      "stored_sha256": "42cac5e0bef09081117272129a779cc5159356460d74b92d03b0e62ca6594cb9",
+      "local_original_path": "local/phase17/final-parent-matrix.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-first-miss-later-hit-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-first-miss-later-hit-single.json",
+      "encoding": "identity",
+      "original_bytes": 41209,
+      "sha256": "fd793f77ae7aba13706dc8a31e3b75c0d5b4b7ffb376a212b039c053780c72c5",
+      "stored_bytes": 41209,
+      "stored_sha256": "fd793f77ae7aba13706dc8a31e3b75c0d5b4b7ffb376a212b039c053780c72c5",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-first-miss-later-hit-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-first-farther-later-nearer-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-first-farther-later-nearer-single.json",
+      "encoding": "identity",
+      "original_bytes": 41794,
+      "sha256": "bddcdcb01cf23759a8ccb1e57341d971df684556bd4e382833ad848b04d78331",
+      "stored_bytes": 41794,
+      "stored_sha256": "bddcdcb01cf23759a8ccb1e57341d971df684556bd4e382833ad848b04d78331",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-first-farther-later-nearer-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-chain1-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-chain1-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 820857,
+      "sha256": "190b1e2af7642dec981ad288818593374c7a878cf829f0994316fb291a741724",
+      "stored_bytes": 12687,
+      "stored_sha256": "597db64843e272e477d89f96ecf02efdc8c5885a277f9cf6a8c0191f33b68918",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-chain1-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-chain1-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-chain1-reversed-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 820866,
+      "sha256": "8cbc20dd9359cff792d9535b95d1ae71946d4e77f09a553f22b5fc5997973301",
+      "stored_bytes": 12687,
+      "stored_sha256": "1de433a48112052843629b13672d6822491b6132db60e6148377e5c571c499f7",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-chain1-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-chain2-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-chain2-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1920174,
+      "sha256": "18a75be887169640e67566f51cdc73c8bf7c05e642d880e79d0647915451399c",
+      "stored_bytes": 29301,
+      "stored_sha256": "078a4f7a9d267037dcb266fcedf5d29f0ea609ed97da6dd90770780447d2d722",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-chain2-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-chain2-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-chain2-reversed-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1920183,
+      "sha256": "b7ea21389230a0f35686e9408d9ff1d4e9c4b10daa8ccf3ef625db2946077a24",
+      "stored_bytes": 29378,
+      "stored_sha256": "bdcfd101304136973d4fc690f579605a86bd3f22489b6df0cfcd15dd5d19b376",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-chain2-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-chain3-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-chain3-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 3242692,
+      "sha256": "f37dd49f9f3f97cb6988d879231c477b352b28de46a1bb625da595953fffdb22",
+      "stored_bytes": 46856,
+      "stored_sha256": "8afb682475a1df8f87741ece3f62921bba27fc6bc717f627d5a1f6a3ca63861a",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-chain3-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-chain3-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-chain3-reversed-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 3242701,
+      "sha256": "3ac632682e0cec656dd74e1c94dad68f5ec20cbd83b0bb732be6e32588be1b5d",
+      "stored_bytes": 47013,
+      "stored_sha256": "fe537314cc8c568f57b782886616feace134b840aa40bf2798be31612fa5176f",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-chain3-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-rotated-pair-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-rotated-pair-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1577571,
+      "sha256": "8573e6827fc14d0f226e87a712fe61634cf13405ba33955ecc8c52382728a10a",
+      "stored_bytes": 21654,
+      "stored_sha256": "85aaf04b0cf0bfc401f218dd88fe9e073411810d22e5998d267262fc8ba76739",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-rotated-pair-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-scaled-triple-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-scaled-triple-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 2635203,
+      "sha256": "471a0a8e1efebcda7d6d81b8d38780bf5c8dff309d3f089aa3e8c90d036f011e",
+      "stored_bytes": 39255,
+      "stored_sha256": "76ab4a635f08c04fcfd638492c848a831dd42d3f8269abc21af15e0d1a0e474c",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-scaled-triple-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-first-miss-later-hit-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-first-miss-later-hit-reversed-single.json",
+      "encoding": "identity",
+      "original_bytes": 41147,
+      "sha256": "a8250d4ba44e6314c136627dac32593f26a2fa3c042008eb96974cad725b97ba",
+      "stored_bytes": 41147,
+      "stored_sha256": "a8250d4ba44e6314c136627dac32593f26a2fa3c042008eb96974cad725b97ba",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-first-miss-later-hit-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-first-farther-later-nearer-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-first-farther-later-nearer-reversed-single.json",
+      "encoding": "identity",
+      "original_bytes": 41728,
+      "sha256": "490ef1fb07ee7156743004f9828ea7c00e0e9f81d802ca6d42d20804f7db15c4",
+      "stored_bytes": 41728,
+      "stored_sha256": "490ef1fb07ee7156743004f9828ea7c00e0e9f81d802ca6d42d20804f7db15c4",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-first-farther-later-nearer-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-chain3-grid.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-chain3-grid.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 3508467,
+      "sha256": "aca29ffc41de0f47a7676acedb42e2ed95edbdefca030d19325779ea0c31c16e",
+      "stored_bytes": 54681,
+      "stored_sha256": "cfccdd384eed7d741bfa2d21297278ead384460759ab846ad9925221916f0348",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-chain3-grid.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-scaled-triple-grid.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-scaled-triple-grid.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 3082774,
+      "sha256": "1b0a00dcadf687336853ffb2993e39fe2c2a79f9278c413cee768a41939c7cc7",
+      "stored_bytes": 50280,
+      "stored_sha256": "b2215548592df3cc5d0b1b0c5bd23b6dcfe5bad28aba11cb7b14cef3b3b6e8e9",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-scaled-triple-grid.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu2-rotated-pair-separated.json",
+      "published_path": "phase17/final-parent-matrix-gpu2-rotated-pair-separated.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 2638598,
+      "sha256": "a6c4d86cfab407c9dc8db7f549b1408eb16c4dec89848d155788d70dbe633d07",
+      "stored_bytes": 38887,
+      "stored_sha256": "85e2717a1ba24e568067d6f4a3551b9f067a6b8f77a2f85f7ec321b91c5f0564",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu2-rotated-pair-separated.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-first-miss-later-hit-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-first-miss-later-hit-single.json",
+      "encoding": "identity",
+      "original_bytes": 41209,
+      "sha256": "3d45898fff39d9bc748dd2873def7d17ef280964f6a364ae743fac9876445e09",
+      "stored_bytes": 41209,
+      "stored_sha256": "3d45898fff39d9bc748dd2873def7d17ef280964f6a364ae743fac9876445e09",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-first-miss-later-hit-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-first-farther-later-nearer-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-first-farther-later-nearer-single.json",
+      "encoding": "identity",
+      "original_bytes": 41794,
+      "sha256": "7f59a96e757ff554dea3770cc58f85ca22a499bc269a6290814a34448e3594d7",
+      "stored_bytes": 41794,
+      "stored_sha256": "7f59a96e757ff554dea3770cc58f85ca22a499bc269a6290814a34448e3594d7",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-first-farther-later-nearer-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-chain1-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-chain1-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 820857,
+      "sha256": "1274e1cd8eafb620ac903ad9df634a48ac69d4ad7ace10676a4a100366714710",
+      "stored_bytes": 12683,
+      "stored_sha256": "121cdba60b7ea750cb37e502be5c31a8135b70845eb583342e91525fd5cb8e88",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-chain1-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-chain1-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-chain1-reversed-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 820866,
+      "sha256": "1c3c1847ad4b3bbe7d24b5aff5c8698d8cbcea6e4fcbb9ce723ee846193971b3",
+      "stored_bytes": 12688,
+      "stored_sha256": "7ca495cbceb030a76cb97574431664c4812313620baefa7f5acf6819b0dbe5d4",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-chain1-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-chain2-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-chain2-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1920174,
+      "sha256": "1599501d17bbcb8544d73fbaafd7d9ae7bfbff356614a4953107b1e2ee5183af",
+      "stored_bytes": 29294,
+      "stored_sha256": "7f482b1a16f7c0766b2bed4af8b7fc49c0733fe680fc6c724817dbb57d8ea531",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-chain2-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-chain2-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-chain2-reversed-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1920183,
+      "sha256": "80380baf3518e87fe45a22fcd23467bf7a682209450063ae76e00186d3f6271c",
+      "stored_bytes": 29398,
+      "stored_sha256": "81440eaf65a586786405dbbcb5f6fab1b7112eec1518a80aac4a06406b6dad8e",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-chain2-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-chain3-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-chain3-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 3242692,
+      "sha256": "e7067baaf45e7024f70b1dec080cd95191823a21c55de611cd46306fcef1f273",
+      "stored_bytes": 46849,
+      "stored_sha256": "d2f5d8bcaf8fdee173306b99eb90166861ca311e551bf309fcffaac62ef586f2",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-chain3-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-chain3-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-chain3-reversed-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 3242701,
+      "sha256": "b586c28229b1b6654eee2d71751a000d44b84a8048b2ffa61e966b948e592e75",
+      "stored_bytes": 46988,
+      "stored_sha256": "af7a74be6b852ac855f9953a98c7d5c24f1646c8f02d4caac3cc0bef9f74358c",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-chain3-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-rotated-pair-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-rotated-pair-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1577571,
+      "sha256": "eb2c5efeae0f2936febd25ec45541882909a6f0318adfe6a8eda5f1cbbf09b9e",
+      "stored_bytes": 21661,
+      "stored_sha256": "d2d02eb7c4826cbdc08879e155b8b9423242c8fe7ea9e91d63ec7aa06f795147",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-rotated-pair-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-scaled-triple-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-scaled-triple-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 2635203,
+      "sha256": "19f0e503f89f19db49c309ccbf4d76199aa44fa0f7f86f59de051be996712583",
+      "stored_bytes": 39237,
+      "stored_sha256": "a268fb779a3650a0b9e173d2096fee5cf74471c8e24e90a238dd416660f9ce8d",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-scaled-triple-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-first-miss-later-hit-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-first-miss-later-hit-reversed-single.json",
+      "encoding": "identity",
+      "original_bytes": 41147,
+      "sha256": "409f2d2e8d04c904d55c89bb72dfd31718a722f246b9c9d84d44c5cf11a4be95",
+      "stored_bytes": 41147,
+      "stored_sha256": "409f2d2e8d04c904d55c89bb72dfd31718a722f246b9c9d84d44c5cf11a4be95",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-first-miss-later-hit-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-first-farther-later-nearer-reversed-single.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-first-farther-later-nearer-reversed-single.json",
+      "encoding": "identity",
+      "original_bytes": 41728,
+      "sha256": "fc0afceaf743cbdef8a2a03992338e8063442be8820e2976fcaad044d8ce52ed",
+      "stored_bytes": 41728,
+      "stored_sha256": "fc0afceaf743cbdef8a2a03992338e8063442be8820e2976fcaad044d8ce52ed",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-first-farther-later-nearer-reversed-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-chain3-grid.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-chain3-grid.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 3508467,
+      "sha256": "578b21e75c2cbbfd579efe495162c895e1814e1e2485416fcf1d867b23fff54d",
+      "stored_bytes": 54667,
+      "stored_sha256": "72853723c3a1c0b51580859e48a757ae6f0b34f9d36b563a290da4f1f35c3ac2",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-chain3-grid.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-scaled-triple-grid.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-scaled-triple-grid.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 3082774,
+      "sha256": "796e5b8918ad611108fd780d04867675e1d5b3d3087df5d90dd9a316b56f98d8",
+      "stored_bytes": 50273,
+      "stored_sha256": "0528ceec70cb58772cb61df7b88f91ba4f09345312dc3437e3d217f387592a7d",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-scaled-triple-grid.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-gpu6-rotated-pair-separated.json",
+      "published_path": "phase17/final-parent-matrix-gpu6-rotated-pair-separated.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 2638598,
+      "sha256": "ad769cde56a71d4e5e2be68141d6630cf6f63e8732b1cd5c5cb8c0da0c6b78da",
+      "stored_bytes": 38912,
+      "stored_sha256": "8aba99b48634ef8d3ca0c4e98aef6d89ee44e13dcb778218f8b489cf2c2800b7",
+      "local_original_path": "local/phase17/final-parent-matrix-gpu6-rotated-pair-separated.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-control-first-miss-later-hit.json",
+      "published_path": "phase17/final-parent-matrix-control-first-miss-later-hit.json",
+      "encoding": "identity",
+      "original_bytes": 16806,
+      "sha256": "87b4b819f67e3dc9ddff038fda094bfb5e8ef5e2f1974730f4b288de9406dd1c",
+      "stored_bytes": 16806,
+      "stored_sha256": "87b4b819f67e3dc9ddff038fda094bfb5e8ef5e2f1974730f4b288de9406dd1c",
+      "local_original_path": "local/phase17/final-parent-matrix-control-first-miss-later-hit.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "final-parent-matrix-control-first-farther-later-nearer.json",
+      "published_path": "phase17/final-parent-matrix-control-first-farther-later-nearer.json",
+      "encoding": "identity",
+      "original_bytes": 17060,
+      "sha256": "12216070bb9170ce75dd0ca944437e437850001f38505f3375ef51309a4058c7",
+      "stored_bytes": 17060,
+      "stored_sha256": "12216070bb9170ce75dd0ca944437e437850001f38505f3375ef51309a4058c7",
+      "local_original_path": "local/phase17/final-parent-matrix-control-first-farther-later-nearer.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "single-instance-regression.json",
+      "published_path": "phase17/single-instance-regression.json",
+      "encoding": "identity",
+      "original_bytes": 3377,
+      "sha256": "3675f6c01acb1c6f0deeb39096bf166c920532c4589ace6222f027660e8edf8d",
+      "stored_bytes": 3377,
+      "stored_sha256": "3675f6c01acb1c6f0deeb39096bf166c920532c4589ace6222f027660e8edf8d",
+      "local_original_path": "local/phase17/single-instance-regression.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "single-instance-regression-identity-single.json",
+      "published_path": "phase17/single-instance-regression-identity-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 754268,
+      "sha256": "eb3644fa74d1fd25f8e17e476ce8346d2bea7403cb3dfeacb934cfd4341f66a0",
+      "stored_bytes": 10883,
+      "stored_sha256": "3b137a2ad9105b6a6655765a8dc687c8e0592d584d80bb199590c4334dcfc482",
+      "local_original_path": "local/phase17/single-instance-regression-identity-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "single-instance-regression-translate-single.json",
+      "published_path": "phase17/single-instance-regression-translate-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 504829,
+      "sha256": "25b5a666f1c819a05c95c584baef73373557fc7cde28eb5d1c3748be6e3af8da",
+      "stored_bytes": 9240,
+      "stored_sha256": "949c82ff48aa29b19ccec6bf4c4738e7565cd0c42c8a17a663ae4d611da7f4cd",
+      "local_original_path": "local/phase17/single-instance-regression-translate-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "single-instance-regression-rotate-single.json",
+      "published_path": "phase17/single-instance-regression-rotate-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 504605,
+      "sha256": "a424992f1f3deb6ede0899eeb66468e1d1a93dd1afbf8d1c11182bf840f499d7",
+      "stored_bytes": 9221,
+      "stored_sha256": "9c014f72388da10d091f76b5ab991d018c27153e8d0a54de6d8f3d2284a0914c",
+      "local_original_path": "local/phase17/single-instance-regression-rotate-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "single-instance-regression-scale-single.json",
+      "published_path": "phase17/single-instance-regression-scale-single.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 511638,
+      "sha256": "5109a754c8e144eec87ec6c2a679146bf7807599c29c2b14e64746d5ab7457d9",
+      "stored_bytes": 9942,
+      "stored_sha256": "de489be8069149a45bed8b5435be698c6338e54a88f025f6c988cc3b0b3d40a5",
+      "local_original_path": "local/phase17/single-instance-regression-scale-single.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "single-instance-regression-identity-grid.json",
+      "published_path": "phase17/single-instance-regression-identity-grid.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1468560,
+      "sha256": "e6eb28240c22ae26c767a5ec6c7b8591dd8bb03cd7cb9f8325c74ae08d6d706c",
+      "stored_bytes": 22205,
+      "stored_sha256": "d849f8bdd7e85ca05482cfa6f58e2ba8528945c31af7671a8e7be93f934883c5",
+      "local_original_path": "local/phase17/single-instance-regression-identity-grid.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "single-instance-regression-scale-grid.json",
+      "published_path": "phase17/single-instance-regression-scale-grid.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1479047,
+      "sha256": "21ced380cd2d49e74b1b8693e2347a3fdbd78bddd3168153e737d29540fa3b2b",
+      "stored_bytes": 24975,
+      "stored_sha256": "8a9507f3a129aa1dbab327a249ef87a135055d141091efbb77604c9ba85942d2",
+      "local_original_path": "local/phase17/single-instance-regression-scale-grid.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "single-instance-regression-identity-overlap.json",
+      "published_path": "phase17/single-instance-regression-identity-overlap.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 985653,
+      "sha256": "ff4211f8b7d90311f6a269ba851f8b7125cb927ab1dcfc2d9debfcb8074c75f2",
+      "stored_bytes": 15295,
+      "stored_sha256": "ec1ae0c6825e72989716be58cdbe8c17659148f76b0d83655b893a3383214291",
+      "local_original_path": "local/phase17/single-instance-regression-identity-overlap.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "single-instance-regression-rotate-separated.json",
+      "published_path": "phase17/single-instance-regression-rotate-separated.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 978487,
+      "sha256": "cb7216c23dc3eaaa46f792c177c3fb7b0980caa1aa8c7181892a754e368d9f53",
+      "stored_bytes": 15374,
+      "stored_sha256": "9810577162d7c837e21014b94c3d4128a9a963a91ce0445e32d6040028ca69ba",
+      "local_original_path": "local/phase17/single-instance-regression-rotate-separated.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "fixed-fixture-regression.json",
+      "published_path": "phase17/fixed-fixture-regression.json",
+      "encoding": "identity",
+      "original_bytes": 10911,
+      "sha256": "b0b492d1e057956eb583f0ea6309c9eeadd5c7c2af82850c81a29e08f40dc0c4",
+      "stored_bytes": 10911,
+      "stored_sha256": "b0b492d1e057956eb583f0ea6309c9eeadd5c7c2af82850c81a29e08f40dc0c4",
+      "local_original_path": "local/phase17/fixed-fixture-regression.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "parent-resource.json",
+      "published_path": "phase17/parent-resource.json",
+      "encoding": "identity",
+      "original_bytes": 1517,
+      "sha256": "a736a473db4a8538fa0f1b8c9e78ee6874b443a9584a7a7a19078aa4439232f4",
+      "stored_bytes": 1517,
+      "stored_sha256": "a736a473db4a8538fa0f1b8c9e78ee6874b443a9584a7a7a19078aa4439232f4",
+      "local_original_path": "local/phase17/parent-resource.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "example-events.json",
+      "published_path": "phase17/example-events.json",
+      "encoding": "identity",
+      "original_bytes": 53266,
+      "sha256": "40ebe097d65a798e5d58a32abf4afb0c856b2df0ea87868db6de2e6848ea3542",
+      "stored_bytes": 53266,
+      "stored_sha256": "40ebe097d65a798e5d58a32abf4afb0c856b2df0ea87868db6de2e6848ea3542",
+      "local_original_path": "local/phase17/example-events.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "pop-four.json",
+      "published_path": "phase17/pop-four.json",
+      "encoding": "identity",
+      "original_bytes": 30204,
+      "sha256": "d962657213387d90b85c9f0b224b321cd6b5d5f5f4ce8dafb1f14bfb0ffa5ab8",
+      "stored_bytes": 30204,
+      "stored_sha256": "d962657213387d90b85c9f0b224b321cd6b5d5f5f4ce8dafb1f14bfb0ffa5ab8",
+      "local_original_path": "local/phase17/pop-four.json",
+      "batch": "phase17"
+    },
+    {
+      "original_path": "device-chain2-overlap.json",
+      "published_path": "phase17/device-chain2-overlap.json.gz",
+      "encoding": "gzip",
+      "original_bytes": 1712740,
+      "sha256": "43d1a922571ca0b0f566939ab7f93004ade531c0f0195bd2c6c7ead439d565e7",
+      "stored_bytes": 30989,
+      "stored_sha256": "f7f1659947f44496fa409dadf531ec4db4868489365488f2c6517ab510566d6b",
+      "local_original_path": "local/phase17/device-chain2-overlap.json",
+      "batch": "phase17"
+    }
+  ],
+  "batches": [
+    {
+      "name": "initial-archive",
+      "summary": {
+        "original_files": 205,
+        "original_bytes": 153010348,
+        "published_files": 106,
+        "published_bytes": 4300493,
+        "local_only_files": 99
+      }
+    },
+    {
+      "name": "phase17",
+      "date": "2026-11-03T13:27:43.446891+00:00",
+      "original_files": 47,
+      "original_bytes": 60196545,
+      "published_bytes": 1389999,
+      "description": "Restricted parent resume matrix, controls, regressions, resource report, examples and boundary observations"
     }
   ]
 }

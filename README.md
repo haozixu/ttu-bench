@@ -2,13 +2,13 @@
 
 本README位于 `ttu-bench/` 根目录，详细文档集中在 `docs/`。第一次阅读建议先看 [TTU 协议入门](docs/TTU_PROTOCOL_GUIDE.md)，再查 [文件索引](docs/INDEX.md) 和 [当前交接](docs/HANDOFF.md)。本文及其他现行文档中的命令均从 **`ttu-bench/` 项目根目录** 执行；行内代码形式的源码、fixture、结果路径也以该目录为基准，点击链接则按文档位置解析。研究文献仍在 `research/`。
 
-实验结果按阶段收在 `results/phase12/` 至 `results/phase16/`，EoSS结果在 `results/eoss/`。正式结果与关键反例供Git提交，大型逐ray日志用无损 `.json.gz` 保存；中间/探索与本地试跑记录保留在被ignore的 `results/archive/`。原始路径、SHA256和现位置见 [manifest](results/manifest.json)，阅读/恢复及提交策略见 [结果归档说明](docs/RESULTS.md)。
+实验结果按阶段收在 `results/phase12/` 至 `results/phase17/`，EoSS结果在 `results/eoss/`。正式结果与关键反例供Git提交，大型逐ray日志用无损 `.json.gz` 保存；中间/探索与本地试跑记录保留在被ignore的 `results/archive/`。原始路径、SHA256和现位置见 [manifest](results/manifest.json)，阅读/恢复及提交策略见 [结果归档说明](docs/RESULTS.md)。
 
-最新 [Phase16](docs/PHASE16.md)：一个自研CUDA kernel内已能处理IAS实例事件、变换ray并独立查询child GAS。8项矩阵、1344次kernel launch、2615次TTU请求全部通过CPU/OptiX对照；包括541次instance事件后child实际miss。**当前仅验证单个静态instance，尚未恢复父级IAS状态。** [Phase15](docs/PHASE15.md)保留host参考实现与4096三角形GAS单GO结果；4096只是最大已测试规模，不是容量上限。
+最新 [Phase17](docs/PHASE17.md)：一个自研CUDA kernel已能保存硬件返回的待处理引用，查询child后恢复父IAS，完成已测1–3个静态instance的最近命中。两张3090上30项、4,768次launch、11,492次TTU请求通过CPU/OptiX对照，包含“先miss后hit”和“先远后近”的反例及负对照。**仅覆盖平坦IAS、共享triangle GAS、已识别的0x21引用类型；四实例新路径、嵌套、any-hit等尚未实现。** 同时纠正单instance中碰巧成立的ID/handle相邻偏移。4096三角形GAS仍只是最大已测试规模，不是容量上限。
 
 ```bash
-CUDA_VISIBLE_DEVICES=1 timeout 40s python3 run_device_instance.py --instance identity --check --output results/local-device-identity.json
-python3 validate_device_instance.py --gpus 1 2 --output results/local-device-matrix.json
+CUDA_VISIBLE_DEVICES=6 timeout 40s python3 run_parent_resume.py --scenario first-farther-later-nearer --check --output results/local/parent-nearer.json
+python3 validate_parent_resume.py --gpus 2 6 --output results/local/parent-matrix.json
 ```
 
 在 RTX 3090（GA102 / SM86、driver 535.309.01、CUDA 12.1）上，以自行 patch 的 CUDA kernel 发射 TTU 指令，绕开运行时 OptiX pipeline、shader 回调和驱动 megakernel。当前目的是为 RT/CUDA 同 SM 资源交互研究提供可控的发射与读回基础。
@@ -37,7 +37,7 @@ python3 validate_ray_protocol.py --gpus 0 5 --output results/local-ray-protocol.
 
 ## 快速复现
 
-需要 NVIDIA 驱动、支持 SM86 的 `nvcc` 和 Python 3。功能线使用 Python 标准库，不依赖运行时 OptiX SDK；EoSS 复现线使用本地 `research/community/eoss` 包及原始 encoding 数据。
+需要 NVIDIA 驱动、支持 SM86 的 `nvcc` 和 Python 3。固定fixture功能线使用 Python 标准库，不依赖OptiX SDK；实时AS/instance入口另需本地OptiX8 SDK和g++；EoSS 复现线使用本地 `research/community/eoss` 包及原始 encoding 数据。
 
 先查 `nvidia-smi` 选择空闲卡；在 `ttu-bench/` 运行：
 
@@ -90,7 +90,7 @@ OPEN → MF(11) → 9 × TTUST → GO → TTULD.CLOSE[0x300]
 
 ## 研究与下一步
 
-长期希望形成论文贡献；可靠基础设施、复现和blog是有价值的阶段成果，不以新颖性作为前期推进门槛。两代TTU接口对照和复杂AS路线见 [AS_ROADMAP.md](docs/AS_ROADMAP.md)。下一功能任务为保存/恢复父级IAS状态，用多个instance的反例验证最近命中；nonopaque triangle续遍历另作协议任务。测量线仍需正确的设备内重复和计时。Phase16功能容器有stack和普通CUDA搬运，不能直接当作最小计时核。
+长期希望形成论文贡献；可靠基础设施、复现和blog是有价值的阶段成果，不以新颖性作为前期推进门槛。两代TTU接口对照和复杂AS路线见 [AS_ROADMAP.md](docs/AS_ROADMAP.md)。下一功能任务是解释四实例出现的新引用/直接triangle返回路径，另行研究等距命中与tmax边界；nonopaque triangle续遍历仍是独立协议任务。测量线可先使用稳定opaque GAS，推进正确的设备内重复和计时。Phase17功能容器有848字节stack和完整trace，不能直接当作最小计时核。
 
 [研究空白审视](../research/notes/rt-cuda-research-gap.md)已纳入 Ray-by-Ray 和 RTSpMSpM 全文：前者已有同 SM 的 lane/warp 微基准并报告 Ampere 复现，后者已讨论 RT/SIMD 的 L1 竞争。仅换到 GA102、重做 lane/warp 扫描或发现内存争抢，不足以构成新贡献。
 
@@ -104,7 +104,8 @@ OPEN → MF(11) → 9 × TTUST → GO → TTULD.CLOSE[0x300]
 - [PHASE13.md](docs/PHASE13.md)：生产GAS、多三角形、返回解码及原组/flags负结果。
 - [PHASE14.md](docs/PHASE14.md)：三组指令证据、一般ray/flags、解码纠正、多命中反例与IAS事件。
 - [PHASE15.md](docs/PHASE15.md)：静态instance记录解码、host参考实现及4096三角形GAS。
-- [PHASE16.md](docs/PHASE16.md)：设备端事件分派/变换/独立child查询、正确性矩阵与父级恢复缺口。
+- [PHASE16.md](docs/PHASE16.md)：设备端事件分派/变换/独立child查询及其历史验证范围。
+- [PHASE17.md](docs/PHASE17.md)：受限父IAS恢复、多实例最近命中、ID解码纠正及负对照。
 - [EOSS_REPRO.md](docs/EOSS_REPRO.md)：EoSS 复现结果、SM86/SM120 delta、helpers API 和恢复边界。
 - [CLEANUP.md](docs/CLEANUP.md)：删除/保留理由与迁移清单。
 

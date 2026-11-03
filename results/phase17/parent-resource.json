@@ -1,0 +1,37 @@
+{
+  "build": {
+    "source_sha256": "28596fb9dc613ad2f55cce08b7ee745ee933aa19414ad80becfe8995a809304a",
+    "cubin_sha256": "9d8e02b7a69cfedc258f74e2be37d7e28531e94de52189a238303f8ef36cdccd",
+    "register_map": {
+      "42": 18,
+      "52": 64,
+      "12": 60,
+      "66": 56,
+      "16": 54,
+      "14": 52,
+      "72": 42,
+      "40": 40,
+      "36": 38,
+      "24": 36,
+      "32": 34,
+      "2": 32,
+      "34": 30,
+      "50": 26,
+      "56": 24,
+      "54": 22,
+      "60": 20,
+      "58": 16
+    },
+    "patch_file_offset": 93664,
+    "group_sha256": "bd9d139e1c27099f8d9aa0d3e8e3c27925b94811957a13b626869559c39ab734",
+    "compiler_output": "",
+    "compiler_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Tue_Feb__7_19:32:13_PST_2023\nCuda compilation tools, release 12.1, V12.1.66\nBuild cuda_12.1.r12.1/compiler.32415258_0\n"
+  },
+  "resource_usage": "\nResource usage:\n Common:\n  GLOBAL:0\n Function parent_probe:\n  REG:88 STACK:848 SHARED:0 LOCAL:0 CONSTANT[0]:368 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function instance_probe:\n  REG:59 STACK:288 SHARED:0 LOCAL:0 CONSTANT[0]:368 TEXTURE:0 SURFACE:0 SAMPLER:0\n",
+  "resource_stderr": "",
+  "source_sha256": {
+    "device_instance.py": "9bd5142036eafb370f081cd552cfbe303d73d725aa3c4bfe676fc1d7a8bf4630",
+    "instance_template.cu": "a5fb69ae8ee2e187d4851e6dc8ff794277bc01d935490234052f53e3af46bb93",
+    "parent_template.cu": "08dc8460dab739b8b9e1b13c5e10a00633100d5082ba88ae01f707b973acfaf8"
+  }
+}

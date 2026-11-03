@@ -1,18 +1,22 @@
-# 当前交接：SM86单instance设备端路径已通，父级恢复待解
+# 当前交接：SM86受限父IAS续遍历已通
 
 README位于 `ttu-bench/` 根目录，详细文档集中在 `docs/`；命令从 `ttu-bench/` 执行。概念与协议边界先读 [TTU 协议入门](TTU_PROTOCOL_GUIDE.md)。旧文档快照在 `docs/reference/history/`，恢复源码仍在 `reference/history/source/`。结果已按阶段归档，大型raw日志为无损gzip；中间版本在本地被ignore的archive，原字节均保留。路径/hash映射和读取方法见 [RESULTS.md](RESULTS.md)，不要直接按旧matrix路径读取新目录。
 
-最新先看 [Phase16](PHASE16.md)：`instance_template.cu`已在一个kernel内实现IAS请求→0x16事件分派→逆变换→独立child查询。8项矩阵、1344次kernel launch、2615次TTU请求全通过，含541次instance事件后child miss。`device_instance.py`把编译器分配的18个寄存器对映射到19条expanded组；`run_device_instance.py`保存raw返回并做CPU/OptiX及host事件解码对照。`validate_device_instance.py --gpus 1 2 --output results/local-device-matrix.json`可复现。这个功能容器有288字节stack和搬运，不能作为最小计时核；尚未恢复父级IAS状态。
+最新先看 [Phase17](PHASE17.md)：`parent_template.cu` 在一个kernel内保存硬件返回的pending引用、查询child、恢复父IAS。平坦1–3个正行列式静态instance、共享triangle GAS、ray flags1/geometry flags0、相对引用类型0x21；两GPU的30项、4,768次launch、11,492次请求（1,484次恢复父级）全通过。两个first-child-only负对照分别错误报告miss或保留更远交点。四实例及其他引用/返回类型仍不支持，不是完整IAS/JIT协议。
 
-[Phase15](PHASE15.md)保留逆矩阵、ID、child引用的字段证据和1802次host参考查询。普通JIT矩阵运算在0x47d0–0x4970，child root构造在0x60d0–0x64b0，证据在reference/jit/jit16-instance-*。不要重复从零猜字段；下一步是父级保存/恢复和多instance反例。另：4096三角形GAS的272次launch已通过，1024只是原最大测试规模。
+**重要纠正：E-0x0c不是通用instance ID，E-0x20不是通用child handle。** 从 `[E+4]` 取得1-based索引，IAS base+0x30取得表偏移，步长0x80，元数据+0x74低24位为ID、+0x60为handle。矩阵仍在E+0x10，child root仍为[E+8]低49位。旧Phase15/16报告与hash保留，现行decoder已修正。正式多实例报告直接包含相邻ID错误反例。
 
-更新：2026-11-02。先读 [README.md](../README.md) 和 [PHASE12.md](PHASE12.md)，用 `run_minimal.py hit/miss --check` 验证环境。当前功能基线不依赖 OptiX 启动、驱动调度现场、shared/local 栈或 EoSS Python 包。
+入口为 `run_parent_resume.py` / `validate_parent_resume.py`，场景在 `fixtures/phase17-parent-cases.json`。`parent_resume.py`提供raw transport及ABI，`device_instance.py`保留默认单instance接口并支持按kernel选择marker。parent_probe有88 registers、848字节stack、7856字节结果trace，只有一个active thread，不能直接计时。单instance回归8项/1,344次launch、2,615次请求及固定fixture8项/40次launch均通过。新正式结果在results/phase17，47份原始结果压缩发布约1.33 MiB。
 
-前阶段 [Phase14](PHASE14.md)：一般方向/tmin/opaque/culling flags共20208次TTU launch通过，13/19条组主要返回逐位一致。`run_scene`默认ray flags1；flags0的nonopaque多命中可返回较远候选，不能视为完整closest-hit。R73/R32符号承载额外信息，t/u取幅值；geometry flag1旧负结果已纠正。IAS事件与ID/变换字段已有Phase15/16推进，父级续遍历仍未实现。
+[Phase15](PHASE15.md)保留host参考及4096三角形GAS；[Phase16](PHASE16.md)保留独立child阶段。普通JIT新增 `reference/jit/jit16-parent-*` 保存/恢复分支，TTU槽已换NOP，仅供分析。不要丢弃已成功的受限路径，也不要把它推广为任意AS。
+
+更新：2026-11-03。先读 [README.md](../README.md) 和 [PHASE12.md](PHASE12.md)，用 `run_minimal.py hit/miss --check` 验证环境。当前功能基线不依赖 OptiX 启动、驱动调度现场、shared/local 栈或 EoSS Python 包。
+
+前阶段 [Phase14](PHASE14.md)：一般方向/tmin/opaque/culling flags共20208次TTU launch通过，13/19条组主要返回逐位一致。`run_scene`默认ray flags1；flags0的nonopaque多命中可返回较远候选，不能视为完整closest-hit。R73/R32符号承载额外信息，t/u取幅值；geometry flag1旧负结果已纠正。IAS事件与ID/变换字段以后续Phase17纠正为准，父级续遍历已实现受限子集。
 
 前阶段 [Phase13](PHASE13.md)：GPU5/7上单/双三角形与最大1024网格，共16case/980launch通过。`both`比较19条expanded与13条reduced；19条保留所有LD但静态消除P4分支。原20条组在实时AS上有CUDA700，固定fixture回归仍通过，不能当作通用可靠控制组。原flag1负记录已有上述解码纠正。
 
-公开线索：[NVIDIA complet/node专利](../../research/notes/nvidia-bvh-public-records.md)，两份PDF已下载。近期功能任务为父级IAS恢复；nonopaque triangle的accept/ignore另线处理。测量顺序仍按下文。无需先独立构造全部BVH才能推进。
+公开线索：[NVIDIA complet/node专利](../../research/notes/nvidia-bvh-public-records.md)，两份PDF已下载。近期功能任务为四实例的新返回路径及等距边界；nonopaque triangle的accept/ignore另线处理。测量顺序仍按下文。无需先独立构造全部BVH才能推进。
 
 EoSS 指令行为复现与 SM86/SM120 delta 是另一条需要保留的实验线，见 [EOSS_REPRO.md](EOSS_REPRO.md)。`run_exp.py` / `build_and_patch.py` 已重建，TTU helpers、EoSS适配、CUDA ELF patch、fixture输入已拆为共用组件。原20指令round trip及8场景40次功能回归通过。旧交接/README在 `docs/reference/history/`，部分原源码在 `reference/history/source/`，不能把旧解释直接当作已证事实。
 
@@ -43,9 +47,11 @@ EoSS 指令行为复现与 SM86/SM120 delta 是另一条需要保留的实验线
 
 ## 后续顺序与完成判据
 
-功能线先解**父级IAS恢复**：沿JIT保存/恢复分支对应返回槽和下一次请求输入；用两个instance验证第一child miss而后续hit、第一child hit而后续更近、交换输入顺序。保存原始事件顺序，不能把builder输入顺序当成遍历顺序。不要以逐个instance独立查询取min冒充硬件父级resume；`parent_slot_nonzero_raw`只是R51非零诊断，尚不是“存在待处理兄弟节点”的解码。详见Phase16末尾。
+功能线下一步是**四实例最小反例**：从 `results/phase17/pop-four.json` 的0x24引用类型与直接triangle返回出发，明确坐标、instance归属和父状态，不要仅提高count限制。另用隔离实验研究等距命中的身份选择及tmax端点；`device-chain2-overlap` 的51项检查失败（29条TTU记录、22项CPU/OptiX比较）已保留，不能放宽oracle后称为全部通过。当前正式矩阵排除并列命中身份问题。嵌套IAS、不同child GAS、负缩放、motion和用户any-hit仍是后续任务。
 
-下面为独立的测量线顺序；Phase16的连续两次请求只证明功能，不满足这些计时判据。
+Phase17受限路径已通过原计划的“先miss后hit”“先远后近”和输入顺序交换；恢复引用来自TTU，不能退回逐个枚举builder输入来冒充协议续遍历。`parent_slot_nonzero_raw`仍只是旧R51诊断，不能当作pending解码；新路径检查R55数量及显式条目类型。
+
+下面为独立的测量线顺序；Phase16/17的多次请求只证明功能，不满足这些计时判据。
 
 1. **先形成正确的重复 TTU 测量。** TTULD 当前覆盖 R72:R73、R32:R33，它们同时是下一次 TTUST 输入。先分离输入/输出，或明确恢复每次被覆盖的输入；不能直接在现序列上加循环。用独立几何 oracle 检查循环尾部结果。
 2. **加入设备内计时与对照。** 明确测 TTUGO 到结果可用、完整 TTU group，还是连续请求吞吐。排除准备、global 写回与 launch；计时指令本身也可能争抢资源，校准空序列与依赖等待。当前 Python 时间和原始 OptiX API 时间不能互换。

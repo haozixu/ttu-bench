@@ -21,7 +21,7 @@ from sm86_fixture import FIXTURES, triangle_result
 
 HERE = Path(__file__).resolve().parent
 STATUS = {1: 'ias_miss', 2: 'unexpected_event', 3: 'invalid_event_address',
-          4: 'invalid_child_root', 5: 'independent_child_complete'}
+          4: 'invalid_child_root', 5: 'independent_child_complete', 6: 'invalid_instance_metadata'}
 
 
 def main():

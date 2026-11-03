@@ -89,7 +89,16 @@ extern "C" __global__ void instance_probe(const DeviceParams* params, DeviceResu
         result->status = 4;
         return;
     }
-    result->instance_id = *reinterpret_cast<const uint32_t*>(event - 0xc) & 0xffffff;
+    uint32_t index_word = *reinterpret_cast<const uint32_t*>(event + 4);
+    uint64_t table_offset = *reinterpret_cast<const uint64_t*>(params->ias_base + 0x30);
+    uint32_t instance_count = *reinterpret_cast<const uint32_t*>(params->ias_base + 0x70);
+    uint64_t metadata_offset = table_offset + uint64_t(index_word - 1) * 0x80;
+    if (!index_word || index_word > instance_count || metadata_offset > params->ias_size ||
+        params->ias_size - metadata_offset < 0x80) {
+        result->status = 6;
+        return;
+    }
+    result->instance_id = *reinterpret_cast<const uint32_t*>(params->ias_base + metadata_offset + 0x74) & 0xffffff;
     const float* inverse = reinterpret_cast<const float*>(event + 0x10);
     float local_ray[8];
     for (int axis = 0; axis < 3; ++axis) {

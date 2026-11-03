@@ -2,7 +2,9 @@
 
 日期：2026-11-03。RTX 3090 / SM86，driver 535.309.01，CUDA 12.1，OptiX 8。承接 [Phase14](PHASE14.md)。本阶段没有性能测量。
 
-后续进展见 [Phase16](PHASE16.md)：设备端事件处理与独立child查询已通，父级IAS恢复仍待实现。下文保留本阶段的host参考实现及当时的下一步计划。
+> 后续纠正与进展：[Phase17](PHASE17.md)已实现平坦1–3静态instance的受限父IAS恢复。**本阶段以E-0x0c/E-0x20读ID/handle的相邻偏移规则已撤回**，应以[E+4]索引查IAS实例表；逆矩阵和child root规则仍成立。下文记录当时实现范围与历史实验，报告及hash不改写。
+
+后续 [Phase16](PHASE16.md)完成设备独立child查询，[Phase17](PHASE17.md)完成受限父级恢复。下文保留本阶段的host参考实现及当时的下一步计划。
 
 **新增：从真实IAS事件读出的逆变换、instance ID、child handle和child root已作差分验证；host处理事件后发起独立child GAS查询可与CPU/OptiX匹配。尚未实现保留父级状态的裸TTU续遍历。** 这不是完整IAS支持，不能用来验证多instance最近命中。
 
@@ -48,8 +50,8 @@ python3 disassemble_ttu.py fixtures/jit_16.elf --range fb0:1190 --range 29b0:2b3
 | 返回 `R72 + ((R73 & 0x1ffff)<<32)` | E | 位于IAS分配范围，不能把R73当浮点t |
 | `E+0x08` 的64位值 | 带tag的child root，低49位对上GAS base+root offset | 每个事件与builder原分配及GAS头部交叉核对；完整tag含义未知 |
 | `E+0x10..E+0x3f` | 3×4世界到局部的逆变换 | identity/translate/rotate/scale，矩阵与build输入相乘为单位矩阵 |
-| `E-0x20` 的64位值 | child handle候选 | 与builder提供的GAS handle逐位一致 |
-| `E-0x0c` 的32位值低24位 | instance ID候选 | build输入与OptiX交叉检查，覆盖0、17、41、0xffffff |
+| `E-0x20` 的64位值 | 历史child handle候选；已撤回通用规则 | 仅本阶段单实例中碰巧相邻，现用IAS表metadata+0x60 |
+| `E-0x0c` 的32位值低24位 | 历史ID候选；已撤回通用规则 | 单实例曾覆盖0、17、41、0xffffff，多实例反例否定；现用metadata+0x74 |
 
 事件的矩阵区域与应用提交的OptixInstance输入记录不是同一个起点。我们检查的是builder产物，不能仅照抄公开OptixInstance结构定义解释所有内部字段。地址掩码、相对偏移和ID布局尚不保证适用于其他节点类型、嵌套、motion、驱动或架构。
 

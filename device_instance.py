@@ -45,8 +45,8 @@ def issue_source():
     return '\n'.join(lines + ['}'])
 
 
-def build():
-    source = (HERE / 'instance_template.cu').read_text() + '\n' + issue_source() + '\n'
+def build(extra_source='', kernel_name='instance_probe'):
+    source = (HERE / 'instance_template.cu').read_text() + '\n' + issue_source() + '\n' + extra_source
     with tempfile.TemporaryDirectory(prefix='ttu-instance-') as directory:
         path = Path(directory) / 'instance.cu'
         cubin = path.with_suffix('.cubin')
@@ -56,7 +56,7 @@ def build():
         image = bytearray(cubin.read_bytes())
     markers = []
     for section in sections(image):
-        if not section['name'].startswith('.text.'):
+        if section['name'] != '.text.' + kernel_name:
             continue
         for offset in range(section['off'], section['off'] + section['size'], 16):
             word, upper = struct.unpack_from('<QQ', image, offset)
@@ -98,27 +98,31 @@ def build():
 
 
 class DeviceProbe:
-    def __init__(self):
+    def __init__(self, *, extra_source='', kernel_name='instance_probe', params_type=Params, result_type=Result):
         if ctypes.sizeof(Params) != 88 or ctypes.sizeof(Result) != 672:
             raise ValueError('unexpected host/device structure layout')
-        self.image, self.build_info = build()
+        self.result_type = result_type
+        self.params_type = params_type
+        self.image, self.build_info = build(extra_source, kernel_name)
         self.module = ctypes.c_void_p()
         check(cuda.cuModuleLoadData(ctypes.byref(self.module), self.image), 'instance module')
         self.function = ctypes.c_void_p()
-        check(cuda.cuModuleGetFunction(ctypes.byref(self.function), self.module, b'instance_probe'), 'instance kernel')
+        check(cuda.cuModuleGetFunction(ctypes.byref(self.function), self.module, kernel_name.encode()), 'instance kernel')
         self.input = ctypes.c_uint64()
         self.output = ctypes.c_uint64()
-        check(cuda.cuMemAlloc_v2(ctypes.byref(self.input), ctypes.sizeof(Params)), 'params allocate')
-        check(cuda.cuMemAlloc_v2(ctypes.byref(self.output), ctypes.sizeof(Result)), 'result allocate')
+        check(cuda.cuMemAlloc_v2(ctypes.byref(self.input), ctypes.sizeof(params_type)), 'params allocate')
+        check(cuda.cuMemAlloc_v2(ctypes.byref(self.output), ctypes.sizeof(result_type)), 'result allocate')
 
     def launch(self, params):
+        if not isinstance(params, self.params_type):
+            raise TypeError(f'expected {self.params_type.__name__} kernel parameters')
         check(cuda.cuMemcpyHtoD_v2(self.input.value, ctypes.byref(params), ctypes.sizeof(params)), 'params upload')
-        zero = bytes(ctypes.sizeof(Result))
+        zero = bytes(ctypes.sizeof(self.result_type))
         check(cuda.cuMemcpyHtoD_v2(self.output.value, zero, len(zero)), 'result zero')
         parameters = (ctypes.c_void_p * 2)(ctypes.addressof(self.input), ctypes.addressof(self.output))
         check(cuda.cuLaunchKernel(self.function, 1, 1, 1, 1, 1, 1, 0, None, parameters, None), 'instance launch')
         check(cuda.cuCtxSynchronize(), 'instance sync')
-        result = Result()
+        result = self.result_type()
         check(cuda.cuMemcpyDtoH_v2(ctypes.byref(result), self.output.value, ctypes.sizeof(result)), 'result readback')
         return result
 

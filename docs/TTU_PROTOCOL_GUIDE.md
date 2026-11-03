@@ -2,7 +2,7 @@
 
 更新：2026-11-03。阅读不需要熟悉 OptiX。前半部分解释公开的光线追踪概念，后半部分解释本项目在 RTX 3090 / SM86、driver 535.309.01 上实际验证的请求和返回。它不是 NVIDIA 官方硬件规范，也不是 SM120 的实测结论。
 
-最新增量见 [Phase16](PHASE16.md)：单个静态instance的事件处理、ray变换与独立child查询已能在一个CUDA kernel内完成，但父级遍历resume仍未完成。记录解码和host参考实现见 [Phase15](PHASE15.md)；三角形GAS的最大已测规模为4096。
+最新增量见 [Phase17](PHASE17.md)：一个CUDA kernel可保存硬件返回引用，查child后恢复父IAS；已测平坦1–3个静态instance、共享triangle GAS、正行列式变换及0x21引用类型。还不是通用IAS支持。instance ID/handle的旧相邻偏移已纠正为索引查表；历史host实现见 [Phase15](PHASE15.md)。三角形GAS最大已测4096。
 
 ## 1. 一条 ray 究竟要问什么
 
@@ -46,7 +46,7 @@ flowchart TD
 
 从概念上说，先在世界坐标里查IAS；遇到可能命中的instance，再把ray转到那把椅子的局部坐标里查GAS。instance通常提供从局部到世界的3×4仿射变换，转ray时用其逆变换。origin作为点变换，direction作为向量变换，不包含平移。
 
-一个有用的细节：如果变换后的direction不重新归一化，那么同一个交点的t可以保持不变，包括非均匀缩放的情况。因为逆变换满足 `M⁻¹(O + tD) = M⁻¹(O) + t × M⁻¹_linear(D)`。这里是在解释数学关系，尚未声称已实现裸TTU的实例变换流程。
+一个有用的细节：如果变换后的direction不重新归一化，那么同一个交点的t可以保持不变，包括非均匀缩放的情况。因为逆变换满足 `M⁻¹(O + tD) = M⁻¹(O) + t × M⁻¹_linear(D)`。Phase16/17已在普通CUDA指令中实现并验证这段变换，非均匀缩放时也不重新归一化direction。
 
 primitive ID回答“这份几何里的第几个三角形”，instance ID回答“场景里的哪次摆放”。十把椅子上的同一个三角形可以有相同primitive ID、不同instance ID。
 
@@ -153,12 +153,16 @@ TTUST/TTULD使用两个显式指定的寄存器对，每对内部相邻。比如
 | 返回 `R72 + ((R73 & 0x1ffff) << 32)` | 实例记录地址，记作E | 定位本次遇到的实例；此时R73不是浮点t |
 | 从 `E+0x10..E+0x3f` 读取 | 3×4世界到局部的逆矩阵 | 普通CUDA指令变换origin/direction |
 | 从 `E+0x08` 读取 | 带tag的child root；已测样本低49位对上GAS root地址 | 构造新的child请求；完整tag含义未知 |
-| 从 `E-0x20` 读取 | 与builder提供的child handle一致的64位值 | 核对引用哪份GAS，不能普遍当裸指针 |
-| 从 `E-0x0c` 读取 | 低24位对上instance ID | 将后续primitive命中归属到这次摆放 |
+| 从 `E+4` 读取 | 1-based实例索引 | 查询IAS中的实例元数据表，不能把相邻记录当当前实例 |
+| `table = uint64[IAS_base+0x30]`，`M = IAS_base+table+(index-1)*0x80` | 元数据记录起点；base+0x70为实例数量 | 检查索引和记录边界 |
+| 从 `M+0x60` 读取 | 与builder提供的child handle一致的64位值 | 核对引用哪份GAS，不能普遍当裸指针 |
+| 从 `M+0x74` 读取 | 低24位为instance ID | 将后续primitive命中归属到这次摆放 |
 
-矩阵的含义仍是“把世界ray转进实例局部空间”，不是最终交点。primitive ID、t和barycentrics要等child查询；child也可能miss。父级还有哪些分支待查、如何保存/恢复，并没有在上述字段表中解决。19条组还读回其他状态槽，目前保留raw值；例如R51非零不能直接命名为“还有兄弟节点”。
+矩阵的含义仍是“把世界ray转进实例局部空间”，不是最终交点。primitive ID、t和barycentrics要等child查询；child也可能miss。**E-0x0c/ E-0x20的旧规则只在单instance中碰巧成立，已撤回。**
 
-这些偏移只对本机已测静态instance路径成立，不能当成公开或跨驱动ABI。见 [Phase15字段证据](PHASE15.md) 和 [三个完整事件样例](../results/phase16/example-events.json)。JSON报告看起来很长，是因为额外保存了输入ray、两次请求的raw寄存器、期望结果、记录快照、hash和运行环境，不代表硬件事件本身包含这些验证材料。
+父级恢复现在也有受限的实证：R54:R55与显式条目R56:R57、R58:R59、R60:R61描述本阶段识别出的待处理引用，`(R55>>25)&7`对应观察到的数量。软件在查child之前保存引用，之后用世界ray及当前最近tmax重新提交一个引用，硬件返回下一个instance或miss。可以理解成“先把还没查的盒子记下来，查完当前模型再回去”；无需知道每个BVH节点的完整二进制格式。具体位域和输入槽见Phase17，它不是所有返回类型的栈规范。R51非零仍不能直接命名为“还有兄弟节点”。
+
+这些偏移只对本机已测静态instance路径成立，不能当成公开或跨驱动ABI。见 [Phase17纠错及父级协议](PHASE17.md) 和 [三个正式事件样例](../results/phase17/example-events.json)；[Phase16旧样例](../results/phase16/example-events.json)按当时源码解读。JSON报告看起来很长，是因为额外保存了输入ray、两次请求的raw寄存器、期望结果、记录快照、hash和运行环境，不代表硬件事件本身包含这些验证材料。
 
 ## 7. 为什么现在还不能说“任意OptiX都能裸SASS完成”
 
@@ -166,11 +170,11 @@ TTUST/TTULD使用两个显式指定的寄存器对，每对内部相邻。比如
 
 **其一，候选交点不是最终最近交点。** 已有一个16三角形反例：CPU和OptiX最近命中是primitive4、t=2，裸TTU的13/19条组却都返回primitive0、t=5。后者确实是ray碰到的三角形，但更远。禁用any-hit或把几何标成opaque后可匹配oracle。它与“硬件交回候选，软件决定接受/忽略并继续遍历”的解释一致；我们还没有实现并验证这套续遍历状态机。
 
-**其二，instance入口可能先返回一个需要处理的事件。** 一个单位变换instance的IAS测试中，返回的 `R72:R73` 合起来是指向IAS实例记录的地址，`R33=0xb0000000`，高5位类号为 `0x16`。原JIT也检查这个类号再分支。此时R33不是重心坐标，R72也不是triangle ID。Phase15已验证记录中的逆变换、ID和child root，Phase16已在设备端处理事件并独立查询child；还没有完成携带父级状态的继续提交流程。实例事件也可能指向最终miss的child，不能据此判为命中。
+**其二，instance入口可能先返回一个需要处理的事件。** 一个单位变换instance的IAS测试中，返回的 `R72:R73` 合起来是指向IAS实例记录的地址，`R33=0xb0000000`，高5位类号为 `0x16`。原JIT也检查这个类号再分支。此时R33不是重心坐标，R72也不是triangle ID。Phase15/16先验证了逆变换与独立child查询；Phase17修正ID查表，并完成受限父级引用恢复，但四实例新路径、异构child、嵌套、motion等仍未实现。实例事件也可能指向最终miss的child，不能据此判为命中。
 
 这不证明硬件完全不支持instance变换，只说明这条已捕获请求路径存在软件处理的边界。即使instance是单位变换、世界/局部坐标数值相同，也仍需解决协议事件，而不是简单把ray原样重发几次。
 
-当前生产AS仍由OptiX构建并保留在原CUDA context的原分配中，裸CUDA kernel发射TTU；CPU和单独的OptiX追踪作为事后正确性对照。已通过一般ray、tmin/tmax、到1024三角形和有限flags的功能矩阵，另补4096三角形测试，但尚未完成保留父级状态的裸TTU实例追踪、nonopaque续遍历、full-warp或性能测量。**我们已经掌握了一段可独立运行且能核验的硬件交互协议，距离完整追踪状态机还有明确的工作。**
+当前生产AS仍由OptiX构建并保留在原CUDA context的原分配中，裸CUDA kernel发射TTU；CPU和单独的OptiX追踪作为事后正确性对照。已通过一般ray、tmin/tmax、到1024三角形和有限flags的功能矩阵，另补4096三角形测试，也完成了受限1–3实例父级恢复；通用IAS、nonopaque续遍历、full-warp及性能测量仍未完成。**我们已经掌握了一段可独立运行且能核验的硬件交互协议，距离完整追踪状态机还有明确的工作。**
 
 ## 继续查证
 

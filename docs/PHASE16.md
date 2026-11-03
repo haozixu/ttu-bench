@@ -2,6 +2,8 @@
 
 日期：2026-11-03。RTX 3090 / SM86，driver 535.309.01，CUDA 12.1，OptiX 8。承接 [Phase15](PHASE15.md)。本阶段没有性能测量。
 
+> 后续纠正与进展：[Phase17](PHASE17.md)已实现平坦1–3静态instance的受限父IAS恢复。**本阶段以E-0x0c/E-0x20读ID/handle的相邻偏移规则已撤回**，应以[E+4]索引查IAS实例表；逆矩阵和child root规则仍成立。下文记录当时实现范围与历史实验，报告及hash不改写。
+
 **一个自研CUDA kernel已能完成IAS请求、识别0x16事件、读取实例记录、变换ray、重新开启child GAS查询并读回结果。8项矩阵、1344次kernel launch、2615次TTU请求全部与CPU/OptiX对照通过。尚未保存并恢复父级IAS遍历状态，因此只支持本阶段验证的单个静态instance。**
 
 ## 本阶段推进了什么

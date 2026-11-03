@@ -1,0 +1,365 @@
+{
+  "timestamp": "2026-11-03T13:19:49.068326+00:00",
+  "contract": "Restricted flat 1-3 instance IAS, positive transforms, one shared triangle GAS; pending hardware references saved and resubmitted by device code",
+  "cases": [
+    {
+      "gpu": "2",
+      "scenario": "first-miss-later-hit",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-first-miss-later-hit-single.json",
+      "sha256": "fd793f77ae7aba13706dc8a31e3b75c0d5b4b7ffb376a212b039c053780c72c5",
+      "launches": 2,
+      "requests": 8,
+      "resumed_parent_requests": 2
+    },
+    {
+      "gpu": "2",
+      "scenario": "first-farther-later-nearer",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-first-farther-later-nearer-single.json",
+      "sha256": "bddcdcb01cf23759a8ccb1e57341d971df684556bd4e382833ad848b04d78331",
+      "launches": 2,
+      "requests": 8,
+      "resumed_parent_requests": 2
+    },
+    {
+      "gpu": "2",
+      "scenario": "chain1",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-chain1-single.json",
+      "sha256": "190b1e2af7642dec981ad288818593374c7a878cf829f0994316fb291a741724",
+      "launches": 96,
+      "requests": 186,
+      "resumed_parent_requests": 0
+    },
+    {
+      "gpu": "2",
+      "scenario": "chain1-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-chain1-reversed-single.json",
+      "sha256": "8cbc20dd9359cff792d9535b95d1ae71946d4e77f09a553f22b5fc5997973301",
+      "launches": 96,
+      "requests": 186,
+      "resumed_parent_requests": 0
+    },
+    {
+      "gpu": "2",
+      "scenario": "chain2",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-chain2-single.json",
+      "sha256": "18a75be887169640e67566f51cdc73c8bf7c05e642d880e79d0647915451399c",
+      "launches": 184,
+      "requests": 434,
+      "resumed_parent_requests": 50
+    },
+    {
+      "gpu": "2",
+      "scenario": "chain2-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-chain2-reversed-single.json",
+      "sha256": "b7ea21389230a0f35686e9408d9ff1d4e9c4b10daa8ccf3ef625db2946077a24",
+      "launches": 184,
+      "requests": 434,
+      "resumed_parent_requests": 50
+    },
+    {
+      "gpu": "2",
+      "scenario": "chain3",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-chain3-single.json",
+      "sha256": "f37dd49f9f3f97cb6988d879231c477b352b28de46a1bb625da595953fffdb22",
+      "launches": 272,
+      "requests": 718,
+      "resumed_parent_requests": 138
+    },
+    {
+      "gpu": "2",
+      "scenario": "chain3-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-chain3-reversed-single.json",
+      "sha256": "3ac632682e0cec656dd74e1c94dad68f5ec20cbd83b0bb732be6e32588be1b5d",
+      "launches": 272,
+      "requests": 718,
+      "resumed_parent_requests": 138
+    },
+    {
+      "gpu": "2",
+      "scenario": "rotated-pair",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-rotated-pair-single.json",
+      "sha256": "8573e6827fc14d0f226e87a712fe61634cf13405ba33955ecc8c52382728a10a",
+      "launches": 184,
+      "requests": 360,
+      "resumed_parent_requests": 0
+    },
+    {
+      "gpu": "2",
+      "scenario": "scaled-triple",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-scaled-triple-single.json",
+      "sha256": "471a0a8e1efebcda7d6d81b8d38780bf5c8dff309d3f089aa3e8c90d036f011e",
+      "launches": 272,
+      "requests": 600,
+      "resumed_parent_requests": 42
+    },
+    {
+      "gpu": "2",
+      "scenario": "first-miss-later-hit-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-first-miss-later-hit-reversed-single.json",
+      "sha256": "a8250d4ba44e6314c136627dac32593f26a2fa3c042008eb96974cad725b97ba",
+      "launches": 2,
+      "requests": 8,
+      "resumed_parent_requests": 2
+    },
+    {
+      "gpu": "2",
+      "scenario": "first-farther-later-nearer-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu2-first-farther-later-nearer-reversed-single.json",
+      "sha256": "490ef1fb07ee7156743004f9828ea7c00e0e9f81d802ca6d42d20804f7db15c4",
+      "launches": 2,
+      "requests": 8,
+      "resumed_parent_requests": 2
+    },
+    {
+      "gpu": "2",
+      "scenario": "chain3",
+      "scene": "grid",
+      "report": "final-parent-matrix-gpu2-chain3-grid.json",
+      "sha256": "aca29ffc41de0f47a7676acedb42e2ed95edbdefca030d19325779ea0c31c16e",
+      "launches": 272,
+      "requests": 776,
+      "resumed_parent_requests": 172
+    },
+    {
+      "gpu": "2",
+      "scenario": "scaled-triple",
+      "scene": "grid",
+      "report": "final-parent-matrix-gpu2-scaled-triple-grid.json",
+      "sha256": "1b0a00dcadf687336853ffb2993e39fe2c2a79f9278c413cee768a41939c7cc7",
+      "launches": 272,
+      "requests": 698,
+      "resumed_parent_requests": 102
+    },
+    {
+      "gpu": "2",
+      "scenario": "rotated-pair",
+      "scene": "separated",
+      "report": "final-parent-matrix-gpu2-rotated-pair-separated.json",
+      "sha256": "a6c4d86cfab407c9dc8db7f549b1408eb16c4dec89848d155788d70dbe633d07",
+      "launches": 272,
+      "requests": 604,
+      "resumed_parent_requests": 42
+    },
+    {
+      "gpu": "6",
+      "scenario": "first-miss-later-hit",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-first-miss-later-hit-single.json",
+      "sha256": "3d45898fff39d9bc748dd2873def7d17ef280964f6a364ae743fac9876445e09",
+      "launches": 2,
+      "requests": 8,
+      "resumed_parent_requests": 2
+    },
+    {
+      "gpu": "6",
+      "scenario": "first-farther-later-nearer",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-first-farther-later-nearer-single.json",
+      "sha256": "7f59a96e757ff554dea3770cc58f85ca22a499bc269a6290814a34448e3594d7",
+      "launches": 2,
+      "requests": 8,
+      "resumed_parent_requests": 2
+    },
+    {
+      "gpu": "6",
+      "scenario": "chain1",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-chain1-single.json",
+      "sha256": "1274e1cd8eafb620ac903ad9df634a48ac69d4ad7ace10676a4a100366714710",
+      "launches": 96,
+      "requests": 186,
+      "resumed_parent_requests": 0
+    },
+    {
+      "gpu": "6",
+      "scenario": "chain1-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-chain1-reversed-single.json",
+      "sha256": "1c3c1847ad4b3bbe7d24b5aff5c8698d8cbcea6e4fcbb9ce723ee846193971b3",
+      "launches": 96,
+      "requests": 186,
+      "resumed_parent_requests": 0
+    },
+    {
+      "gpu": "6",
+      "scenario": "chain2",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-chain2-single.json",
+      "sha256": "1599501d17bbcb8544d73fbaafd7d9ae7bfbff356614a4953107b1e2ee5183af",
+      "launches": 184,
+      "requests": 434,
+      "resumed_parent_requests": 50
+    },
+    {
+      "gpu": "6",
+      "scenario": "chain2-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-chain2-reversed-single.json",
+      "sha256": "80380baf3518e87fe45a22fcd23467bf7a682209450063ae76e00186d3f6271c",
+      "launches": 184,
+      "requests": 434,
+      "resumed_parent_requests": 50
+    },
+    {
+      "gpu": "6",
+      "scenario": "chain3",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-chain3-single.json",
+      "sha256": "e7067baaf45e7024f70b1dec080cd95191823a21c55de611cd46306fcef1f273",
+      "launches": 272,
+      "requests": 718,
+      "resumed_parent_requests": 138
+    },
+    {
+      "gpu": "6",
+      "scenario": "chain3-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-chain3-reversed-single.json",
+      "sha256": "b586c28229b1b6654eee2d71751a000d44b84a8048b2ffa61e966b948e592e75",
+      "launches": 272,
+      "requests": 718,
+      "resumed_parent_requests": 138
+    },
+    {
+      "gpu": "6",
+      "scenario": "rotated-pair",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-rotated-pair-single.json",
+      "sha256": "eb2c5efeae0f2936febd25ec45541882909a6f0318adfe6a8eda5f1cbbf09b9e",
+      "launches": 184,
+      "requests": 360,
+      "resumed_parent_requests": 0
+    },
+    {
+      "gpu": "6",
+      "scenario": "scaled-triple",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-scaled-triple-single.json",
+      "sha256": "19f0e503f89f19db49c309ccbf4d76199aa44fa0f7f86f59de051be996712583",
+      "launches": 272,
+      "requests": 600,
+      "resumed_parent_requests": 42
+    },
+    {
+      "gpu": "6",
+      "scenario": "first-miss-later-hit-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-first-miss-later-hit-reversed-single.json",
+      "sha256": "409f2d2e8d04c904d55c89bb72dfd31718a722f246b9c9d84d44c5cf11a4be95",
+      "launches": 2,
+      "requests": 8,
+      "resumed_parent_requests": 2
+    },
+    {
+      "gpu": "6",
+      "scenario": "first-farther-later-nearer-reversed",
+      "scene": "single",
+      "report": "final-parent-matrix-gpu6-first-farther-later-nearer-reversed-single.json",
+      "sha256": "fc0afceaf743cbdef8a2a03992338e8063442be8820e2976fcaad044d8ce52ed",
+      "launches": 2,
+      "requests": 8,
+      "resumed_parent_requests": 2
+    },
+    {
+      "gpu": "6",
+      "scenario": "chain3",
+      "scene": "grid",
+      "report": "final-parent-matrix-gpu6-chain3-grid.json",
+      "sha256": "578b21e75c2cbbfd579efe495162c895e1814e1e2485416fcf1d867b23fff54d",
+      "launches": 272,
+      "requests": 776,
+      "resumed_parent_requests": 172
+    },
+    {
+      "gpu": "6",
+      "scenario": "scaled-triple",
+      "scene": "grid",
+      "report": "final-parent-matrix-gpu6-scaled-triple-grid.json",
+      "sha256": "796e5b8918ad611108fd780d04867675e1d5b3d3087df5d90dd9a316b56f98d8",
+      "launches": 272,
+      "requests": 698,
+      "resumed_parent_requests": 102
+    },
+    {
+      "gpu": "6",
+      "scenario": "rotated-pair",
+      "scene": "separated",
+      "report": "final-parent-matrix-gpu6-rotated-pair-separated.json",
+      "sha256": "ad769cde56a71d4e5e2be68141d6630cf6f63e8732b1cd5c5cb8c0da0c6b78da",
+      "launches": 272,
+      "requests": 604,
+      "resumed_parent_requests": 42
+    }
+  ],
+  "negative_controls": [
+    {
+      "report": "final-parent-matrix-control-first-miss-later-hit.json",
+      "sha256": "87b4b819f67e3dc9ddff038fda094bfb5e8ef5e2f1974730f4b288de9406dd1c",
+      "expected_returncode": 1,
+      "actual_returncode": 1,
+      "passed": true,
+      "actual": {
+        "primitive": null,
+        "t": null,
+        "barycentrics": null,
+        "instance_id": null,
+        "front_face": null
+      },
+      "expected": {
+        "primitive": 0,
+        "t": 5.0,
+        "barycentrics": [
+          0.125,
+          0.625
+        ],
+        "front_face": false,
+        "instance_id": 17
+      }
+    },
+    {
+      "report": "final-parent-matrix-control-first-farther-later-nearer.json",
+      "sha256": "12216070bb9170ce75dd0ca944437e437850001f38505f3375ef51309a4058c7",
+      "expected_returncode": 1,
+      "actual_returncode": 1,
+      "passed": true,
+      "actual": {
+        "primitive": 0,
+        "t": 5.0,
+        "barycentrics": [
+          0.125,
+          0.625
+        ],
+        "instance_id": 41,
+        "front_face": false
+      },
+      "expected": {
+        "primitive": 0,
+        "t": 4.128019162974299,
+        "barycentrics": [
+          0.6439323963474359,
+          0.1360214640817412
+        ],
+        "front_face": false,
+        "instance_id": 17
+      }
+    }
+  ],
+  "validator_sha256": "cab9c8e30a315957477706fd2b3c1f8f1d5a7e6d3eff78705c106fb7ba9c123f",
+  "totals": {
+    "launches": 4768,
+    "requests": 11492,
+    "resumed_parent_requests": 1484
+  }
+}
