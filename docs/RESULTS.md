@@ -6,6 +6,7 @@
 |---|---|---|
 | phase12–16 | 固定fixture、GAS/IAS正式矩阵、回归及关键失败 | 原JSON/gzip；本轮未改变 |
 | phase17 | 父IAS恢复、两个必要反例、负对照、四实例与等距边界 | 47份报告→7个文件；41份报告在ZIP |
+| phase18 | 单warp计时、172case、快照竞争失败及校准 | 179份报告→5个文件；175份在ZIP |
 | eoss / maintenance | 指令行为、代际delta、修复后回归 | 原布局，保留 |
 | manifest.json | 原始路径、aliases、原字节hash及发布去向 | 每份原报告一项；bundles记录物理ZIP的hash |
 | archive/、local/、local-*、scratch/ | 试跑、中间版本、原未压缩副本、旧gzip副本 | 本地保留，ignore |

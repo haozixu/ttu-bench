@@ -1,0 +1,187 @@
+{
+  "source": "final-v2-warp-matrix.json",
+  "source_sha256": "ad82d0e3360d09d1dbb3a041eb788a3c4f182a0bb14c2b9192955f971c637a0d",
+  "contract": "Derived lane0 steady medians from GPU5; use original matrix for both GPU summaries and full ranges",
+  "overlap": [
+    {
+      "lanes": 1,
+      "group": "reduced",
+      "alu": 0,
+      "before_wait": 381,
+      "after_wait": 381,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a0-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a0-before-wait.json"
+    },
+    {
+      "lanes": 1,
+      "group": "reduced",
+      "alu": 16,
+      "before_wait": 381,
+      "after_wait": 445,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a16-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a16-after-wait.json"
+    },
+    {
+      "lanes": 1,
+      "group": "reduced",
+      "alu": 32,
+      "before_wait": 381,
+      "after_wait": 509,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a32-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a32-after-wait.json"
+    },
+    {
+      "lanes": 1,
+      "group": "reduced",
+      "alu": 64,
+      "before_wait": 391,
+      "after_wait": 637,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a64-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a64-after-wait.json"
+    },
+    {
+      "lanes": 1,
+      "group": "reduced",
+      "alu": 128,
+      "before_wait": 647,
+      "after_wait": 893,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a128-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a128-after-wait.json"
+    },
+    {
+      "lanes": 1,
+      "group": "expanded",
+      "alu": 0,
+      "before_wait": 453,
+      "after_wait": 453,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a0-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a0-before-wait.json"
+    },
+    {
+      "lanes": 1,
+      "group": "expanded",
+      "alu": 16,
+      "before_wait": 453,
+      "after_wait": 517,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a16-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a16-after-wait.json"
+    },
+    {
+      "lanes": 1,
+      "group": "expanded",
+      "alu": 32,
+      "before_wait": 453,
+      "after_wait": 581,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a32-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a32-after-wait.json"
+    },
+    {
+      "lanes": 1,
+      "group": "expanded",
+      "alu": 64,
+      "before_wait": 453,
+      "after_wait": 709,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a64-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a64-after-wait.json"
+    },
+    {
+      "lanes": 1,
+      "group": "expanded",
+      "alu": 128,
+      "before_wait": 668,
+      "after_wait": 965,
+      "before_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a128-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a128-after-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "reduced",
+      "alu": 0,
+      "before_wait": 602,
+      "after_wait": 602,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a0-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a0-before-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "reduced",
+      "alu": 16,
+      "before_wait": 602,
+      "after_wait": 666,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a16-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a16-after-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "reduced",
+      "alu": 32,
+      "before_wait": 602,
+      "after_wait": 730,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a32-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a32-after-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "reduced",
+      "alu": 64,
+      "before_wait": 602,
+      "after_wait": 858,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a64-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a64-after-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "reduced",
+      "alu": 128,
+      "before_wait": 720,
+      "after_wait": 1114,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a128-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a128-after-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "expanded",
+      "alu": 0,
+      "before_wait": 787,
+      "after_wait": 787,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a0-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a0-before-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "expanded",
+      "alu": 16,
+      "before_wait": 787,
+      "after_wait": 851,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a16-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a16-after-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "expanded",
+      "alu": 32,
+      "before_wait": 787,
+      "after_wait": 915,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a32-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a32-after-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "expanded",
+      "alu": 64,
+      "before_wait": 787,
+      "after_wait": 1043,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a64-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a64-after-wait.json"
+    },
+    {
+      "lanes": 32,
+      "group": "expanded",
+      "alu": 128,
+      "before_wait": 789,
+      "after_wait": 1299,
+      "before_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a128-before-wait.json",
+      "after_report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a128-after-wait.json"
+    }
+  ]
+}

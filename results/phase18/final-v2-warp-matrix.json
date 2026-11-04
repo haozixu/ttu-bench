@@ -1,0 +1,6577 @@
+{
+  "timestamp": "2026-11-03T14:39:11.150937+00:00",
+  "contract": "Single CTA/warp, 1 or 32 active lanes; preserved valid TTU groups; all lane results checked; clocks/ALU outside fused body; no preemption or inter-warp claim",
+  "cases": [
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-none-hit-a0-before-wait.json",
+      "sha256": "bd14ec075ee8c9478d2be2a4d029cc2c35f8bfe46b01352fbc90cc7633de3bc0",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 12,
+          "median": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "nop",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-nop-hit-a0-before-wait.json",
+      "sha256": "b1c78df6ea33446ac4bd0c514574d049a21a3b4e52eee5a9499ca303dc0b87ff",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 8,
+          "median": 8,
+          "max": 8
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 16,
+          "median": 16,
+          "max": 16
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "mf0",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-mf0-hit-a0-before-wait.json",
+      "sha256": "9b19a5d26cf7f7906f4e080e4e9c9b8942a8d89f225343526502a6a20bac5033",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 8,
+          "median": 8,
+          "max": 8
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 16,
+          "median": 16,
+          "max": 16
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a0-before-wait.json",
+      "sha256": "b9614b5063f444567d54c8ba2260454fdcae6ac012270050dbfbf36e000a9ca8",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 381,
+          "median": 381,
+          "max": 381
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a0-before-wait.json",
+      "sha256": "664da586b60ca8964a07a98ab8764d807c9328e4083a14281e139c5f15b21d12",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-none-hit-a16-before-wait.json",
+      "sha256": "f036bee738a1f003b2bb591a6628e8424a6b76bf81b97c05204e54dcb9e21ef7",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 76,
+          "median": 76,
+          "max": 76
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-none-hit-a16-after-wait.json",
+      "sha256": "a0b0730da1bd7011732fa05568021653505171b2a99d484e5a47525916e4b414",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 76,
+          "median": 76,
+          "max": 76
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-none-hit-a32-before-wait.json",
+      "sha256": "c7f80e51c61e3b2cfa9ccc3ade41321904388ee8cd89cb26de7bc11e580dc933",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 140,
+          "median": 140,
+          "max": 140
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-none-hit-a32-after-wait.json",
+      "sha256": "e2868f8300a27c775fadff056b608baa0af01241eae79fca3541af46b5b852c3",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 140,
+          "median": 140,
+          "max": 140
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-none-hit-a64-before-wait.json",
+      "sha256": "458cdc9bc1049f26c6f9a33161344781a9a0b10b707687cce3a19ee2e07545e3",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 268,
+          "median": 268,
+          "max": 268
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-none-hit-a64-after-wait.json",
+      "sha256": "ca58b19f54e6f2581604045920c1a9cf83a4dbd802c808506d31c9153e2a9657",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 268,
+          "median": 268,
+          "max": 268
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-none-hit-a128-before-wait.json",
+      "sha256": "51491e7e34787b503d7c855246e408d121118e66667d8c607fd82417ad5bf002",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 524,
+          "median": 524,
+          "max": 524
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-none-hit-a128-after-wait.json",
+      "sha256": "4e706dc1edd6a22d7986bf7de20044e187732a1989868ef1bed81d946c80a0ed",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 524,
+          "median": 524,
+          "max": 524
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a16-before-wait.json",
+      "sha256": "25a4ad7b194b1c67868ea3c558bef77d62a986e4cb455d4df89c0f45d7974158",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 381,
+          "median": 381,
+          "max": 381
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a16-after-wait.json",
+      "sha256": "7fabc4bf03db6b11757f15e681930d8b5679baf5168bb6bdd46dc7cffc5777fa",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 445,
+          "median": 445,
+          "max": 445
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a32-before-wait.json",
+      "sha256": "01b2ef69e5d525aa82fca53552ac9aca57c28f349764803cc79b30f6425febef",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 381,
+          "median": 381,
+          "max": 381
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a32-after-wait.json",
+      "sha256": "185234e5a34b616739cd2146b44fb892396e3a94b9645c837d5454707f99f80a",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 509,
+          "median": 509,
+          "max": 509
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a64-before-wait.json",
+      "sha256": "e0fa7bc7b91c71ba8fd1c3eaaf420aab31146276b3f3d17316a371e318645a99",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 391,
+          "median": 391,
+          "max": 391
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a64-after-wait.json",
+      "sha256": "4ca70eed6c0dad6765ea03f30f11786065b4828038fc5614ad6393b80de12154",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 637,
+          "median": 637,
+          "max": 637
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a128-before-wait.json",
+      "sha256": "c1f563245e8e1b9b865ce7e8a66db713928092e10ad4b163e948e0402021a70f",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 647,
+          "median": 647,
+          "max": 647
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a128-after-wait.json",
+      "sha256": "3bd8a96138132aedc04830df3b37c1d1445a0a7bfe6c0c450dbe2808de7668d6",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 893,
+          "median": 893,
+          "max": 893
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a16-before-wait.json",
+      "sha256": "a158e2259aed258418f42b1994482da432a73d6e5d74e6122f2aec83034d4449",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a16-after-wait.json",
+      "sha256": "b0715eba1eb45e7f9be7cf7cc6f3a0d366c1062d31c2643e1cf20ddaaddedc20",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 517,
+          "median": 517,
+          "max": 517
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a32-before-wait.json",
+      "sha256": "62d8c878f59650957328a8b45b1d4ce8212cefa1da600774692b4288d8921a9d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a32-after-wait.json",
+      "sha256": "0b07bc281409ea10d991d1c67b364337a7fed488ebe0e6dc61fb80352387b82d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 581,
+          "median": 581,
+          "max": 581
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a64-before-wait.json",
+      "sha256": "48a0989db2809939f4fd6a94a0fb4e89c48784f391e484d19f18e3f67f6536bb",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a64-after-wait.json",
+      "sha256": "918348ef3aa5e285d7f2fb671ffbe37373a64a305e2d7829f2633724b5122a6d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 709,
+          "median": 709,
+          "max": 709
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a128-before-wait.json",
+      "sha256": "607ca92e0544d524adfefcae6dab4e11849d1c712de8c5523438199ae50cdbb2",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 668,
+          "median": 668,
+          "max": 668
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a128-after-wait.json",
+      "sha256": "d357febfe985a6cfc3b493bacd8787238239f3854d0dade80cd75a2a8f8a25e6",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 965,
+          "median": 965,
+          "max": 965
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "miss",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-miss-a0-before-wait.json",
+      "sha256": "be3facd765af5df246a6606ca22c09418375a793c6b020983270fe0b9c41f88b",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 172,
+          "median": 172,
+          "max": 172
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 303,
+          "median": 303,
+          "max": 303
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "short",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-short-a0-before-wait.json",
+      "sha256": "1564ac42a66a7896d58aff78d49fa2201619e40dd690e6ea891d5e1d77255aa6",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 249,
+          "median": 249,
+          "max": 249
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 380,
+          "median": 380,
+          "max": 380
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 0,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a0-before-wait-open0.json",
+      "sha256": "55da3d8831c96ebe18a123ebcbdb0924acd28a9ab97574421986aa407e1b412d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 381,
+          "median": 381,
+          "max": 381
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 8,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a0-before-wait-open8.json",
+      "sha256": "64887b7d4fbacaf710af2addd35b22e72cf2ee4ffc2654b87811eb77124a8c64",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 138,
+          "median": 138,
+          "max": 138
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 392,
+          "median": 392,
+          "max": 392
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 16,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a0-before-wait-open16.json",
+      "sha256": "e17f61168087f97252ebb541bb7f7c928104309a0a71abef2581c52e394e1347",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 170,
+          "median": 170,
+          "max": 170
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 424,
+          "median": 424,
+          "max": 424
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 32,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a0-before-wait-open32.json",
+      "sha256": "86b889b93080bbb9ab85358bcc181dbbabc31167d95d375d775ae323ba76df1c",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 234,
+          "median": 234,
+          "max": 234
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 488,
+          "median": 488,
+          "max": 488
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 64,
+      "report": "final-v2-warp-matrix-gpu5-l1-reduced-hit-a0-before-wait-open64.json",
+      "sha256": "e00fe4fc776c602817903840aadae3beb2d82cf67dcf57740e726dbd9743174d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 362,
+          "median": 362,
+          "max": 362
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 616,
+          "median": 616,
+          "max": 616
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "miss",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-miss-a0-before-wait.json",
+      "sha256": "15410b51eb82411e590295efc1877ef63d729d4977e980577646f38b89b211b8",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 223,
+          "median": 223,
+          "max": 223
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 375,
+          "median": 375,
+          "max": 375
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "short",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-short-a0-before-wait.json",
+      "sha256": "1163957a7f8664248e7c324d1c39a3d39b0e1f92ba1c3b19919a548445a2f291",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 300,
+          "median": 300,
+          "max": 300
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 452,
+          "median": 452,
+          "max": 452
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 0,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a0-before-wait-open0.json",
+      "sha256": "6f30ed80c7abb801d4804e7dfb5a03da1e184d3bf1cf1c0a89cc7453f505b18a",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 8,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a0-before-wait-open8.json",
+      "sha256": "cf8258c499b48dfdd73a2ee3cadfe67fcfe43ca19dfbe61f39b0327674f90a76",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 159,
+          "median": 159,
+          "max": 159
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 464,
+          "median": 464,
+          "max": 464
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 16,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a0-before-wait-open16.json",
+      "sha256": "16994517d66f6f7bb1abeb5b6d80164acadc52e1593839496416f1a554922c3c",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 191,
+          "median": 191,
+          "max": 191
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 496,
+          "median": 496,
+          "max": 496
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 32,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a0-before-wait-open32.json",
+      "sha256": "e2f1b5d9717a17a836968ae7ed4b491292b8a3c0ba37af0ddfba80484c3b1056",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 255,
+          "median": 255,
+          "max": 255
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 560,
+          "median": 560,
+          "max": 560
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 64,
+      "report": "final-v2-warp-matrix-gpu5-l1-expanded-hit-a0-before-wait-open64.json",
+      "sha256": "9d36b71ac9c8b360448691030c981adf9d14c8299a756334aa254b4d532f998d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 383,
+          "median": 383,
+          "max": 383
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 688,
+          "median": 688,
+          "max": 688
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-none-hit-a0-before-wait.json",
+      "sha256": "953fdd778bab812af53a1d9dc930c19ad7efec7a0a20caa6c574df6a854ea04d",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 12,
+          "median": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "nop",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-nop-hit-a0-before-wait.json",
+      "sha256": "ea23baea247f9a8083b0a14db8a4128c239f085eaf8eeff5e1ee16173d4c3104",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 8,
+          "median": 8,
+          "max": 8
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 16,
+          "median": 16,
+          "max": 16
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "mf0",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-mf0-hit-a0-before-wait.json",
+      "sha256": "5efa7d4145616136687aef6ac51e680e12ba2bcec6b2af0b0f02271ca3d5c60d",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 8,
+          "median": 8,
+          "max": 8
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 16,
+          "median": 16,
+          "max": 16
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a0-before-wait.json",
+      "sha256": "90c2fb43717e3466614a54b0516ebb5771bf63a88ea8f0fd15ce729cfad003bd",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a0-before-wait.json",
+      "sha256": "b34ad8c855a6d73807c6cc35d006791cb4e64763d054a66bd4decd8b4623dee3",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-none-hit-a16-before-wait.json",
+      "sha256": "4e6c4d0f0aeedb61195705d99b1fe0eda9c546b4fa7dc6d93ee52a2c0c8b141e",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 76,
+          "median": 76,
+          "max": 76
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-none-hit-a16-after-wait.json",
+      "sha256": "7cbec2f22823e3c611ba37b6d247d764d3a5ac4c3fe6cd4500cc519e9c9441ee",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 76,
+          "median": 76,
+          "max": 76
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-none-hit-a32-before-wait.json",
+      "sha256": "a0b8cafbeb1bbc87e630ad1cd1cf27df741223b8cd4210deb66d15d1a7157f54",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 140,
+          "median": 140,
+          "max": 140
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-none-hit-a32-after-wait.json",
+      "sha256": "817ec2ece20d361f1ddccc8e06891f7c43bce6faf4d1b3351fd4b4bd08b598d7",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 140,
+          "median": 140,
+          "max": 140
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-none-hit-a64-before-wait.json",
+      "sha256": "6fc177aaa02cab3a2aafd5d968975766c834be2b319649035c388a2c6133d350",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 268,
+          "median": 268,
+          "max": 268
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-none-hit-a64-after-wait.json",
+      "sha256": "abea17ca42150bf141e6b18d064eea9ba40d99b43b6f2e0419779bb29c2d6446",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 268,
+          "median": 268,
+          "max": 268
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-none-hit-a128-before-wait.json",
+      "sha256": "ffb0f2d8c73e7694695d505acc727b34eb7d118c23a6ff84f779cabaf6197833",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 524,
+          "median": 524,
+          "max": 524
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-none-hit-a128-after-wait.json",
+      "sha256": "ae526f0c5935211046e4a3bcc26003962f93a3fbdf9272c2ed37860f6249dc62",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 524,
+          "median": 524,
+          "max": 524
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a16-before-wait.json",
+      "sha256": "f8548079b15118cde91705e3faccff17cebb9691cac91e95d81d324564537404",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a16-after-wait.json",
+      "sha256": "50086c359958bf1b2c1f31d6a663ff6c7ec3d820f6414aca972400bb224f640f",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 666,
+          "median": 666,
+          "max": 666
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a32-before-wait.json",
+      "sha256": "b8198368dce0f470e8fdcf12e7d594f9fed949831938f55b856cc8e053214f63",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a32-after-wait.json",
+      "sha256": "b54043b656e2961f6e237111691a98fa425578f21a4079ce2c34cbb63081bae3",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 730,
+          "median": 730,
+          "max": 730
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a64-before-wait.json",
+      "sha256": "37c204dd7383d9558900ad8e5635b5305e6e8d76038296c00e1793d189dbe14b",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a64-after-wait.json",
+      "sha256": "44423d9d74609f9a4e8c1dd8e200a37ebf32a6d6a5635d505a481ddca66aae38",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 858,
+          "median": 858,
+          "max": 858
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a128-before-wait.json",
+      "sha256": "3c94cda46fb2989d0c9fa1d8c06a1d7651cc6180726339239364c40a4a23b71c",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 720,
+          "median": 720,
+          "max": 720
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a128-after-wait.json",
+      "sha256": "f02caf510b64357f440bd4c187f3ce8509c4955d614beea52bb83a651a0ef496",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 1114,
+          "median": 1114,
+          "max": 1114
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a16-before-wait.json",
+      "sha256": "df7d23c0922ce74ce8d4fc912ab19dd61773d0fc34639e029c0d455eddd8b611",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a16-after-wait.json",
+      "sha256": "5d5b9d2c02c8cd6bd65d5065a64ccf42c473471c51bbf1fbd13eb22aacada176",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 851,
+          "median": 851,
+          "max": 851
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a32-before-wait.json",
+      "sha256": "9094df54966b59dd22e04555035fce7d087c778b3d68963785cd98b7ae93c6cb",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a32-after-wait.json",
+      "sha256": "b7f4ca1e781e900e8e730b27be85bd6a8b2cd88c94488e822174a11b21558955",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 915,
+          "median": 915,
+          "max": 915
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a64-before-wait.json",
+      "sha256": "7f0c29dc52cf61d305ee23412187f1bf64f632fd77d1fd67b5f12219419eac08",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a64-after-wait.json",
+      "sha256": "bcc9b37b8fc72bdfb91c520fa103c1f5ce0b7ace1ca27cd4658699a7369b9b70",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 1043,
+          "median": 1043,
+          "max": 1043
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a128-before-wait.json",
+      "sha256": "97e80a4cd7d2e2ef73e63d0bc40b69deaaf7e3d1b6ac025fdfc201ad86858845",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 548,
+          "median": 548,
+          "max": 548
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 789,
+          "median": 789,
+          "max": 789
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a128-after-wait.json",
+      "sha256": "d7050066c648d6684c893df714635aab3f501d33363a6011b862c4aec46f76f7",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 1299,
+          "median": 1299,
+          "max": 1299
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "miss",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-miss-a0-before-wait.json",
+      "sha256": "de12f792385b6a9cf2539aeb4d55be5685d2e2717fabb038b6e5733390556979",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 296,
+          "median": 297,
+          "max": 297
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 500,
+          "median": 501,
+          "max": 501
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "short",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-short-a0-before-wait.json",
+      "sha256": "4a9396f4d0ebda62f88e5e8d0a4ce34a2e549087f0cb96dde8da9c234c101806",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 386,
+          "median": 386,
+          "max": 386
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 590,
+          "median": 590,
+          "max": 590
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 0,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a0-before-wait-open0.json",
+      "sha256": "685fc37a34a4aee70456bde3aa125935eac7c67af6d87f993e79366b2fb002d1",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 8,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a0-before-wait-open8.json",
+      "sha256": "ce84f89518846f9d543af4b718f5fd3688fa188eb7df20c266c942d2582e5bb8",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 16,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a0-before-wait-open16.json",
+      "sha256": "f057a852d855812ae8a9c843a634538ede1648eb35abca0a93cfd19e21b1617c",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 228,
+          "median": 230,
+          "max": 231
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 630,
+          "median": 632,
+          "max": 633
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 32,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a0-before-wait-open32.json",
+      "sha256": "6e602506ec3ef5caa5d67a3fd8ebc61d9e04e51b489c091f516043ea2dcd931c",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 292,
+          "median": 293,
+          "max": 294
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 694,
+          "median": 695,
+          "max": 696
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 64,
+      "report": "final-v2-warp-matrix-gpu5-l32-reduced-hit-a0-before-wait-open64.json",
+      "sha256": "1836e5781451186d467012a44238cf1ee677c2e6dc87425e627fb87e2346117d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 420,
+          "median": 420,
+          "max": 433
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 822,
+          "median": 822,
+          "max": 835
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "miss",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-miss-a0-before-wait.json",
+      "sha256": "983946a6a361b0b9faf797bdf82b4805175c6982b058b882eca2a919658bb5d0",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 445,
+          "median": 445,
+          "max": 445
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 686,
+          "median": 686,
+          "max": 686
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "short",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-short-a0-before-wait.json",
+      "sha256": "220ffa8104b2a5f454784fb6aaad8d65721cea79340a75c788f071d74d8dfc3b",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 528,
+          "median": 528,
+          "max": 528
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 769,
+          "median": 769,
+          "max": 769
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 0,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a0-before-wait-open0.json",
+      "sha256": "972b1ac9dba32a559805512abd7bb80038b701eae2efab44185f578a6c33c17e",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 27
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 8,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a0-before-wait-open8.json",
+      "sha256": "071f9b34a56dd3c4bcce596bde1b5de999022176240e7386b3f24ffa9c66991b",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 16,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a0-before-wait-open16.json",
+      "sha256": "5e6e4ac35626de6aed9e52fd16442b1686e571457d8d7aa62aa14cf6c7dc95cf",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 265,
+          "median": 267,
+          "max": 268
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 815,
+          "median": 817,
+          "max": 818
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 32,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a0-before-wait-open32.json",
+      "sha256": "db56d75274e768e1a331fcb68a052f599e4091859fb1595b9092a0fffc653d65",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 329,
+          "median": 330,
+          "max": 330
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 879,
+          "median": 880,
+          "max": 880
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "5",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 64,
+      "report": "final-v2-warp-matrix-gpu5-l32-expanded-hit-a0-before-wait-open64.json",
+      "sha256": "7b22e0ba751064d829013676b31bea7411ce082aa3ce45e80cc1dbb382068c5a",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 457,
+          "median": 457,
+          "max": 457
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 1007,
+          "median": 1007,
+          "max": 1007
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-none-hit-a0-before-wait.json",
+      "sha256": "200a7a82acc346e6108fbb60dbf823084d68254d4139d62c6ddbd16d15d6382e",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 12,
+          "median": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "nop",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-nop-hit-a0-before-wait.json",
+      "sha256": "7d8ce55805a99847edf6502032ecfb26f46a15c43ccc11d3711ca31b276c062b",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 8,
+          "median": 8,
+          "max": 8
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 16,
+          "median": 16,
+          "max": 16
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "mf0",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-mf0-hit-a0-before-wait.json",
+      "sha256": "64b5d84bbfaa6233aea8c5d212a7c82421a84e94c7598c65eb64801fe6633414",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 8,
+          "median": 8,
+          "max": 8
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 16,
+          "median": 16,
+          "max": 16
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a0-before-wait.json",
+      "sha256": "3f82fe571eba2241ded44018be89b0330e494f05bd9c707301d6cd355a773ac8",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 381,
+          "median": 381,
+          "max": 381
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a0-before-wait.json",
+      "sha256": "76e3cedb3c6688545d75e7df95d99ef149a90cb9dd921f204f7c14c84025ef27",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-none-hit-a16-before-wait.json",
+      "sha256": "93bfb6a0f87debbe9f13739dc217f9d992ad360628414efae839bab981368ff5",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 76,
+          "median": 76,
+          "max": 76
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-none-hit-a16-after-wait.json",
+      "sha256": "88e40bfc858c5910f130eefcb9eee8f58eb43407b9002538ff820da76d3818ca",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 76,
+          "median": 76,
+          "max": 76
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-none-hit-a32-before-wait.json",
+      "sha256": "361b55efedd26c597d5e2dd9abd1d736bdd13b33637515ce09ee511dad32ea34",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 140,
+          "median": 140,
+          "max": 140
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-none-hit-a32-after-wait.json",
+      "sha256": "092fb63cb7ec236114e9789d57e64172273a2cef8b0bc14a0bf906ad68f000cd",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 140,
+          "median": 140,
+          "max": 140
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-none-hit-a64-before-wait.json",
+      "sha256": "b62a912ae5f699282be2fb545634cbaed94f263ba4594ba1cad5b01c2c5ea583",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 268,
+          "median": 268,
+          "max": 268
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-none-hit-a64-after-wait.json",
+      "sha256": "02da97bebb5fef3ff7cb93a085486d412c2be066acdfe7d42c6261fd6d6d449c",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 268,
+          "median": 268,
+          "max": 268
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-none-hit-a128-before-wait.json",
+      "sha256": "d45833efb09c28a2cd67b4a667c90d5f8f9a7e312512474b1ffb84adbeb719db",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 524,
+          "median": 524,
+          "max": 524
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "none",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-none-hit-a128-after-wait.json",
+      "sha256": "b63cc715f433292690210f7f2d70fd8ca0d19dce05c3e95f2b90cc38124a52eb",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 524,
+          "median": 524,
+          "max": 524
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a16-before-wait.json",
+      "sha256": "2c336b86e39c9d8025cf64b101b3f3c7ac17f560813f4bf81154ef74766a16ec",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 381,
+          "median": 381,
+          "max": 381
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a16-after-wait.json",
+      "sha256": "f6122427f5018de863148e2c355ccd9626471e8eca454157ffd0fb9f10a50cfb",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 445,
+          "median": 445,
+          "max": 445
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a32-before-wait.json",
+      "sha256": "5b27e72ecb15d4a43d3748fb1780a4536ad450e09ac55765bbd8e6461af251a2",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 381,
+          "median": 381,
+          "max": 381
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a32-after-wait.json",
+      "sha256": "0f85cdcfb599cf25327f6a9814e3c7e7c8cce7944be948432503175b3ff94497",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 509,
+          "median": 509,
+          "max": 509
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a64-before-wait.json",
+      "sha256": "a165192441e9ef894de3c91865c0d457dcc60d840520549ac6bf89ec7c0c7bff",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 391,
+          "median": 391,
+          "max": 391
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a64-after-wait.json",
+      "sha256": "434607981103adc75a255b9d156a8d14320b97468dafb57f0d3e8c3847980aff",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 637,
+          "median": 637,
+          "max": 637
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a128-before-wait.json",
+      "sha256": "18194c6a7997e8f36edf2782a4f759b95ae13864b093e2db063acaebdedb0efc",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 647,
+          "median": 647,
+          "max": 647
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a128-after-wait.json",
+      "sha256": "880bde23fa77b0b71a55f500bfe71978744a3cbee1e9ec0a25b9d7f615aed04c",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 893,
+          "median": 893,
+          "max": 893
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a16-before-wait.json",
+      "sha256": "5ac34e89469de15303f6a1467792a60cffda23819cd8c7f957f7fd5a6a5e4ec5",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a16-after-wait.json",
+      "sha256": "c2d8d236fd9101aaa84d312e14d0558b3ead8ffdf9a369769f0214439b169040",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 517,
+          "median": 517,
+          "max": 517
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a32-before-wait.json",
+      "sha256": "21385decf42a7adbc9ad3a17943a9e5a7e58c094f07e8c51d7f9fffa44479ea6",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a32-after-wait.json",
+      "sha256": "934d3b0bc1d052ddc2e36d09420c8c347d326e9f1bf69d41b6f26d7dd0c124d7",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 581,
+          "median": 581,
+          "max": 581
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a64-before-wait.json",
+      "sha256": "6d5444bb6cb673a341d4ef29e0ec1eaeb7bf17940f595adc3375a6172fe8ba49",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a64-after-wait.json",
+      "sha256": "412d21042a56c8e76818547bd5f83b2cdfaa52ed02a1d6df54c9a60c99939047",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 709,
+          "median": 709,
+          "max": 709
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a128-before-wait.json",
+      "sha256": "c725268b946d71a56ec244396b68e29945658900ac964f959160e3d0ed2c3a4c",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 668,
+          "median": 668,
+          "max": 668
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a128-after-wait.json",
+      "sha256": "24c251f1c4420b4674a8999919122918d3c117f549df8b424f2024e651051e65",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 965,
+          "median": 965,
+          "max": 965
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "miss",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-miss-a0-before-wait.json",
+      "sha256": "ff466fe14cd052444a831bef7b4410d49ac2f5a11c718f15989a2ceb83ae60ff",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 172,
+          "median": 172,
+          "max": 172
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 303,
+          "median": 303,
+          "max": 303
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "short",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-short-a0-before-wait.json",
+      "sha256": "cc71e582fd12fa51483b610862fd0497bed786a3213dfbbdd1c990e94d77604d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 249,
+          "median": 249,
+          "max": 249
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 380,
+          "median": 380,
+          "max": 380
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 0,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a0-before-wait-open0.json",
+      "sha256": "cf147ece09281c260775c42af337ea8daf7cb3158b7dd291301d0c7349e06bb1",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 127,
+          "median": 127,
+          "max": 127
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 381,
+          "median": 381,
+          "max": 381
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 8,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a0-before-wait-open8.json",
+      "sha256": "e4a10b50d54b6a4bf2c0e26aa206a1a85edc991536b23386485d29ae0964e60d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 138,
+          "median": 138,
+          "max": 138
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 392,
+          "median": 392,
+          "max": 392
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 16,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a0-before-wait-open16.json",
+      "sha256": "b838e3e02a9902c6dd8d3450c8ebf5d7d363acd6e0773cb0379c7dc4d1919ff4",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 170,
+          "median": 170,
+          "max": 170
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 424,
+          "median": 424,
+          "max": 424
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 32,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a0-before-wait-open32.json",
+      "sha256": "73dc348c897defdb4a4aca8a7e3423562241906ddd62db421b45af462587c9c9",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 234,
+          "median": 234,
+          "max": 234
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 488,
+          "median": 488,
+          "max": 488
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 64,
+      "report": "final-v2-warp-matrix-gpu0-l1-reduced-hit-a0-before-wait-open64.json",
+      "sha256": "20ec06f2075f6ef5c1b8cc324decc4c929395ef7bec309b545a40dde997c68e0",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 362,
+          "median": 362,
+          "max": 362
+        },
+        "prewait_interval": {
+          "min": 250,
+          "median": 250,
+          "max": 250
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 616,
+          "median": 616,
+          "max": 616
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "miss",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-miss-a0-before-wait.json",
+      "sha256": "52bc0f1108a1ce1b501c916911fd47770dbcaa448b2e7523ba05fc4ccd65366a",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 223,
+          "median": 223,
+          "max": 223
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 375,
+          "median": 375,
+          "max": 375
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "short",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-short-a0-before-wait.json",
+      "sha256": "d42202620d7fd6cb6faba62688e99d8e80f6dd043e66bf1347986e91441a08af",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 300,
+          "median": 300,
+          "max": 300
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 452,
+          "median": 452,
+          "max": 452
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 0,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a0-before-wait-open0.json",
+      "sha256": "c7b137ebe41367d34f04a6637d86f1d4c22345355bade85734a03eb2ec447c3f",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 148,
+          "median": 148,
+          "max": 148
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 453,
+          "median": 453,
+          "max": 453
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 8,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a0-before-wait-open8.json",
+      "sha256": "7be8a9fbd2b4599c479fd1f7e6b87cfa50f59e40416db083d87f45bd37ca6d80",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 159,
+          "median": 159,
+          "max": 159
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 464,
+          "median": 464,
+          "max": 464
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 16,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a0-before-wait-open16.json",
+      "sha256": "5206548ba3bae1b81a099f4a2515f5771cf08996fb9f1aa59da1037e100575b7",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 191,
+          "median": 191,
+          "max": 191
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 496,
+          "median": 496,
+          "max": 496
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 32,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a0-before-wait-open32.json",
+      "sha256": "5ab0ea530aa587c7f2978ba0cd2b72cec69450c6ece027cc9fe6f0df1477a78a",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 255,
+          "median": 255,
+          "max": 255
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 560,
+          "median": 560,
+          "max": 560
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 1,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 64,
+      "report": "final-v2-warp-matrix-gpu0-l1-expanded-hit-a0-before-wait-open64.json",
+      "sha256": "4b5dc7f25053cfb08fb2c29cc368041a0c2ee39d6e020a259865db2dff0da9da",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 48,
+      "lane_checks": 48,
+      "summary": {
+        "group_interval": {
+          "min": 383,
+          "median": 383,
+          "max": 383
+        },
+        "prewait_interval": {
+          "min": 301,
+          "median": 301,
+          "max": 301
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 688,
+          "median": 688,
+          "max": 688
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-none-hit-a0-before-wait.json",
+      "sha256": "aa58a8a06ae5a6825ecceb80b6a270419703566e43963ccb69922c78db2b13a7",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 12,
+          "median": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "nop",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-nop-hit-a0-before-wait.json",
+      "sha256": "9ea8b417320058207d3c8ec6a848d2697c0ca0fe44b22c5b273852d6b48536ff",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 8,
+          "median": 8,
+          "max": 8
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 16,
+          "median": 16,
+          "max": 16
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "mf0",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-mf0-hit-a0-before-wait.json",
+      "sha256": "22560571eab39c9baf06870879210553597814dfff107ccb78f62ddaede74a14",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 8,
+          "median": 8,
+          "max": 8
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 16,
+          "median": 16,
+          "max": 16
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a0-before-wait.json",
+      "sha256": "fe71529fe09c1a5ba8f66a9c8161c04cf14096a50ed0e419ebfe02f6e3b77dab",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a0-before-wait.json",
+      "sha256": "9c8b51f212541be89f9c585e5a242a9f663230f3f06e1fbe23cf9b03afce4af9",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-none-hit-a16-before-wait.json",
+      "sha256": "843f21199a76a38cae2e2efe6336d44b7e76e8c6ad6979327d0d3075b50ba188",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 76,
+          "median": 76,
+          "max": 76
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-none-hit-a16-after-wait.json",
+      "sha256": "7cce230a8d237dde9e6297fa75ced1d48d0b1382bf99fa132c0a21e3addfd807",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 76,
+          "median": 76,
+          "max": 76
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-none-hit-a32-before-wait.json",
+      "sha256": "d7348a4d314c97fd6b9a97019b4175da2647d67bfbbfa934de87efd83b1435d9",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 140,
+          "median": 140,
+          "max": 140
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-none-hit-a32-after-wait.json",
+      "sha256": "e4024de35cd26508c5be859419f744da3b8d3ec41a93d26ed9b23f0e73d74dfa",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 140,
+          "median": 140,
+          "max": 140
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-none-hit-a64-before-wait.json",
+      "sha256": "c68318c7b3a55e4ec7fd15e7d1ce6968b31984287bd3990281a4eeb96de43347",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 268,
+          "median": 268,
+          "max": 268
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-none-hit-a64-after-wait.json",
+      "sha256": "145c58616fc8667fc4588de8ee7743d008ff87028aefc74a2070e0997862dafd",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 268,
+          "median": 268,
+          "max": 268
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-none-hit-a128-before-wait.json",
+      "sha256": "8f505739241ef94cb4def9b11322f678422ff3efe83b854986f8a31aef574ce5",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 524,
+          "median": 524,
+          "max": 524
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "none",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-none-hit-a128-after-wait.json",
+      "sha256": "6cf06b886275b1120920ea99d1feaa3c83942a35750261c11ad9cf844eab511c",
+      "launches": 12,
+      "warp_requests": 0,
+      "lane_requests": 0,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "prewait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 524,
+          "median": 524,
+          "max": 524
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a16-before-wait.json",
+      "sha256": "80866569880ff52ce65c8e55f3a6bf3f15bff42a96bc28d60c132cb59710fbb6",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a16-after-wait.json",
+      "sha256": "0890f589d18d2d20dbcff978fd8b9b769959affa20a7fe32b193ec42644ca247",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 666,
+          "median": 666,
+          "max": 666
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a32-before-wait.json",
+      "sha256": "384d0978cd2c4112dd5a1f815dcc902bb4fa2368e0e8279b1ce2ce6aae7d170e",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a32-after-wait.json",
+      "sha256": "fae3af82d034ab7b9bb31231ac2a85f4088e3000832cc6604db0b54c8ee9b32f",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 730,
+          "median": 730,
+          "max": 730
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a64-before-wait.json",
+      "sha256": "cfd8b2dd86714178caebed398e06222776d52e3599233b43c919c6a57e47baef",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a64-after-wait.json",
+      "sha256": "40b687bab6679d29abf66fcdfc780eab6c2760513880f1380335fd0b91e235a7",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 858,
+          "median": 858,
+          "max": 858
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a128-before-wait.json",
+      "sha256": "849753347f09fe9b853bf400aea24c1f2995695d39e669514e82a0bc31e5758c",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 720,
+          "median": 720,
+          "max": 720
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a128-after-wait.json",
+      "sha256": "f2d19a55ea00ddba2584d337f35e203a774145e9608cc6c74b3bda619f8f01fa",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 1114,
+          "median": 1114,
+          "max": 1114
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a16-before-wait.json",
+      "sha256": "6017f0f484888ab202bc09ba0aa4ab378c00faacbfc4bb45a3eba62bd8800651",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 16,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a16-after-wait.json",
+      "sha256": "9e1261f7bf6fb3c824bf3b0a399631fe16cf729e57cb0534dc8a3f70988b4951",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 68,
+          "median": 68,
+          "max": 68
+        },
+        "total": {
+          "min": 851,
+          "median": 851,
+          "max": 851
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a32-before-wait.json",
+      "sha256": "2231929c4a6b1336b3072616993db2dcaa7efca56bbc220d598441362b3680a6",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 32,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a32-after-wait.json",
+      "sha256": "8339234a09ac80ba1945051d7ac25b3990c7a481acc92c830032099dcebb9304",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 132,
+          "median": 132,
+          "max": 132
+        },
+        "total": {
+          "min": 915,
+          "median": 915,
+          "max": 915
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a64-before-wait.json",
+      "sha256": "e3ebc99292b8fc40323fa3a88dd8cfc198d38103ed6b0d29100b1aba5a949b85",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 64,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a64-after-wait.json",
+      "sha256": "f66b7b0e4ed27e66ccedef3ee5a9a9131671da1a4b420f731f678ee35b202637",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 260,
+          "median": 260,
+          "max": 260
+        },
+        "total": {
+          "min": 1043,
+          "median": 1043,
+          "max": 1043
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a128-before-wait.json",
+      "sha256": "0237a3fd1bc49093ce5a37c09221026c8d0b65509c8d1faf493d186aba3f05ce",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 548,
+          "median": 548,
+          "max": 548
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 789,
+          "median": 789,
+          "max": 789
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 128,
+      "placement": "after-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a128-after-wait.json",
+      "sha256": "57aab866132f5033bea665f13439aec1fad15beba755dc6e891b9ddf52404c26",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 516,
+          "median": 516,
+          "max": 516
+        },
+        "total": {
+          "min": 1299,
+          "median": 1299,
+          "max": 1299
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "miss",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-miss-a0-before-wait.json",
+      "sha256": "080a1c967ae896c25d60b17af5d3e32192b61eaabe8f48c30a686410b50db921",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 296,
+          "median": 297,
+          "max": 297
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 500,
+          "median": 501,
+          "max": 501
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "short",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-short-a0-before-wait.json",
+      "sha256": "4f9d1b543377f7de129f31d20ea92678957e41b1e58ccd248883570400aaeb50",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 386,
+          "median": 386,
+          "max": 386
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 590,
+          "median": 590,
+          "max": 590
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 0,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a0-before-wait-open0.json",
+      "sha256": "c0921ababbd9ef2d236804eb1a53aa215a9429af846ac27680a8952163db50a7",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 8,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a0-before-wait-open8.json",
+      "sha256": "3756a9565fbde36fb6537f2459230840e599faa9aba514361e063f465e056cd7",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 200,
+          "median": 200,
+          "max": 200
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 602,
+          "median": 602,
+          "max": 602
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 16,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a0-before-wait-open16.json",
+      "sha256": "006da6617e7e423dc0271c73da2db2233b7f1f3861c1f69fd55e431589f2e11a",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 228,
+          "median": 230,
+          "max": 231
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 630,
+          "median": 632,
+          "max": 633
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 32,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a0-before-wait-open32.json",
+      "sha256": "b93d4954387452f0cb9b15346f6c48c94c5a5f6553cb7561c2a4bdcaeadd2235",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 293,
+          "median": 293,
+          "max": 294
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 695,
+          "median": 695,
+          "max": 696
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "reduced",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 64,
+      "report": "final-v2-warp-matrix-gpu0-l32-reduced-hit-a0-before-wait-open64.json",
+      "sha256": "71f0c2076f10915e57ac79d93e8af672b9fdcb27f2521b1a9820a654f2e75a5c",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 420,
+          "median": 420,
+          "max": 420
+        },
+        "prewait_interval": {
+          "min": 398,
+          "median": 398,
+          "max": 398
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 822,
+          "median": 822,
+          "max": 822
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "miss",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-miss-a0-before-wait.json",
+      "sha256": "de4cd1ae9c1524b5bf3ff94d23c99a3175eb243acf44ec5fcc96c987ced6d3ea",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 445,
+          "median": 445,
+          "max": 445
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 686,
+          "median": 686,
+          "max": 686
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "short",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": null,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-short-a0-before-wait.json",
+      "sha256": "e357cc08363783263768c5c53c3f006ec4028b2a08e651abd7d4b7d16f6eb46a",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 528,
+          "median": 528,
+          "max": 528
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 769,
+          "median": 769,
+          "max": 769
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 0,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a0-before-wait-open0.json",
+      "sha256": "91acc21f39b4403b10bd083ee0d2cab5bd46c64301f08e7cc8e44cc8ab85c6e1",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 8,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a0-before-wait-open8.json",
+      "sha256": "c723b93247468d9027e0f9370b9cbce84d0ba06b1d68db1b32baf951ff438975",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 237,
+          "median": 237,
+          "max": 237
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 787,
+          "median": 787,
+          "max": 787
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 16,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a0-before-wait-open16.json",
+      "sha256": "60bfc20e4d563f75d8267b15e9648eac2d6de119f7f148bd84244503e239cb93",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 265,
+          "median": 266,
+          "max": 268
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 815,
+          "median": 816,
+          "max": 818
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 32,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a0-before-wait-open32.json",
+      "sha256": "ed2349fe5ded0fb15503d90db2c2b422b7381946f86997b381494b8df4ef283d",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 330,
+          "median": 330,
+          "max": 331
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 880,
+          "median": 880,
+          "max": 881
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "gpu": "0",
+      "lanes": 32,
+      "group": "expanded",
+      "ray": "hit",
+      "alu": 0,
+      "placement": "before-wait",
+      "open_gap": 64,
+      "report": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a0-before-wait-open64.json",
+      "sha256": "98a0e40635de5ff0519be183b3f247d457c8d96f220fe0133e2f0f53ef362b98",
+      "launches": 12,
+      "warp_requests": 48,
+      "lane_requests": 1536,
+      "lane_checks": 1536,
+      "summary": {
+        "group_interval": {
+          "min": 457,
+          "median": 457,
+          "max": 457
+        },
+        "prewait_interval": {
+          "min": 546,
+          "median": 546,
+          "max": 546
+        },
+        "postwait_interval": {
+          "min": 4,
+          "median": 4,
+          "max": 4
+        },
+        "total": {
+          "min": 1007,
+          "median": 1007,
+          "max": 1007
+        },
+        "open_issue_interval": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        }
+      }
+    }
+  ],
+  "totals": {
+    "launches": 2064,
+    "warp_requests": 6144,
+    "lane_requests": 101376,
+    "lane_checks": 136224
+  },
+  "validator_sha256": "b263a2a464201839a80056579de77fec325dd8cb9740f7b67fd7556be716aa30"
+}

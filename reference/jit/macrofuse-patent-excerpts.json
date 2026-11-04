@@ -1,0 +1,126 @@
+{
+  "title": "Robust, efficient multiprocessor-coprocessor interface",
+  "url": "https://patents.google.com/patent/US11138009B2/en",
+  "downloaded": "2026-11-03",
+  "html_sha256": "5c99d26620996d3c47e75f6ddf3c23f46fbe9fa74ab4b324a260878c0c916bcc",
+  "pdf_relative_to_workspace": "research/papers/nvidia-patent-US11138009B2-coprocessor-interface.pdf",
+  "pdf_sha256": "279bef76ce745ece010448768b28e910d7a6e0b269dfc9a2622d3b1a3581689a",
+  "contract": "Selected patent embodiments; not a GA102 hardware specification or measured preemption result",
+  "paragraphs": [
+    {
+      "id": "p-0193",
+      "number": "0198",
+      "text": "The “CP_READ <destination register(s)>, <coprocessor source address>” instruction 1222 causes the multiprocessor to read output data from a coprocessor “address” and write it to one or more registers of the multiprocessor. The specified coprocessor address may specify a physical location in a data RAM internal to the coprocessor and/or otherwise accessible to the coprocessor. In some embodiments, the specified coprocessor address may include an abstract specification of the way the result data is to be interpreted and/or transformed when written to the multiprocessor. In the example ray tracing acceleration, one or more CP_READ may be used to return the detected ray-BVH intersection(s) and continuation stack from the coprocessor to the multiprocessor."
+    },
+    {
+      "id": "p-0194",
+      "number": "0199",
+      "text": "According to example embodiments, the CP_READ instruction 1222 is non-blocking, and the operation initiated by the preceding CP_COMMAND 1220 need not have completed when CP_READ executes. In effect, CP_READ 1222 is a promise to eventually write the output data to the specified destination location(s)."
+    },
+    {
+      "id": "p-0195",
+      "number": "0200",
+      "text": "Example embodiments provide for the thread or group of threads to be notified when the result data is in registers and/or other memory location accessible to the multiprocessor, and is ready to be consumed. As described above, in some embodiments, a scoreboard is used to notify the multiprocessor when the result data from the particular operation performed by the coprocessor is written 1230 by the coprocessor to the location read by the multiprocessor. That is, the multiprocessor associates an explicit named scoreboard with a CP_READ instruction via a “release when complete” annotation. The thread or thread group then waits for the scoreboard to be released immediately before consuming the results, which allows additional work to be performed while the operation is still in progress."
+    },
+    {
+      "id": "p-0196",
+      "number": "0201",
+      "text": "The “CP_CLOSE” instruction 1226 causes the multiprocessor to close the connection to the coprocessor. At this point, specification of the particular coprocessor operation (including destination registers for the output result data) is complete, but the target operation being performed by the coprocessor may still be in flight."
+    },
+    {
+      "id": "p-0197",
+      "number": "0202",
+      "text": "The only blocking instruction in the {CP_OPEN, . . . , CP_CLOSE} sequence is CP_WAIT, which waits on resources. All subsequent instructions may execute back-to-back, to the extent allowed by the implementation. In fact, it is valid for the “arbitrary intervening instructions” 1227 that follow CP_CLOSE in the example to include another {CP_OPEN, . . . , CP_CLOSE} sequence, which indicates that multiple coprocessor operations can be in flight at once, on behalf of a single thread of execution."
+    },
+    {
+      "id": "p-0198",
+      "number": "0203",
+      "text": "In some example embodiments, each connection is independent. That is, the coprocessor is stateless in the sense that a given operation (specified via a {CP_OPEN, . . . , CP_CLOSE} sequence) cannot affect later occurring coprocessor operations (i.e. a later occurring particular coprocessor commands specified by CP_COMMAND instructions) unless its output result data is directly or indirectly used by the thread or thread group to affect the input of that later occurring coprocessor operation, such as, for example, by passing such result data to the later occurring particular coprocessor operation via CP_WRITE."
+    },
+    {
+      "id": "p-0199",
+      "number": "0204",
+      "text": "The WAIT_ON_SCOREBOARD instruction(s) 1228 are blocking instructions that causes the thread or thread group to wait on a particular scoreboard entry setup by a preceding CP_READ 1226 . As described above, the scoreboard is used to keep track of defined dependencies and is used to notify the thread or thread group when each of the CP_READ instruction(s) writes result data output by the coprocessor to multiprocessor registers and/or memory."
+    },
+    {
+      "id": "p-0200",
+      "number": "0205",
+      "text": "Activity 1230 illustrates the coprocessor writing, as a result of the particular target operation initiated by CP_COMMAND 1220 being executed on the coprocessor, result data. In some example embodiments, the coprocessor may write the result data to a coprocessor-accessible memory, from which the multiprocessor obtains the result data by specifying the “coprocessor source address” specified in the CP_READ 1222 instruction(s)."
+    },
+    {
+      "id": "p-0201",
+      "number": "0206",
+      "text": "After the last WAIT_ON_SCOREBOARD 1228 has unblocked, the thread or thread group may consume the result data. In the example ray tracing acceleration, when the last WAIT_ON_SCOREBOARD is unblocked, all the stack information being returned from the coprocessor would have completed writing to multiprocessor registers and/or memory. The further processing of the thread or thread group may then proceed with by storing (STORE RESULTS 1232 ) or otherwise consuming the result data. In the example ray tracing acceleration, the consuming may include using the returned ray-BVH intersection information and continuation stack in one or more of determining image characteristics, and determining another portion of the BVH to be processed by the coprocessor."
+    },
+    {
+      "id": "p-0214",
+      "number": "0219",
+      "text": "The idea implemented by the inventors in the adaptation is to fuse the complete {CP_OPEN, . . . , CP_CLOSE} instruction subsequence within the multi-instruction sequence described in relation to FIG. 11A into a single “macro-instruction” by disabling interrupts for the duration of the subsequence. Moreover, the macro-instruction is implemented in a way that cannot be abused or accidentally misused to keep interrupts disabled indefinitely. This is done with a macro initiation instruction (e.g. “CP_MACRO_FUSE”) that takes an explicit count of instructions that the multiprocessor is configured to execute without interruption. In the description here, the convention that the count excludes the CP_MACRO_FUSE instruction itself is adopted, but embodiments are not limited thereto."
+    },
+    {
+      "id": "p-0215",
+      "number": "0220",
+      "text": "A macro-instruction consisting of three “micro-instructions” would then have the following general form:"
+    },
+    {
+      "id": "p-0216",
+      "number": "0221",
+      "text": "That is, the macro-instruction for the three micro-instructions consists of a macro initiation instruction (CP_MACRO_FUSE) followed by the three micro-instructions. When applied to the multiprocessor-coprocessor interface described in relation to FIGS. 11A, 11B and- 12 , CP_MACRO_FUSE is combined with CP_WAIT to form a new CP_MACRO_FUSE instruction in order for it to have the desired effect of fusing the full coprocessor instruction subsequence (with the exception of CP_OPEN) while also eliminating the possibility of a thread disabling interrupts and then waiting an indeterminate length of time for coprocessor resources to be allocated and a connection to be opened, as could happen if CP_OPEN were included in the macro-instruction."
+    },
+    {
+      "id": "p-0217",
+      "number": "0222",
+      "text": "With this enhancement, the example multi-instruction sequence described in relation to FIGS. 11-12 is adapted to be:"
+    },
+    {
+      "id": "p-0218",
+      "number": "0223",
+      "text": "CP_OPEN CP_MACRO_FUSE 7 CP_WRITE cp[0x100] R2, R3 CP_WRITE cp[0x208] R4, R5 CP_WRITE cp[0x300] R10, R11 CP_COMMAND 0x1 CP_READ R12, R13, cp[0x400] &release_when_complete(sb0) CP_READ R16, R17, cp[0x460] &release_when_complete(sb1) CP_CLOSE # ... # ... (optional arbitrary intervening instructions) # ... WAIT_ON_SCOREBOARD sb0 WAIT_ON_SCOREBOARD sb1 ... # Consume results (e.g., storing results to memory): STORE [R7], R12 # ..."
+    },
+    {
+      "id": "p-0219",
+      "number": "0224",
+      "text": "The adapted multi-instruction sequence as shown above includes the “CP_MACRO_FUSE 7 ” instruction specifying that the next 7 instructions in the sequence are to be issued while interrupts are disabled. The next 7 instructions include all the CP_WRITE, CP_COMMAND, CP_READ and CP_CLOSE instructions in the sequence as specified. Enabling of interrupts can be done only after the 7 instructions. Therefore, in the adapted multi-instruction sequence, the entire subsequence {CP_OPEN . . . CP_CLOSE} is guaranteed to execute without preemption."
+    },
+    {
+      "id": "p-0220",
+      "number": "0225",
+      "text": "Conventional techniques can be used to disable interrupts, and to subsequently enable interrupts."
+    },
+    {
+      "id": "p-0221",
+      "number": "0226",
+      "text": "FIG. 14A includes a flowchart of a process 1400 which issues the adapted multi-instruction sequence (i.e., including the CP_MACRO_FUSE instruction) according to some example embodiments. The only changes from the process 1100 described in relation to FIG. 11A are the CP_MACRO_FUSE instruction issued (and the associated disabling of interrupts) at step 1404 after the CP_OPEN 1402 and the enabling of interrupts at step 1408 . Thus, in FIG. 14A , step 1402 corresponds to step 1102 as described in relation to FIG. 11A , step 1406 corresponds to steps 1104 - 1112 as described in relation to FIG. 11A , step 1408 corresponds to step 1114 as described in relation to FIG. 11A , and step 1410 corresponds to step 1116 as described in relation to FIG. 11A ."
+    },
+    {
+      "id": "p-0222",
+      "number": "0227",
+      "text": "Note that it is still possible for the thread or thread group executing the multi-instruction sequence to be preempted between the CP_OPEN and CP_MACRO_FUSE instruction. Therefore, the trap handler is configured to check for this possibility (e.g., via a dedicated instruction) and then open a new connection on behalf of the thread via CP_OPEN before returning control to the restored thread. This may be the only remaining responsibility of the trap handler as far as the coprocessor interface is concerned. Also note that while the trap handler must initiate opening of a connection via CP_OPEN, it need not wait for coprocessor resources to be allocated or for the connection to be actually opened, since that is accomplished by the restored thread waiting at CP_MACRO_FUSE (e.g., which includes CP_WAIT on connection open)."
+    },
+    {
+      "id": "p-0223",
+      "number": "0228",
+      "text": "The CP_MACRO_FUSE instruction enables the implementation, in effect, of a coprocessor instruction that is a variable length “macro-instruction,” accomplished via a series of simpler micro-instructions. The implementation in example embodiments satisfy several high-level requirements, including the following: (1) the macro-instruction must be considered a single instruction for the purpose of compute instruction-level preemption (CILP); (2) preemption latency must remain bounded for all possible macro-instructions that can be expressed in the ISA, and in particular, hardware must guarantee that the macro-instruction mechanism cannot be abused to hold off traps indefinitely; and (3) the macro-instruction must be considered a single instruction for the purpose of single-step debugging."
+    },
+    {
+      "id": "p-0224",
+      "number": "0229",
+      "text": "As described in relation to FIG. 11A , CP_OPEN requests allocation of the coprocessor resources required for the query. The resources may include a “ticket” for the connection and either one or more “execution slots” per thread or thread group. CP_OPEN is non-blocking, but it has the side-effect of setting a flag in SM that is associated with the thread or thread group, which is referred to as the “CP_WAIT_FLAG” bit. Note that CP_OPEN is not part of the coprocessor macro-instruction."
+    },
+    {
+      "id": "p-0225",
+      "number": "0230",
+      "text": "The macro-instruction begins with the macro initiation instruction “CP_MACRO_FUSE.” This micro-instruction is not eligible to issue until CP_WAIT_FLAG clears. Once it does, the next N micro-instructions are also guaranteed to complete before the SM can trap, where N is specified as an immediate operand of the CP_MACRO_FUSE instruction."
+    },
+    {
+      "id": "p-0226",
+      "number": "0231",
+      "text": "The only instructions allowed within a macro are CP_MACRO_FUSE (which must begin the macro), CP_WRITE, CP_COMMAND, CP_READ and CP_CLOSE instructions."
+    },
+    {
+      "id": "p-0227",
+      "number": "0232",
+      "text": "CP_MACRO_FUSE is ineligible to issue until the CP_WAIT_FLAG bit clears (i.e., until SM receives an acknowledgment from coprocessor that a ticket has been allocated for that thread or thread group)."
+    }
+  ]
+}

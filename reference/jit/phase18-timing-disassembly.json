@@ -1,0 +1,571 @@
+{
+  "source": "results/local/phase18/final-v2-reduced.cubin",
+  "source_sha256": "7f5a65aa3fd069ed3343f9ecc6adf9802161d9b6e6846768e8c40b635b15bb67",
+  "section": ".text.ttu_timing",
+  "section_bytes": 131456,
+  "excerpt": "reference/jit/phase18-timing-ordinary.sass",
+  "excerpt_sha256": "052023ecfe8636b8e3724880808db102029844a8ab97383792ae5ff24c91e549",
+  "ranges": [
+    [
+      "0x0",
+      "0xb00"
+    ]
+  ],
+  "command": [
+    "nvdisasm",
+    "-b",
+    "SM86",
+    "-ndf",
+    "-hex",
+    "ordinary.bin"
+  ],
+  "nvdisasm_version": "nvdisasm: NVIDIA (R) CUDA disassembler\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Tue_Jan_24_19:13:03_PST_2023\nCuda compilation tools, release 12.1, V12.1.55\nBuild cuda_12.1.r12.1/compiler.32345990_0\n",
+  "tool_sha256": "5a2f4eaeaa4c3338da19972f226e3aec306318981c2fdd53f99e1d7052960d3b",
+  "ttu_removed": [
+    {
+      "offset": "0x770",
+      "bytes": "d0730000000000000001000000ec0f00",
+      "decoded": {
+        "name": "TTUOPEN",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0x780",
+      "bytes": "d4790000000b00000000000000e80f00",
+      "decoded": {
+        "name": "TTUMACROFUSE",
+        "predicate": 7,
+        "count": 11
+      }
+    },
+    {
+      "offset": "0x790",
+      "bytes": "d17300002a0000003400000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 0,
+        "rb": 42,
+        "register2": 52
+      }
+    },
+    {
+      "offset": "0x7a0",
+      "bytes": "d17300000c4000004200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 64,
+        "rb": 12,
+        "register2": 66
+      }
+    },
+    {
+      "offset": "0x7b0",
+      "bytes": "d1730000105000000e00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 80,
+        "rb": 16,
+        "register2": 14
+      }
+    },
+    {
+      "offset": "0x7c0",
+      "bytes": "d1730000488000002800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 128,
+        "rb": 72,
+        "register2": 40
+      }
+    },
+    {
+      "offset": "0x7d0",
+      "bytes": "d173000024c000001800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 192,
+        "rb": 36,
+        "register2": 24
+      }
+    },
+    {
+      "offset": "0x7e0",
+      "bytes": "d173000020d000000200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 208,
+        "rb": 32,
+        "register2": 2
+      }
+    },
+    {
+      "offset": "0x7f0",
+      "bytes": "d1730000220001003200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 256,
+        "rb": 34,
+        "register2": 50
+      }
+    },
+    {
+      "offset": "0x800",
+      "bytes": "d1730000388001003600000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 384,
+        "rb": 56,
+        "register2": 54
+      }
+    },
+    {
+      "offset": "0x810",
+      "bytes": "d17300003c9001003a00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 400,
+        "rb": 60,
+        "register2": 58
+      }
+    },
+    {
+      "offset": "0x820",
+      "bytes": "d3730000000000000000000000e20f00",
+      "decoded": {
+        "name": "TTUGO",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0x830",
+      "bytes": "d27348000000030020040e0000620e00",
+      "decoded": {
+        "name": "TTULD",
+        "predicate": 7,
+        "address": 768,
+        "rd": 72,
+        "register2": 32,
+        "close": 1
+      }
+    },
+    {
+      "offset": "0x1280",
+      "bytes": "d0730000000000000001000000ec0f00",
+      "decoded": {
+        "name": "TTUOPEN",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0x1290",
+      "bytes": "d4790000000b00000000000000e80f00",
+      "decoded": {
+        "name": "TTUMACROFUSE",
+        "predicate": 7,
+        "count": 11
+      }
+    },
+    {
+      "offset": "0x12a0",
+      "bytes": "d17300002a0000003400000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 0,
+        "rb": 42,
+        "register2": 52
+      }
+    },
+    {
+      "offset": "0x12b0",
+      "bytes": "d17300000c4000004200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 64,
+        "rb": 12,
+        "register2": 66
+      }
+    },
+    {
+      "offset": "0x12c0",
+      "bytes": "d1730000105000000e00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 80,
+        "rb": 16,
+        "register2": 14
+      }
+    },
+    {
+      "offset": "0x12d0",
+      "bytes": "d1730000488000002800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 128,
+        "rb": 72,
+        "register2": 40
+      }
+    },
+    {
+      "offset": "0x12e0",
+      "bytes": "d173000024c000001800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 192,
+        "rb": 36,
+        "register2": 24
+      }
+    },
+    {
+      "offset": "0x12f0",
+      "bytes": "d173000020d000000200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 208,
+        "rb": 32,
+        "register2": 2
+      }
+    },
+    {
+      "offset": "0x1300",
+      "bytes": "d1730000220001003200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 256,
+        "rb": 34,
+        "register2": 50
+      }
+    },
+    {
+      "offset": "0x1310",
+      "bytes": "d1730000388001003600000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 384,
+        "rb": 56,
+        "register2": 54
+      }
+    },
+    {
+      "offset": "0x1320",
+      "bytes": "d17300003c9001003a00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 400,
+        "rb": 60,
+        "register2": 58
+      }
+    },
+    {
+      "offset": "0x1330",
+      "bytes": "d3730000000000000000000000e20f00",
+      "decoded": {
+        "name": "TTUGO",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0x1340",
+      "bytes": "d27348000000030020040e0000620e00",
+      "decoded": {
+        "name": "TTULD",
+        "predicate": 7,
+        "address": 768,
+        "rd": 72,
+        "register2": 32,
+        "close": 1
+      }
+    },
+    {
+      "offset": "0x1d90",
+      "bytes": "d0730000000000000001000000ec0f00",
+      "decoded": {
+        "name": "TTUOPEN",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0x1da0",
+      "bytes": "d4790000000b00000000000000e80f00",
+      "decoded": {
+        "name": "TTUMACROFUSE",
+        "predicate": 7,
+        "count": 11
+      }
+    },
+    {
+      "offset": "0x1db0",
+      "bytes": "d17300002a0000003400000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 0,
+        "rb": 42,
+        "register2": 52
+      }
+    },
+    {
+      "offset": "0x1dc0",
+      "bytes": "d17300000c4000004200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 64,
+        "rb": 12,
+        "register2": 66
+      }
+    },
+    {
+      "offset": "0x1dd0",
+      "bytes": "d1730000105000000e00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 80,
+        "rb": 16,
+        "register2": 14
+      }
+    },
+    {
+      "offset": "0x1de0",
+      "bytes": "d1730000488000002800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 128,
+        "rb": 72,
+        "register2": 40
+      }
+    },
+    {
+      "offset": "0x1df0",
+      "bytes": "d173000024c000001800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 192,
+        "rb": 36,
+        "register2": 24
+      }
+    },
+    {
+      "offset": "0x1e00",
+      "bytes": "d173000020d000000200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 208,
+        "rb": 32,
+        "register2": 2
+      }
+    },
+    {
+      "offset": "0x1e10",
+      "bytes": "d1730000220001003200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 256,
+        "rb": 34,
+        "register2": 50
+      }
+    },
+    {
+      "offset": "0x1e20",
+      "bytes": "d1730000388001003600000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 384,
+        "rb": 56,
+        "register2": 54
+      }
+    },
+    {
+      "offset": "0x1e30",
+      "bytes": "d17300003c9001003a00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 400,
+        "rb": 60,
+        "register2": 58
+      }
+    },
+    {
+      "offset": "0x1e40",
+      "bytes": "d3730000000000000000000000e20f00",
+      "decoded": {
+        "name": "TTUGO",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0x1e50",
+      "bytes": "d27348000000030020040e0000620e00",
+      "decoded": {
+        "name": "TTULD",
+        "predicate": 7,
+        "address": 768,
+        "rd": 72,
+        "register2": 32,
+        "close": 1
+      }
+    },
+    {
+      "offset": "0x28a0",
+      "bytes": "d0730000000000000001000000ec0f00",
+      "decoded": {
+        "name": "TTUOPEN",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0x28b0",
+      "bytes": "d4790000000b00000000000000e80f00",
+      "decoded": {
+        "name": "TTUMACROFUSE",
+        "predicate": 7,
+        "count": 11
+      }
+    },
+    {
+      "offset": "0x28c0",
+      "bytes": "d17300002a0000003400000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 0,
+        "rb": 42,
+        "register2": 52
+      }
+    },
+    {
+      "offset": "0x28d0",
+      "bytes": "d17300000c4000004200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 64,
+        "rb": 12,
+        "register2": 66
+      }
+    },
+    {
+      "offset": "0x28e0",
+      "bytes": "d1730000105000000e00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 80,
+        "rb": 16,
+        "register2": 14
+      }
+    },
+    {
+      "offset": "0x28f0",
+      "bytes": "d1730000488000002800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 128,
+        "rb": 72,
+        "register2": 40
+      }
+    },
+    {
+      "offset": "0x2900",
+      "bytes": "d173000024c000001800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 192,
+        "rb": 36,
+        "register2": 24
+      }
+    },
+    {
+      "offset": "0x2910",
+      "bytes": "d173000020d000000200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 208,
+        "rb": 32,
+        "register2": 2
+      }
+    },
+    {
+      "offset": "0x2920",
+      "bytes": "d1730000220001003200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 256,
+        "rb": 34,
+        "register2": 50
+      }
+    },
+    {
+      "offset": "0x2930",
+      "bytes": "d1730000388001003600000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 384,
+        "rb": 56,
+        "register2": 54
+      }
+    },
+    {
+      "offset": "0x2940",
+      "bytes": "d17300003c9001003a00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 400,
+        "rb": 60,
+        "register2": 58
+      }
+    },
+    {
+      "offset": "0x2950",
+      "bytes": "d3730000000000000000000000e20f00",
+      "decoded": {
+        "name": "TTUGO",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0x2960",
+      "bytes": "d27348000000030020040e0000620e00",
+      "decoded": {
+        "name": "TTULD",
+        "predicate": 7,
+        "address": 768,
+        "rd": 72,
+        "register2": 32,
+        "close": 1
+      }
+    }
+  ],
+  "use": "Static evidence only; not runnable traversal code"
+}

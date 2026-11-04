@@ -1,0 +1,3 @@
+========= COMPUTE-SANITIZER
+{"group": "none", "lanes": 32, "alu": 16, "placement": "after-wait", "records": 384, "failures": 0, "fatal_error": null, "summary": {"group_interval": {"min": 4, "median": 4.0, "max": 4}, "prewait_interval": {"min": 4, "median": 4.0, "max": 4}, "postwait_interval": {"min": 68, "median": 68.0, "max": 68}, "total": {"min": 76, "median": 76.0, "max": 76}}}
+========= ERROR SUMMARY: 0 errors

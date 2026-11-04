@@ -98,7 +98,7 @@ python3 validate_parent_resume.py --gpus 2 6 --output results/local/parent-matri
 - 软件栈16项、父请求最多8步；不支持的引用类型、返回类型、边界或步数都会显式返回错误。没有证明任意AS都能在这些界限内完成。
 - 嵌套IAS、不同child GAS、负行列式变换、motion、用户any-hit/custom primitive、一般溢出路径及full warp仍未实现。flags0较远候选反例也仍未解决。
 
-Phase17已提交为 `867ee16`。按用户要求，复杂IAS协议逆向暂时挂起；上述未解路径及原始证据保留，恢复时从四实例0x24引用的坐标/instance归属开始，等距/tmax另作隔离实验。当前转向单warp测量，先用稳定opaque GAS推进重复、计时和MACROFUSE语义，不等待完整OptiX支持。
+Phase17已提交为 `867ee16`。按用户要求，复杂IAS协议逆向暂时挂起；上述未解路径及原始证据保留，恢复时从四实例0x24引用的坐标/instance归属开始，等距/tmax另作隔离实验。当前转向 [Phase18单warp测量](PHASE18.md)，先用稳定opaque GAS推进重复、计时和MACROFUSE语义，不等待完整OptiX支持。
 
 ## 归档布局更新
 
