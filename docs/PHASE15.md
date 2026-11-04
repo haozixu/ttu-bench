@@ -10,22 +10,22 @@
 
 ## 1024是测试规模，不是容量上限
 
-`validate_scene.py` 选取16/64/257/1024作为回归规模；`run_scene.geometry('grid', count)` 主动生成对应数量的三角形，按间隔3排列在二维网格上，再交给OptiX builder。bridge将 `numVertices` 设为三角形数量的3倍。此前1024只是最大已测试输入，没有从AS格式或硬件能力推导该上限。
+`tools/validate_scene.py` 选取16/64/257/1024作为回归规模；`run_scene.geometry('grid', count)` 主动生成对应数量的三角形，按间隔3排列在二维网格上，再交给OptiX builder。bridge将 `numVertices` 设为三角形数量的3倍。此前1024只是最大已测试输入，没有从AS格式或硬件能力推导该上限。
 
 本阶段直接扩大到4096：
 
 ```bash
-CUDA_VISIBLE_DEVICES=2 timeout 40s python3 run_scene.py grid --count 4096 --ray-suite general --group both --repeat 1 --check --output results/local-grid4096.json
+CUDA_VISIBLE_DEVICES=2 timeout 40s python3 bench.py run_scene grid --count 4096 --ray-suite general --group both --repeat 1 --check --output results/local-grid4096.json
 ```
 
 [正式结果](../results/phase15/phase15-grid4096.json.gz)：136条ray × 13/19条组，共272次launch全部通过CPU/OptiX对照，AS大小270592字节，命中ID覆盖到4095。每条ray每组只有一个GO，遍历过程中无软件节点访问或重新提交。该结果仍不能给出内部访问节点数、BVH深度或硬件上限。
 
 ## JIT事件分支提供了什么信息
 
-[实例分支SASS](../reference/jit/jit16-instance-ordinary.sass) 与 [来源manifest](../reference/jit/jit16-instance-disassembly.json) 保留原始地址、原指令字与源hash。提取时只为反汇编将TTU换成NOP；输出不能运行。可复现工具为 [disassemble_ttu.py](../disassemble_ttu.py)：
+[实例分支SASS](../reference/jit/jit16-instance-ordinary.sass) 与 [来源manifest](../reference/jit/jit16-instance-disassembly.json) 保留原始地址、原指令字与源hash。提取时只为反汇编将TTU换成NOP；输出不能运行。可复现工具为 [disassemble_ttu.py](../tools/disassemble_ttu.py)：
 
 ```bash
-python3 disassemble_ttu.py fixtures/jit_16.elf --range fb0:1190 --range 29b0:2b30 --range 3100:33a0 --range 41e0:4bc0 --range 5e80:6520 --range 8500:8590 --output /tmp/ttu-instance.sass --manifest /tmp/ttu-instance.json
+python3 bench.py disassemble_ttu fixtures/jit_16.elf --range fb0:1190 --range 29b0:2b30 --range 3100:33a0 --range 41e0:4bc0 --range 5e80:6520 --range 8500:8590 --output /tmp/ttu-instance.sass --manifest /tmp/ttu-instance.json
 ```
 
 关键静态证据：
@@ -57,7 +57,7 @@ python3 disassemble_ttu.py fixtures/jit_16.elf --range fb0:1190 --range 29b0:2b3
 
 ## 新工具及其正确性范围
 
-[instance_protocol.py](../instance_protocol.py) 提供有边界检查的事件解码和ray变换。[run_instance_probe.py](../run_instance_probe.py) 的流程是：
+[instance_protocol.py](../src/instance_protocol.py) 提供有边界检查的事件解码和ray变换。[run_instance_probe.py](../tools/run_instance_probe.py) 的流程是：
 
 1. 在同一CUDA context构建一个静态instance的IAS及其GAS。
 2. 发射19/13条组，保存原始IAS返回。
@@ -71,12 +71,12 @@ IAS也可能返回潜在instance事件而child实际miss；工具会继续核对
 复现命令均从 `ttu-bench/` 执行：
 
 ```bash
-CUDA_VISIBLE_DEVICES=1 timeout 40s python3 run_instance_probe.py --instance identity --output results/local-instance-identity.json --check
-CUDA_VISIBLE_DEVICES=1 timeout 40s python3 run_instance_probe.py --instance translate --instance-id 41 --output results/local-instance-translate.json --check
-CUDA_VISIBLE_DEVICES=1 timeout 40s python3 run_instance_probe.py --instance rotate --instance-id 0 --output results/local-instance-rotate.json --check
-CUDA_VISIBLE_DEVICES=1 timeout 40s python3 run_instance_probe.py --instance scale --instance-id 0xffffff --output results/local-instance-scale.json --check
-CUDA_VISIBLE_DEVICES=2 timeout 40s python3 run_instance_probe.py --instance identity --scene grid --count 64 --instance-id 41 --output results/local-instance-grid.json --check
-CUDA_VISIBLE_DEVICES=2 timeout 40s python3 run_instance_probe.py --instance scale --scene grid --count 64 --output results/local-instance-scaled-grid.json --check
+CUDA_VISIBLE_DEVICES=1 timeout 40s python3 bench.py run_instance_probe --instance identity --output results/local-instance-identity.json --check
+CUDA_VISIBLE_DEVICES=1 timeout 40s python3 bench.py run_instance_probe --instance translate --instance-id 41 --output results/local-instance-translate.json --check
+CUDA_VISIBLE_DEVICES=1 timeout 40s python3 bench.py run_instance_probe --instance rotate --instance-id 0 --output results/local-instance-rotate.json --check
+CUDA_VISIBLE_DEVICES=1 timeout 40s python3 bench.py run_instance_probe --instance scale --instance-id 0xffffff --output results/local-instance-scale.json --check
+CUDA_VISIBLE_DEVICES=2 timeout 40s python3 bench.py run_instance_probe --instance identity --scene grid --count 64 --instance-id 41 --output results/local-instance-grid.json --check
+CUDA_VISIBLE_DEVICES=2 timeout 40s python3 bench.py run_instance_probe --instance scale --scene grid --count 64 --output results/local-instance-scaled-grid.json --check
 ```
 
 [正式矩阵](../results/phase15/phase15-instance-matrix.json)：上述6项在GPU1/2全部通过，共928次IAS查询、874次独立child查询，合计1802次裸TTU launch。CPU/OptiX oracle比较另计，不是TTU launch数。13/19条两组都通过；两张卡按不同场景分配，不是完整的场景×GPU交叉矩阵。早期 `phase15-instance-*-initial` 和无gpu前缀结果为探索版本，以正式矩阵及各文件源码hash为准。

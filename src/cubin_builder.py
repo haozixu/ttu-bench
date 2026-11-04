@@ -1,4 +1,5 @@
 """Reusable SM86 CUDA ELF container patching and ordinary SASS helpers."""
+from project_paths import BUILD
 import struct
 import subprocess
 from pathlib import Path
@@ -13,7 +14,8 @@ EXIT = (0x794d, 0x000fea0003800000)
 
 def compile_template(source):
     source = Path(source)
-    template = source.with_suffix('.cubin')
+    BUILD.mkdir(parents=True, exist_ok=True)
+    template = BUILD / (source.stem + '.cubin')
     if not template.exists() or template.stat().st_mtime < source.stat().st_mtime:
         subprocess.run(['nvcc', '-arch=sm_86', '-cubin', str(source), '-o', str(template)], check=True)
     return template.read_bytes()

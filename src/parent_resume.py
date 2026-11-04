@@ -3,6 +3,7 @@
 No guessed continuation policy is implied by this transport. Host can submit
 all observed state slots, separated from scene/oracle and resume policy.
 """
+from project_paths import KERNELS
 import ctypes
 from pathlib import Path
 
@@ -47,7 +48,7 @@ class ParentProbe(DeviceProbe):
     def __init__(self):
         if ctypes.sizeof(Trace) != 976 or ctypes.sizeof(ParentResult) != 7856:
             raise ValueError('unexpected parent-result ABI')
-        source = Path(__file__).with_name('parent_template.cu').read_text()
+        source = (KERNELS / 'parent_template.cu').read_text()
         super().__init__(extra_source=source, kernel_name='parent_probe', params_type=ParentParams, result_type=ParentResult)
 
 

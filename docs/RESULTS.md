@@ -14,18 +14,20 @@
 
 ZIP直接压缩原始JSON，未在内部再套gzip；支持标准解压工具按成员随机读取。每个阶段bundle有完整文件SHA256，每个成员另有原始SHA256/字节数。**报告数量与物理文件数量分开统计**：manifest.summary.published_reports计报告，published_files/bytes对ZIP去重；旧batch中的published_files/bytes是当时发布快照，不是当前布局。ZIP不ignore，也未采用Git LFS。
 
-例如Phase17与18合计原226个文件变成12个，原始证据一份不少。旧压缩副本保留在本机 `results/archive/bundled/`，clone只需要发布ZIP，不依赖这些副本。已有阶段合并用 [bundle_results.py](../bundle_results.py)，新阶段从local矩阵发布用 [publish_results.py](../publish_results.py)，两者复用原字节，校验ZIP往返后再更新manifest并归档旧物理文件。
+例如Phase17与18合计原226个文件变成12个，原始证据一份不少。旧压缩副本保留在本机 `results/archive/bundled/`，clone只需要发布ZIP，不依赖这些副本。已有阶段合并用 [bundle_results.py](../tools/bundle_results.py)，新阶段从local矩阵发布用 [publish_results.py](../tools/publish_results.py)，两者复用原字节，校验ZIP往返后再更新manifest并归档旧物理文件。
 
 ## 读取、校验和恢复
+
+目录整理不改历史报告或其source hash；迁移前源码可从 `3f66f03`恢复。新报告使用当前相对源码路径，见 [文件索引](INDEX.md)。下面Python导入示例在项目根配合 `PYTHONPATH=src:tools`使用，CLI统一走bench.py。
 
 命令在ttu-bench根执行，只依赖Python标准库：
 
 ```bash
-python3 result_store.py verify
-python3 result_store.py verify --include-local
-python3 result_store.py show phase17/device-chain2-overlap.json.gz
-python3 result_store.py show phase18/resource-functional.json.gz
-python3 result_store.py restore --destination results/local/restored
+python3 bench.py result_store verify
+python3 bench.py result_store verify --include-local
+python3 bench.py result_store show phase17/device-chain2-overlap.json.gz
+python3 bench.py result_store show phase18/resource-functional.json.gz
+python3 bench.py result_store restore --destination results/local/restored
 ```
 
 `show`接受原始名、旧发布路径alias及旧报告中的绝对路径；输出原始字节，可加 `--output`写单文件。具体case的旧名以manifest中的aliases为准。`verify`检查全部发布字节和成员hash；`--include-local`还检查本机归档/原副本，因此clone上通常不可用。`restore`恢复所有发布报告的原始相对路径，拒绝越出目标目录及覆盖不同内容；不会修改发布集。恢复目标默认被ignore。
@@ -44,4 +46,4 @@ for case in matrix['cases']:
 
 新结果先写 `results/local/`，有明确用途后选取正式矩阵、全部引用子报告、关键负结果及必要校准证据，加入manifest。派生observations或example-events便于阅读，不能替代完整raw。早期不完整/错误测量保留于本地；若其失败本身影响结论，则将代表失败一并发布并解释原因。
 
-不因非当前主线删除EoSS、helpers、历史源码或有意义的架构delta。fixtures、JIT和研究PDF不属于结果合并范围。Git仓库位于 `ttu-bench/.git`；本轮未自动提交Phase18/19。此前用户授权的Phase17提交为 `867ee16`。
+不因非当前主线删除EoSS、helpers、历史源码或有意义的架构delta。fixtures、JIT和研究PDF不属于结果合并范围。Git仓库位于 `ttu-bench/.git`；Phase18/19已分别提交，后续文件整理单独提交。此前用户授权的Phase17提交为 `867ee16`。

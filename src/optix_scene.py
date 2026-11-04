@@ -1,10 +1,10 @@
 """OptiX GAS builder/oracle that keeps allocations in the caller's context."""
+from project_paths import ROOT as HERE, KERNELS, BUILD
 import ctypes
 from pathlib import Path
 import shutil
 import subprocess
 
-HERE = Path(__file__).resolve().parent
 SDK = HERE.parent / 'OptiX-8.0.0'
 
 
@@ -24,11 +24,12 @@ class Hit(ctypes.Structure):
 
 
 def build_bridge():
+    BUILD.mkdir(parents=True, exist_ok=True)
     toolkit = Path(shutil.which('nvcc')).resolve().parent.parent
-    source = HERE / 'scene_bridge.cpp'
-    library = HERE / 'scene_bridge.so'
-    oracle = HERE / 'scene_oracle.cu'
-    ptx = HERE / 'scene_oracle.ptx'
+    source = KERNELS / 'scene_bridge.cpp'
+    library = BUILD / 'scene_bridge.so'
+    oracle = KERNELS / 'scene_oracle.cu'
+    ptx = BUILD / 'scene_oracle.ptx'
     if not ptx.exists() or ptx.stat().st_mtime < oracle.stat().st_mtime:
         subprocess.run(['nvcc', '-ptx', '-arch=sm_86', '-I', str(SDK / 'include'),
                         str(oracle), '-o', str(ptx)], check=True)

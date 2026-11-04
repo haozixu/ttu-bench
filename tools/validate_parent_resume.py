@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Reproduce flat-IAS parent resubmission and first-child-only negative controls."""
+from project_paths import ROOT as HERE, bench_command
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -9,7 +10,6 @@ from pathlib import Path
 import subprocess
 import sys
 
-HERE = Path(__file__).resolve().parent
 
 
 def main():
@@ -25,7 +25,7 @@ def main():
     for gpu in args.gpus:
         for scenario, scene in cases:
             path = args.output.with_name(f'{args.output.stem}-gpu{gpu}-{scenario}-{scene}.json')
-            command = [sys.executable, str(HERE / 'run_parent_resume.py'), '--scenario', scenario,
+            command = [*bench_command('run_parent_resume'), '--scenario', scenario,
                        '--scene', scene, '--count', '64', '--repeat', '2', '--check', '--output', str(path)]
             result = subprocess.run(command, env=dict(os.environ, CUDA_VISIBLE_DEVICES=gpu),
                                     timeout=40, text=True, capture_output=True)
@@ -42,7 +42,7 @@ def main():
     controls = []
     for scenario in ('first-miss-later-hit', 'first-farther-later-nearer'):
         path = args.output.with_name(f'{args.output.stem}-control-{scenario}.json')
-        command = [sys.executable, str(HERE / 'run_parent_resume.py'), '--scenario', scenario,
+        command = [*bench_command('run_parent_resume'), '--scenario', scenario,
                    '--stop-after-first', '--check', '--output', str(path)]
         result = subprocess.run(command, env=dict(os.environ, CUDA_VISIBLE_DEVICES=args.gpus[0]),
                                 timeout=40, text=True, capture_output=True)

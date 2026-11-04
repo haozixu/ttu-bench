@@ -1,6 +1,6 @@
 # 文件索引
 
-更新：2026-11-03。入口是 [README.md](../README.md)，初次阅读先看 [TTU 协议入门](TTU_PROTOCOL_GUIDE.md)。当前协议边界见 [PHASE14.md](PHASE14.md)，基础协议见 [PHASE12.md](PHASE12.md)，独立指令行为、差异与恢复记录见 [EOSS_REPRO.md](EOSS_REPRO.md)。
+更新：2026-11-03。入口是 [README.md](../docs/reference/README.md)，初次阅读先看 [TTU 协议入门](TTU_PROTOCOL_GUIDE.md)。当前协议边界见 [PHASE14.md](PHASE14.md)，基础协议见 [PHASE12.md](PHASE12.md)，独立指令行为、差异与恢复记录见 [EOSS_REPRO.md](EOSS_REPRO.md)。
 
 当前主线为 [Phase19](PHASE19.md) MACROFUSE行为、同warp Tensor/global/shared重叠；复杂IAS协议逆向暂挂，Phase17证据和待解路径保留。
 
@@ -12,48 +12,52 @@
 
 ## 可执行代码
 
+2026-11-04目录整理：`src/`保留可复用模块，`tools/`集中实验与维护CLI，`kernels/`保存CUDA/C++源，`build/`保存生成缓存。统一使用 `python3 bench.py <命令>`，不直接运行tools中的文件；子进程也通过同一入口。Python直接导入可设 `PYTHONPATH=src:tools`。路径解析与新报告源码hash由 [project_paths.py](../src/project_paths.py)管理。
+
+报告、fixtures、JIT和历史文档原字节不变；迁移前源码版本为 `3f66f03`，可按旧报告中的source hash核对该版本。当前路径、迁移前后hash见 [file-layout-migration.json](file-layout-migration.json)。新报告记录新相对路径，并包含launcher/路径模块hash，不改写旧报告来匹配新代码。
+
 | 文件 | 用途与依赖 |
 |---|---|
-| `ttu_isa.py` | TTU 族16字节编码、字段读取/修改、融合组count及输入寄存器分析；标准库 |
-| `eoss_helpers.py` | 本地 EoSS 数据与 BinaryPatcher/control 适配，REPLACE_FULL 保留操作数和调度位 |
-| `cubin_builder.py` | 普通 SASS / 单入口 CUDA ELF patch 和元数据更新；cuda_driver |
-| `sm86_fixture.py` | 原20条/精简13条组、hash、root/ray输入；fixture知识与通用ISA分离 |
-| `build_and_patch.py` | 重建 EoSS exp1–5，使用共享构建器和 EoSS 完整替换；非原源码恢复 |
-| `run_exp.py` | EoSS复现；每trial新进程，记录fault/context毒化/超时与hash；非几何oracle |
-| `validate_encoding.py` | 原20指令round trip、精简hash、字段边界、EoSS保真patch、历史源码hash检查 |
-| `run_minimal.py` | 主入口；读取 fixtures，分配 CUDA 内存，合成输入，精简/保留原始 TTU 组，提供解析求交检查 |
-| `minimal.py` | 组装功能probe、发射已构建image和读回；共用ttu_isa/cubin_builder/cuda_driver |
-| `minimal_template.cu` | nvcc 编译容器；源中的 FADD 链不会执行 |
-| `cuda_driver.py` | 当前代码使用的 Driver API 函数签名与 ELF section 解析；没有 megakernel 或 OptiX 初始化 |
-| `validate_minimal.py` | 8 个场景 × 指定 GPU × 每场景 5 次 launch；每场景独立进程，新 context，20 秒超时 |
-| `optix_scene.py` / `scene_bridge.cpp` | 在调用者当前CUDA context内构建/持有triangle GAS并提供OptiX oracle；首次编译需OptiX8 SDK/nvcc/g++ |
-| `scene_oracle.cu` | 最小OptiX raygen/closest-hit/miss，返回primitive/t/barycentrics |
-| `run_scene.py` | 生产GAS功能入口，CPU+OptiX+裸TTU三方比较；默认13条组，both比较19/13条组，原20条组单列诊断 |
-| `validate_scene.py` | 单/双三角形及16/64/257/1024网格回归；每case新进程，保存raw寄存器与源码/AS/group hash |
-| `validate_ray_protocol.py` | geometry/ray flags、绕序的TTU回归；另测5种静态IAS的CPU/OptiX oracle，明确不算TTU实例成功 |
-| `instance_protocol.py` | 0x16静态instance事件记录的有边界解码、逆变换ray；经验布局，非完整续遍历ABI |
-| `run_instance_probe.py` | 一个静态instance的真实IAS事件、host解码及独立child GAS查询；验证矩阵/ID/child root，明确不是父级遍历resume |
-| `device_instance.py` | 18个寄存器对的编译器分配映射、19条TTU组patch、host/device结构及CUDA launch；功能容器，非计时核 |
-| `instance_template.cu` | 设备端IAS事件分派、记录边界检查、逆变换及独立child查询；不恢复父级 |
-| `run_device_instance.py` | 单静态instance设备功能入口，保存两个请求的raw返回并核对CPU/OptiX及host事件解码 |
-| `validate_device_instance.py` | 8项device-instance回归，逐项新进程/context、40秒timeout、报告hash |
-| `parent_resume.py` / `parent_template.cu` | raw state transport与受限父IAS设备续遍历，显式pending软件栈；单active thread，非计时核 |
-| `run_parent_resume.py` / `validate_parent_resume.py` | 最终及逐事件CPU/OptiX检查；30项正矩阵与两个first-child-only负对照 |
-| `run_parent_probe.py` | host控制raw状态的none/copy/promote/pop诊断；不是通用算法或正式closest-hit入口 |
-| `warp_timing.py` / `timing_template.cu` | 单warp raw SASS测量构建及逐lane快照，96寄存器，无stack/shared；保持融合组body不变 |
-| `run_warp_timing.py` / `validate_warp_timing.py` | clock64四窗口、1/32 lanes、ALU位置、OPEN-gap和MF0/NOP校准；正式172项矩阵 |
-| `disassemble_ttu.py` | 保存源hash/原TTU字节，将TTU换NOP后反汇编普通指令片段；输出不可运行 |
-| `mixed_timing.py` / `run_mixed_timing.py` | Phase19：128寄存器、256B dynamic shared、独立scoreboard、即时消费者及HMMA保守padding |
-| `validate_mixed_timing.py` | 152项单warp Tensor/global/shared/FADD及拆组对照，两GPU；独立process/timeout |
-| `run_macrofuse_control.py` / `validate_macrofuse_control.py` | 匹配NOP/MF0替换正常MF的48项预期715负对照，保留ST/GO/LD.CLOSE |
-| `inspect_mixed_timing.py` | 从实测cubin记录SASS、来源hash及融合范围，TTU换NOP的输出只供分析 |
-| `bundle_results.py` / `publish_results.py` | 原字节合并及新阶段ZIP发布，矩阵引用hash验证 |
-| `validate_result_store.py` | 旧alias、ZIP损坏拒绝、恢复越界及不同内容覆盖拒绝 |
-| `result_store.py` | 按manifest读取原始/新路径的结果、校验压缩及原始SHA256、恢复原始目录结构；标准库 |
+| `src/ttu_isa.py` | TTU 族16字节编码、字段读取/修改、融合组count及输入寄存器分析；标准库 |
+| `src/eoss_helpers.py` | 本地 EoSS 数据与 BinaryPatcher/control 适配，REPLACE_FULL 保留操作数和调度位 |
+| `src/cubin_builder.py` | 普通 SASS / 单入口 CUDA ELF patch 和元数据更新；cuda_driver |
+| `src/sm86_fixture.py` | 原20条/精简13条组、hash、root/ray输入；fixture知识与通用ISA分离 |
+| `tools/build_and_patch.py` | 重建 EoSS exp1–5，使用共享构建器和 EoSS 完整替换；非原源码恢复 |
+| `tools/run_exp.py` | EoSS复现；每trial新进程，记录fault/context毒化/超时与hash；非几何oracle |
+| `tools/validate_encoding.py` | 原20指令round trip、精简hash、字段边界、EoSS保真patch、历史源码hash检查 |
+| `tools/run_minimal.py` | 主入口；读取 fixtures，分配 CUDA 内存，合成输入，精简/保留原始 TTU 组，提供解析求交检查 |
+| `src/minimal.py` | 组装功能probe、发射已构建image和读回；共用ttu_isa/cubin_builder/cuda_driver |
+| `kernels/minimal_template.cu` | nvcc 编译容器；源中的 FADD 链不会执行 |
+| `src/cuda_driver.py` | 当前代码使用的 Driver API 函数签名与 ELF section 解析；没有 megakernel 或 OptiX 初始化 |
+| `tools/validate_minimal.py` | 8 个场景 × 指定 GPU × 每场景 5 次 launch；每场景独立进程，新 context，20 秒超时 |
+| `src/optix_scene.py` / `kernels/scene_bridge.cpp` | 在调用者当前CUDA context内构建/持有triangle GAS并提供OptiX oracle；首次编译需OptiX8 SDK/nvcc/g++ |
+| `kernels/scene_oracle.cu` | 最小OptiX raygen/closest-hit/miss，返回primitive/t/barycentrics |
+| `tools/run_scene.py` | 生产GAS功能入口，CPU+OptiX+裸TTU三方比较；默认13条组，both比较19/13条组，原20条组单列诊断 |
+| `tools/validate_scene.py` | 单/双三角形及16/64/257/1024网格回归；每case新进程，保存raw寄存器与源码/AS/group hash |
+| `tools/validate_ray_protocol.py` | geometry/ray flags、绕序的TTU回归；另测5种静态IAS的CPU/OptiX oracle，明确不算TTU实例成功 |
+| `src/instance_protocol.py` | 0x16静态instance事件记录的有边界解码、逆变换ray；经验布局，非完整续遍历ABI |
+| `tools/run_instance_probe.py` | 一个静态instance的真实IAS事件、host解码及独立child GAS查询；验证矩阵/ID/child root，明确不是父级遍历resume |
+| `src/device_instance.py` | 18个寄存器对的编译器分配映射、19条TTU组patch、host/device结构及CUDA launch；功能容器，非计时核 |
+| `kernels/instance_template.cu` | 设备端IAS事件分派、记录边界检查、逆变换及独立child查询；不恢复父级 |
+| `tools/run_device_instance.py` | 单静态instance设备功能入口，保存两个请求的raw返回并核对CPU/OptiX及host事件解码 |
+| `tools/validate_device_instance.py` | 8项device-instance回归，逐项新进程/context、40秒timeout、报告hash |
+| `src/parent_resume.py` / `kernels/parent_template.cu` | raw state transport与受限父IAS设备续遍历，显式pending软件栈；单active thread，非计时核 |
+| `tools/run_parent_resume.py` / `tools/validate_parent_resume.py` | 最终及逐事件CPU/OptiX检查；30项正矩阵与两个first-child-only负对照 |
+| `tools/run_parent_probe.py` | host控制raw状态的none/copy/promote/pop诊断；不是通用算法或正式closest-hit入口 |
+| `src/warp_timing.py` / `kernels/timing_template.cu` | 单warp raw SASS测量构建及逐lane快照，96寄存器，无stack/shared；保持融合组body不变 |
+| `tools/run_warp_timing.py` / `tools/validate_warp_timing.py` | clock64四窗口、1/32 lanes、ALU位置、OPEN-gap和MF0/NOP校准；正式172项矩阵 |
+| `tools/disassemble_ttu.py` | 保存源hash/原TTU字节，将TTU换NOP后反汇编普通指令片段；输出不可运行 |
+| `src/mixed_timing.py` / `tools/run_mixed_timing.py` | Phase19：128寄存器、256B dynamic shared、独立scoreboard、即时消费者及HMMA保守padding |
+| `tools/validate_mixed_timing.py` | 152项单warp Tensor/global/shared/FADD及拆组对照，两GPU；独立process/timeout |
+| `tools/run_macrofuse_control.py` / `tools/validate_macrofuse_control.py` | 匹配NOP/MF0替换正常MF的48项预期715负对照，保留ST/GO/LD.CLOSE |
+| `tools/inspect_mixed_timing.py` | 从实测cubin记录SASS、来源hash及融合范围，TTU换NOP的输出只供分析 |
+| `tools/bundle_results.py` / `tools/publish_results.py` | 原字节合并及新阶段ZIP发布，矩阵引用hash验证 |
+| `tools/validate_result_store.py` | 旧alias、ZIP损坏拒绝、恢复越界及不同内容覆盖拒绝 |
+| `tools/result_store.py` | 按manifest读取原始/新路径的结果、校验压缩及原始SHA256、恢复原始目录结构；标准库 |
 
-`minimal_template.cubin` 和 `__pycache__/` 是自动生成的缓存。功能入口不需要 EoSS；EoSS复现/编码验证入口使用已有 `research/community/eoss -> eoss-framework` 符号链接。
+`build/minimal_template.cubin` 和各目录的 `__pycache__/` 是自动生成的缓存。功能入口不需要 EoSS；EoSS复现/编码验证入口使用已有 `research/community/eoss -> eoss-framework` 符号链接。
 
-`scene_bridge.so` / `scene_oracle.ptx` 同样是生成缓存。`run_scene.py` 使用OptiX builder/oracle，`run_minimal.py` 的固定fixture入口仍不需要OptiX。
+`build/scene_bridge.so` / `build/scene_oracle.ptx` 同样是生成缓存。旧根目录缓存移到 `build/legacy-root/`保留，当前构建使用新位置。`tools/run_scene.py` 使用OptiX builder/oracle，`tools/run_minimal.py` 的固定fixture入口仍不需要OptiX。
 
 ## 固定输入
 
@@ -129,7 +133,7 @@ Phase17新增 `reference/jit/jit16-parent-ordinary.sass` / `jit16-parent-disasse
 
 文档迁移前路径与SHA256保存在 [document-migration.json](document-migration.json)；四份 `.pre-cleanup.md` 快照逐字节保留，因此快照里的旧链接和旧结论也保持原状。
 
-[HANDOFF.md](HANDOFF.md) 跟踪后续任务，[NEXT_PROMPT.md](NEXT_PROMPT.md) 作短入口。[CLEANUP.md](CLEANUP.md) 记录原清理及其纠正；`cleanup-2026-11-02.json` 保留当时删除清单，不改写成当前文件清单。恢复身份、API和差异证据集中在 EOSS_REPRO。
+[HANDOFF.md](HANDOFF.md) 跟踪后续任务，[NEXT_PROMPT.md](NEXT_PROMPT.md) 作短入口。[CLEANUP.md](CLEANUP.md) 记录原清理及其纠正；`docs/reference/cleanup-2026-11-02.json` 保留当时删除清单，不改写成当前文件清单。恢复身份、API和差异证据集中在 EOSS_REPRO。
 
 [AS_ROADMAP.md](AS_ROADMAP.md) 评估代际差异来源、复杂AS/完整OptiX语义的路线与成本，并复核四份未恢复旧文件。当前以微架构探索/工具/blog为合理成果。
 

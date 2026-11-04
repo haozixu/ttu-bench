@@ -74,7 +74,7 @@ flags是给这次查询的规则：某些面要不要忽略、几何交点需不
 
 这里的“软件”通常也是在GPU的SM上执行的普通指令，不是回到CPU执行回调。对本项目的三角形场景，RT硬件做包围盒/三角形求交；any-hit程序可以读取纹理或其他应用数据，再选择忽略交点、接受交点并继续，或接受交点并终止追踪。接受一个候选不等于它就是最近交点：遍历发现候选的顺序不保证按t从小到大，继续遍历可能找到更近的。禁用any-hit也不等于只找第一个交点；“首次命中即终止”是另一条规则。
 
-应用编写的any-hit程序与驱动生成的协议控制代码也要区分。当前 `scene_oracle.cu` 没有any-hit入口，只有raygen/closest-hit/miss；OptiX仍能完成flags0的最近命中，而裸提交存在较远候选反例。这说明即使没有用户any-hit程序，也不能省略尚未理解的协议事件处理。该反例本身没有验证真实alpha测试或accept/ignore的编码。
+应用编写的any-hit程序与驱动生成的协议控制代码也要区分。当前 `kernels/scene_oracle.cu` 没有any-hit入口，只有raygen/closest-hit/miss；OptiX仍能完成flags0的最近命中，而裸提交存在较远候选反例。这说明即使没有用户any-hit程序，也不能省略尚未理解的协议事件处理。该反例本身没有验证真实alpha测试或accept/ignore的编码。
 
 本项目目前只实现/验证以下ray flags：
 
@@ -187,7 +187,7 @@ US11138009B2专利给出的模型是：OPEN申请资源，MF等待连接就绪�
 - [Phase14](PHASE14.md)：一般ray/flags、符号解码纠正、候选反例与IAS事件的原始结果链接。
 - [Phase12](PHASE12.md)：13条序列、固定fixture、地址编码和反例对照；其方向/符号限制以后续Phase14为准。
 - [AS路线](AS_ROADMAP.md)：复杂AS、代际对比和扩展取舍。
-- [sm86_fixture.py](../sm86_fixture.py)：当前输入构造和经验triangle decoder；[ttu_isa.py](../ttu_isa.py)：编码helpers。
+- [sm86_fixture.py](../src/sm86_fixture.py)：当前输入构造和经验triangle decoder；[ttu_isa.py](../src/ttu_isa.py)：编码helpers。
 - [OptiX 8类型定义](../../OptiX-8.0.0/include/optix_types.h)：GAS/IAS构建输入、instance结构、公开ray/geometry/instance flags。
 
 ## 8. 融合组与异步计算的新边界

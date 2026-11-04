@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate device-side parent resubmission for a restricted flat 1-3 instance IAS."""
+from project_paths import hash_sources
 import argparse
 import ctypes
 from datetime import datetime, timezone
@@ -20,7 +21,6 @@ from run_instance_probe import read_device, matches_triangle
 from run_scene import geometry, general_rays, reference, world_geometry
 from sm86_fixture import FIXTURES, triangle_result
 
-HERE = Path(__file__).resolve().parent
 SOURCES = ('run_parent_resume.py', 'parent_resume.py', 'parent_template.cu', 'device_instance.py',
            'instance_template.cu', 'instance_protocol.py', 'run_instance_probe.py', 'run_scene.py',
            'sm86_fixture.py', 'ttu_isa.py', 'cuda_driver.py', 'optix_scene.py', 'scene_bridge.cpp', 'scene_oracle.cu')
@@ -157,7 +157,7 @@ def main():
                   ias_base=scene.info.base, ias_hex=ias.hex(), gas_base=scene.info.gas_base,
                   ias_root_offset=roots[0], gas_root_offset=roots[1], gas_sha256=hashlib.sha256(gas).hexdigest(),
                   case_fixture_sha256=hashlib.sha256(cases_path.read_bytes()).hexdigest(),
-                  source_sha256={name: hashlib.sha256((HERE / name).read_bytes()).hexdigest() for name in SOURCES},
+                  source_sha256=hash_sources(SOURCES),
                   cuda_visible_devices=os.environ.get('CUDA_VISIBLE_DEVICES'),
                   gpu_inventory=subprocess.run(['nvidia-smi', '--query-gpu=index,uuid,name,driver_version', '--format=csv'],
                                                capture_output=True, text=True, check=True).stdout)

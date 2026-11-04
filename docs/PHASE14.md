@@ -56,15 +56,15 @@
 
 同一一般ray矩阵，设置 `OPTIX_RAY_FLAG_DISABLE_ANYHIT`，或将geometry设为 `OPTIX_GEOMETRY_FLAG_DISABLE_ANYHIT`，即可与closest-hit oracle匹配。这**与nonopaque候选返回、软件accept/ignore后需要续遍历的解释一致**；尚未实现accept/ignore/resume，不能把这项解释当作已验证的完整状态机。没有any-hit shader并不保证裸提交路径自动具有OptiX完整closest-hit语义。
 
-`run_scene.py`现在默认 `--ray-flags 1`，OptiX与TTU使用同样的请求flags。`--ray-flags 0`仍可诊断；CLI明确保存flags，并以closest-hit oracle暴露上述反例，不会把合法候选默认为成功。Phase13默认raw flags0但oracle disable-anyhit=1，原+Z矩阵恰好匹配；它没有覆盖这个多命中反例，因此不能据其通过声称通用closest-hit。
+`tools/run_scene.py`现在默认 `--ray-flags 1`，OptiX与TTU使用同样的请求flags。`--ray-flags 0`仍可诊断；CLI明确保存flags，并以closest-hit oracle暴露上述反例，不会把合法候选默认为成功。Phase13默认raw flags0但oracle disable-anyhit=1，原+Z矩阵恰好匹配；它没有覆盖这个多命中反例，因此不能据其通过声称通用closest-hit。
 
 ## 正式结果
 
 ```bash
-python3 validate_scene.py --gpus 2 6 --ray-suite general --repeat 3 --output results/local-general.json
-python3 validate_ray_protocol.py --gpus 0 5 --output results/local-ray-protocol.json
-CUDA_VISIBLE_DEVICES=5 timeout 30s python3 run_scene.py overlap --ray-suite general --ray-flags 1 --group both --check
-CUDA_VISIBLE_DEVICES=5 timeout 30s python3 run_scene.py grid --count 64 --geometry-opaque --ray-flags 0x10 --ray-suite general --group both --check
+python3 bench.py validate_scene --gpus 2 6 --ray-suite general --repeat 3 --output results/local-general.json
+python3 bench.py validate_ray_protocol --gpus 0 5 --output results/local-ray-protocol.json
+CUDA_VISIBLE_DEVICES=5 timeout 30s python3 bench.py run_scene overlap --ray-suite general --ray-flags 1 --group both --check
+CUDA_VISIBLE_DEVICES=5 timeout 30s python3 bench.py run_scene grid --count 64 --geometry-opaque --ray-flags 0x10 --ray-suite general --group both --check
 ```
 
 | 记录 | 结果 |
@@ -83,8 +83,8 @@ ray flags覆盖NONE、DISABLE_ANYHIT、CULL_BACK_FACING_TRIANGLES、CULL_FRONT_F
 `Scene(..., instances=...)`现在支持静态IAS引用GAS并持有依赖。instance ID为17，双instance第二个为41。恒等、平移、90度旋转、非均匀正缩放、双instance的CPU世界坐标triangle与OptiX结果全部匹配；这是上述10个**oracle-only** cases，不能算TTU instance功能成功。
 
 ```bash
-CUDA_VISIBLE_DEVICES=5 timeout 30s python3 run_scene.py single --instances scale --ray-suite general --oracle-only --check
-CUDA_VISIBLE_DEVICES=5 timeout 30s python3 run_scene.py single --instances identity --group expanded --ray .25 .25 -5 0 0 0 1 100 --check
+CUDA_VISIBLE_DEVICES=5 timeout 30s python3 bench.py run_scene single --instances scale --ray-suite general --oracle-only --check
+CUDA_VISIBLE_DEVICES=5 timeout 30s python3 bench.py run_scene single --instances identity --group expanded --ray .25 .25 -5 0 0 0 1 100 --check
 ```
 
 第二条当前预期检查失败，它是未实现续遍历的诊断入口。[正式事件记录](../results/phase14/phase14-ias-event-final.json) 和 [当次IAS字节](../results/phase14/phase14-ias-identity-final.bin) 配套：

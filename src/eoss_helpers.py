@@ -1,9 +1,10 @@
 """Local EoSS adapter: retain canonical bytes and explicit patch policies."""
+from project_paths import ROOT as HERE
 import json
 import sys
 from pathlib import Path
 
-COMMUNITY = Path(__file__).resolve().parent.parent / 'research' / 'community'
+COMMUNITY = HERE.parent / 'research' / 'community'
 sys.path.insert(0, str(COMMUNITY))
 
 from eoss import paths

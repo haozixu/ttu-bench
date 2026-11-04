@@ -1,6 +1,6 @@
 # Phase19：MACROFUSE行为与同warp Tensor/访存重叠
 
-2026-11-03，RTX3090 / SM86，driver535.309.01，CUDA12.1。复杂IAS逆向继续暂挂。Phase18源码/原报告不改，新入口为 [run_mixed_timing.py](../run_mixed_timing.py)、[mixed_timing.py](../mixed_timing.py)，拆组/负对照另有 [run_macrofuse_control.py](../run_macrofuse_control.py)。本阶段是有功能检查的行为实验，没有饱和吞吐或具体争抢端口的结论。
+2026-11-03，RTX3090 / SM86，driver535.309.01，CUDA12.1。复杂IAS逆向继续暂挂。Phase18原报告及整理前Git源码版本保留，新入口为 [run_mixed_timing.py](../tools/run_mixed_timing.py)、[mixed_timing.py](../src/mixed_timing.py)，拆组/负对照另有 [run_macrofuse_control.py](../tools/run_macrofuse_control.py)。本阶段是有功能检查的行为实验，没有饱和吞吐或具体争抢端口的结论。
 
 ## MACROFUSE：这次实际测了什么
 
@@ -102,19 +102,19 @@ TTU结果SB1、内存SB2、shared初始化读依赖SB3、HMMA设置SB5、快照S
 - `pilot-none-shared-4-normal-0.json`：LDS类型/寻址字段错误，生成了`LDS.U8 …X4`，功能oracle失败；已修正为32bit、无缩放LDS。
 - `pilot-v3-shared1.json`：setup的IMAD addend在过短间隔读到旧R110，shared环未建立；计时外增加保守间隔后通过。
 
-两份早期完整矩阵没有立即消费检查，不采用其性能数字，留在ignored local。上面三份失败是旧prototype，source hash与现源码不同；保留证据不表示当前脚本能逐字复现旧版。`reference/jit/phase19-{hmma,global,shared,none}.{sass,json}` 保存实测cubin来源hash、普通SASS及融合槽解码；只为反汇编将TTU替换NOP，**不可运行该替换版本**。原含进程VA的cubin留local。`inspect_mixed_timing.py`检查融合体内仍为TTU指令。
+两份早期完整矩阵没有立即消费检查，不采用其性能数字，留在ignored local。上面三份失败是旧prototype，source hash与现源码不同；保留证据不表示当前脚本能逐字复现旧版。`reference/jit/phase19-{hmma,global,shared,none}.{sass,json}` 保存实测cubin来源hash、普通SASS及融合槽解码；只为反汇编将TTU替换NOP，**不可运行该替换版本**。原含进程VA的cubin留local。`tools/inspect_mixed_timing.py`检查融合体内仍为TTU指令。
 
 额外用compute-sanitizer memcheck验证不含TTU的global/shared普通SASS路径，各2launch×2sample×32lanes，均0错误；仪器化周期不纳入性能表。日志与报告留 `results/local/phase19/{global,shared}-memcheck.{txt,json}`，未计入211份发布集。
 
 先查空闲GPU，命令从ttu-bench根目录执行：
 
 ```bash
-CUDA_VISIBLE_DEVICES=5 timeout 25s python3 run_mixed_timing.py --group reduced --lanes 32 --kind hmma --count 8 --placement before-wait --check --output results/local/tensor-before.json
-CUDA_VISIBLE_DEVICES=5 timeout 25s python3 run_mixed_timing.py --lanes 32 --variant split10 --gap 64 --check --output results/local/split-go-read.json
-CUDA_VISIBLE_DEVICES=5 timeout 25s python3 run_mixed_timing.py --lanes 32 --kind global --count 2 --check --output results/local/global-before.json
-python3 validate_mixed_timing.py --gpus 5 1 --output results/local/mixed-matrix.json
-python3 validate_macrofuse_control.py --gpus 5 1 --output results/local/mf-controls.json
-python3 result_store.py verify
+CUDA_VISIBLE_DEVICES=5 timeout 25s python3 bench.py run_mixed_timing --group reduced --lanes 32 --kind hmma --count 8 --placement before-wait --check --output results/local/tensor-before.json
+CUDA_VISIBLE_DEVICES=5 timeout 25s python3 bench.py run_mixed_timing --lanes 32 --variant split10 --gap 64 --check --output results/local/split-go-read.json
+CUDA_VISIBLE_DEVICES=5 timeout 25s python3 bench.py run_mixed_timing --lanes 32 --kind global --count 2 --check --output results/local/global-before.json
+python3 bench.py validate_mixed_timing --gpus 5 1 --output results/local/mixed-matrix.json
+python3 bench.py validate_macrofuse_control --gpus 5 1 --output results/local/mf-controls.json
+python3 bench.py result_store verify
 ```
 
 负对照runner预期非零，自动矩阵校验明确的715，timeout不算通过。不重置共享GPU。结果发布按 [RESULTS.md](RESULTS.md)：本阶段211份证据无损发布为5个物理文件（单ZIP含207份原报告，外加两个矩阵、observations、资源）。

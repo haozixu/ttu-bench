@@ -4,6 +4,7 @@
 Reconstructed runner, not a restoration of the deleted source. No BVH is
 supplied: successful execution is a protocol observation, not a traversal oracle.
 """
+from project_paths import ROOT as HERE, hash_sources, bench_command
 import argparse
 import ctypes
 from datetime import datetime, timezone
@@ -18,7 +19,6 @@ from build_and_patch import DEFAULT_EXPERIMENTS, EXPERIMENTS, build_experiment, 
 from cuda_driver import check, cuda
 from minimal import launch_image
 
-HERE = Path(__file__).resolve().parent
 
 
 def child(name, threads, wait_mask):
@@ -62,7 +62,7 @@ def main():
     records = []
     for name in selected:
         for trial in range(args.repeat):
-            command = [sys.executable, str(Path(__file__).resolve()), name, '--child', '--threads', str(args.threads),
+            command = [*bench_command('run_exp'), name, '--child', '--threads', str(args.threads),
                        '--wait-mask', str(args.wait_mask)]
             try:
                 completed = subprocess.run(command, capture_output=True, text=True, timeout=args.timeout, cwd=HERE)
@@ -90,9 +90,8 @@ def main():
             break
     gpu = subprocess.run(['nvidia-smi', '--query-gpu=index,uuid,name,driver_version', '--format=csv'],
                          capture_output=True, text=True, check=True).stdout
-    hashes = {name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
-              for name in ('run_exp.py', 'build_and_patch.py', 'ttu_isa.py', 'eoss_helpers.py', 'cuda_driver.py',
-                           'cubin_builder.py', 'minimal.py', 'minimal_template.cu')}
+    hashes = hash_sources(('run_exp.py', 'build_and_patch.py', 'ttu_isa.py', 'eoss_helpers.py', 'cuda_driver.py',
+                           'cubin_builder.py', 'minimal.py', 'minimal_template.cu'))
     eoss_data = HERE.parent / 'research/community/eoss-framework/data/encodings/ttu_sm120.json'
     report = dict(timestamp=datetime.now(timezone.utc).isoformat(), harness='reconstructed-eoss-v2',
                   cuda_visible_devices=os.environ.get('CUDA_VISIBLE_DEVICES'), gpu_inventory=gpu,

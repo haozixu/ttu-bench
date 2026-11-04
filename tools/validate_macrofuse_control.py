@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Check MF-removal controls: fresh process, expected 715, no timeout masking."""
+from project_paths import bench_command
 import argparse
 import hashlib
 import json
@@ -21,7 +22,7 @@ def main():
                 for mode in ('nop','zero'):
                     for repeat in range(3):
                         path=args.output.parent/f'{args.output.stem}-gpu{gpu}-l{lanes}-{group}-{mode}-r{repeat}.json'
-                        command=['python3','run_macrofuse_control.py','--mode',mode,'--group',group,'--lanes',str(lanes),
+                        command=[*bench_command('run_macrofuse_control'),'--mode',mode,'--group',group,'--lanes',str(lanes),
                                  '--launches','3','--check','--output',str(path)]
                         try:
                             p=subprocess.run(command,env=os.environ|{'CUDA_VISIBLE_DEVICES':str(gpu)},capture_output=True,text=True,timeout=25)

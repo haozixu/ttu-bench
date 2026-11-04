@@ -1,8 +1,9 @@
 """Phase19: explicit scoreboards, HMMA/LDG/LDS workloads, bounded MF variants.
 
-Phase18 modules remain untouched so their recorded source hashes stay valid.
+Phase18 experimental behavior is retained; pre-layout source hashes refer to Git history.
 TTU result uses SB1, memory SB2, HMMA SB5; clocks C wait only on SB1.
 """
+from project_paths import KERNELS
 import ctypes
 import hashlib
 from pathlib import Path
@@ -13,7 +14,6 @@ from sm86_fixture import load_group
 from ttu_isa import input_registers, ttumf, unpack
 from warp_timing import clock, arithmetic
 
-HERE = Path(__file__).resolve().parent
 STRIDE = 512
 
 
@@ -108,7 +108,7 @@ def build(values, pointer, *, kind='none', count=0, placement='before-wait',
             sequence.extend([(0x7986 | 76<<24 | r<<32 | (sample*STRIDE+r*4)<<40,
                               0x0001e8000c101d04),nop(1)])
     sequence.append(EXIT)
-    image=bytes(patch_kernel(compile_template(HERE/'timing_template.cu'),'ttu_timing',sequence,registers=128))
+    image=bytes(patch_kernel(compile_template(KERNELS / 'timing_template.cu'),'ttu_timing',sequence,registers=128))
     info=dict(cubin_sha256=hashlib.sha256(image).hexdigest(),ttu_group_sha256=hashlib.sha256(raw).hexdigest(),
         instruction_count=len(sequence),registers=128,dynamic_shared_bytes=256,offsets=offsets,
         scoreboard=dict(ttu=1,memory=2,shared_setup=3,hmma=5,snapshot=0),

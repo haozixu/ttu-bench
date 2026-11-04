@@ -4,6 +4,7 @@
 Policy modes are experimental hypotheses, not validated general continuation.
 Every request is a new kernel and OPEN/CLOSE session; no renderer is implied.
 """
+from project_paths import hash_sources
 import argparse
 import ctypes
 from datetime import datetime, timezone
@@ -22,7 +23,6 @@ from run_instance_probe import read_device
 from run_scene import geometry, reference, world_geometry
 from sm86_fixture import FIXTURES, operands, triangle_result
 
-HERE = Path(__file__).resolve().parent
 
 
 def main():
@@ -120,10 +120,9 @@ def main():
                   ias_base=scene.info.base, ias_hex=ias.hex(), gas_base=scene.info.gas_base,
                   ias_root_offset=roots[0], gas_root_offset=roots[1], build=probe.build_info,
                   cuda_visible_devices=os.environ.get('CUDA_VISIBLE_DEVICES'),
-                  source_sha256={name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
-                                 for name in ('run_parent_probe.py', 'parent_resume.py', 'device_instance.py',
+                  source_sha256=hash_sources(('run_parent_probe.py', 'parent_resume.py', 'device_instance.py',
                                               'instance_template.cu', 'instance_protocol.py', 'sm86_fixture.py',
-                                              'run_scene.py', 'optix_scene.py', 'scene_bridge.cpp', 'ttu_isa.py')},
+                                              'run_scene.py', 'optix_scene.py', 'scene_bridge.cpp', 'ttu_isa.py')),
                   gpu_inventory=subprocess.run(['nvidia-smi', '--query-gpu=index,uuid,name,driver_version', '--format=csv'],
                                                capture_output=True, text=True, check=True).stdout)
     args.output.parent.mkdir(parents=True, exist_ok=True)

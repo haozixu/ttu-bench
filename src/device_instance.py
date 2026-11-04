@@ -2,6 +2,7 @@
 
 Compiler code handles events; this functional harness is not a timing kernel.
 """
+from project_paths import KERNELS
 import ctypes
 import hashlib
 from pathlib import Path
@@ -14,7 +15,6 @@ from sm86_fixture import load_group
 from ttu_isa import decode, set_field, unpack
 
 
-HERE = Path(__file__).resolve().parent
 PAIRS = (42, 52, 12, 66, 16, 14, 72, 40, 36, 24, 32, 2, 34, 50, 56, 54, 60, 58)
 
 
@@ -46,7 +46,7 @@ def issue_source():
 
 
 def build(extra_source='', kernel_name='instance_probe'):
-    source = (HERE / 'instance_template.cu').read_text() + '\n' + issue_source() + '\n' + extra_source
+    source = (KERNELS / 'instance_template.cu').read_text() + '\n' + issue_source() + '\n' + extra_source
     with tempfile.TemporaryDirectory(prefix='ttu-instance-') as directory:
         path = Path(directory) / 'instance.cu'
         cubin = path.with_suffix('.cubin')

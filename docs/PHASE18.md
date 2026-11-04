@@ -20,7 +20,7 @@ EoSS §6引用的 [US11138009B2：Robust, efficient multiprocessor-coprocessor i
 
 ## 测量核与时间窗口
 
-[warp_timing.py](../warp_timing.py) 使用独立 [timing_template.cu](../timing_template.cu) 容器，自行patch执行代码；复用 `cubin_builder.py`、`ttu_isa.py` 和固定fixture知识。原helpers及功能入口保留。容器原FADD链不会执行。
+[warp_timing.py](../src/warp_timing.py) 使用独立 [timing_template.cu](../kernels/timing_template.cu) 容器，自行patch执行代码；复用 `src/cubin_builder.py`、`src/ttu_isa.py` 和固定fixture知识。原helpers及功能入口保留。容器原FADD链不会执行。
 
 ```text
 等待前一sample的读取依赖，恢复全部请求输入
@@ -108,12 +108,12 @@ OPEN后立即读clock约10周期。8条FADD按校准提供32周期计算，但1l
 先查空闲GPU，命令从ttu-bench根目录执行：
 
 ```bash
-CUDA_VISIBLE_DEVICES=5 timeout 25s python3 run_warp_timing.py --group reduced --lanes 1 --alu 32 --placement before-wait --check --output results/local/warp-before.json
-CUDA_VISIBLE_DEVICES=5 timeout 25s python3 run_warp_timing.py --group reduced --lanes 32 --open-gap 8 --check --output results/local/warp-open-gap.json
-python3 validate_warp_timing.py --gpus 5 0 --output results/local/warp-matrix.json
-python3 result_store.py verify
+CUDA_VISIBLE_DEVICES=5 timeout 25s python3 bench.py run_warp_timing --group reduced --lanes 1 --alu 32 --placement before-wait --check --output results/local/warp-before.json
+CUDA_VISIBLE_DEVICES=5 timeout 25s python3 bench.py run_warp_timing --group reduced --lanes 32 --open-gap 8 --check --output results/local/warp-open-gap.json
+python3 bench.py validate_warp_timing --gpus 5 0 --output results/local/warp-matrix.json
+python3 bench.py result_store verify
 ```
 
-后续 [Phase19](PHASE19.md) 已开始MACROFUSE拆分、Tensor及访存位置对照；Phase18源码与原报告保留，避免改变旧结果的source hash。专利指出普通指令不属于允许宏内类型，暂不把“往组里插NOP看看会不会挂”当常规下一步。中断/抢占原子性需要独立方法；当前没有声称已测出。复杂IAS继续暂挂。
+后续 [Phase19](PHASE19.md) 已开始MACROFUSE拆分、Tensor及访存位置对照；Phase18原报告不改；目录迁移前源码可由Git版本恢复。专利指出普通指令不属于允许宏内类型，暂不把“往组里插NOP看看会不会挂”当常规下一步。中断/抢占原子性需要独立方法；当前没有声称已测出。复杂IAS继续暂挂。
 
 归档更新：原179份发布文件现在为5个物理文件，矩阵、observations、资源、sanitizer日志保留可读文件，其余无损合并入records.zip。旧失败链接指向ZIP，成员通过manifest/旧路径读取；不删除失败或改写历史报告。

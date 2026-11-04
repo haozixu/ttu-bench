@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Check device-side instance dispatch and an independent child query (no IAS resume)."""
+from project_paths import hash_sources
 import argparse
 import ctypes
 from datetime import datetime, timezone
@@ -19,7 +20,6 @@ from run_instance_probe import matches_triangle, read_device
 from run_scene import geometry, general_rays, instances_for, reference, world_geometry
 from sm86_fixture import FIXTURES, triangle_result
 
-HERE = Path(__file__).resolve().parent
 STATUS = {1: 'ias_miss', 2: 'unexpected_event', 3: 'invalid_event_address',
           4: 'invalid_child_root', 5: 'independent_child_complete', 6: 'invalid_instance_metadata'}
 
@@ -138,11 +138,10 @@ def main():
                   ias_root_offset=roots[0], gas_root_offset=roots[1], ias_hex=ias.hex(),
                   gas_sha256=hashlib.sha256(gas).hexdigest(),
                   cuda_visible_devices=os.environ.get('CUDA_VISIBLE_DEVICES'),
-                  source_sha256={name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
-                                 for name in ('run_device_instance.py', 'device_instance.py', 'instance_template.cu',
+                  source_sha256=hash_sources(('run_device_instance.py', 'device_instance.py', 'instance_template.cu',
                                               'instance_protocol.py', 'run_instance_probe.py', 'run_scene.py',
                                               'sm86_fixture.py', 'cuda_driver.py', 'ttu_isa.py', 'optix_scene.py',
-                                              'scene_bridge.cpp', 'scene_oracle.cu')},
+                                              'scene_bridge.cpp', 'scene_oracle.cu')),
                   gpu_inventory=subprocess.run(['nvidia-smi', '--query-gpu=index,uuid,name,driver_version', '--format=csv'],
                                                capture_output=True, text=True, check=True).stdout)
     args.output.parent.mkdir(parents=True, exist_ok=True)

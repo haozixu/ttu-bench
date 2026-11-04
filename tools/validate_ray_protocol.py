@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate opaque/culling requests and instance oracles in fresh processes."""
+from project_paths import ROOT as HERE, bench_command
 import argparse
 from datetime import datetime, timezone
 import json
@@ -8,7 +9,6 @@ from pathlib import Path
 import subprocess
 import sys
 
-HERE = Path(__file__).resolve().parent
 
 
 def main():
@@ -34,7 +34,7 @@ def main():
     for gpu in args.gpus:
         for case in cases:
             destination = directory / f'gpu{gpu}-{case["name"]}.json'
-            command = [sys.executable, str(HERE / 'run_scene.py'), case['scene'], '--count', '64',
+            command = [*bench_command('run_scene'), case['scene'], '--count', '64',
                        '--group', 'both', '--ray-suite', 'general', '--ray-flags', str(case['flags']),
                        '--instances', case['instances'], '--repeat', str(args.repeat),
                        '--check', '--output', str(destination)]

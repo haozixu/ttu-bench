@@ -25,14 +25,14 @@ Phase15由host解码事件、变换ray，再次launch查询child。本阶段host
 
 | 文件 | 用途 |
 |---|---|
-| [device_instance.py](../device_instance.py) | host/device结构、构建、编译器寄存器映射、TTU patch、module及launch接口 |
-| [instance_template.cu](../instance_template.cu) | 普通CUDA事件分派、边界检查、逆矩阵运算、请求重新初始化；不承担计时 |
-| [run_device_instance.py](../run_device_instance.py) | 实时AS、输入ray、raw返回、设备变换/记录与host解码交叉检查、CPU及OptiX oracle |
-| [validate_device_instance.py](../validate_device_instance.py) | 8项复现矩阵，每项新进程/context、40秒timeout，保存子报告及hash |
+| [device_instance.py](../src/device_instance.py) | host/device结构、构建、编译器寄存器映射、TTU patch、module及launch接口 |
+| [instance_template.cu](../kernels/instance_template.cu) | 普通CUDA事件分派、边界检查、逆矩阵运算、请求重新初始化；不承担计时 |
+| [run_device_instance.py](../tools/run_device_instance.py) | 实时AS、输入ray、raw返回、设备变换/记录与host解码交叉检查、CPU及OptiX oracle |
+| [validate_device_instance.py](../tools/validate_device_instance.py) | 8项复现矩阵，每项新进程/context、40秒timeout，保存子报告及hash |
 
 `ttu_issue()`用18个64位输入/输出对应fixture里的18个寄存器对。nvcc生成21条连续DADD marker；工具检查opcode、marker立即数和寄存器关系，取得真实寄存器分配，再把19条expanded TTU组的两个显式寄存器字段重映射。前后各放一个wait-all NOP，普通CUDA代码负责输入/输出搬运。输入、输出缓冲独立，第二次请求前重新初始化全部状态，避免直接重复被LD覆盖的输入。
 
-这让事件处理可以用可读CUDA代码逐步扩展，同时继续复用`ttu_isa.py`和`sm86_fixture.load_group()`的编码知识。它仍绑定SM86及当前fixture协议，不能直接当作通用内联TTU ABI；编译器变化导致marker布局不符合预期时会拒绝patch。
+这让事件处理可以用可读CUDA代码逐步扩展，同时继续复用`src/ttu_isa.py`和`sm86_fixture.load_group()`的编码知识。它仍绑定SM86及当前fixture协议，不能直接当作通用内联TTU ABI；编译器变化导致marker布局不符合预期时会拒绝patch。
 
 [资源记录](../results/phase16/phase16-device-resource-usage.txt)来自一次单独构建：`instance_probe`为59 registers/thread、288字节stack、0显式shared。`cuobjdump`同时显示LOCAL:0，不能据此忽略stack上的数组及搬运。此功能容器以`-Xptxas -O0`编译，只有1个thread/active lane，不能替代Phase12的80寄存器/无stack测量容器，也不能用其host时间估计TTU延迟。
 
@@ -63,8 +63,8 @@ Phase15由host解码事件、变换ray，再次launch查询child。本阶段host
 复现，从`ttu-bench/`运行并选择空闲卡：
 
 ```bash
-CUDA_VISIBLE_DEVICES=1 timeout 40s python3 run_device_instance.py --instance identity --ray-index 0 --check --output results/local-device-one.json
-python3 validate_device_instance.py --gpus 1 2 --output results/local-device-matrix.json
+CUDA_VISIBLE_DEVICES=1 timeout 40s python3 bench.py run_device_instance --instance identity --ray-index 0 --check --output results/local-device-one.json
+python3 bench.py validate_device_instance --gpus 1 2 --output results/local-device-matrix.json
 ```
 
 编码校验通过；[固定fixture回归](../results/phase16/phase16-fixture-regression.json)为GPU2的8case/40launch，含原20条组。
@@ -75,7 +75,7 @@ python3 validate_device_instance.py --gpus 1 2 --output results/local-device-mat
 
 下一任务应围绕这些反例解码，而不是简单把已知实例逐个独立查询后取min：后者可以做软件参考，但不能验证TTU父级恢复协议。
 
-1. 从JIT的父级状态保存/恢复路径明确每个返回槽和重提交输入的对应关系。现有片段在`reference/jit/jit16-instance-ordinary.sass`，必要时用`disassemble_ttu.py`补齐`0x2b20–0x41e0`及后续栈恢复分支。
+1. 从JIT的父级状态保存/恢复路径明确每个返回槽和重提交输入的对应关系。现有片段在`reference/jit/jit16-instance-ordinary.sass`，必要时用`tools/disassemble_ttu.py`补齐`0x2b20–0x41e0`及后续栈恢复分支。
 2. 构造两个instance、输入顺序交换、沿ray前后重叠；专门加入“第一事件child miss、另一个child hit”和“第一child hit但另一个更近”。需要记录事件顺序，不能仅从builder输入顺序推定访问顺序。
 3. 显式保留父级ray、返回槽和当前best t，在child完成后恢复父级，直到有可验证的终止条件；与CPU/OptiX比较最终最近命中。
 

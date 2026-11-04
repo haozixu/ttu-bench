@@ -1,4 +1,5 @@
 """Single-triangle SM86 mttu fixture knowledge; separate from general ISA."""
+from project_paths import ROOT as HERE
 import hashlib
 import math
 import struct
@@ -7,7 +8,7 @@ from pathlib import Path
 from cuda_driver import sections
 from ttu_isa import decode, fused_group, set_field, unpack
 
-FIXTURES = Path(__file__).resolve().parent / 'fixtures'
+FIXTURES = HERE / 'fixtures'
 AS_SHA256 = '715c99ef42c84709f9d0f91b6b458e253895981dec2ea4fa16a51cf56c7ab269'
 GROUP_SHA256 = 'f8ff2e20f9711dcaff44c9af412c1e4f79d2f00ccfe56aceb4795e6584f50a02'
 REDUCED_SHA256 = 'ced3108f52be2c8fd4fb811b988e5e71f81a4ccf70d8a6df0aaa9d2af66e6bbd'

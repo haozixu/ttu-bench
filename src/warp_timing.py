@@ -4,6 +4,7 @@ TTU groups are byte-identical to the validated fixture groups. Clocks and ALU
 work remain outside MACROFUSE. Each sample restores all TTUST inputs and waits
 before the next sample. This measures an instrumented request, not pure RT time.
 """
+from project_paths import KERNELS
 import ctypes
 import hashlib
 from pathlib import Path
@@ -14,7 +15,6 @@ from cuda_driver import check, cuda
 from sm86_fixture import load_group
 from ttu_isa import input_registers, ttumf
 
-HERE = Path(__file__).resolve().parent
 STRIDE = 512
 REGISTERS = 96
 SNAPSHOT_REGISTERS = 92
@@ -82,7 +82,7 @@ def build(values, *, group='reduced', samples=4, alu=0, placement='before-wait',
             # snapshots from the next sample overwriting clock/result slots.
             sequence.append((0x7918, 0x001fe20000000000))
     sequence.append(EXIT)
-    template = compile_template(HERE / 'timing_template.cu')
+    template = compile_template(KERNELS / 'timing_template.cu')
     image = patch_kernel(template, 'ttu_timing', sequence, registers=REGISTERS)
     info = dict(cubin_sha256=hashlib.sha256(image).hexdigest(),
                 group_sha256=hashlib.sha256(body).hexdigest(), offsets=offsets,

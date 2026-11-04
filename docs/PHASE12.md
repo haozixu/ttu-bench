@@ -2,7 +2,7 @@
 
 日期：2026-11-02。设备：RTX 3090 / GA102 / SM86，driver 535.309.01，CUDA 12.1。
 
-**当前主入口是 `run_minimal.py`。它在全新 CUDA context 中自行分配 AS、dummy root 和输出缓冲，只发射自研 CUDA kernel；不创建 OptiX pipeline，不调用原始 megakernel，不需要驱动私有调度上下文。**
+**当前主入口是 `tools/run_minimal.py`。它在全新 CUDA context 中自行分配 AS、dummy root 和输出缓冲，只发射自研 CUDA kernel；不创建 OptiX pipeline，不调用原始 megakernel，不需要驱动私有调度上下文。**
 
 这是功能正确性里程碑，尚无 RT/CUDA 争抢或延迟测量结果；13 条是当前已验证的精简 TTU 序列，不声称全局最短。研究问题与已有工作的边界见 [研究空白审视](../../research/notes/rt-cuda-research-gap.md)。
 
@@ -11,11 +11,11 @@
 先用 `nvidia-smi` 选择空闲卡。在 `ttu-bench/` 项目根目录运行：
 
 ```bash
-CUDA_VISIBLE_DEVICES=7 timeout 20s python3 run_minimal.py hit --check --repeat 5
-CUDA_VISIBLE_DEVICES=7 timeout 20s python3 run_minimal.py miss --check --repeat 5
-CUDA_VISIBLE_DEVICES=7 timeout 20s python3 run_minimal.py hit --oz -10 --check
-CUDA_VISIBLE_DEVICES=7 timeout 20s python3 run_minimal.py hit --dz 2 --check
-CUDA_VISIBLE_DEVICES=7 timeout 20s python3 run_minimal.py hit --tmax 6 --check
+CUDA_VISIBLE_DEVICES=7 timeout 20s python3 bench.py run_minimal hit --check --repeat 5
+CUDA_VISIBLE_DEVICES=7 timeout 20s python3 bench.py run_minimal miss --check --repeat 5
+CUDA_VISIBLE_DEVICES=7 timeout 20s python3 bench.py run_minimal hit --oz -10 --check
+CUDA_VISIBLE_DEVICES=7 timeout 20s python3 bench.py run_minimal hit --dz 2 --check
+CUDA_VISIBLE_DEVICES=7 timeout 20s python3 bench.py run_minimal hit --tmax 6 --check
 ```
 
 输出为 JSON；`--check` 根据原始三角形做独立的解析求交，失败会非零退出。`mode` 只选择默认 x/y，最终结果由全部 ray 参数决定，例如 `hit --tmax 6` 应得到 miss。
@@ -23,7 +23,7 @@ CUDA_VISIBLE_DEVICES=7 timeout 20s python3 run_minimal.py hit --tmax 6 --check
 完整验证：
 
 ```bash
-python3 validate_minimal.py --gpus 5 7 --output results/local-functional.json
+python3 bench.py validate_minimal --gpus 5 7 --output results/local-functional.json
 ```
 
 每个 case 独立进程 / 新 context；每 case 发射 5 次（每次加载/卸载自研 module），覆盖精简组和原始 20 指令组。已在 GPU 5、7 各完成 8 case，共 **16 case / 80 launch，全通过**。原始结果、GPU UUID、资源报告现收在 `results/phase12/`；曾保存的含进程VA的cubin已删除，见文末历史说明。GPU kernel 的资源为 **80 registers/thread、0 local、0 shared、0 stack**，单 active lane。
@@ -49,10 +49,10 @@ python3 validate_minimal.py --gpus 5 7 --output results/local-functional.json
 
 ## 实现与实际依赖
 
-- `minimal_template.cu` 仅提供合法 CUDA ELF 容器；其 FADD 链在加载前被完全替换，不执行。
-- `minimal.py` 根据 TTUST 的显式源寄存器对，只初始化所需 GPR；载入 CUDA 全局访存 descriptor，发射 TTU 组，等待 scoreboard 后写回结果，EXIT。GPU 端没有软件 traversal、callback、local/shared 访问。
-- `run_minimal.py` 从保存的 `fixtures/jit_16.elf` 中取 **0xe70–0xfa0 的 20×16B 原始协议**，从 `.nv.global.init` 取 dummyRootNode 的前 128B；这是静态数据来源，不会加载/执行该驱动 module。另读取已保存的 `fixtures/optix_as.bin`，不在运行时构建 AS。
-- `cuda_driver.py` 提供当前使用的 Driver API 与 ELF 读取；清理后不再从已删除的旧 megakernel runner 导入任何代码。
+- `kernels/minimal_template.cu` 仅提供合法 CUDA ELF 容器；其 FADD 链在加载前被完全替换，不执行。
+- `src/minimal.py` 根据 TTUST 的显式源寄存器对，只初始化所需 GPR；载入 CUDA 全局访存 descriptor，发射 TTU 组，等待 scoreboard 后写回结果，EXIT。GPU 端没有软件 traversal、callback、local/shared 访问。
+- `tools/run_minimal.py` 从保存的 `fixtures/jit_16.elf` 中取 **0xe70–0xfa0 的 20×16B 原始协议**，从 `.nv.global.init` 取 dummyRootNode 的前 128B；这是静态数据来源，不会加载/执行该驱动 module。另读取已保存的 `fixtures/optix_as.bin`，不在运行时构建 AS。
+- `src/cuda_driver.py` 提供当前使用的 Driver API 与 ELF 读取；清理后不再从已删除的旧 megakernel runner 导入任何代码。
 - AS 用普通 `cuMemAlloc` 分配在高 VA，修正 `AS+0xd0` 自指针；本例不需要低 4GB VA。只验证了此固定单三角形 AS，不外推所有生产 AS 可同样重定位。
 - **dummyRootNode 不可省略**：原 module 的此对象包含单位变换。直接清零输入 R50:R51 会把 hit 变成 miss；只清 R50 可能 fault。现在从原始静态数据复制后自行分配和编码。
 - 原 AS SHA256：`715c99ef42c84709f9d0f91b6b458e253895981dec2ea4fa16a51cf56c7ab269`。

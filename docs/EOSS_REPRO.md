@@ -4,22 +4,22 @@
 
 ## 恢复范围与来源
 
-旧 README/INDEX/HANDOFF/NEXT_PROMPT 从清理前会话输出恢复到 `reference/history/`。`build_ttu3.py`、`probe3.cu`、`run_ttu4.py` 的历史源码与 `cleanup-2026-11-02.json` 中删除前的大小和 SHA256 一致。历史文档包含错误结论，放在历史目录保留原文，不作为当前运行说明。
+旧 README/INDEX/HANDOFF/NEXT_PROMPT 从清理前会话输出恢复到 `reference/history/`。`build_ttu3.py`、`probe3.cu`、`run_ttu4.py` 的历史源码与 `docs/reference/cleanup-2026-11-02.json` 中删除前的大小和 SHA256 一致。历史文档包含错误结论，放在历史目录保留原文，不作为当前运行说明。
 
-原 `build_and_patch.py`、`run_exp.py` 的完整源码未找到。当前同名文件是**重建版**，保留 exp1–5 实验名；改用显式寄存器初始化和读回容器，不能视为旧 FADD 链 harness 的逐字节复原。
+原 `build_and_patch.py`、`run_exp.py` 的完整源码未找到。当前 `tools/`下同名文件是**重建版**，保留 exp1–5 实验名；改用显式寄存器初始化和读回容器，不能视为旧 FADD 链 harness 的逐字节复原。
 
 ## 两条可以独立使用的实验线
 
 ```bash
-CUDA_VISIBLE_DEVICES=7 python3 run_exp.py all --repeat 3 --output results/local-eoss.json
-CUDA_VISIBLE_DEVICES=7 python3 run_exp.py exp2_open2 --repeat 3
-CUDA_VISIBLE_DEVICES=7 python3 run_minimal.py hit --check --repeat 5
-python3 validate_encoding.py
+CUDA_VISIBLE_DEVICES=7 python3 bench.py run_exp all --repeat 3 --output results/local-eoss.json
+CUDA_VISIBLE_DEVICES=7 python3 bench.py run_exp exp2_open2 --repeat 3
+CUDA_VISIBLE_DEVICES=7 python3 bench.py run_minimal hit --check --repeat 5
+python3 bench.py validate_encoding
 ```
 
-先用 nvidia-smi 选空闲 GPU。`run_exp.py` 自动为每个变体和 trial 创建独立子进程/context，20 秒超时；超时后停止整组，保留错误和 stdout/stderr。不会自动重置 GPU。`all` 包含 probe、exp1–5 和 IVALL 对照；可能挂起的 scoreboard-write 变体只能显式选择，不在默认组内。错误 count、缺 CLOSE 的挂起扫描没有加入默认实验。
+先用 nvidia-smi 选空闲 GPU。`tools/run_exp.py` 自动为每个变体和 trial 创建独立子进程/context，20 秒超时；超时后停止整组，保留错误和 stdout/stderr。不会自动重置 GPU。`all` 包含 probe、exp1–5 和 IVALL 对照；可能挂起的 scoreboard-write 变体只能显式选择，不在默认组内。错误 count、缺 CLOSE 的挂起扫描没有加入默认实验。
 
-`run_exp.py` 默认一个 active lane，`--threads 32` 可选择完整 warp，但该模式所有 lane 共用 dump 地址，只适合看执行/fault 状态，不能解释为逐 lane 结果。默认 `--wait-mask 0` 用于独立指令行为；`run_minimal.py` 保持已验证的结果等待。复现一个 fault 必须记录 TTU 编码及后续 wait 条件，不能仅比较助记符。
+`tools/run_exp.py` 默认一个 active lane，`--threads 32` 可选择完整 warp，但该模式所有 lane 共用 dump 地址，只适合看执行/fault 状态，不能解释为逐 lane 结果。默认 `--wait-mask 0` 用于独立指令行为；`tools/run_minimal.py` 保持已验证的结果等待。复现一个 fault 必须记录 TTU 编码及后续 wait 条件，不能仅比较助记符。
 
 ## 历史与新测结果
 
@@ -50,13 +50,15 @@ python3 validate_encoding.py
 
 | 模块 | 接口与边界 |
 |---|---|
-| `ttu_isa.py` | `inst/ttuopen/ttumf/ttust/ttugo/ttuld/ttuclose/ttucctl` 返回16字节；`decode/field/set_field` 保留未修改位；`input_registers/fused_group` 管理显式寄存器对和count。TTUCLOSE 是 Rosetta 的 LD.CLOSE/RZ 别名，仅做编码支持，未单独实测 |
-| `eoss_helpers.py` | 原样读取 SM120 canonical 数据；调用 EoSS `BinaryPatcher` 与 `PatchPolicy.REPLACE_FULL`；EoSS 调度字段读写可从 `control` 使用 |
-| `cubin_builder.py` | 编译合法单入口 CUDA ELF，生成 MOV/寄存器dump，替换 SASS 和寄存器/EXIT 元数据；支持 EoSS patch 回调；当前元数据处理仅支持自己的模板 |
-| `minimal.py` | 从 TTUST 推导输入并生成 standalone probe；`launch_image` 接受已构造 image，供两条实验线复用 |
-| `sm86_fixture.py` | 经 hash 校验的原20条/精简13条组、单三角形地址打包和 ray 寄存器模板；这些是 fixture 知识，不假装通用 ISA |
+| `src/ttu_isa.py` | `inst/ttuopen/ttumf/ttust/ttugo/ttuld/ttuclose/ttucctl` 返回16字节；`decode/field/set_field` 保留未修改位；`input_registers/fused_group` 管理显式寄存器对和count。TTUCLOSE 是 Rosetta 的 LD.CLOSE/RZ 别名，仅做编码支持，未单独实测 |
+| `src/eoss_helpers.py` | 原样读取 SM120 canonical 数据；调用 EoSS `BinaryPatcher` 与 `PatchPolicy.REPLACE_FULL`；EoSS 调度字段读写可从 `control` 使用 |
+| `src/cubin_builder.py` | 编译合法单入口 CUDA ELF，生成 MOV/寄存器dump，替换 SASS 和寄存器/EXIT 元数据；支持 EoSS patch 回调；当前元数据处理仅支持自己的模板 |
+| `src/minimal.py` | 从 TTUST 推导输入并生成 standalone probe；`launch_image` 接受已构造 image，供两条实验线复用 |
+| `src/sm86_fixture.py` | 经 hash 校验的原20条/精简13条组、单三角形地址打包和 ray 寄存器模板；这些是 fixture 知识，不假装通用 ISA |
 
 例如构造或修改指令，不需要复制 minimal 的位运算：
+
+以下直接导入示例需在项目根设置 `PYTHONPATH=src:tools`；使用bench.py运行实验时自动设置模块搜索路径。
 
 ```python
 from ttu_isa import ttuld, ttust, fused_group, decode
@@ -81,7 +83,7 @@ print(decode(load))
 | IVALL+scoreboard write 的 timeout 与论文 fault 不同 | 上述新负结果与明确 harness 条件 | 候选行为差异，尚待最小同字节/同步条件对照 |
 | EoSS canned 的 CLOSE-labelled 字是 bit72；SM86工作组为bit74 | artifact原始数据与工作组；**两代 Rosetta 的 close 均为bit74** | artifact与编码定义不一致，不能算已证明的架构差异；不静默改写上游数据 |
 
-Rosetta 两代的 MACROFUSE.Sb 都是 bits44:40，5位；旧代码用8位掩码不代表硬件支持8位count。`validate_encoding.py` 校验20条原指令 round trip、13条组 hash、字段边界、EoSS调度改写不伤操作数，以及已恢复源码的原hash。
+Rosetta 两代的 MACROFUSE.Sb 都是 bits44:40，5位；旧代码用8位掩码不代表硬件支持8位count。`tools/validate_encoding.py` 校验20条原指令 round trip、13条组 hash、字段边界、EoSS调度改写不伤操作数，以及已恢复源码的原hash。
 
 完整静态对照含源文件hash，保存在 `results/eoss/ttu-sm86-sm120-layout.json`。两代OPEN都有DUAL位（bit72），两代LD都有CLOSE位（bit74）。目前没有从这些编码资料发现明显的TTU接口代际断裂。更复杂AS、软件续遍历、驱动路径及探索路线见 [AS_ROADMAP.md](AS_ROADMAP.md)。
 

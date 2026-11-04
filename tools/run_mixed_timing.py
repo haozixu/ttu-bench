@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""One-warp functional/timing probe; reports instrumented SM-clock intervals."""
+"""Phase19: same-warp TTU with HMMA, memory and split MACROFUSE examples."""
+from project_paths import hash_sources
 import argparse
 import ctypes
 from datetime import datetime, timezone
@@ -14,29 +15,36 @@ import subprocess
 
 from cuda_driver import check, cuda, sections
 from sm86_fixture import AS_SHA256, FIXTURES, operands, triangle_result
-from warp_timing import TimingProbe, build
+from mixed_timing import MixedProbe, build
 
-HERE = Path(__file__).resolve().parent
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--group', choices=('none', 'nop', 'mf0', 'reduced', 'expanded'), default='reduced')
+    parser.add_argument('--group', choices=('none', 'reduced', 'expanded'), default='reduced')
     parser.add_argument('--lanes', type=int, choices=(1, 32), default=1)
     parser.add_argument('--samples', type=int, default=4)
     parser.add_argument('--launches', type=int, default=12)
-    parser.add_argument('--alu', type=int, default=0)
     parser.add_argument('--placement', choices=('before-wait', 'after-wait'), default='before-wait')
-    parser.add_argument('--open-gap', type=int, help='clock after OPEN, then 0..128 FADDs before MF; fused body unchanged')
+    parser.add_argument('--kind', choices=('none','fadd','hmma','global','shared'), default='none')
+    parser.add_argument('--count', type=int, default=0)
+    parser.add_argument('--variant',choices=('normal','prefix-mf0','open-mf0','split9','split10','open-gap'),default='normal')
+    parser.add_argument('--gap',type=int,default=0)
     parser.add_argument('--ray', choices=('hit', 'miss', 'short'), default='hit')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--artifact', type=Path, help='local cubin with process-specific VAs; not replayable')
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
-    if not 2 <= args.samples <= 8 or not 2 <= args.launches or not 0 <= args.alu <= 512:
-        parser.error('samples 2..8, launches >=2 and alu 0..512 required')
-    if args.open_gap is not None and (args.group not in ('reduced', 'expanded') or not 0 <= args.open_gap <= 128):
-        parser.error('--open-gap requires reduced/expanded and 0..128')
+    if not 2 <= args.samples <= 4 or args.launches < 2 or not 0 <= args.count <= 128 or not 0 <= args.gap <= 64:
+        parser.error('samples 2..4, launches >=2, count 0..128, gap 0..64 required')
+    if args.group == 'none' and args.variant != 'normal':
+        parser.error('MF examples require a TTU group')
+    if args.gap and args.variant not in ('open-gap','split9','split10'):
+        parser.error('gap requires open-gap or split9/10')
+    if args.kind == 'none' and args.count:
+        parser.error('count requires a workload')
+    if args.kind == 'hmma' and args.lanes != 32:
+        parser.error('HMMA requires full warp')
     check(cuda.cuInit(0), 'init')
     device, context = ctypes.c_int(), ctypes.c_void_p()
     check(cuda.cuDeviceGet(ctypes.byref(device), 0), 'device')
@@ -63,12 +71,17 @@ def main():
     ox, oy = (50., 2.) if args.ray == 'miss' else (.25, .25)
     tmax = 6. if args.ray == 'short' else 100.
     values = operands(base, ox, oy, -5., 1., tmax, dummy, ray_flags=1)
-    image, build_info = build(values, group=args.group, samples=args.samples, alu=args.alu,
-                             placement=args.placement, open_gap=args.open_gap)
+    ring = allocate(b'', 64*128)
+    ring_data=bytearray(64*128)
+    for index in range(64):
+        struct.pack_into('<Q',ring_data,index*128,ring+((index+1)%64)*128)
+    check(cuda.cuMemcpyHtoD_v2(ring,bytes(ring_data),len(ring_data)),'ring upload')
+    image, build_info = build(values,ring,group=args.group,samples=args.samples,kind=args.kind,
+                             count=args.count,placement=args.placement,variant=args.variant,gap=args.gap)
     if args.artifact:
         args.artifact.parent.mkdir(parents=True, exist_ok=True)
         args.artifact.write_bytes(image)
-    probe = TimingProbe(image, lanes=args.lanes, samples=args.samples)
+    probe = MixedProbe(image, lanes=args.lanes, samples=args.samples)
     failures, records = [], []
     before = subprocess.run(['nvidia-smi', '--query-gpu=index,uuid,name,driver_version,clocks.sm,temperature.gpu,utilization.gpu',
                              '--format=csv'], capture_output=True, text=True, check=True).stdout
@@ -84,11 +97,22 @@ def main():
                 clocks = [raw[r] | raw[r+1] << 32 for r in (80, 82, 84, 86)]
                 accumulator = struct.unpack('<f', struct.pack('<I', raw[88]))[0]
                 result = triangle_result(raw) if args.group in ('reduced', 'expanded') else None
-                passed = (raw[78] == lane and accumulator == args.alu + (args.open_gap or 0)
+                passed = (raw[78] == lane and accumulator == (args.count if args.kind=='fadd' else 0) + (args.gap if args.variant in ('open-gap','split9','split10') else 0)
                           and all(a <= b for a, b in zip(clocks, clocks[1:])))
-                after_open = raw[90] | raw[91] << 32 if args.open_gap is not None else None
-                if after_open is not None:
-                    passed = passed and clocks[0] <= after_open <= clocks[1]
+                tensor = [struct.unpack('<f', struct.pack('<I',raw[r]))[0] for r in range(96,100)]
+                global_pointer = raw[112] | raw[113]<<32
+                passed = passed and tensor == [float(16*args.count if args.kind=='hmma' else 0)]*4
+                tensor_consumed = [struct.unpack('<f', struct.pack('<I',raw[r]))[0] for r in range(116,120)]
+                passed = passed and tensor_consumed == tensor
+                passed = passed and list(raw[120:124]) == [raw[r] for r in (72,73,32,33)]
+                passed = passed and global_pointer == ring + ((args.count if args.kind=='global' else 0)%64)*128
+                passed = passed and raw[108] == lane*4 + (128 if args.kind=='shared' and args.count%2 else 0)
+                global_consumed=raw[114] | raw[115]<<32
+                passed = passed and global_consumed == (global_pointer if args.kind=='global' else 0)
+                passed = passed and raw[109] == (raw[108] if args.kind=='shared' else 0)
+                after_go = raw[90] | raw[91]<<32 if args.variant == 'split10' else None
+                if after_go is not None:
+                    passed = passed and clocks[0] <= after_go <= clocks[1]
                 if result is not None:
                     passed = passed and (result['kind'] == 'miss' if args.ray != 'hit' else
                               result['kind'] == 'triangle' and result['primitive'] == 0
@@ -100,33 +124,31 @@ def main():
                                     group_interval=clocks[1]-clocks[0], prewait_interval=clocks[2]-clocks[1],
                                     postwait_interval=clocks[3]-clocks[2], total=clocks[3]-clocks[0],
                                     accumulator=accumulator, result=result, passed=passed,
-                                    after_open=after_open,
-                                    open_issue_interval=after_open-clocks[0] if after_open is not None else None,
+                                    global_consumed=global_consumed,shared_consumed=raw[109],tensor=tensor,tensor_consumed=tensor_consumed,global_pointer=global_pointer,shared_value=raw[108],after_go=after_go,
                                     raw=[f'{value:08x}' for value in raw]))
     # Lanes share warp scheduling: use only lane0, exclude first launch/sample.
     steady = [r for r in records if r['lane'] == 0 and r['launch'] > 0 and r['sample'] > 0]
     summary = {key: dict(min=min(r[key] for r in steady), median=statistics.median(r[key] for r in steady),
                          max=max(r[key] for r in steady))
                for key in ('group_interval', 'prewait_interval', 'postwait_interval', 'total')} if steady else {}
-    if steady and args.open_gap is not None:
-        summary['open_issue_interval'] = dict(min=min(r['open_issue_interval'] for r in steady),
-                                              median=statistics.median(r['open_issue_interval'] for r in steady),
-                                              max=max(r['open_issue_interval'] for r in steady))
-    sources = ('run_warp_timing.py', 'warp_timing.py', 'timing_template.cu', 'cubin_builder.py',
+    if steady and args.variant == 'split10':
+        deltas = [r['after_go']-r['clocks'][0] for r in steady]
+        summary['through_go_interval'] = dict(min=min(deltas),median=statistics.median(deltas),max=max(deltas))
+    sources = ('run_mixed_timing.py', 'mixed_timing.py', 'warp_timing.py', 'timing_template.cu', 'cubin_builder.py',
                'sm86_fixture.py', 'ttu_isa.py', 'cuda_driver.py')
     report = dict(timestamp=datetime.now(timezone.utc).isoformat(), args=vars(args) | {'output': str(args.output),
                    'artifact': str(args.artifact) if args.artifact else None},
-                  contract='1 CTA/warp; identical per-lane rays, disjoint snapshots; restored inputs each sample; clocks and ALU outside MACROFUSE; no pure RT latency claim',
+                  contract='1 CTA/warp; work outside fused bodies; memory SB2, padded HMMA with immediate consumers; C waits TTU SB1, then immediate raw copies; no saturation or pure RT latency claim',
                   clock_definition=['before OPEN/MF0/empty', 'after complete group without explicit wait',
-                                    'after wait-all and optional before-wait ALU', 'after optional after-wait ALU'],
+                                    'after SB1 wait and optional completed before-wait workload', 'after immediate TTU copies and completed optional after-wait workload'],
                   summary_lane0_steady=summary, steady_samples=len(steady), records=records, failures=failures,
                   fatal_error=fatal_error, build=build_info, ray=[ox,oy,-5,0,0,0,1,tmax],
-                  as_sha256=AS_SHA256, cuda_visible_devices=os.environ.get('CUDA_VISIBLE_DEVICES'), inventory_before=before,
+                  as_sha256=AS_SHA256, ring=dict(base=ring,nodes=64,stride=128,policy='LDG.STRONG.GPU bypass L1; warm ring, not cold DRAM'), cuda_visible_devices=os.environ.get('CUDA_VISIBLE_DEVICES'), inventory_before=before,
                   compiler_version=subprocess.run(['nvcc', '--version'],capture_output=True,text=True,check=True).stdout,
-                  source_sha256={name:hashlib.sha256((HERE/name).read_bytes()).hexdigest() for name in sources})
+                  source_sha256=hash_sources(sources))
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2, allow_nan=False)+'\n')
-    print(json.dumps(dict(group=args.group, lanes=args.lanes, alu=args.alu, placement=args.placement,
+    print(json.dumps(dict(group=args.group, lanes=args.lanes, kind=args.kind,count=args.count,variant=args.variant,gap=args.gap,placement=args.placement,
                           records=len(records), failures=len(failures), fatal_error=fatal_error, summary=summary)))
     if not fatal_error:
         probe.close()

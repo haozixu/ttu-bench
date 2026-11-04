@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """One-warp calibration, valid TTU groups, and independent-ALU overlap matrix."""
+from project_paths import bench_command
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -9,7 +10,6 @@ from pathlib import Path
 import subprocess
 import sys
 
-HERE = Path(__file__).resolve().parent
 
 
 def main():
@@ -36,7 +36,7 @@ def main():
         for lanes, group, ray, alu, placement, gap in cases:
             label = f'gpu{gpu}-l{lanes}-{group}-{ray}-a{alu}-{placement}' + (f'-open{gap}' if gap is not None else '')
             output = args.output.with_name(f'{args.output.stem}-{label}.json')
-            command = [sys.executable, str(HERE/'run_warp_timing.py'), '--lanes', str(lanes), '--group', group,
+            command = [*bench_command('run_warp_timing'), '--lanes', str(lanes), '--group', group,
                        '--ray', ray, '--alu', str(alu), '--placement', placement, '--samples', '4', '--launches', '12',
                        '--check', '--output', str(output)]
             if gap is not None:

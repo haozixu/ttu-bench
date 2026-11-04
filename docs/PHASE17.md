@@ -57,7 +57,7 @@ R54..R61 = 0
 
 然后重新 OPEN/GO/LD.CLOSE，得到下一个 instance 事件或 miss；可能产生的更多 pending 引用继续入栈。不是保持同一次 OPEN，也不是遍历 builder 提供的所有 instance 独立求交取 min。每个 child 查询仍是独立的 GAS 请求，父级进度由返回引用连接。
 
-直接照搬整组返回状态、或者只搬一个条目却不保存其余条目，会丢失后续工作。[run_parent_probe.py](../run_parent_probe.py) 保留 none/copy/promote/pop 的诊断入口；其中 copy/promote 是待否证的历史假设，不是可用的通用算法。它的 pop 也是 host 诊断策略，不承担正式最近命中判定。
+直接照搬整组返回状态、或者只搬一个条目却不保存其余条目，会丢失后续工作。[run_parent_probe.py](../tools/run_parent_probe.py) 保留 none/copy/promote/pop 的诊断入口；其中 copy/promote 是待否证的历史假设，不是可用的通用算法。它的 pop 也是 host 诊断策略，不承担正式最近命中判定。
 
 JIT 对照新增 [parent普通指令片段](../reference/jit/jit16-parent-ordinary.sass) 和 [来源manifest](../reference/jit/jit16-parent-disassembly.json)：0x2b20–0x30f0处理返回描述符，0x3200–0x3740、0x40a0–0x41d0保存引用，0x7e40–0x84a0弹栈恢复，0x8500–0x8580返回请求准备。本实现只提取已验证的子集，没有逐字移植全部 shared/local 栈分支。反汇编文件的 TTU 槽已换 NOP，仅供静态分析，不可运行。
 
@@ -65,18 +65,18 @@ JIT 对照新增 [parent普通指令片段](../reference/jit/jit16-parent-ordina
 
 | 文件 | 用途 |
 |---|---|
-| [parent_resume.py](../parent_resume.py) | raw state transport、parent kernel ABI及编译/launch封装 |
-| [parent_template.cu](../parent_template.cu) | 单kernel的事件分派、child查询、pending软件栈及恢复循环 |
-| [run_parent_resume.py](../run_parent_resume.py) | 每次最终结果及每个child与CPU/OptiX对照，保存输入/父/子完整raw状态 |
-| [validate_parent_resume.py](../validate_parent_resume.py) | 15场景×两GPU，加两个 first-child-only 负对照；每项独立进程/context，40秒timeout |
+| [parent_resume.py](../src/parent_resume.py) | raw state transport、parent kernel ABI及编译/launch封装 |
+| [parent_template.cu](../kernels/parent_template.cu) | 单kernel的事件分派、child查询、pending软件栈及恢复循环 |
+| [run_parent_resume.py](../tools/run_parent_resume.py) | 每次最终结果及每个child与CPU/OptiX对照，保存输入/父/子完整raw状态 |
+| [validate_parent_resume.py](../tools/validate_parent_resume.py) | 15场景×两GPU，加两个 first-child-only 负对照；每项独立进程/context，40秒timeout |
 | [phase17-parent-cases.json](../fixtures/phase17-parent-cases.json) | 显式变换、反例ray及交换输入顺序的场景定义 |
 
-共享 [device_instance.py](../device_instance.py) 增加可选kernel名、源码及参数/结果类型；marker只在目标kernel的text section内查找，避免编译器为不同入口复制 device callee 后误计数。默认单instance接口保留。
+共享 [device_instance.py](../src/device_instance.py) 增加可选kernel名、源码及参数/结果类型；marker只在目标kernel的text section内查找，避免编译器为不同入口复制 device callee 后误计数。默认单instance接口保留。
 
 ```bash
-CUDA_VISIBLE_DEVICES=6 timeout 40s python3 run_parent_resume.py --scenario first-miss-later-hit --check --output results/local/parent-miss-hit.json
-CUDA_VISIBLE_DEVICES=6 timeout 40s python3 run_parent_resume.py --scenario first-farther-later-nearer --check --output results/local/parent-nearer.json
-python3 validate_parent_resume.py --gpus 2 6 --output results/local/parent-matrix.json
+CUDA_VISIBLE_DEVICES=6 timeout 40s python3 bench.py run_parent_resume --scenario first-miss-later-hit --check --output results/local/parent-miss-hit.json
+CUDA_VISIBLE_DEVICES=6 timeout 40s python3 bench.py run_parent_resume --scenario first-farther-later-nearer --check --output results/local/parent-nearer.json
+python3 bench.py validate_parent_resume --gpus 2 6 --output results/local/parent-matrix.json
 ```
 
 先检查GPU空闲情况，index仅为本次运行选择。负对照加 `--stop-after-first --check`，预期退出码1。发布结果通过manifest解析，不能直接按矩阵原始子报告名在当前目录读取。
@@ -102,4 +102,4 @@ Phase17已提交为 `867ee16`。按用户要求，复杂IAS协议逆向暂时挂
 
 ## 归档布局更新
 
-原47份发布文件合并为7个物理文件：完整逐case报告、负对照与等距失败共41份在 [records.zip](../results/phase17/records.zip)，正式矩阵、两项回归、资源、代表事件、四实例诊断保留可读JSON。旧路径均为manifest alias；上文等距样本链接指向ZIP，成员为 `device-chain2-overlap.json`。用 `result_store.py show` 或 `load_result()`按旧名读取，原始字节/hash未改。
+原47份发布文件合并为7个物理文件：完整逐case报告、负对照与等距失败共41份在 [records.zip](../results/phase17/records.zip)，正式矩阵、两项回归、资源、代表事件、四实例诊断保留可读JSON。旧路径均为manifest alias；上文等距样本链接指向ZIP，成员为 `device-chain2-overlap.json`。用 `python3 bench.py result_store show` 或 `load_result()`按旧名读取，原始字节/hash未改。

@@ -28,7 +28,7 @@
 
 公开PTX没有TTU opcode，也没有普通CUDA下等价optixTrace的公开发射入口。inline PTX只能嵌合法PTX，不能让ptxas接受TTUST等原生助记符。OptiX能从CUDA/PTX程序JIT出追踪代码，但使用其编程接口/运行时，不等于普通PTX直接访问RT Core。
 
-因此采用混合实现：相机、软件BVH、着色、索引、输出全部用CUDA C++，只有小段TTU后端patch。已有 [device_instance.py](../device_instance.py) 的编译器寄存器映射/marker思路可复用，但须重新验证优化选项、marker唯一性、寄存器存活、编译器可见的数据依赖、访存顺序、scoreboard和实际SASS。marker不符合预期就拒绝运行。当前-O0功能容器不是性能核，先做功能版，再单独优化和计时。
+因此采用混合实现：相机、软件BVH、着色、索引、输出全部用CUDA C++，只有小段TTU后端patch。已有 [device_instance.py](../src/device_instance.py) 的编译器寄存器映射/marker思路可复用，但须重新验证优化选项、marker唯一性、寄存器存活、编译器可见的数据依赖、访存顺序、scoreboard和实际SASS。marker不符合预期就拒绝运行。当前-O0功能容器不是性能核，先做功能版，再单独优化和计时。
 
 这是私有接口的工程hack：编译器不知道TTU语义，patcher承担驱动/编译器原本维护的约束；AS输入仍依赖本机格式。小模块封装、固定SM/工具链、保留原cubin/patched hash和功能检查可使它可审阅，不能使其变成稳定公开ABI。无须手写整个renderer的SASS。
 

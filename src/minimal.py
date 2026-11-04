@@ -1,6 +1,7 @@
 """Build a CUDA-entry TTU probe from validated driver operands, without its
 megakernel, traversal software, callbacks, or local/shared-memory accesses.
 """
+from project_paths import KERNELS
 import ctypes
 import os
 import struct
@@ -10,11 +11,10 @@ from cuda_driver import check, cuda
 from cubin_builder import CUDA_ENTRY, EXIT, MOV_CONTROL, compile_template, mov_immediate, dump_registers, patch_kernel
 from ttu_isa import decode, input_registers, unpack
 
-HERE = Path(__file__).resolve().parent
 
 
 def build(registers, output_address, group):
-    template = compile_template(HERE / 'minimal_template.cu')
+    template = compile_template(KERNELS / 'minimal_template.cu')
     registers = list(registers)
     for register in os.environ.get("MINIMAL_ZERO", "").split(","):
         if register:

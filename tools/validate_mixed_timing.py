@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Bounded Phase19 matrix. Each case gets its own process/context and timeout."""
+from project_paths import bench_command
 import argparse
 import hashlib
 import json
@@ -44,7 +45,7 @@ def main():
     for gpu in args.gpus:
         for index,row in enumerate(configurations()):
             path=args.output.parent/f'{args.output.stem}-gpu{gpu}-{index:03}.json'
-            command=['python3','run_mixed_timing.py']
+            command=bench_command('run_mixed_timing')
             for key,value in row.items(): command.extend(['--'+key.replace('_','-'),str(value)])
             command.extend(['--check','--output',str(path)])
             try:

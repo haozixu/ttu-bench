@@ -4,6 +4,7 @@
 Root packing uses an empirical header offset and fixture tags,
 not a universal OptiX handle decoder.
 """
+from project_paths import hash_sources
 import argparse
 import ctypes
 from datetime import datetime, timezone
@@ -20,7 +21,6 @@ from minimal import launch
 from optix_scene import Scene
 from sm86_fixture import FIXTURES, load_group, operands, triangle_result
 
-HERE = Path(__file__).resolve().parent
 BASE_TRIANGLE = [(1.0, 0.0, 0.0), (0.0, 2.0, 0.0), (0.0, 0.0, 3.0)]
 
 
@@ -261,9 +261,8 @@ def main():
                                       for a, b in zip(cpu['barycentrics'], optix['barycentrics']))
         if not matches:
             failures.append(f'CPU/OptiX ray{index} mismatch')
-    source_hashes = {name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
-                     for name in ('run_scene.py', 'scene_bridge.cpp', 'scene_oracle.cu', 'optix_scene.py',
-                                  'minimal.py', 'cubin_builder.py', 'ttu_isa.py', 'sm86_fixture.py')}
+    source_hashes = hash_sources(('run_scene.py', 'scene_bridge.cpp', 'scene_oracle.cu', 'optix_scene.py',
+                                  'minimal.py', 'cubin_builder.py', 'ttu_isa.py', 'sm86_fixture.py'))
     report = dict(timestamp=datetime.now(timezone.utc).isoformat(), scene=args.scene,
                   triangles=triangles, rays=rays, cpu=expected, optix=oracle, records=records,
                   instances=instances, world_triangles=world,

@@ -9,10 +9,10 @@
 ## 可复现结果
 
 ```bash
-CUDA_VISIBLE_DEVICES=7 timeout 30s python3 run_scene.py separated --group both --repeat 5 --check
-CUDA_VISIBLE_DEVICES=7 timeout 30s python3 run_scene.py overlap-reversed --group both --check
-CUDA_VISIBLE_DEVICES=7 timeout 30s python3 run_scene.py grid --count 1024 --group both --check
-python3 validate_scene.py --gpus 5 7 --output results/local-scenes.json
+CUDA_VISIBLE_DEVICES=7 timeout 30s python3 bench.py run_scene separated --group both --repeat 5 --check
+CUDA_VISIBLE_DEVICES=7 timeout 30s python3 bench.py run_scene overlap-reversed --group both --check
+CUDA_VISIBLE_DEVICES=7 timeout 30s python3 bench.py run_scene grid --count 1024 --group both --check
+python3 bench.py validate_scene --gpus 5 7 --output results/local-scenes.json
 ```
 
 `both` 比较 **19 条 expanded 与 13 条 reduced**。原始 20 条组以 `--group full` 保留作诊断，不能将其与 expanded 混称。
@@ -31,12 +31,12 @@ CPU 使用 Möller–Trumbore；OptiX 返回 primitive、ray t、barycentrics。
 
 ## 可复用组件
 
-- `scene_bridge.cpp` / `optix_scene.py`：在调用者当前 context 中构建并持有 GAS、vertices、scratch、OptiX module/pipeline/SBT；公开 base / size / traversable handle 和 oracle。首次运行编译 `.so` / `.ptx`，需本地 OptiX SDK、nvcc、g++。
-- `scene_oracle.cu`：固定 payload 的最小 raygen / closest-hit / miss，仅用于参考结果。
+- `kernels/scene_bridge.cpp` / `src/optix_scene.py`：在调用者当前 context 中构建并持有 GAS、vertices、scratch、OptiX module/pipeline/SBT；公开 base / size / traversable handle 和 oracle。首次运行编译 `.so` / `.ptx`，需本地 OptiX SDK、nvcc、g++。
+- `kernels/scene_oracle.cu`：固定 payload 的最小 raygen / closest-hit / miss，仅用于参考结果。
 - `sm86_fixture.load_group(expanded=True)`：将原组的 P4=false 分支静态专门化，移除 P4=true 的 ST[0x200]，其余 predicate 改 PT；保留全部 7 个 LD，重新计算 MF(17)，总计 19 条 TTU。13 条组保持原 hash。
 - `sm86_fixture.triangle_result`：当前 triangle 子集的经验返回解码。hit 下 `-FP32(R73)` 是 t，`[-FP32(R32), FP32(R33)]` 对上 barycentrics；`R72 & 0x0fffffff` 对上 primitive。**只验证实际覆盖的 ID，不宣称完整字段宽度/ABI。**
-- `run_scene.py`：CPU/OptiX/TTU 三方比较，保存 R0–R75；raw TTU 在第一次 oracle trace 之前执行。`--ray-index` 隔离某条 ray，`--oracle-only` 单独验证 builder，`--as-dump` 保存当前 AS 原始字节。
-- `validate_scene.py`：每个场景/设备独立进程与 context，默认 30 秒 timeout，失败即停止矩阵；不重置 GPU。
+- `tools/run_scene.py`：CPU/OptiX/TTU 三方比较，保存 R0–R75；raw TTU 在第一次 oracle trace 之前执行。`--ray-index` 隔离某条 ray，`--oracle-only` 单独验证 builder，`--as-dump` 保存当前 AS 原始字节。
+- `tools/validate_scene.py`：每个场景/设备独立进程与 context，默认 30 秒 timeout，失败即停止矩阵；不重置 GPU。
 
 root 暂仍采用 fixture 的 **AS base+0x300 与原 tag**。当前各规模成功不代表这是通用 handle 解码。实时 AS 不搬迁、不 patch 自指针，builder 保持分配有效；与 Phase12 的离线单三角形 AS 不同。
 

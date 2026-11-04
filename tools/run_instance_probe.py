@@ -4,6 +4,7 @@
 The two launches do not preserve or resume an IAS traversal session.
 Results must not be treated as a general IAS implementation.
 """
+from project_paths import hash_sources
 import argparse
 import ctypes
 from datetime import datetime, timezone
@@ -23,7 +24,6 @@ from run_scene import geometry, general_rays, instances_for, reference, world_ge
 from sm86_fixture import FIXTURES, load_group, operands, triangle_result
 
 
-HERE = Path(__file__).resolve().parent
 
 
 def read_device(address, size):
@@ -168,10 +168,9 @@ def main():
                   ias_hex=ias_data.hex(), gas_sha256=hashlib.sha256(gas_data).hexdigest(),
                   records=records, failures=failures, fatal_error=fatal_error,
                   cuda_visible_devices=os.environ.get('CUDA_VISIBLE_DEVICES'),
-                  source_sha256={name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
-                                 for name in ('run_instance_probe.py', 'instance_protocol.py', 'run_scene.py', 'cuda_driver.py',
+                  source_sha256=hash_sources(('run_instance_probe.py', 'instance_protocol.py', 'run_scene.py', 'cuda_driver.py',
                                               'sm86_fixture.py', 'minimal.py', 'ttu_isa.py', 'cubin_builder.py',
-                                              'optix_scene.py', 'scene_bridge.cpp', 'scene_oracle.cu')},
+                                              'optix_scene.py', 'scene_bridge.cpp', 'scene_oracle.cu')),
                   gpu_inventory=subprocess.run(['nvidia-smi', '--query-gpu=index,uuid,name,driver_version', '--format=csv'],
                                                capture_output=True, text=True, check=True).stdout)
     args.output.write_text(json.dumps(report, indent=2, allow_nan=False) + '\n')

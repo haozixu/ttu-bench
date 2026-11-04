@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """CPU checks against driver bytes, EoSS golden data, and cleanup hashes."""
+from project_paths import ROOT as HERE
 import hashlib
 import json
 from pathlib import Path
@@ -8,7 +9,6 @@ from eoss_helpers import canonical_sm120, control, patch_slots
 from sm86_fixture import load_group
 from ttu_isa import decode, field, inst, set_field, ttucctl, ttugo, ttuld, ttumf, ttuopen, ttust, unpack
 
-HERE = Path(__file__).resolve().parent
 
 
 def main():
@@ -54,7 +54,7 @@ def main():
             pass
         else:
             raise RuntimeError('out-of-range field was accepted')
-    manifest = json.loads((HERE / 'cleanup-2026-11-02.json').read_text())
+    manifest = json.loads((HERE / 'docs/reference/cleanup-2026-11-02.json').read_text())
     restored = []
     for name in ('build_ttu3.py', 'probe3.cu', 'run_ttu4.py'):
         expected = next(entry for entry in manifest['deleted_text'] if entry['path'] == name)

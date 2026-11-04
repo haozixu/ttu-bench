@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Resolve, verify or restore byte-preserved results using results/manifest.json."""
+from project_paths import ROOT as HERE
 import argparse
 from functools import lru_cache
 import gzip
@@ -8,7 +9,7 @@ import json
 from pathlib import Path
 import zipfile
 
-ROOT = Path(__file__).resolve().parent / 'results'
+ROOT = HERE / 'results'
 
 
 def catalog():

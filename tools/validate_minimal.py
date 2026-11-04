@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Functional regression matrix. Each case gets a fresh process/CUDA context."""
+from project_paths import bench_command
 import argparse
 import json
 import os
@@ -24,7 +25,7 @@ def main():
             environment = dict(os.environ, CUDA_VISIBLE_DEVICES=gpu)
             for name in ('MINIMAL_ZERO', 'MINIMAL_NOTTU'):
                 environment.pop(name, None)
-            result = subprocess.run([sys.executable, str(Path(__file__).with_name('run_minimal.py')),
+            result = subprocess.run([*bench_command('run_minimal'),
                                      *case, '--repeat', '5', '--check'], env=environment,
                                     text=True, capture_output=True, timeout=20)
             if result.returncode:

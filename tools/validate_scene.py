@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Run the limited live-GAS matrix; one fresh process/context per scene/GPU."""
+from project_paths import ROOT as HERE, bench_command
 import argparse
 from datetime import datetime, timezone
 import json
@@ -8,7 +9,6 @@ from pathlib import Path
 import subprocess
 import sys
 
-HERE = Path(__file__).resolve().parent
 
 
 def main():
@@ -32,7 +32,7 @@ def main():
     for gpu in args.gpus:
         for scene, count in cases:
             destination = directory / f'gpu{gpu}-{scene}{count or ""}.json'
-            command = [sys.executable, str(HERE / 'run_scene.py'), scene, '--group', 'both',
+            command = [*bench_command('run_scene'), scene, '--group', 'both',
                        '--repeat', str(args.repeat), '--check', '--output', str(destination),
                        '--ray-suite', args.ray_suite, '--ray-flags', args.ray_flags]
             if args.geometry_opaque:

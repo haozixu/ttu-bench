@@ -4,6 +4,7 @@
 The new harness initializes R0..R75 and dumps registers after the sequence.
 It is not byte-identical to the deleted FADD-chain harness.
 """
+from project_paths import KERNELS
 import argparse
 import struct
 from pathlib import Path
@@ -12,7 +13,6 @@ from cubin_builder import CUDA_ENTRY, EXIT, compile_template, dump_registers, mo
 from eoss_helpers import canonical_sm120, replace_full
 from ttu_isa import inst, ttucctl, ttugo, ttuld, ttumf, ttuopen, ttust
 
-HERE = Path(__file__).resolve().parent
 EXPERIMENTS = ('probe', 'exp1_open1', 'exp2_open2', 'exp3_mf0', 'exp4_cctl',
                'exp4_cctl_ivall', 'exp4_cctl_wr0', 'exp4_cctl_ivall_wr0', 'exp5_group')
 DEFAULT_EXPERIMENTS = ('probe', 'exp1_open1', 'exp2_open2', 'exp3_mf0', 'exp4_cctl',
@@ -46,7 +46,7 @@ def build_experiment(name, output_address, *, wait_mask=0):
     instructions.extend(struct.iter_unpack('<QQ', group))
     instructions.extend(dump_registers(output_address, wait_mask=wait_mask))
     instructions.append(EXIT)
-    template = compile_template(HERE / 'minimal_template.cu')
+    template = compile_template(KERNELS / 'minimal_template.cu')
     return patch_kernel(template, 'ttu_minimal', instructions, replace=replace_full)
 
 

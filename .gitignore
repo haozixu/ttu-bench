@@ -1,12 +1,7 @@
 __pycache__/
 *.py[cod]
 
-# Rebuilt CUDA containers and bridge
-/minimal_template.cubin
-/timing_template.cubin
-/instance_template.cubin
-/scene_bridge.so
-/scene_oracle.ptx
+# Rebuilt CUDA containers, OptiX bridge and preserved pre-layout local caches
 /build/
 
 # Existing local archive: exploratory runs, uncompressed originals, old local runs.

@@ -4,9 +4,9 @@
 
 ## 过度清理的纠正
 
-已从清理前会话输出恢复旧README/INDEX/HANDOFF/NEXT_PROMPT到 `reference/history/`；其中错误解释保留原文并由目录README警示。部分源码可与删除前hash逐字节核对，恢复为历史副本。原 `run_exp.py` / `build_and_patch.py` 完整内容未找回，根目录同名入口是重建版，不能声称原样恢复。
+已从清理前会话输出恢复旧README/INDEX/HANDOFF/NEXT_PROMPT到 `reference/history/`；其中错误解释保留原文并由目录README警示。部分源码可与删除前hash逐字节核对，恢复为历史副本。原 `run_exp.py` / `build_and_patch.py` 完整内容未找回，现行 `tools/`下同名入口是重建版，不能声称原样恢复。
 
-新增共用 `ttu_isa.py`、`eoss_helpers.py`、`cubin_builder.py`、`sm86_fixture.py`，并让minimal实际复用。EoSS复现、SM86/SM120 delta和负结果详见 [EOSS_REPRO.md](EOSS_REPRO.md)。研究新颖性、几何功能正确性、指令行为复现分别评价；不再以前两项缺失否定后一项的保存价值。原删除manifest保持原状，以便审计恢复身份。
+新增共用 `src/ttu_isa.py`、`src/eoss_helpers.py`、`src/cubin_builder.py`、`src/sm86_fixture.py`，并让minimal实际复用。EoSS复现、SM86/SM120 delta和负结果详见 [EOSS_REPRO.md](EOSS_REPRO.md)。研究新颖性、几何功能正确性、指令行为复现分别评价；不再以前两项缺失否定后一项的保存价值。原删除manifest保持原状，以便审计恢复身份。
 
 ## 保留与迁移
 
@@ -28,7 +28,7 @@
 | `_text_*.bin`、旧反汇编 txt、e7/probe3 cubin、旧 ELF 工具 | 重复或不完整派生物，部分曾将 TTU NOP 化；原始 JIT 保留，现有 ELF parser 可直接读原 section |
 | 旧模板 cubin、pyc | 可由当前源文件再生的缓存；验证可能重新创建 |
 
-共移除43个旧文本/代码文件及25个二进制/缓存文件，原内容合计34,520,456字节；另重构旧 OptiX host 并重写入口文档。详细路径、大小、删除前 SHA256 与迁移目标记录在 `cleanup-2026-11-02.json`。清单不包含被删除文件的内容。
+共移除43个旧文本/代码文件及25个二进制/缓存文件，原内容合计34,520,456字节；另重构旧 OptiX host 并重写入口文档。详细路径、大小、删除前 SHA256 与迁移目标记录在 `docs/reference/cleanup-2026-11-02.json`。清单不包含被删除文件的内容。
 
 ## 文档与验证
 

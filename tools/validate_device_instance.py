@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Reproduce the single-instance device-dispatch matrix in fresh processes."""
+from project_paths import bench_command
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -24,7 +25,7 @@ def main():
     for index, (mode, scene, count, instance_id, repeat) in enumerate(cases):
         gpu = args.gpus[(index // 4) % len(args.gpus)]
         path = args.output.with_name(f'{args.output.stem.removesuffix("-matrix")}-{mode}-{scene}.json')
-        command = [sys.executable, str(Path(__file__).with_name('run_device_instance.py')),
+        command = [*bench_command('run_device_instance'),
                    '--instance', mode, '--scene', scene, '--count', str(count), '--instance-id', str(instance_id),
                    '--repeat', str(repeat), '--check', '--output', str(path)]
         subprocess.run(command, env=dict(os.environ, CUDA_VISIBLE_DEVICES=gpu), timeout=40, check=True)

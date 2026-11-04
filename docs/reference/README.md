@@ -8,11 +8,11 @@
 
 ## jit/
 
-实例事件分支的普通SASS新证据见 [jit16-instance-ordinary.sass](../../reference/jit/jit16-instance-ordinary.sass) / [来源manifest](../../reference/jit/jit16-instance-disassembly.json)，对应 [Phase15](../PHASE15.md)。`disassemble_ttu.py` 可复现提取；TTU换NOP只用于反汇编，输出不可执行。
+实例事件分支的普通SASS新证据见 [jit16-instance-ordinary.sass](../../reference/jit/jit16-instance-ordinary.sass) / [来源manifest](../../reference/jit/jit16-instance-disassembly.json)，对应 [Phase15](../PHASE15.md)。`tools/disassemble_ttu.py` 可复现提取；TTU换NOP只用于反汇编，输出不可执行。
 
 其余20个 `jit_00..20.elf` 原始快照（`jit_16.elf` 在 fixtures）。它们来自前期 OptiX 8 / driver535.309.01 进程中的 JIT 捕获，可能包含不同遍历家族、构建核或已链接/未链接模块。保留原字节用于后续比较，不保证每个镜像是标准工具可直接反汇编或独立发射的完整 CUDA ELF。
 
-原始文件大小/hash 见 [cleanup-2026-11-02.json](../../cleanup-2026-11-02.json) 的 moved 项。当前 AS 生成器没有重建这些 JIT 快照的功能。
+原始文件大小/hash 见 [cleanup-2026-11-02.json](../../docs/reference/cleanup-2026-11-02.json) 的 moved 项。当前 AS 生成器没有重建这些 JIT 快照的功能。
 
 ## optix/
 
