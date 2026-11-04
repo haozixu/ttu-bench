@@ -11,7 +11,7 @@
 ## 两条可以独立使用的实验线
 
 ```bash
-CUDA_VISIBLE_DEVICES=7 python3 bench.py run_exp all --repeat 3 --output results/local-eoss.json
+CUDA_VISIBLE_DEVICES=7 python3 bench.py run_exp all --repeat 3
 CUDA_VISIBLE_DEVICES=7 python3 bench.py run_exp exp2_open2 --repeat 3
 CUDA_VISIBLE_DEVICES=7 python3 bench.py run_minimal hit --check --repeat 5
 python3 bench.py validate_encoding

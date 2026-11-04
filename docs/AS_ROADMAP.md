@@ -1,8 +1,8 @@
 # 从单三角形 TTU 到复杂 AS：探索路线
 
-最新 [Phase17](PHASE17.md)：保存/重新提交硬件pending引用，已测平坦1–3个静态instance的父IAS续遍历与最近命中通过两GPU的30项矩阵、4,768次launch、11,492次请求。仅覆盖共享triangle GAS、正行列式变换、flags1及引用类型0x21；四实例已出现其他路径，不能宣称完整IAS。instance ID/handle改为按事件索引查IAS表，旧相邻偏移规则撤回。[Phase15](PHASE15.md)保留4096三角形GAS结果。
+最新 [Phase17](TTU_PROTOCOL.md)：保存/重新提交硬件pending引用，已测平坦1–3个静态instance的父IAS续遍历与最近命中通过两GPU的30项矩阵、4,768次launch、11,492次请求。仅覆盖共享triangle GAS、正行列式变换、flags1及引用类型0x21；四实例已出现其他路径，不能宣称完整IAS。instance ID/handle改为按事件索引查IAS表，旧相邻偏移规则撤回。[Phase15](TTU_PROTOCOL.md)保留4096三角形GAS结果。
 
-更新：2026-11-03。长期希望形成research contribution与paper；前期基础设施、可靠复现与blog也有价值，不以新颖性作为推进门槛。GAS最大已测4096三角形；一般方向、tmin、opaque与有限culling flags共20208次launch通过，见 [Phase14](PHASE14.md)。单instance设备功能见Phase16，受限多instance父级恢复见Phase17，通用IAS仍未完成。nonopaque多命中已有较远候选反例，不能把单次GO默认当作完整closest-hit；Phase18已有固定GAS的单warp计时与独立算术重叠对照，通用吞吐/竞争测量仍待开展。
+更新：2026-11-03。长期希望形成research contribution与paper；前期基础设施、可靠复现与blog也有价值，不以新颖性作为推进门槛。GAS最大已测4096三角形；一般方向、tmin、opaque与有限culling flags共20208次launch通过，见 [Phase14](TTU_PROTOCOL.md)。单instance设备功能见Phase16，受限多instance父级恢复见Phase17，通用IAS仍未完成。nonopaque多命中已有较远候选反例，不能把单次GO默认当作完整closest-hit；Phase18已有固定GAS的单warp计时与独立算术重叠对照，通用吞吐/竞争测量仍待开展。
 
 公开结构资料并非空白：新补两份NVIDIA专利，给出complet/multi-box和node layout示例；但还没有对上本机535 AS的完整公开builder。具体图号、下载及软件CWBVH/AMD格式的区别见 [资料核查](../../research/notes/nvidia-bvh-public-records.md)。
 
@@ -72,7 +72,7 @@
 
 OptiX的closest-hit/miss/any-hit/custom intersection包含普通程序执行；不是每一项功能都由一条TTU在RT Core内完成。任意CUDA程序最终也会成为SASS，这种广义“全用SASS”在原则上很宽，但工程目标应说清：自己接管硬件traversal接口，还是复刻OptiX全部编程模型。后者长期维护私有接口的成本远大于当前microbenchmark。
 
-当前几何功能基线已覆盖多三角形GAS和一般ray，1–3静态instance的受限设备续遍历也已通。[Phase19](PHASE19.md)已补MACROFUSE拆分/必要性反例及Tensor、global/shared重叠。2026-11-04选择先做单GAS小renderer，验证逐lane不同ray、尾warp及软件CUDA/TTU/OptiX三后端，再回紧凑多warp测量；细节见 [MEASUREMENT_ROADMAP](MEASUREMENT_ROADMAP.md)。复杂IAS新返回路径及等距边界继续暂挂；不能由三角形数量推断已知BVH层数。any-hit与custom primitive仍是后续独立篇章。
+当前几何功能基线已覆盖多三角形GAS和一般ray，1–3静态instance的受限设备续遍历也已通。[单warp测量](MEASUREMENTS.md)有MACROFUSE拆分/必要性反例及Tensor、global/shared重叠；[renderer](RENDERER.md)已完成Bunny与单次地面镜面。下一步优先紧凑多warp，具体顺序集中在 [交接](HANDOFF.md)。复杂IAS新返回路径及等距边界继续暂挂；不能由三角形数量推断BVH层数。
 
 可以形成三篇独立blog：从opcode到有oracle的裸TTU；生产AS与TTU提交/返回协议；复杂BVH下的lane/warp时序与CUDA并发。即使最后都是复现或明确的负结果，也足以作为有价值的阶段产物。
 

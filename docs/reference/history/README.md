@@ -1,6 +1,6 @@
 # 清理前记录的恢复副本
 
-这些文件从清理前读取文件的完整 stdout 恢复，保留当时的表述，包括后来撤回的结论。**用于追溯实验和知识来源；当前协议请查 [TTU 协议入门](../../TTU_PROTOCOL_GUIDE.md)、[PHASE14](../../PHASE14.md) 与 [EOSS_REPRO](../../EOSS_REPRO.md)，不能把历史文件当现行操作指南。**
+这些文件从清理前读取文件的完整 stdout 恢复，保留当时的表述，包括后来撤回的结论。**用于追溯实验和知识来源；当前协议请查 [TTU 协议入门](../../TTU_PROTOCOL_GUIDE.md)、[协议](../../TTU_PROTOCOL.md) 与 [EOSS_REPRO](../../EOSS_REPRO.md)，不能把历史文件当现行操作指南。**
 
 2026-11-03仅迁移文档位置：四份 `.pre-cleanup.md` 保持逐字节原文，包括其中的旧链接和旧路径。恢复源码仍在 [reference/history/source](../../../reference/history/source/)，未随文档移动。迁移前SHA256见 [迁移清单](../../document-migration.json)。
 
