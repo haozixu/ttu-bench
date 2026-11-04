@@ -94,8 +94,12 @@ python3 validate_parent_resume.py --gpus 2 6 --output results/local/parent-matri
 ## 保留的边界与负观察
 
 - 四实例的 [host诊断](../results/phase17/pop-four.json) 首次返回的三个条目类型为0x21、0x21、**0x24**，第三个引用重新提交后直接返回triangle，而不是0x16实例事件；当前kernel不实现其语义，并拒绝instance数大于3。3不是硬件容量上限，也不代表增加计数限制就能支持任意IAS。
-- [等距重叠样本](../results/phase17/device-chain2-overlap.json.gz) 有51项检查失败：29条裸TTU记录未通过、22项CPU/OptiX比较不匹配；它们不是51条不同ray。29条裸TTU失败记录的t均与CPU相同，冲突在命中身份。两份GAS三角形经instance变换后完全重合，CPU的 `<=` 更新选择后一个身份，而当前缩短 tmax 的 child 查询未必返回相等端点；OptiX也未必选同一身份。观察到的冲突涉及并列命中身份/边界语义，尚未系统解决。保留原始失败，不放宽oracle把它改成通过，也不将它计入正式正矩阵。
+- [等距重叠样本](../results/phase17/records.zip) 有51项检查失败：29条裸TTU记录未通过、22项CPU/OptiX比较不匹配；它们不是51条不同ray。29条裸TTU失败记录的t均与CPU相同，冲突在命中身份。两份GAS三角形经instance变换后完全重合，CPU的 `<=` 更新选择后一个身份，而当前缩短 tmax 的 child 查询未必返回相等端点；OptiX也未必选同一身份。观察到的冲突涉及并列命中身份/边界语义，尚未系统解决。保留原始失败，不放宽oracle把它改成通过，也不将它计入正式正矩阵。
 - 软件栈16项、父请求最多8步；不支持的引用类型、返回类型、边界或步数都会显式返回错误。没有证明任意AS都能在这些界限内完成。
 - 嵌套IAS、不同child GAS、负行列式变换、motion、用户any-hit/custom primitive、一般溢出路径及full warp仍未实现。flags0较远候选反例也仍未解决。
 
-下一功能任务是从四实例最小反例辨认新引用类型与直接triangle返回的坐标/instance归属，再逐项扩展；另行隔离等距/tmax边界。测量线可以先用已稳定的opaque GAS推进正确设备内重复和计时，无需等待完整OptiX支持。
+Phase17已提交为 `867ee16`。按用户要求，复杂IAS协议逆向暂时挂起；上述未解路径及原始证据保留，恢复时从四实例0x24引用的坐标/instance归属开始，等距/tmax另作隔离实验。当前转向单warp测量，先用稳定opaque GAS推进重复、计时和MACROFUSE语义，不等待完整OptiX支持。
+
+## 归档布局更新
+
+原47份发布文件合并为7个物理文件：完整逐case报告、负对照与等距失败共41份在 [records.zip](../results/phase17/records.zip)，正式矩阵、两项回归、资源、代表事件、四实例诊断保留可读JSON。旧路径均为manifest alias；上文等距样本链接指向ZIP，成员为 `device-chain2-overlap.json`。用 `result_store.py show` 或 `load_result()`按旧名读取，原始字节/hash未改。

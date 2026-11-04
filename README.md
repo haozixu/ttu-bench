@@ -2,7 +2,7 @@
 
 本README位于 `ttu-bench/` 根目录，详细文档集中在 `docs/`。第一次阅读建议先看 [TTU 协议入门](docs/TTU_PROTOCOL_GUIDE.md)，再查 [文件索引](docs/INDEX.md) 和 [当前交接](docs/HANDOFF.md)。本文及其他现行文档中的命令均从 **`ttu-bench/` 项目根目录** 执行；行内代码形式的源码、fixture、结果路径也以该目录为基准，点击链接则按文档位置解析。研究文献仍在 `research/`。
 
-实验结果按阶段收在 `results/phase12/` 至 `results/phase17/`，EoSS结果在 `results/eoss/`。正式结果与关键反例供Git提交，大型逐ray日志用无损 `.json.gz` 保存；中间/探索与本地试跑记录保留在被ignore的 `results/archive/`。原始路径、SHA256和现位置见 [manifest](results/manifest.json)，阅读/恢复及提交策略见 [结果归档说明](docs/RESULTS.md)。
+实验结果按阶段收在 `results/phase12/` 至 `results/phase17/`，EoSS结果在 `results/eoss/`。正式结果与关键反例供Git提交，Phase17逐项报告合并到 `records.zip`，旧阶段大型日志保留 `.json.gz`；中间/探索与本地试跑记录保留在被ignore的 `results/archive/`。原始路径、SHA256和现位置见 [manifest](results/manifest.json)，阅读/恢复及提交策略见 [结果归档说明](docs/RESULTS.md)。
 
 最新 [Phase17](docs/PHASE17.md)：一个自研CUDA kernel已能保存硬件返回的待处理引用，查询child后恢复父IAS，完成已测1–3个静态instance的最近命中。两张3090上30项、4,768次launch、11,492次TTU请求通过CPU/OptiX对照，包含“先miss后hit”和“先远后近”的反例及负对照。**仅覆盖平坦IAS、共享triangle GAS、已识别的0x21引用类型；四实例新路径、嵌套、any-hit等尚未实现。** 同时纠正单instance中碰巧成立的ID/handle相邻偏移。4096三角形GAS仍只是最大已测试规模，不是容量上限。
 

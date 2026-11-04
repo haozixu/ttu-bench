@@ -1,43 +1,31 @@
 # 实验结果归档与Git提交
 
-更新：2026-11-03。初次整理前 `results/` 共205份文件，153,010,348字节（145.9 MiB）。初次归档和本次Phase17增量均保留原始字节，没有删除实验数据或改写历史报告。
+更新：2026-11-04。正式结论依赖的原始报告、反例和失败保留原字节及SHA256；临时试跑放在ignored目录。为减少目录中的文件数量，**Phase17起采用每阶段一个 `records.zip`，外面只保留矩阵、摘要和少数易读样例**。Phase12–16仍保留原gzip布局。
 
-## 提交哪些
-
-| 目录/文件 | 内容 | 提交策略 |
+| 目录 | 发布内容 | 物理文件布局 |
 |---|---|---|
-| `results/phase12/` | 固定fixture基线、反例、资源与设备信息 | 提交 |
-| `results/phase13/` | 正式GAS矩阵及逐case报告，20条组fault、decoder误判等证据 | 提交 |
-| `results/phase14/` | 最终v2矩阵及全部逐case报告、跨组对照、较远候选、IAS事件、解码纠错记录 | 提交 |
-| `results/phase15/` | 正式host-instance矩阵及6项原报告、4096三角形GAS、回归 | 提交 |
-| `results/phase16/` | 正式device-instance矩阵及8项原报告、资源、回归和代表性事件 | 提交 |
-| `results/phase17/` | 父IAS恢复正式矩阵、全部子报告及负对照、回归、资源和边界反例 | 提交 |
-| `results/eoss/` | EoSS指令行为、fault/timeout及SM86/SM120静态编码对照 | 提交，保留有意义的delta |
-| `results/maintenance/` | 清理后及helpers提取后的功能回归 | 提交 |
-| `results/manifest.json` | 累计252份原文件的路径、字节数、SHA256、发布/本地去向与批次 | 提交 |
-| `results/archive/exploratory/` | 早期scene、旧矩阵、sign-check、instance初版等中间记录 | 本地保留，ignore |
-| `results/archive/originals/` | 已发布gzip对应的原始未压缩副本 | 本地保留，ignore |
-| `results/archive/local/`、`local-*`、`local/`、`scratch/` | 本机试跑、解压、临时产物 | ignore |
+| phase12–16 | 固定fixture、GAS/IAS正式矩阵、回归及关键失败 | 原JSON/gzip；本轮未改变 |
+| phase17 | 父IAS恢复、两个必要反例、负对照、四实例与等距边界 | 47份报告→7个文件；41份报告在ZIP |
+| eoss / maintenance | 指令行为、代际delta、修复后回归 | 原布局，保留 |
+| manifest.json | 原始路径、aliases、原字节hash及发布去向 | 每份原报告一项；bundles记录物理ZIP的hash |
+| archive/、local/、local-*、scratch/ | 试跑、中间版本、原未压缩副本、旧gzip副本 | 本地保留，ignore |
 
-初次归档发布106份原始结果，4,300,493字节。Phase17新增47份、60,196,545字节原始数据，压缩发布1,389,999字节（含正式矩阵及30份正报告、2个负对照、单instance/fixture回归、资源、样例与边界记录）。**manifest累计252份原始文件、153份发布，发布存储5,690,492字节（5.43 MiB）**，另加manifest及原先未入catalog的小型派生样例。初始及Phase17批次分别保存在manifest.batches，summary为累计计数。超过256 KiB的正式JSON使用标准gzip、固定mtime=0、无损压缩；因此Git中的大型raw日志不再逐行diff，日常审阅看小型矩阵、文档和样例。此规模暂不需要Git LFS。
+ZIP直接压缩原始JSON，未在内部再套gzip；支持标准解压工具按成员随机读取。每个阶段bundle有完整文件SHA256，每个成员另有原始SHA256/字节数。**报告数量与物理文件数量分开统计**：manifest.summary.published_reports计报告，published_files/bytes对ZIP去重；旧batch中的published_files/bytes是当时发布快照，不是当前布局。ZIP不ignore，也未采用Git LFS。
 
-旧的general-final/closest、旧ray-protocol以及Phase15初版有独立实验条件和源码hash，不能笼统称为完全相同的重复文件。它们保留在本地归档，正式结论选择最终v2/正式矩阵作为主要证据。关键负结果及EoSS记录单独提交，不能因“不是当前主线”丢弃。
+Phase17原47个文件变成7个，原始证据一份不少。旧压缩副本保留在本机 `results/archive/bundled/`，clone只需要发布ZIP，不依赖这些副本。已有阶段合并用 [bundle_results.py](../bundle_results.py)，新阶段从local矩阵发布用 [publish_results.py](../publish_results.py)，两者复用原字节，校验ZIP往返后再更新manifest并归档旧物理文件。
 
-`results/phase16/example-events.json`从正式报告逐项提取hit、instance后child miss、IAS直接miss各一个；保留来源路径、hash、完整raw记录和输入ray。它是方便阅读的派生文件，不能代替完整矩阵。
+## 读取、校验和恢复
 
-## 如何读取与校验
-
-命令从 `ttu-bench/` 执行，无第三方Python依赖：
+命令在ttu-bench根执行，只依赖Python标准库：
 
 ```bash
 python3 result_store.py verify
 python3 result_store.py verify --include-local
+python3 result_store.py show phase17/device-chain2-overlap.json.gz
 python3 result_store.py restore --destination results/local/restored
 ```
 
-第一条校验全部发布结果的压缩文件hash及解压后的原始hash；第二条同时核查本机归档和未压缩副本，clone上没有归档时不可用；第三条将发布集解压并恢复原始results相对目录，不修改发布文件。遇到已有但不同的目标文件会拒绝覆盖。
-
-程序化读取示例：
+`show`接受原始名、旧发布路径alias及旧报告中的绝对路径；输出原始字节，可加 `--output`写单文件。具体case的旧名以manifest中的aliases为准。`verify`检查全部发布字节和成员hash；`--include-local`还检查本机归档/原副本，因此clone上通常不可用。`restore`恢复所有发布报告的原始相对路径，拒绝越出目标目录及覆盖不同内容；不会修改发布集。恢复目标默认被ignore。
 
 ```python
 from result_store import load_result
@@ -47,12 +35,10 @@ for case in matrix['cases']:
     print(case['file'], len(report['records']))
 ```
 
-matrix内部的旧路径、命令和source hash全部原样保留。解析旧的`results/...`路径，或报告中带`/results/`的原机器绝对路径，均可使用此loader；不要直接在新目录对旧matrix的`file/report`字段调用`Path.read_text()`。manifest描述已选定的发布/归档集，新跑出的local结果不会自动加入它。Phase17报告保留原始文件名及字节，以manifest映射到phase17目录；本地原始副本留在local/phase17。
+矩阵内部旧路径、命令和source hash原样保留，**不要按旧路径直接 `Path.read_text()`**，应用loader解析。旧单文件链接已改为相应ZIP；具体成员由manifest的archive_member字段定位。loader也支持 `phase17/records.zip#<archive_member>`，ZIP路径本身不唯一标识报告。
 
-未来实验先输出到 `results/local-*` 或 `results/local/`，有明确结论后选择正式结果归档，并同步manifest和阶段文档；不要把每次探索都直接提升为正式phase证据。
+## 新实验发布原则
 
-## 与本次提交的关系
+新结果先写 `results/local/`，有明确用途后选取正式矩阵、全部引用子报告、关键负结果及必要校准证据，加入manifest。派生observations或example-events便于阅读，不能替代完整raw。早期不完整/错误测量保留于本地；若其失败本身影响结论，则将代表失败一并发布并解释原因。
 
-README已回到项目根目录，阶段文档仍在 `docs/`；历史文档快照没有修改。fixtures、原JIT镜像、历史helpers以及研究PDF不属于此次结果裁剪范围。
-
-用户已建立并提交Git仓库，元数据位于 `ttu-bench/.git`；`gpu-engine/` 上层不是该仓库根目录。后续改动可从ttu-bench审阅，本次不自动add或commit。另有 `research/community/` 约747 MiB、`research/papers/` 约242 MiB；它们与上述结果发布集是不同来源。若准备提交整个gpu-engine，第三方checkout应另外决定采用来源清单/固定commit/submodule还是vendor；不要将嵌套checkout默认为本项目源码，也不要未经核对直接ignore掉EoSS运行依赖。
+不因非当前主线删除EoSS、helpers、历史源码或有意义的架构delta。fixtures、JIT和研究PDF不属于结果合并范围。Git仓库位于 `ttu-bench/.git`；本轮仅整理已有结果，未自动提交。此前用户授权的Phase17提交为 `867ee16`。
