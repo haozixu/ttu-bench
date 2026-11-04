@@ -2,11 +2,11 @@
   "date": "2026-11-03T12:18:39.305339+00:00",
   "contract": "Original bytes and embedded historical paths remain unchanged. Identity/gzip entries have stored hashes; ZIP bundles have a physical-file hash in bundles and each member has original_bytes/sha256. Aliases resolve former published paths. Local archives are ignored and absent in a clone.",
   "summary": {
-    "original_files": 431,
-    "original_bytes": 559257450,
-    "published_reports": 332,
-    "published_files": 118,
-    "published_bytes": 8979528,
+    "original_files": 642,
+    "original_bytes": 1241186210,
+    "published_reports": 543,
+    "published_files": 123,
+    "published_bytes": 15642137,
     "local_only_files": 99
   },
   "files": [
@@ -4625,6 +4625,2753 @@
         "phase18/cases/final-v2-warp-matrix-gpu0-l32-expanded-hit-a0-before-wait-open64.json.gz"
       ],
       "archive_member": "final-v2-warp-matrix-gpu0-l32-expanded-hit-a0-before-wait-open64.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix.json",
+      "original_bytes": 222851,
+      "sha256": "133edf7df709096e6a10d23c040eb01c30c59835ccb05a31d04752f6f89936a1",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/final-v3-mixed-matrix.json",
+      "encoding": "identity",
+      "stored_bytes": 222851,
+      "stored_sha256": "133edf7df709096e6a10d23c040eb01c30c59835ccb05a31d04752f6f89936a1"
+    },
+    {
+      "original_path": "phase19/final-mf-controls.json",
+      "original_bytes": 21254,
+      "sha256": "1f1c1b3b45c00b8f67ac3da0485e1b35b7c59f31153d853614b755f4b74f158f",
+      "local_original_path": "local/phase19/final-mf-controls.json",
+      "aliases": [
+        "local/phase19/final-mf-controls.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/final-mf-controls.json",
+      "encoding": "identity",
+      "stored_bytes": 21254,
+      "stored_sha256": "1f1c1b3b45c00b8f67ac3da0485e1b35b7c59f31153d853614b755f4b74f158f"
+    },
+    {
+      "original_path": "phase19/mixed-resource.txt",
+      "original_bytes": 140,
+      "sha256": "c8188e30399f2d31154c727a6deef2d7075f82d9cf2f29234cda3ece96fc65e3",
+      "local_original_path": "local/phase19/mixed-resource.txt",
+      "aliases": [
+        "local/phase19/mixed-resource.txt"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/mixed-resource.txt",
+      "encoding": "identity",
+      "stored_bytes": 140,
+      "stored_sha256": "c8188e30399f2d31154c727a6deef2d7075f82d9cf2f29234cda3ece96fc65e3"
+    },
+    {
+      "original_path": "phase19/observations.json",
+      "original_bytes": 134885,
+      "sha256": "4cb9375d2dce11e42d9ee346277f586f7bce5ec1ab0cbe0ef939f018b6e97f9b",
+      "local_original_path": "local/phase19/observations.json",
+      "aliases": [
+        "local/phase19/observations.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/observations.json",
+      "encoding": "identity",
+      "stored_bytes": 134885,
+      "stored_sha256": "4cb9375d2dce11e42d9ee346277f586f7bce5ec1ab0cbe0ef939f018b6e97f9b"
+    },
+    {
+      "original_path": "phase19/consumer-hmma1.json",
+      "original_bytes": 1228255,
+      "sha256": "5d229000524855426231f4298c6782c755aa0bc878b1127d0431fc774e107862",
+      "local_original_path": "local/phase19/consumer-hmma1.json",
+      "aliases": [
+        "local/phase19/consumer-hmma1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "consumer-hmma1.json"
+    },
+    {
+      "original_path": "phase19/evidence-global.json",
+      "original_bytes": 4898336,
+      "sha256": "465523cd77fb54605e18cc28529eeedd0481b20318889af75350d37f2887ef33",
+      "local_original_path": "local/phase19/evidence-global.json",
+      "aliases": [
+        "local/phase19/evidence-global.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "evidence-global.json"
+    },
+    {
+      "original_path": "phase19/evidence-hmma.json",
+      "original_bytes": 4901402,
+      "sha256": "d9cdbbc462771b5b608d5dfe769095667881d3a7553fc4e17e6667846676ecb9",
+      "local_original_path": "local/phase19/evidence-hmma.json",
+      "aliases": [
+        "local/phase19/evidence-hmma.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "evidence-hmma.json"
+    },
+    {
+      "original_path": "phase19/evidence-none.json",
+      "original_bytes": 5318534,
+      "sha256": "05172308df00434c41c2ad0e8bccf49964e74ce71c51bcd5c96e14565064656d",
+      "local_original_path": "local/phase19/evidence-none.json",
+      "aliases": [
+        "local/phase19/evidence-none.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "evidence-none.json"
+    },
+    {
+      "original_path": "phase19/evidence-shared.json",
+      "original_bytes": 4878170,
+      "sha256": "145ae1e85b53a8c68d2b763b47f64eda6749c759427b0fef34712ba6d993f37b",
+      "local_original_path": "local/phase19/evidence-shared.json",
+      "aliases": [
+        "local/phase19/evidence-shared.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "evidence-shared.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-expanded-nop-r0.json",
+      "original_bytes": 5296,
+      "sha256": "d2c779481fa830c152d411f12e9965ad792b10460b8a86e8dc7e0a2809726805",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-expanded-nop-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-expanded-nop-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-expanded-nop-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-expanded-nop-r1.json",
+      "original_bytes": 5296,
+      "sha256": "a96d5a8b98db02946f1b67942d48348b3375d160557bd5312a1f9a5363924421",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-expanded-nop-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-expanded-nop-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-expanded-nop-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-expanded-nop-r2.json",
+      "original_bytes": 5296,
+      "sha256": "7890cb22eb80389c690a42357c6beb09095aa6693d59204262012b865a56e16e",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-expanded-nop-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-expanded-nop-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-expanded-nop-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-expanded-zero-r0.json",
+      "original_bytes": 5298,
+      "sha256": "7d2cdb3531d1ba1bc0d3d2b41f44e24c04fae576025c36779069d22ce1135ecf",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-expanded-zero-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-expanded-zero-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-expanded-zero-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-expanded-zero-r1.json",
+      "original_bytes": 5298,
+      "sha256": "a940b9b0b0c2949ff6061f98a1d0fc29bc0d5327190fedbd8b4bfda2d7ecbe55",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-expanded-zero-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-expanded-zero-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-expanded-zero-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-expanded-zero-r2.json",
+      "original_bytes": 5298,
+      "sha256": "04e0ae1c9e401bee131f8c4e8d0f579f7992e698046cec285a9f1a8e42115181",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-expanded-zero-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-expanded-zero-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-expanded-zero-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-reduced-nop-r0.json",
+      "original_bytes": 5295,
+      "sha256": "9f6b524ab377fed66131420e3444c58479da3d2b15b7462c2b1bdbc274bb5db2",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-reduced-nop-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-reduced-nop-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-reduced-nop-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-reduced-nop-r1.json",
+      "original_bytes": 5295,
+      "sha256": "ef2902b98a71df1363852b6420ad47523237840624931c1340cab15163bbda02",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-reduced-nop-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-reduced-nop-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-reduced-nop-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-reduced-nop-r2.json",
+      "original_bytes": 5295,
+      "sha256": "390f9f0b51e227f94af67c3716a7c5f454b15cc865f27790b2b46f7faa5c0620",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-reduced-nop-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-reduced-nop-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-reduced-nop-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-reduced-zero-r0.json",
+      "original_bytes": 5297,
+      "sha256": "3c512b7b9bc5c88e0ed1fd25aa44dd28ce006273ee0ba51ea8c3e3bfafdd634e",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-reduced-zero-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-reduced-zero-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-reduced-zero-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-reduced-zero-r1.json",
+      "original_bytes": 5296,
+      "sha256": "8843bb19d17462baba727516a508935b02dd351d6f11642d4af218a737048f9d",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-reduced-zero-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-reduced-zero-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-reduced-zero-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l1-reduced-zero-r2.json",
+      "original_bytes": 5296,
+      "sha256": "64fce3346e4080fefc6045c05683d102a70a429f5e78bb3cb97d9804936b4729",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l1-reduced-zero-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l1-reduced-zero-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l1-reduced-zero-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-expanded-nop-r0.json",
+      "original_bytes": 5298,
+      "sha256": "2cdfba3d9f5bb4a0617070b517b56e93b61d130792e4ef5fcd5b8ca4a51f53fc",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-expanded-nop-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-expanded-nop-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-expanded-nop-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-expanded-nop-r1.json",
+      "original_bytes": 5298,
+      "sha256": "4f1a4c9854840b101d7083e19d3252953ed14c7f960bbd5fd4026a74041fb8cc",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-expanded-nop-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-expanded-nop-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-expanded-nop-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-expanded-nop-r2.json",
+      "original_bytes": 5298,
+      "sha256": "4611db0fc68158f2526d4575083c755773e9dfb00251358624356baadbea1358",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-expanded-nop-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-expanded-nop-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-expanded-nop-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-expanded-zero-r0.json",
+      "original_bytes": 5300,
+      "sha256": "c883ac4cf4223e42504dcfe347135c467175c919a1f169d6d933bfa3c2865088",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-expanded-zero-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-expanded-zero-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-expanded-zero-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-expanded-zero-r1.json",
+      "original_bytes": 5300,
+      "sha256": "0198e19cce8ee0f1114e0132e892917965bba7fa406806b729be601dd1fca214",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-expanded-zero-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-expanded-zero-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-expanded-zero-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-expanded-zero-r2.json",
+      "original_bytes": 5300,
+      "sha256": "6020b79caeacf5599f7e2e7f24885e2327573db4fbfc8114bf43a4c69b3a2578",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-expanded-zero-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-expanded-zero-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-expanded-zero-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-reduced-nop-r0.json",
+      "original_bytes": 5296,
+      "sha256": "d55a891e2fa00011c866c79315e52f7fa54c8764228b739dd030f929cab38116",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-reduced-nop-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-reduced-nop-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-reduced-nop-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-reduced-nop-r1.json",
+      "original_bytes": 5296,
+      "sha256": "47b9943b5818f349ec0924030fad9491daf057539e0e7354fe823eabe5d6ee55",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-reduced-nop-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-reduced-nop-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-reduced-nop-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-reduced-nop-r2.json",
+      "original_bytes": 5296,
+      "sha256": "2e3b67f6888087e29ee124eb2814cbe9e55c1d874fe0fe629e8af0100ccb606c",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-reduced-nop-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-reduced-nop-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-reduced-nop-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-reduced-zero-r0.json",
+      "original_bytes": 5298,
+      "sha256": "79e305d71ff8f3184ee005c5c845e58c0d51129dd12347e92adbe0ad1ba84912",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-reduced-zero-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-reduced-zero-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-reduced-zero-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-reduced-zero-r1.json",
+      "original_bytes": 5298,
+      "sha256": "f2a867a1a54278e05d63950ea16d7e882bf64263b86d8bb0f95588e1dfca167d",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-reduced-zero-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-reduced-zero-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-reduced-zero-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu1-l32-reduced-zero-r2.json",
+      "original_bytes": 5298,
+      "sha256": "6287ada056783c89ecd064bb3dee891eee3ff7b3da0f2477c567b69bdb9b3039",
+      "local_original_path": "local/phase19/final-mf-controls-gpu1-l32-reduced-zero-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu1-l32-reduced-zero-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu1-l32-reduced-zero-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-expanded-nop-r0.json",
+      "original_bytes": 5296,
+      "sha256": "8dd9741a2c05ee9f867fb7ac3ebe6ebf766e68b9794048d7c7c619a3d88d632b",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-expanded-nop-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-expanded-nop-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-expanded-nop-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-expanded-nop-r1.json",
+      "original_bytes": 5296,
+      "sha256": "e51026310fdaf4bb270e5239be14618b4696c3a78e1248059d461ca54ec3f821",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-expanded-nop-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-expanded-nop-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-expanded-nop-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-expanded-nop-r2.json",
+      "original_bytes": 5296,
+      "sha256": "f0ccda3c9d4824c757dab3836f369244f1619d4f56df273b9999ad9cbee517ed",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-expanded-nop-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-expanded-nop-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-expanded-nop-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-expanded-zero-r0.json",
+      "original_bytes": 5298,
+      "sha256": "a0168f56376b536fb97861a1f04d41d1751a2f8f1b8e5098e8a296289dd24754",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-expanded-zero-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-expanded-zero-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-expanded-zero-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-expanded-zero-r1.json",
+      "original_bytes": 5298,
+      "sha256": "90c3c674ecdefa2c7ff2ad6bb49d1a200d7f8024e353e282a3c352bd2277c87f",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-expanded-zero-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-expanded-zero-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-expanded-zero-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-expanded-zero-r2.json",
+      "original_bytes": 5298,
+      "sha256": "748145edc77bd81d228d766426c38232a667e7f121e7e442dcfe1dab5c06e7e3",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-expanded-zero-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-expanded-zero-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-expanded-zero-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-reduced-nop-r0.json",
+      "original_bytes": 5294,
+      "sha256": "8744d01ee2551c19346c571a06c6aa43ca6996a5d9fd200df8902ec42a81152a",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-reduced-nop-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-reduced-nop-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-reduced-nop-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-reduced-nop-r1.json",
+      "original_bytes": 5294,
+      "sha256": "bb5ca4a4b9d1b6d7aa14f68344165abb2636c8cbf200ff853db2b62b45684d4e",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-reduced-nop-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-reduced-nop-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-reduced-nop-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-reduced-nop-r2.json",
+      "original_bytes": 5294,
+      "sha256": "b6ffcd5c1fd4ac5398307eff4b6af73be1fac37d034f0473d1294103991550b2",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-reduced-nop-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-reduced-nop-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-reduced-nop-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-reduced-zero-r0.json",
+      "original_bytes": 5296,
+      "sha256": "b6fddbf1f6c35722d1758b530265cae30db934c22febdf0d9fea37ce625d518f",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-reduced-zero-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-reduced-zero-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-reduced-zero-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-reduced-zero-r1.json",
+      "original_bytes": 5296,
+      "sha256": "fdf7506e6deb719c090e76d2642b4b5456ee2662cc53374f47b622363e6fbc08",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-reduced-zero-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-reduced-zero-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-reduced-zero-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l1-reduced-zero-r2.json",
+      "original_bytes": 5296,
+      "sha256": "0eae46505555d6dce9bd7a5444c00f29f586d2924192a774bcad808d4ad464e5",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l1-reduced-zero-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l1-reduced-zero-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l1-reduced-zero-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-expanded-nop-r0.json",
+      "original_bytes": 5298,
+      "sha256": "5dc0c506737c54043fb85f3e714a101868c5fa7646b772d41c5018a294601592",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-expanded-nop-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-expanded-nop-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-expanded-nop-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-expanded-nop-r1.json",
+      "original_bytes": 5298,
+      "sha256": "e081d7bbaecb957292bc659f502be070278a1921da44abdba8af4716f01e372e",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-expanded-nop-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-expanded-nop-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-expanded-nop-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-expanded-nop-r2.json",
+      "original_bytes": 5298,
+      "sha256": "829eb723cc9902496540e5a6f571cd06c9447b94d727508407a9ea9c97ecef9f",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-expanded-nop-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-expanded-nop-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-expanded-nop-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-expanded-zero-r0.json",
+      "original_bytes": 5300,
+      "sha256": "23b497d46e39ee1be34c9c5bf120601885a9538ee62311f8c4d6d7e5e463a67c",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-expanded-zero-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-expanded-zero-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-expanded-zero-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-expanded-zero-r1.json",
+      "original_bytes": 5300,
+      "sha256": "06d0a060964c057aad23f4169bd538ac0a7794209287647e08649e6e81373d85",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-expanded-zero-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-expanded-zero-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-expanded-zero-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-expanded-zero-r2.json",
+      "original_bytes": 5300,
+      "sha256": "19fb3100b46378a2cb81593c3991c8317a27cb3c873005400c16349a78b7b89a",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-expanded-zero-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-expanded-zero-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-expanded-zero-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-reduced-nop-r0.json",
+      "original_bytes": 5296,
+      "sha256": "87fd748e8914f9f8141ef51e6e5816872a0f54121e8b116a8f86fb1bb9f193f3",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-reduced-nop-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-reduced-nop-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-reduced-nop-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-reduced-nop-r1.json",
+      "original_bytes": 5296,
+      "sha256": "0356b6746423b6304dd24288acbe63305bf75df6bd271ecd94722bc2625fdc3b",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-reduced-nop-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-reduced-nop-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-reduced-nop-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-reduced-nop-r2.json",
+      "original_bytes": 5296,
+      "sha256": "72e10504a02086e79acc96fe59a5c034d4eedb402ab54de48459e59b8dd34770",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-reduced-nop-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-reduced-nop-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-reduced-nop-r2.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-reduced-zero-r0.json",
+      "original_bytes": 5298,
+      "sha256": "b26dabbe2c038b559a6a03e2c9c0d6fb9deccbfdc20f54d0b9a8c938a65ac15d",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-reduced-zero-r0.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-reduced-zero-r0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-reduced-zero-r0.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-reduced-zero-r1.json",
+      "original_bytes": 5298,
+      "sha256": "524d7c95cd1b601121be9d2650c61b60c274ae77ac64360bbb8078a7e560c792",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-reduced-zero-r1.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-reduced-zero-r1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-reduced-zero-r1.json"
+    },
+    {
+      "original_path": "phase19/final-mf-controls-gpu5-l32-reduced-zero-r2.json",
+      "original_bytes": 5298,
+      "sha256": "c4bc07410fa6485f9d3036415a3f7d49ffeed65d90ad46a4532175d332bfb320",
+      "local_original_path": "local/phase19/final-mf-controls-gpu5-l32-reduced-zero-r2.json",
+      "aliases": [
+        "local/phase19/final-mf-controls-gpu5-l32-reduced-zero-r2.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-mf-controls-gpu5-l32-reduced-zero-r2.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-000.json",
+      "original_bytes": 157235,
+      "sha256": "366ee7765add9c7abcf1ad2918dc55f5005d693100a33a29fde3956d8721fbb0",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-000.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-000.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-000.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-001.json",
+      "original_bytes": 170856,
+      "sha256": "4cea4ffcb19b2417d9bf9888bae5b8dda0cb9248fff21d08c30d474743876c2b",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-001.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-001.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-001.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-002.json",
+      "original_bytes": 170867,
+      "sha256": "02f9f65cebe81d79b5db983dec4dc08454acf391c67a0678f81d826bb0b33eaa",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-002.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-002.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-002.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-003.json",
+      "original_bytes": 4890620,
+      "sha256": "7ecde61f35cfb8cc7f76398e970cb44c2b6866121426fffaba1f3703c99cea0a",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-003.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-003.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-003.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-004.json",
+      "original_bytes": 5326099,
+      "sha256": "c7bf73ee04198aa527638e4949fc027b1d2e78178fdaa380d233f14375146e88",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-004.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-004.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-004.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-005.json",
+      "original_bytes": 5326100,
+      "sha256": "16ce145b6ceb2dac2f20cb27cdcdfea15dd673ea4fdf7e006e2d6420766d93cc",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-005.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-005.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-005.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-006.json",
+      "original_bytes": 4896775,
+      "sha256": "0dd299e5411ef9b1b27e61766d7617991c08b7384e561238ec4322aa7371cbe6",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-006.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-006.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-006.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-007.json",
+      "original_bytes": 4895235,
+      "sha256": "40194fad5514075838a4b8131b09d4ed3ecadcf30b21f830b617b9ec39f9cda1",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-007.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-007.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-007.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-008.json",
+      "original_bytes": 5327636,
+      "sha256": "1207d1f27a14cb87e6b2ed69076498a2b3709e1ab60c063b5cf48da4cdcebc0d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-008.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-008.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-008.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-009.json",
+      "original_bytes": 5329174,
+      "sha256": "5ddeb87ebee25519b3b8147db061d26a770b485d67aba0fc439116e6c5dcb439",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-009.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-009.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-009.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-010.json",
+      "original_bytes": 4904445,
+      "sha256": "5b5197657783dc42c6d1288401329e08e72e125896c99237b8032dd074265460",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-010.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-010.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-010.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-011.json",
+      "original_bytes": 4902906,
+      "sha256": "8570dd85eeb896c4c38ee397ca08ca71bc880b9f3e182eec8cfb90ad6fe002ac",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-011.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-011.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-011.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-012.json",
+      "original_bytes": 5338387,
+      "sha256": "6b435cf12c264aec48e2eb46fa4f904d83511d50121ee385575fd0fcd1c15eee",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-012.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-012.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-012.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-013.json",
+      "original_bytes": 5338386,
+      "sha256": "8ccae144b0c2be2f229776c482481b360b384703cd779314cf0654c4d132a291",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-013.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-013.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-013.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-014.json",
+      "original_bytes": 4919811,
+      "sha256": "3229325882c66ad5d343dcae49d42f8f2090534acc3786c76a0f415cd64c95e0",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-014.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-014.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-014.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-015.json",
+      "original_bytes": 4918272,
+      "sha256": "e20e621be79c961337f6928d01ffb639a27a79ea691b8b3864b34c42f7850fb4",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-015.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-015.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-015.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-016.json",
+      "original_bytes": 5350675,
+      "sha256": "fda995a890284af146d97c05acc9bb45e464353cce057df81f758af4a84959ca",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-016.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-016.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-016.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-017.json",
+      "original_bytes": 5352213,
+      "sha256": "1e7d5adaee15a722b9c1f4d6b20a64ea7aa3c1d68cef7518011ace55d2c74f6a",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-017.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-017.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-017.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-018.json",
+      "original_bytes": 4922893,
+      "sha256": "15d38cd324efb22c447934ade9d5a75649bda5ae720bd36903764d37aa15ca85",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-018.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-018.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-018.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-019.json",
+      "original_bytes": 4921353,
+      "sha256": "31fe39141acc43a0337c08d4416689bf4090e46c3247ddf582f39bd8d8d4ed5f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-019.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-019.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-019.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-020.json",
+      "original_bytes": 5352986,
+      "sha256": "64ae67264a5ff387c29bc02c73d2650c81d2de23b060d3f34b27c4fcb66c078c",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-020.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-020.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-020.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-021.json",
+      "original_bytes": 5354908,
+      "sha256": "c4e3bef41afe13aa38e47577ce064a7b5437f018061fae75b6a4da696d48fa3f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-021.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-021.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-021.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-022.json",
+      "original_bytes": 4916742,
+      "sha256": "8f01abc2824ac03a5ecde80059bff896c7b74b9dfe4eac9cb0ab45da220a8e40",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-022.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-022.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-022.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-023.json",
+      "original_bytes": 4915202,
+      "sha256": "3c504f3db6e0b78e237eac533adee491d24aea1c313fb7c740406b134e75377a",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-023.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-023.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-023.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-024.json",
+      "original_bytes": 5347605,
+      "sha256": "41784eea7494c2c2aa6cf6c049309371de88970c5713f6107c8a19e3533ebbc9",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-024.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-024.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-024.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-025.json",
+      "original_bytes": 5349143,
+      "sha256": "40a47dfdfaf36074432069df7fd1e44bd735befb977e7d0583daaab01d061927",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-025.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-025.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-025.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-026.json",
+      "original_bytes": 4916742,
+      "sha256": "6e20630d69604c8ec13e9c866b34ef8b6de3dda42d519e0e3a073352ec1a28d5",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-026.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-026.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-026.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-027.json",
+      "original_bytes": 4915201,
+      "sha256": "d7c3112451dba4720216e3da68975ca3ca382d4c6dcd1e52955741496b5fdedc",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-027.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-027.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-027.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-028.json",
+      "original_bytes": 5347605,
+      "sha256": "20d78e8b58eddd2b09dccac7e10647d485ce69f4c4ec0d546b6bcd3d32a26ab7",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-028.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-028.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-028.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-029.json",
+      "original_bytes": 5350298,
+      "sha256": "094322d86c137192d988c807dd125eccf546d0739e2a19d38bcd10e2fb954443",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-029.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-029.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-029.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-030.json",
+      "original_bytes": 4919820,
+      "sha256": "273c9262dfd2849a833a06b2852bff220d432655dc98603f84ca0bfaefee8d96",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-030.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-030.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-030.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-031.json",
+      "original_bytes": 4918280,
+      "sha256": "ebe7aa651919732a5e09cc9fe5c5f4efd90da3accdda05349d4567abdbda703f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-031.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-031.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-031.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-032.json",
+      "original_bytes": 5349915,
+      "sha256": "ac18b0a48c8ff829a41efb5c0f5cc3f28ee76120f90d5416bfda328aae5df0df",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-032.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-032.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-032.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-033.json",
+      "original_bytes": 5351837,
+      "sha256": "78e1abc8f2770842dd308e0ec7b81869317ad23a2e48b9907cefadf99aa97b0e",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-033.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-033.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-033.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-034.json",
+      "original_bytes": 4896576,
+      "sha256": "11d9cd12928e82e9e99f97013f886e3fc6f4df12c5239bca541ae7ba5212afcd",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-034.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-034.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-034.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-035.json",
+      "original_bytes": 4895036,
+      "sha256": "815c5a8e82c6f2221d50170cd1c3813c990a8ba2d12eb85c0f9690b35e8f21c2",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-035.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-035.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-035.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-036.json",
+      "original_bytes": 5330517,
+      "sha256": "0c04ea8f032696820ee003ae03b3811f9fef6e6558747c6a645078bc6a3db6e5",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-036.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-036.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-036.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-037.json",
+      "original_bytes": 5330516,
+      "sha256": "bf18552dd50d7f41879290ac935bc3c8977293cd9cdaa665fd49d7a058530cac",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-037.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-037.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-037.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-038.json",
+      "original_bytes": 4896966,
+      "sha256": "14e7cd0420254f714e4e29dbc605e8055214d7e90d1c73b649e8d5e3deaf2b50",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-038.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-038.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-038.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-039.json",
+      "original_bytes": 4895427,
+      "sha256": "843b964e0b75c855d2df35562a31c18580b69fb4a10404bfbc4de1be1f2b52da",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-039.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-039.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-039.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-040.json",
+      "original_bytes": 5327834,
+      "sha256": "b5eeb0101f71a40a03f1640a6771746546e0170ec16416645cefead910f33d0a",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-040.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-040.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-040.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-041.json",
+      "original_bytes": 5329368,
+      "sha256": "c6df86b9af5b8b7e09e6dd13b36c0b15f2bda3ae8804b568f1103f0743955485",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-041.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-041.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-041.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-042.json",
+      "original_bytes": 4896966,
+      "sha256": "15ef525fa7c6705cbf8347de6b2a1cea22ba337f906fe87fcacb0283c154bc6f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-042.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-042.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-042.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-043.json",
+      "original_bytes": 4895427,
+      "sha256": "e8d4ec4f3cbb86a7a6a4af6bd2ba6d7fae40673392e6bf89760ce3bbf091e722",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-043.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-043.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-043.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-044.json",
+      "original_bytes": 5327830,
+      "sha256": "a138b2cc3927f609bb27f7c65348ff00641e0d69e3d244201ac075ec961a89f9",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-044.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-044.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-044.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-045.json",
+      "original_bytes": 5330523,
+      "sha256": "9818e09d58eca5e7126d1108ab594db8575dd2d7de6f5e88308b4024deb6ffdd",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-045.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-045.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-045.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-046.json",
+      "original_bytes": 170858,
+      "sha256": "550c2be1e2fdd1cab94fd79a0827065540d8220fe1bd1651cf8fbe0f843757bf",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-046.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-046.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-046.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-047.json",
+      "original_bytes": 170856,
+      "sha256": "432a4cb20b097629800c1bfada8cc9197eefba5698a9bbbf3a84d7a6ce136b4d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-047.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-047.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-047.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-048.json",
+      "original_bytes": 170855,
+      "sha256": "59583fab9d8e66ddd18f7589c1bfbdafe099927e939862f7dd06964844e4efdf",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-048.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-048.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-048.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-049.json",
+      "original_bytes": 170904,
+      "sha256": "eee04addee6ebb23ad135b93bb64f01695074d42af4190971bdb5ff3bbb110f9",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-049.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-049.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-049.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-050.json",
+      "original_bytes": 170904,
+      "sha256": "b092b83359227438a4fcc6df8a734b514e1a4959f11ecf8d1bcf506a692a9662",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-050.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-050.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-050.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-051.json",
+      "original_bytes": 171428,
+      "sha256": "aa1ed5685dfc052c1c03bef76fe321d83af3c5cf6dacb86a347c5ec1ef4324a8",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-051.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-051.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-051.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-052.json",
+      "original_bytes": 171477,
+      "sha256": "86956dfdd03f24a91145278685dda920a960431a99957ce19ad14188cbb3e605",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-052.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-052.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-052.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-053.json",
+      "original_bytes": 171437,
+      "sha256": "da10b1fe9668b78de8b3ec96919ed1c4ae5a210715d1b9f982882c361495e0e8",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-053.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-053.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-053.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-054.json",
+      "original_bytes": 170906,
+      "sha256": "82a6e64fd0269d0bf33fa7d9ca3787419ab877e2b7f68882fa50f002422d1423",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-054.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-054.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-054.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-055.json",
+      "original_bytes": 170906,
+      "sha256": "e94de4e4027b80bf9850363b529b2ec74f39dd0d643d9a00be29f6b660853f23",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-055.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-055.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-055.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-056.json",
+      "original_bytes": 5326103,
+      "sha256": "61e0909ceea651151b9e298a90dba6d0b26af1cbb8b689656721dc9c7d36c724",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-056.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-056.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-056.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-057.json",
+      "original_bytes": 5326100,
+      "sha256": "9b00876d238a117c614d7125008576d59203964de4fc1163eded77a933b8c478",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-057.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-057.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-057.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-058.json",
+      "original_bytes": 5326099,
+      "sha256": "5c0fb4759310e2749d88acdac5e56e00527f8b14b11f39709d7cb1492aaf4178",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-058.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-058.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-058.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-059.json",
+      "original_bytes": 5327636,
+      "sha256": "4e0cb894a2295ed0cf75006f81de96a160f8331ea6d2768f94f640b190b0db48",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-059.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-059.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-059.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-060.json",
+      "original_bytes": 5327636,
+      "sha256": "c3d54eab8b4dd362a78e1fc7c1fb347e2a10cd28b647fd2ac5f53cc175109fa8",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-060.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-060.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-060.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-061.json",
+      "original_bytes": 5341551,
+      "sha256": "a0b2389d18a4e5ffa0d5c53c7d8c93918722b8a284be1f80cfdf509cf671b602",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-061.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-061.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-061.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-062.json",
+      "original_bytes": 5343089,
+      "sha256": "5291b984f722aa108eb22d30952f42ed01e8adbe00afbbde4dde97ed2e2e36b9",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-062.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-062.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-062.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-063.json",
+      "original_bytes": 5342737,
+      "sha256": "6882eb6ddac2a9dafea8c8a08e4d229fad2b2117bdc2c8ca33519f710e45d93f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-063.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-063.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-063.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-064.json",
+      "original_bytes": 5327638,
+      "sha256": "bd268a34c2fbd80d75e4df40c47b4f274062ca904d3883be3fbae692fb7f1c93",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-064.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-064.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-064.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-065.json",
+      "original_bytes": 5327638,
+      "sha256": "9505663d5ed92bf1cb63d3b655deeace8282dc092228fa7fb11809a1385a364b",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-065.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-065.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-065.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-066.json",
+      "original_bytes": 5327637,
+      "sha256": "5a5cd955a5066e0d8f833ea7397f74840ff3376eb9d14c23034402c8ebb80e49",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-066.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-066.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-066.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-067.json",
+      "original_bytes": 5343090,
+      "sha256": "d0fc3a0fa01adf685cdfeac0d896a66198c855394ec25d5b5b7d1c0218c9df22",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-067.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-067.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-067.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-068.json",
+      "original_bytes": 5350676,
+      "sha256": "137b0d2bac885a7d3509e42c5ba922584f0b86d1da655ebf10b1cd8ea0c80908",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-068.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-068.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-068.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-069.json",
+      "original_bytes": 5353369,
+      "sha256": "f2f23954f6683056859f5540e991bc663693e7f2dce6e1141f55fc1842375e6d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-069.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-069.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-069.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-070.json",
+      "original_bytes": 5347606,
+      "sha256": "77e2b5f78d52dafc7817decb2caf6d895ac8928d082f9ec6e19324b3dcc862ac",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-070.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-070.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-070.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-071.json",
+      "original_bytes": 5350299,
+      "sha256": "cfac30d484df4ee5fe543458b551076fe931c6fc93789d9ba44b235cb4da14eb",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-071.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-071.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-071.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-072.json",
+      "original_bytes": 5327831,
+      "sha256": "40bf736667bdc9c5c6567a721e4d000eb8f92c7d19692becfca2e44cb037e380",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-072.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-072.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-072.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-073.json",
+      "original_bytes": 5330524,
+      "sha256": "96faa4d9212d1b4b7706434436dc30238629468b083fcbee5138ae86e29aa8af",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-073.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-073.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-073.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-074.json",
+      "original_bytes": 5307377,
+      "sha256": "d349211264527c5ba465f27948e73d40cc64b33d010b1c0ecd89ca6c720d0614",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-074.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-074.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-074.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu1-075.json",
+      "original_bytes": 5307761,
+      "sha256": "178682053ba764891c308ce5e0231f865928ad51e2abf2161620cb321f518a73",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu1-075.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu1-075.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu1-075.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-000.json",
+      "original_bytes": 156659,
+      "sha256": "ecd25b320009ea2209ad09d7dbab8942458a18f4adf85e72e76553600bd5f0e2",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-000.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-000.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-000.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-001.json",
+      "original_bytes": 170280,
+      "sha256": "e1a12f5c8ed477fcd7f35c32ac3dfe0ddea0795af2e8732285f3806e2a208c1b",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-001.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-001.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-001.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-002.json",
+      "original_bytes": 170291,
+      "sha256": "bf0b0b8425a1a9a0f0fd01e413efb48a103d11b25e2e1d38757b064149b44547",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-002.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-002.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-002.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-003.json",
+      "original_bytes": 4872188,
+      "sha256": "20aded6802d1617f054f8192710856cf165c780f864a0a2ca772fb8d5de94889",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-003.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-003.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-003.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-004.json",
+      "original_bytes": 5307667,
+      "sha256": "4eb8ffa1d8cd12141c303eb56b15c8bd3e267c5c831405840bb3eb55245c983b",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-004.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-004.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-004.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-005.json",
+      "original_bytes": 5307668,
+      "sha256": "62fbeaf5e16facb0cf725eb73c9cd909465a590f02a171ecd2807388542deaba",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-005.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-005.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-005.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-006.json",
+      "original_bytes": 4878343,
+      "sha256": "947e753d7667ba9fe62cd70a9a50302b0e9dcbbdd90f24c72b21779aff3a387d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-006.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-006.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-006.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-007.json",
+      "original_bytes": 4876803,
+      "sha256": "9a60c5f65e03ec8c365646e554590d21dfdbfd2526130655899ad4ed6780dc1f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-007.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-007.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-007.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-008.json",
+      "original_bytes": 5309204,
+      "sha256": "99fd52259fc0dd1928b6659d0967c970ba38b8ff8a1285a9f7820f95c206a90d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-008.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-008.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-008.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-009.json",
+      "original_bytes": 5310742,
+      "sha256": "2ee36007aeb9b08e52c8787e1ef398872c1b6507b31cce330c070f32451ad6e1",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-009.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-009.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-009.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-010.json",
+      "original_bytes": 4886014,
+      "sha256": "a54e553687f301dcaf427e7e4dc673aa2f49b4873621f74320e5124ac85b93f2",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-010.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-010.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-010.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-011.json",
+      "original_bytes": 4884474,
+      "sha256": "ac25b0daa32873470a1e7c3b537603f82194669d4312430b5c952f8179db0bc6",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-011.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-011.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-011.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-012.json",
+      "original_bytes": 5319955,
+      "sha256": "4b0624a4db98631b1264386c56fc7f3dafe4cf76e282a2a529300e60c0db7892",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-012.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-012.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-012.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-013.json",
+      "original_bytes": 5319954,
+      "sha256": "bc1c133a78bcfe8bd5f4dd0ecb4c909b2f6c10b4d4c59a88000d1eb9cc718d39",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-013.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-013.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-013.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-014.json",
+      "original_bytes": 4901380,
+      "sha256": "6d5671337e5e1014cd937c616dcd18de8f8ec4c97793d86aa897392bded3a80f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-014.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-014.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-014.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-015.json",
+      "original_bytes": 4899840,
+      "sha256": "42215054eef2d676c3fd9437167dd653f0830b2d9e25ddf44bba6d57951bc081",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-015.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-015.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-015.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-016.json",
+      "original_bytes": 5332243,
+      "sha256": "cc89efac0b032849d6ba734853872c46bcb8839c51192f582500df9d1fb35b99",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-016.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-016.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-016.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-017.json",
+      "original_bytes": 5333781,
+      "sha256": "4b707d72be43fcf3cb57e4f1cb35eed8df3c0593c94247888eb5bae42fb36e94",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-017.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-017.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-017.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-018.json",
+      "original_bytes": 4904461,
+      "sha256": "cd99a777a7f14f53da349b1e727df4454e375eda3f6777df7fa3dcdba0d90922",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-018.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-018.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-018.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-019.json",
+      "original_bytes": 4902921,
+      "sha256": "f0e0fdfc205a6f8c84ee0cdb98c8a5030050f7e2420fefd783dffbc16209f37f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-019.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-019.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-019.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-020.json",
+      "original_bytes": 5334554,
+      "sha256": "541bb01f2b59b345017218b74764d33b7ce429daa130d1e0d90ca2988896191b",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-020.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-020.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-020.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-021.json",
+      "original_bytes": 5336476,
+      "sha256": "b5ddbf8d992c016e04c43a3f85148c9f9f952b93cc0b81186348672c259c6058",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-021.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-021.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-021.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-022.json",
+      "original_bytes": 4898310,
+      "sha256": "6b7dc1ba4ebc0dcbe46e0c370f81eb26ecb22ea4c69acb54af3c6b7e180aad1d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-022.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-022.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-022.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-023.json",
+      "original_bytes": 4896770,
+      "sha256": "9fad0ca6246c7168c72a5cc1aee18960339432c763c106d26712e0a88fb6928a",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-023.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-023.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-023.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-024.json",
+      "original_bytes": 5329173,
+      "sha256": "46cbb4cd7b150e913383d2226067cb55a2e1d85737b4dfbf50d104fb120d9909",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-024.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-024.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-024.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-025.json",
+      "original_bytes": 5330711,
+      "sha256": "50a2163923aaa9bf8f47596615c0c9f31e3159af0072f487568db8ee64e6a05d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-025.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-025.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-025.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-026.json",
+      "original_bytes": 4898310,
+      "sha256": "a1f146f09de629ba5eafca1be0d5b9e053b408a8682f205828fb1b55307225e3",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-026.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-026.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-026.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-027.json",
+      "original_bytes": 4896774,
+      "sha256": "7bdc951f7f6d136168a811ba1e04209cbc54120faf49b68e1a53589e97f66c4e",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-027.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-027.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-027.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-028.json",
+      "original_bytes": 5329173,
+      "sha256": "00703a555ccad9657549604a4c0d68beaf387a74cf5263e3b6416a06459e996d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-028.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-028.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-028.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-029.json",
+      "original_bytes": 5331866,
+      "sha256": "1b7181edc488fe1126b879fbe5060c39e60ba98ab348545dab5378523a8b7bc3",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-029.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-029.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-029.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-030.json",
+      "original_bytes": 4901388,
+      "sha256": "df23d072764fee8b34708ebd5849a18104dc1beadf0b43b8fd780ec430ede32b",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-030.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-030.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-030.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-031.json",
+      "original_bytes": 4899848,
+      "sha256": "a9bf94af88c998d4dee856b7b6ac9f06ab9bbc4bf2f44840dc86dc7da28c6ae2",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-031.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-031.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-031.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-032.json",
+      "original_bytes": 5330328,
+      "sha256": "fd1005d19c64eee8aa4d6dd1c494472e27381c76a265dd2dcdcad7e55fd78234",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-032.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-032.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-032.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-033.json",
+      "original_bytes": 5333405,
+      "sha256": "f449c399021e467ae402eeceab00b11b6d4ff24f782c8288819c749776aaef8d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-033.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-033.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-033.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-034.json",
+      "original_bytes": 4878146,
+      "sha256": "6fc7bbac8ddb58c9b53f7f27b61c4ca3e0472d0e5b6ac59fddcca880a76ea7d9",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-034.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-034.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-034.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-035.json",
+      "original_bytes": 4876604,
+      "sha256": "864413c9dd531e08e3a26d2c07a7c6a8b6b7a787ea122d9d40bea596eacbb865",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-035.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-035.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-035.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-036.json",
+      "original_bytes": 5312085,
+      "sha256": "d072b0e2468930068869bd0ec113d1d2a0173f505de7b7dff6cc8e699619e21b",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-036.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-036.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-036.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-037.json",
+      "original_bytes": 5312084,
+      "sha256": "bcb5f6ca5cc2586dc23325aff09517498e066d2893e8bb18115b9d6ccf1fcbaa",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-037.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-037.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-037.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-038.json",
+      "original_bytes": 4878535,
+      "sha256": "2aa1fee1967b1f9449ac11ff1732f05986ac61244474a3878aef27edf895d36b",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-038.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-038.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-038.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-039.json",
+      "original_bytes": 4876995,
+      "sha256": "a7931eb096f774f6c511c158b5d073e34ad4cb7ddeebd7d770a08ec8d7320f43",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-039.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-039.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-039.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-040.json",
+      "original_bytes": 5309398,
+      "sha256": "dabd6176e60c7541003fc0f4444dab40c51de6ce4468813a43b8185310a70758",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-040.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-040.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-040.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-041.json",
+      "original_bytes": 5310936,
+      "sha256": "4a59aad85c2323b64162642604c059cc57195313549f31ab01b22268f099e46f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-041.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-041.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-041.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-042.json",
+      "original_bytes": 4878535,
+      "sha256": "98bcfd450199b365c60bc5f1ead7542ca5c3f2ffc987dff2b936d4de1ef7156d",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-042.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-042.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-042.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-043.json",
+      "original_bytes": 4876995,
+      "sha256": "f520949b14f103b4c7fd7d7426f70b300653cd0f4d339a117be31e224f66ccc6",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-043.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-043.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-043.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-044.json",
+      "original_bytes": 5309398,
+      "sha256": "9a49c6511acc5217ab1dba6a49d61944c18f36657630a3c5c3130e4ec0c34f33",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-044.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-044.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-044.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-045.json",
+      "original_bytes": 5312091,
+      "sha256": "3f2b42433fc6eb39f1656dab03e520f864565660c7cbf6e823ebb527c81e0129",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-045.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-045.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-045.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-046.json",
+      "original_bytes": 170285,
+      "sha256": "650abc48fde93eec3f6c403a9be4b2b33965a1d07698c40974e83a8d36124359",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-046.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-046.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-046.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-047.json",
+      "original_bytes": 170281,
+      "sha256": "2fb7310dc86b7399937e32353ef73d609de5052cfe7dfcba154abb44b1e5e185",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-047.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-047.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-047.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-048.json",
+      "original_bytes": 170279,
+      "sha256": "311b2ad825f681a05e0dc3b22015e59ff3720245e35a92ebb370b5d74d86ff20",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-048.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-048.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-048.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-049.json",
+      "original_bytes": 170328,
+      "sha256": "38b345ffe08e90182d815f0751aaec1bbd78fe30f2d880e1b0f845aadf79b7ee",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-049.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-049.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-049.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-050.json",
+      "original_bytes": 170328,
+      "sha256": "27c3505e2f04a6272bbff9173889a20b43c5ea4b12c17048582748859e61dc48",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-050.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-050.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-050.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-051.json",
+      "original_bytes": 170708,
+      "sha256": "435b7a3eac8c84c59880437d865a49b11dfe57c2b347804a99ab77cbb9027459",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-051.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-051.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-051.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-052.json",
+      "original_bytes": 170757,
+      "sha256": "345b1750a611db2aaa6f11a0dddf4b1704aeee5df7771fb249dc5b273db3e429",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-052.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-052.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-052.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-053.json",
+      "original_bytes": 170717,
+      "sha256": "fdbbb03cbe85287c03f28c60e8119d85c0f4698be62795a20c319ae9b8e3ba6c",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-053.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-053.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-053.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-054.json",
+      "original_bytes": 170330,
+      "sha256": "b3b084f8da1a808835b4d5405f9252ed1b54cb44bb6eba608a020d14c58300a1",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-054.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-054.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-054.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-055.json",
+      "original_bytes": 170330,
+      "sha256": "fe058a30c5c7df46bd5d93e01db0c555827506affbe589f430b8affea5a0b94e",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-055.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-055.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-055.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-056.json",
+      "original_bytes": 5307671,
+      "sha256": "1b6721a9968d9dcf382ae56c07ffd9c72990e783fee41ebc4d3188d821cda84c",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-056.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-056.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-056.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-057.json",
+      "original_bytes": 5307669,
+      "sha256": "d1cbd00605348a9eda8522d9e4c09eaaee6cbfe41191c7340232edf621b91d4b",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-057.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-057.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-057.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-058.json",
+      "original_bytes": 5307667,
+      "sha256": "9c6bad1ead52e585c6068d47f8e9ed5c581bbcae8780a4b37e0bf23d44edee93",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-058.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-058.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-058.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-059.json",
+      "original_bytes": 5309204,
+      "sha256": "fd9cf4c242892cf4861a5b28d677ed6218b28a32004f00d53a817ba9f3bd4287",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-059.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-059.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-059.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-060.json",
+      "original_bytes": 5309204,
+      "sha256": "00100342e55ab295f24e12b019568bfeffc9fe3e65117f4d14e92eb37b258234",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-060.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-060.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-060.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-061.json",
+      "original_bytes": 5318512,
+      "sha256": "b8402c743c1d18ae1b5720ddc2196d7af0a430be9e2a3b9a5d7259b47c7d28bf",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-061.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-061.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-061.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-062.json",
+      "original_bytes": 5320049,
+      "sha256": "e8ef82246ea9c03270e2b49bb18891acff21cd5028021c64be7292335b98737e",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-062.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-062.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-062.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-063.json",
+      "original_bytes": 5319665,
+      "sha256": "9bc18c0e1cae5119a8ad2f32feca836f9b8f825a440bc70d41cbae0aaf5c34fc",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-063.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-063.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-063.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-064.json",
+      "original_bytes": 5309206,
+      "sha256": "a02ad12c4ecd85dfedc9510542fadfa88a54c26b94dc751144c383d7860ad5b9",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-064.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-064.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-064.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-065.json",
+      "original_bytes": 5309206,
+      "sha256": "03999053abb9c6d968708005002ec31b4d48cb5792029da8604088c94b53b241",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-065.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-065.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-065.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-066.json",
+      "original_bytes": 5309204,
+      "sha256": "dd9541a71cad7a1d2e7d9d46f838fea3c03a64314255b787d369961c73991f81",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-066.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-066.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-066.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-067.json",
+      "original_bytes": 5320050,
+      "sha256": "b673afd493968c520af60f9950b78ec8d6139e2042b97d5ab6c0691fb2f238a5",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-067.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-067.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-067.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-068.json",
+      "original_bytes": 5332244,
+      "sha256": "ed4024297d0f7b9d725139acec81c5eb69791a0ddddea0c0c18e5ea7cb4a38f2",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-068.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-068.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-068.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-069.json",
+      "original_bytes": 5334937,
+      "sha256": "fd0b1866c350fd6486f27808b8e65bcba2fb69c2e89bcde393af341040889788",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-069.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-069.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-069.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-070.json",
+      "original_bytes": 5329174,
+      "sha256": "2ce18265328a71662563a215b929d9fd0dfc82b8e93967a4291b3eda962ae84f",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-070.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-070.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-070.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-071.json",
+      "original_bytes": 5331867,
+      "sha256": "691ce019c1ba21a66a2567be995e341f27f9d50d194d258c6c1dc3174078f970",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-071.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-071.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-071.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-072.json",
+      "original_bytes": 5309399,
+      "sha256": "b29b7ebffc77a7200532af446c475a82b55b671ea4b662bea93d826aa194cfae",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-072.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-072.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-072.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-073.json",
+      "original_bytes": 5312091,
+      "sha256": "69936461f562ffd4d64ef894a4e8e459d17f37fa8cd2199e8a526a37be6d6632",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-073.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-073.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-073.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-074.json",
+      "original_bytes": 5283984,
+      "sha256": "071b10d9039d571ee93bd72791556103c215172c656d56b19feca1dd4880c669",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-074.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-074.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-074.json"
+    },
+    {
+      "original_path": "phase19/final-v3-mixed-matrix-gpu5-075.json",
+      "original_bytes": 5284721,
+      "sha256": "65801bb78915323f8578b935eaf7a31496a7bb729b6e90372523f3e6b71fcc23",
+      "local_original_path": "local/phase19/final-v3-mixed-matrix-gpu5-075.json",
+      "aliases": [
+        "local/phase19/final-v3-mixed-matrix-gpu5-075.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "final-v3-mixed-matrix-gpu5-075.json"
+    },
+    {
+      "original_path": "phase19/pilot-none-shared-4-normal-0.json",
+      "original_bytes": 1183281,
+      "sha256": "09ca76bc799f4f0a03e9c6f724a22d4cf2ebe3e3cd1d66439b8d4d120ade8308",
+      "local_original_path": "local/phase19/pilot-none-shared-4-normal-0.json",
+      "aliases": [
+        "local/phase19/pilot-none-shared-4-normal-0.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "pilot-none-shared-4-normal-0.json"
+    },
+    {
+      "original_path": "phase19/pilot-v3-shared1.json",
+      "original_bytes": 1301433,
+      "sha256": "85cece3de6046993fe840c5bbd19f5f31af89dd1bfd4e6beebec901da8ed4f5f",
+      "local_original_path": "local/phase19/pilot-v3-shared1.json",
+      "aliases": [
+        "local/phase19/pilot-v3-shared1.json"
+      ],
+      "batch": "phase19",
+      "published_path": "phase19/records.zip",
+      "encoding": "zip",
+      "archive_member": "pilot-v3-shared1.json"
     }
   ],
   "batches": [
@@ -4653,6 +7400,15 @@
       "original_bytes": 346050557,
       "published_bytes": 3576915,
       "description": "Single-warp timing v2: 172 functional/calibration/overlap/OPEN-gap cases, matrix, resources, derived observations, sanitizer and superseded snapshot-hazard evidence; all raw cases gzipped"
+    },
+    {
+      "name": "phase19",
+      "date": "2026-11-03T15:22:08.595142+00:00",
+      "original_files": 211,
+      "original_bytes": 681928760,
+      "published_reports": 211,
+      "published_files": 5,
+      "published_bytes": 6662609
     }
   ],
   "bundles": {
@@ -4666,6 +7422,12 @@
       "bytes": 3445632,
       "sha256": "d5481e00beba0e529f4cd59ac6e98ad8ef46c34aa80216ad466afe5970c725da",
       "reports": 175,
+      "encoding": "zip-deflate"
+    },
+    "phase19/records.zip": {
+      "bytes": 6283479,
+      "sha256": "a79f7e0890c06c933515ead9e79954a3422245f542752c250d89f8ee755be9b6",
+      "reports": 207,
       "encoding": "zip-deflate"
     }
   }

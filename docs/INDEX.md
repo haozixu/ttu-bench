@@ -2,9 +2,13 @@
 
 更新：2026-11-03。入口是 [README.md](../README.md)，初次阅读先看 [TTU 协议入门](TTU_PROTOCOL_GUIDE.md)。当前协议边界见 [PHASE14.md](PHASE14.md)，基础协议见 [PHASE12.md](PHASE12.md)，独立指令行为、差异与恢复记录见 [EOSS_REPRO.md](EOSS_REPRO.md)。
 
+当前主线为 [Phase19](PHASE19.md) MACROFUSE行为、同warp Tensor/global/shared重叠；复杂IAS协议逆向暂挂，Phase17证据和待解路径保留。
+
+2026-11-04的后续工程顺序见 [MEASUREMENT_ROADMAP](MEASUREMENT_ROADMAP.md)：先小renderer补不同lane和三后端比较，再回多warp。这是计划，不是新增实验结果。
+
 入口README位于 `ttu-bench/` 根目录，详细文档集中在 `docs/`。下表源码、数据和结果的行内路径以 `ttu-bench/` 为基准；所有复现命令也从该目录执行。文档点击链接已按新位置更新。
 
-最新 [Phase17](PHASE17.md)：保存并重新提交硬件返回引用，已测平坦1–3静态instance的父IAS续遍历通过两GPU的30项矩阵；仍限共享GAS及0x21引用类型。单instance相邻ID/handle规则已撤回，改用事件索引查IAS表。[Phase15](PHASE15.md)保留记录解码、host参考实现及4096三角形GAS单GO测试。
+功能基线 [Phase17](PHASE17.md)：保存并重新提交硬件返回引用，已测平坦1–3静态instance的父IAS续遍历通过两GPU的30项矩阵；仍限共享GAS及0x21引用类型。单instance相邻ID/handle规则已撤回，改用事件索引查IAS表。[Phase15](PHASE15.md)保留记录解码、host参考实现及4096三角形GAS单GO测试。
 
 ## 可执行代码
 
@@ -36,7 +40,15 @@
 | `parent_resume.py` / `parent_template.cu` | raw state transport与受限父IAS设备续遍历，显式pending软件栈；单active thread，非计时核 |
 | `run_parent_resume.py` / `validate_parent_resume.py` | 最终及逐事件CPU/OptiX检查；30项正矩阵与两个first-child-only负对照 |
 | `run_parent_probe.py` | host控制raw状态的none/copy/promote/pop诊断；不是通用算法或正式closest-hit入口 |
+| `warp_timing.py` / `timing_template.cu` | 单warp raw SASS测量构建及逐lane快照，96寄存器，无stack/shared；保持融合组body不变 |
+| `run_warp_timing.py` / `validate_warp_timing.py` | clock64四窗口、1/32 lanes、ALU位置、OPEN-gap和MF0/NOP校准；正式172项矩阵 |
 | `disassemble_ttu.py` | 保存源hash/原TTU字节，将TTU换NOP后反汇编普通指令片段；输出不可运行 |
+| `mixed_timing.py` / `run_mixed_timing.py` | Phase19：128寄存器、256B dynamic shared、独立scoreboard、即时消费者及HMMA保守padding |
+| `validate_mixed_timing.py` | 152项单warp Tensor/global/shared/FADD及拆组对照，两GPU；独立process/timeout |
+| `run_macrofuse_control.py` / `validate_macrofuse_control.py` | 匹配NOP/MF0替换正常MF的48项预期715负对照，保留ST/GO/LD.CLOSE |
+| `inspect_mixed_timing.py` | 从实测cubin记录SASS、来源hash及融合范围，TTU换NOP的输出只供分析 |
+| `bundle_results.py` / `publish_results.py` | 原字节合并及新阶段ZIP发布，矩阵引用hash验证 |
+| `validate_result_store.py` | 旧alias、ZIP损坏拒绝、恢复越界及不同内容覆盖拒绝 |
 | `result_store.py` | 按manifest读取原始/新路径的结果、校验压缩及原始SHA256、恢复原始目录结构；标准库 |
 
 `minimal_template.cubin` 和 `__pycache__/` 是自动生成的缓存。功能入口不需要 EoSS；EoSS复现/编码验证入口使用已有 `research/community/eoss -> eoss-framework` 符号链接。
@@ -56,9 +68,13 @@
 
 ## 实验证据
 
-结果已按 `results/phase12/` 至 `results/phase17/`、`results/eoss/`、`results/maintenance/` 分类。大型JSON无损gzip保存；内部路径/command及hash仍为原始记录，不改写历史结果。用 [manifest](../results/manifest.json) 或 `result_store.load_result()`解析旧路径。中间版本保存在被ignore的 `results/archive/`，clone不含这些本地归档；正式结论依赖的矩阵、逐case数据和关键反例均在发布集。见 [RESULTS.md](RESULTS.md)。
+结果已按 `results/phase12/` 至 `results/phase19/`、`results/eoss/`、`results/maintenance/` 分类。Phase17起单ZIP保存逐项报告，较早阶段保留gzip；内部路径/command及hash仍为原始记录，不改写历史结果。用 [manifest](../results/manifest.json) 或 `result_store.load_result()`解析旧路径。中间版本保存在被ignore的 `results/archive/`，clone不含这些本地归档；正式结论依赖的矩阵、逐case数据和关键反例均在发布集。见 [RESULTS.md](RESULTS.md)。
 
-最新 [Phase17](PHASE17.md)：[parent矩阵](../results/phase17/final-parent-matrix.json)保存30项、4,768次launch、11,492次请求及两个负对照，逐case报告同目录发布。另有单instance/fixture回归、资源、代表事件、四实例与等距边界记录；全部加入manifest。
+最新 [Phase19](PHASE19.md)：[v3矩阵](../results/phase19/final-v3-mixed-matrix.json)152项、194784次逐lane检查；[48项MF替换负对照](../results/phase19/final-mf-controls.json)均预期715。211份原报告/矩阵/摘要集中成5个物理文件，207个成员在records.zip。提供Tensor/global/shared真实SASS及立即消费检查；HMMA精确依赖仍待解读。
+
+此前 [Phase18](PHASE18.md)：[单warp v2矩阵](../results/phase18/final-v2-warp-matrix.json)及[records.zip](../results/phase18/records.zip)中的172份case和3份校准/旧失败，记录2064次launch、6144次warp级请求和136224次逐lane检查；同warp异步重叠、OPEN-gap、MF0与匹配NOP校准均通过。资源、sanitizer、快照源寄存器竞争的旧失败证据一并入manifest。
+
+此前 [Phase17](PHASE17.md)：[parent矩阵](../results/phase17/final-parent-matrix.json)保存30项、4,768次launch、11,492次请求及两个负对照，逐case与负对照共41份在[records.zip](../results/phase17/records.zip)；阶段共7个物理文件。另有单instance/fixture回归、资源、代表事件、四实例与等距边界记录；全部加入manifest。
 
 此前 [Phase16](PHASE16.md)：[device矩阵](../results/phase16/phase16-device-matrix.json)及同目录下`phase16-device-{instance}-{scene}.json.gz`保存8项、1344次kernel launch/2615次TTU请求，全通过；[代表性事件](../results/phase16/example-events.json)为方便阅读的派生样例。`phase16-device-resource-usage.txt`为单独构建的资源报告；`phase16-fixture-regression.json`为8case/40launch固定fixture回归。设备端独立child查询不是父级resume。
 

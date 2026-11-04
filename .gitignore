@@ -19,6 +19,6 @@ __pycache__/
 /results/scratch/
 
 # Device-instance builds live in a TemporaryDirectory and leave no cubin here.
-# Tracked result layout: results/{phase12,...,phase18,eoss,maintenance}/
+# Tracked result layout: results/{phase12,...,phase19,eoss,maintenance}/
 # and results/manifest.json; records.zip / .json.gz evidence is intentionally not ignored.
 # Fixtures, original JIT images and historical sources remain visible too.

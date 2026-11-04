@@ -114,6 +114,6 @@ python3 validate_warp_timing.py --gpus 5 0 --output results/local/warp-matrix.js
 python3 result_store.py verify
 ```
 
-后续可测试MACROFUSE拆分、Tensor及访存位置对照；Phase18源码与原报告保留，避免改变旧结果的source hash。专利指出普通指令不属于允许宏内类型，暂不把“往组里插NOP看看会不会挂”当常规下一步。中断/抢占原子性需要独立方法；当前没有声称已测出。复杂IAS继续暂挂。
+后续 [Phase19](PHASE19.md) 已开始MACROFUSE拆分、Tensor及访存位置对照；Phase18源码与原报告保留，避免改变旧结果的source hash。专利指出普通指令不属于允许宏内类型，暂不把“往组里插NOP看看会不会挂”当常规下一步。中断/抢占原子性需要独立方法；当前没有声称已测出。复杂IAS继续暂挂。
 
 归档更新：原179份发布文件现在为5个物理文件，矩阵、observations、资源、sanitizer日志保留可读文件，其余无损合并入records.zip。旧失败链接指向ZIP，成员通过manifest/旧路径读取；不删除失败或改写历史报告。

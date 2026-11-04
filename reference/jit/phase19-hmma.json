@@ -1,0 +1,13 @@
+{
+  "report": "results/local/phase19/evidence-hmma.json",
+  "report_sha256": "d9cdbbc462771b5b608d5dfe769095667881d3a7553fc4e17e6667846676ecb9",
+  "cubin_source": "results/local/phase19/evidence-hmma.cubin",
+  "cubin_sha256": "32171fecb04e7338812a3b7d1b7a57cc1d25a0736c11346650533caba31da920",
+  "section": ".text.ttu_timing",
+  "excerpt_start": "0x7d0",
+  "excerpt_end": "0xb20",
+  "excerpt_sha256": "e4714dd82528e293088d7aea3b5aaa8bb6cc6cc84a1cd89a0dfe8ae67d723afb",
+  "tool_sha256": "bdde7361bfb96bf3db3b8847b00ff255b0ba461d6f4e917fec47daae87a76b2d",
+  "ttu_removed": [],
+  "instruction": "NOP replacement is analysis-only; runtime used original TTU bytes"
+}

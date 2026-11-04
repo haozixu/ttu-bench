@@ -1,0 +1,159 @@
+{
+  "report": "results/local/phase19/evidence-none.json",
+  "report_sha256": "05172308df00434c41c2ad0e8bccf49964e74ce71c51bcd5c96e14565064656d",
+  "cubin_source": "results/local/phase19/evidence-none.cubin",
+  "cubin_sha256": "76fb881aac55092d6f502aceb287b0ff20ec218c95aabbf15eb89e8d1f1da3ce",
+  "section": ".text.ttu_timing",
+  "excerpt_start": "0xa10",
+  "excerpt_end": "0xc80",
+  "excerpt_sha256": "a286e956572b362db373834be81aaa052b71682f84a20d8699d733af9253aa71",
+  "tool_sha256": "bdde7361bfb96bf3db3b8847b00ff255b0ba461d6f4e917fec47daae87a76b2d",
+  "ttu_removed": [
+    {
+      "offset": "0xb10",
+      "bytes": "d0730000000000000001000000ec0f00",
+      "decoded": {
+        "name": "TTUOPEN",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0xb20",
+      "bytes": "d4790000000a00000000000000e80f00",
+      "decoded": {
+        "name": "TTUMACROFUSE",
+        "predicate": 7,
+        "count": 10
+      }
+    },
+    {
+      "offset": "0xb30",
+      "bytes": "d17300002a0000003400000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 0,
+        "rb": 42,
+        "register2": 52
+      }
+    },
+    {
+      "offset": "0xb40",
+      "bytes": "d17300000c4000004200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 64,
+        "rb": 12,
+        "register2": 66
+      }
+    },
+    {
+      "offset": "0xb50",
+      "bytes": "d1730000105000000e00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 80,
+        "rb": 16,
+        "register2": 14
+      }
+    },
+    {
+      "offset": "0xb60",
+      "bytes": "d1730000488000002800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 128,
+        "rb": 72,
+        "register2": 40
+      }
+    },
+    {
+      "offset": "0xb70",
+      "bytes": "d173000024c000001800000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 192,
+        "rb": 36,
+        "register2": 24
+      }
+    },
+    {
+      "offset": "0xb80",
+      "bytes": "d173000020d000000200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 208,
+        "rb": 32,
+        "register2": 2
+      }
+    },
+    {
+      "offset": "0xb90",
+      "bytes": "d1730000220001003200000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 256,
+        "rb": 34,
+        "register2": 50
+      }
+    },
+    {
+      "offset": "0xba0",
+      "bytes": "d1730000388001003600000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 384,
+        "rb": 56,
+        "register2": 54
+      }
+    },
+    {
+      "offset": "0xbb0",
+      "bytes": "d17300003c9001003a00000000e20100",
+      "decoded": {
+        "name": "TTUST",
+        "predicate": 7,
+        "address": 400,
+        "rb": 60,
+        "register2": 58
+      }
+    },
+    {
+      "offset": "0xbc0",
+      "bytes": "d3730000000000000000000000e20f00",
+      "decoded": {
+        "name": "TTUGO",
+        "predicate": 7
+      }
+    },
+    {
+      "offset": "0xbe0",
+      "bytes": "d4790000000100000000000000e80f00",
+      "decoded": {
+        "name": "TTUMACROFUSE",
+        "predicate": 7,
+        "count": 1
+      }
+    },
+    {
+      "offset": "0xbf0",
+      "bytes": "d27348000000030020040e0000620e00",
+      "decoded": {
+        "name": "TTULD",
+        "predicate": 7,
+        "address": 768,
+        "rd": 72,
+        "register2": 32,
+        "close": 1
+      }
+    }
+  ],
+  "instruction": "NOP replacement is analysis-only; runtime used original TTU bytes"
+}

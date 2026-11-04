@@ -1,0 +1,13 @@
+{
+  "report": "results/local/phase19/evidence-shared.json",
+  "report_sha256": "145ae1e85b53a8c68d2b763b47f64eda6749c759427b0fef34712ba6d993f37b",
+  "cubin_source": "results/local/phase19/evidence-shared.cubin",
+  "cubin_sha256": "0587a5ce90cef1457b0ab935b04e1164aee98bf507cbcbb1c047c901fc82ba50",
+  "section": ".text.ttu_timing",
+  "excerpt_start": "0x7d0",
+  "excerpt_end": "0x980",
+  "excerpt_sha256": "e640f97aa11799cd75d1387965a08fa6d8e388970067adddfc174d3ba6af7faf",
+  "tool_sha256": "bdde7361bfb96bf3db3b8847b00ff255b0ba461d6f4e917fec47daae87a76b2d",
+  "ttu_removed": [],
+  "instruction": "NOP replacement is analysis-only; runtime used original TTU bytes"
+}
