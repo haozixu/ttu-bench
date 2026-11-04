@@ -1,0 +1,23 @@
+{
+  "name": "Stanford Bunny",
+  "credit": "Stanford University Computer Graphics Laboratory",
+  "source": "https://graphics.stanford.edu/data/3Dscanrep/#bunny",
+  "terms": "https://graphics.stanford.edu/data/3Dscanrep/#acknowledge",
+  "terms_excerpt": "You are welcome to use the data and models for research purposes. You are also welcome to mirror or redistribute them for free.",
+  "terms_note": "Credit Stanford Computer Graphics Laboratory. Commercial use requires permission; consult the source terms.",
+  "archive_url": "https://graphics.stanford.edu/pub/3Dscanrep/bunny.tar.gz",
+  "archive_bytes": 4894286,
+  "archive_sha256": "a5720bd96d158df403d153381b8411a727a1d73cff2f33dc9b212d6f75455b84",
+  "normalization_bounds": [[-0.0946899, 0.0329874, -0.0618736], [0.0610091, 0.187321, 0.0587997]],
+  "readme": {
+    "member": "bunny/reconstruction/README",
+    "bytes": 655,
+    "sha256": "91cd6c3a1b21008ccc4169ff2bde4732243ccb4b68ab99e10c09fdd7a6496eac"
+  },
+  "levels": {
+    "res4": {"member": "bunny/reconstruction/bun_zipper_res4.ply", "bytes": 34359, "sha256": "2ca4b1c9206eb2768f10eeb06f30d2dcf576c21f69243335660c896605d1f0ab", "vertices": 453, "triangles": 948},
+    "res3": {"member": "bunny/reconstruction/bun_zipper_res3.ply", "bytes": 148524, "sha256": "d628625d14fbe5deecb123536b515405c522984d43488cc24f91980eb75edadc", "vertices": 1889, "triangles": 3851},
+    "res2": {"member": "bunny/reconstruction/bun_zipper_res2.ply", "bytes": 658744, "sha256": "8faa052bb08cf1625eec97b6508baceee11eec9cf28f83f6a9d4547ab15d7761", "vertices": 8171, "triangles": 16301},
+    "full": {"member": "bunny/reconstruction/bun_zipper.ply", "bytes": 3033195, "sha256": "b1acc63bece78444aa2e15bdcc72371a201279b98c6f5d4b74c993d02f0566fe", "vertices": 35947, "triangles": 69451}
+  }
+}

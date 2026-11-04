@@ -3,6 +3,7 @@
 #include <optix_stubs.h>
 #include <optix_function_table_definition.h>
 #include <cstdint>
+#include <chrono>
 #include <cstring>
 #include <stdexcept>
 #include <string>
@@ -39,6 +40,7 @@ struct Scene {
     OptixTraversableHandle gas = 0;
     CUdeviceptr base = 0;
     size_t size = 0;
+    double build_seconds = 0;
     bool has_instances = false;
     std::vector<CUdeviceptr> allocations;
 
@@ -51,6 +53,7 @@ struct Scene {
     }
 
     void build(const OptixBuildInput& input) {
+        auto started = std::chrono::steady_clock::now();
         OptixAccelBuildOptions options = {};
         options.buildFlags = OPTIX_BUILD_FLAG_NONE;
         options.operation = OPTIX_BUILD_OPERATION_BUILD;
@@ -62,6 +65,7 @@ struct Scene {
         check(optixAccelBuild(context, nullptr, &options, &input, 1,
                               temporary, sizes.tempSizeInBytes, base, size, &gas, nullptr, 0));
         check(cuCtxSynchronize());
+        build_seconds += std::chrono::duration<double>(std::chrono::steady_clock::now()-started).count();
     }
 
     ~Scene() {
@@ -200,3 +204,18 @@ extern "C" int scene_trace(void* object, const Ray* rays, unsigned count, unsign
 }
 
 extern "C" void scene_destroy(void* object) { delete static_cast<Scene*>(object); }
+
+extern "C" double scene_build_seconds(void* object) { return static_cast<Scene*>(object)->build_seconds; }
+
+extern "C" int scene_launch_device(void* object, uint64_t device_params, unsigned count) {
+    auto scene = static_cast<Scene*>(object);
+    try {
+        if (!count || !device_params) throw std::runtime_error("requires nonempty device parameters");
+        check(optixLaunch(scene->pipeline, nullptr, device_params, sizeof(Params),
+                          &scene->sbt, count, 1, 1));
+        return 0;
+    } catch (const std::exception& error) {
+        last_error = error.what();
+        return -1;
+    }
+}

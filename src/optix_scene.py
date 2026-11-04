@@ -52,6 +52,10 @@ class Scene:
         self.library.scene_trace.argtypes = [ctypes.c_void_p, ctypes.POINTER(Ray), ctypes.c_uint, ctypes.c_uint,
                                               ctypes.POINTER(Hit)]
         self.library.scene_trace.restype = ctypes.c_int
+        self.library.scene_launch_device.argtypes = [ctypes.c_void_p, ctypes.c_uint64, ctypes.c_uint]
+        self.library.scene_launch_device.restype = ctypes.c_int
+        self.library.scene_build_seconds.argtypes = [ctypes.c_void_p]
+        self.library.scene_build_seconds.restype = ctypes.c_double
         self.library.scene_destroy.argtypes = [ctypes.c_void_p]
         self.library.scene_destroy.restype = None
         self.library.scene_error.argtypes = []
@@ -85,3 +89,11 @@ class Scene:
         if self.object:
             self.library.scene_destroy(self.object)
             self.object = ctypes.c_void_p()
+
+    def launch_device(self, device_params, count):
+        """Enqueue using persistent caller-owned Params/rays/hits on stream 0."""
+        self.check(self.library.scene_launch_device(self.object, device_params, count))
+
+    def build_seconds(self):
+        """Host time for AS sizing/allocation/build/sync, excluding pipeline JIT."""
+        return self.library.scene_build_seconds(self.object)

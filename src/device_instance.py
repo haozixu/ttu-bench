@@ -54,6 +54,17 @@ def build(extra_source='', kernel_name='instance_probe'):
         command = ['nvcc', '-arch=sm_86', '-cubin', '-Xptxas', '-O0', str(path), '-o', str(cubin)]
         compiled = subprocess.run(command, capture_output=True, text=True, check=True)
         image = bytearray(cubin.read_bytes())
+    image, metadata = patch_compiled(image, kernel_name)
+    return image, metadata | dict(source_sha256=hashlib.sha256(source.encode()).hexdigest(),
+                                 compiler_output=compiled.stderr,
+                                 compiler_version=subprocess.run(['nvcc', '--version'], capture_output=True,
+                                                                 text=True, check=True).stdout)
+
+
+def patch_compiled(image, kernel_name, *, separate_maps=False):
+    """Patch the validated 21-marker block in an existing CUDA kernel image."""
+    image = bytearray(image)
+    original_hash = hashlib.sha256(image).hexdigest()
     markers = []
     for section in sections(image):
         if section['name'] != '.text.' + kernel_name:
@@ -64,37 +75,54 @@ def build(extra_source='', kernel_name='instance_probe'):
                 markers.append((offset, word, upper))
     if len(markers) != 21 or any(markers[index][0] != markers[0][0] + 16 * index for index in range(21)):
         raise ValueError('expected 21 contiguous DADD marker instructions')
-    register_map = {}
+    register_map, input_register_map = {}, {}
     for index, original in enumerate(PAIRS):
         _, word, _ = markers[index]
-        if word >> 32 != 0x3ff00000 + index or (word >> 16 & 255) != (word >> 24 & 255):
+        destination, source = word >> 16 & 255, word >> 24 & 255
+        if word >> 32 != 0x3ff00000 + index or (not separate_maps and destination != source):
             raise ValueError('DADD marker operand or immediate changed')
-        register_map[original] = word >> 16 & 255
-    registers = [register + delta for register in register_map.values() for delta in (0, 1)]
-    if len(set(registers)) != 36 or any(register >= 255 for register in registers):
-        raise ValueError('compiler assigned overlapping or invalid register pairs')
+        register_map[original] = destination
+        input_register_map[original] = source
+    for mapping in (input_register_map, register_map):
+        registers = [register + delta for register in mapping.values() for delta in (0, 1)]
+        if (len(set(registers)) != 36 or any(register >= 255 for register in registers) or
+                any(register % 2 for register in mapping.values())):
+            raise ValueError('compiler assigned overlapping or invalid register pairs')
     for index in range(3):
-        if markers[18 + index][1] >> 32 != 0x40000000 + index:
+        word = markers[18 + index][1]
+        if (word >> 32 != 0x40000000 + index or
+                word >> 16 & 255 != register_map[PAIRS[0]] or
+                word >> 24 & 255 != register_map[PAIRS[0]]):
             raise ValueError('trailing DADD marker changed')
+    instructions = unpack(load_group(expanded=True))
+    returned, reading = set(), False
+    for instruction in instructions:
+        decoded = decode(instruction)
+        if decoded['name'] == 'TTULD':
+            reading = True
+            returned.update(register for register in (decoded['rd'], decoded['register2']) if register != 255)
+        elif decoded['name'] == 'TTUST' and reading:
+            raise ValueError('separate maps require all TTUST before TTULD')
+    if any(input_register_map[original] != register_map[original] for original in set(PAIRS)-returned):
+        raise ValueError('unreturned pair must preserve its input register')
     mapped = []
-    for instruction in unpack(load_group(expanded=True)):
+    for instruction in instructions:
         decoded = decode(instruction)
         names = ('rb', 'register2') if decoded['name'] == 'TTUST' else (
             ('rd', 'register2') if decoded['name'] == 'TTULD' else ())
+        mapping = input_register_map if decoded['name'] == 'TTUST' else register_map
         for name in names:
             if decoded[name] != 255:
-                instruction = set_field(instruction, name, register_map[decoded[name]])
+                instruction = set_field(instruction, name, mapping[decoded[name]])
         mapped.append(instruction)
     wait = struct.pack('<QQ', 0x7918, 0x000fe20000000000 | 0x3f << 52)
     replacement = wait + b''.join(mapped) + wait
     start = markers[0][0]
     image[start:start + len(replacement)] = replacement
-    return bytes(image), dict(source_sha256=hashlib.sha256(source.encode()).hexdigest(),
+    return bytes(image), dict(original_cubin_sha256=original_hash,
                              cubin_sha256=hashlib.sha256(image).hexdigest(), register_map=register_map,
-                             patch_file_offset=start, group_sha256=hashlib.sha256(b''.join(mapped)).hexdigest(),
-                             compiler_output=compiled.stderr,
-                             compiler_version=subprocess.run(['nvcc', '--version'], capture_output=True,
-                                                             text=True, check=True).stdout)
+                             input_register_map=input_register_map, patch_symbol=kernel_name,
+                             patch_file_offset=start, group_sha256=hashlib.sha256(b''.join(mapped)).hexdigest())
 
 
 class DeviceProbe:
