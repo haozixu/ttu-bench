@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Publish local matrices and referenced reports as one lossless phase ZIP."""
+"""Publish matrices and explicitly selected evidence; all cases are opt-in."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
 import zipfile
-from bundle_results import summarize
+from bundle_results import CONTRACT, summarize
 from result_store import ROOT, catalog
 
 
@@ -20,6 +20,7 @@ def main():
     parser.add_argument('--matrices',type=Path,nargs='+',required=True)
     parser.add_argument('--reports',type=Path,nargs='*',default=[])
     parser.add_argument('--readable',type=Path,nargs='*',default=[])
+    parser.add_argument('--include-cases',action='store_true',help='also publish every matrix case report')
     args=parser.parse_args()
     if not args.phase.startswith('phase') or not args.phase[5:].isdigit():
         parser.error('phase<number> required')
@@ -28,14 +29,21 @@ def main():
     if target.exists():
         raise FileExistsError(target)
     reports=set(args.reports)
+    selected_reports={path.resolve() for path in reports}
     for path in args.matrices:
         matrix=json.loads(path.read_bytes())
         for case in matrix['cases']:
             report=Path(case['file'])
+            if not args.include_cases and report.resolve() not in selected_reports:
+                continue
             if digest(report.read_bytes())!=case['sha256']:
                 raise ValueError(f'matrix reference hash mismatch: {report}')
-            reports.add(report)
+            if report.resolve() not in selected_reports:
+                reports.add(report)
+                selected_reports.add(report.resolve())
     all_paths=[*args.matrices,*args.readable,*sorted(reports)]
+    if len(all_paths)!=len(set(all_paths)):
+        raise ValueError('a source must appear in only one publication category')
     names=[p.name for p in all_paths]
     if len(names)!=len(set(names)) or {f'{args.phase}/{n}' for n in names} & {e['original_path'] for e in manifest['files']}:
         raise ValueError('duplicate original names')
@@ -46,19 +54,20 @@ def main():
     name=f'{args.phase}/records.zip'
     archive_path=ROOT/name
     entries=[]
-    with zipfile.ZipFile(archive_path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
-        for path in sorted(reports):
-            info=zipfile.ZipInfo(path.name,date_time=(2026,1,1,0,0,0))
-            info.compress_type=zipfile.ZIP_DEFLATED
-            info.external_attr=0o100644<<16
-            archive.writestr(info,sources[path],compresslevel=9)
-    with zipfile.ZipFile(archive_path) as archive:
-        for path in reports:
-            if archive.read(path.name)!=sources[path]: raise ValueError('ZIP roundtrip mismatch')
+    if reports:
+        with zipfile.ZipFile(archive_path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+            for path in sorted(reports):
+                info=zipfile.ZipInfo(path.name,date_time=(2026,1,1,0,0,0))
+                info.compress_type=zipfile.ZIP_DEFLATED
+                info.external_attr=0o100644<<16
+                archive.writestr(info,sources[path],compresslevel=9)
+        with zipfile.ZipFile(archive_path) as archive:
+            for path in reports:
+                if archive.read(path.name)!=sources[path]: raise ValueError('ZIP roundtrip mismatch')
     for path,data in sources.items():
         local=str(path.resolve().relative_to(ROOT.resolve()))
         entry=dict(original_path=f'{args.phase}/{path.name}',original_bytes=len(data),sha256=digest(data),
-                   local_original_path=local,aliases=[local],batch=args.phase)
+                   aliases=[local],batch=args.phase)
         if path in reports:
             entry.update(published_path=name,encoding='zip',archive_member=path.name)
         else:
@@ -67,12 +76,14 @@ def main():
             entry.update(published_path=published,encoding='identity',stored_bytes=len(data),stored_sha256=digest(data))
         entries.append(entry)
     manifest['files'].extend(entries)
-    manifest.setdefault('bundles',{})[name]=dict(bytes=archive_path.stat().st_size,
-        sha256=digest(archive_path.read_bytes()),reports=len(reports),encoding='zip-deflate')
+    if reports:
+        manifest.setdefault('bundles',{})[name]=dict(bytes=archive_path.stat().st_size,
+            sha256=digest(archive_path.read_bytes()),reports=len(reports),encoding='zip-deflate')
+    manifest['contract']=CONTRACT
     summarize(manifest)
     manifest.setdefault('batches',[]).append(dict(name=args.phase,date=datetime.now(timezone.utc).isoformat(),
         original_files=len(entries),original_bytes=sum(e['original_bytes'] for e in entries),
-        published_reports=len(entries),published_files=len(all_paths)-len(reports)+1,
+        published_reports=len(entries),published_files=len(all_paths)-len(reports)+bool(reports),
         published_bytes=sum(p.stat().st_size for p in target.iterdir())))
     (ROOT/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print(json.dumps(manifest['batches'][-1]))

@@ -3,7 +3,7 @@
 
 A phase keeps its matrices, summaries, text logs and sample-events readable.
 Individual gzip reports / cases become members of one deterministic ZIP.
-Old compressed files are moved to the ignored local archive after verification.
+Old compressed files are deleted after verification; no duplicate archive is kept.
 """
 import argparse
 import hashlib
@@ -12,6 +12,12 @@ from pathlib import Path
 import zipfile
 
 from result_store import ROOT, catalog, read_original
+
+
+CONTRACT = ('Retained reports preserve original bytes and embedded historical paths. '
+    'Identity/gzip entries have stored hashes; ZIP bundles have physical-file hashes and per-member original hashes. '
+    'Aliases resolve retained former paths. Historical matrices may reference discarded routine reports; '
+    'the catalog inventories retained evidence only.')
 
 
 def summarize(manifest):
@@ -54,6 +60,8 @@ def bundle(phases):
             sha256=hashlib.sha256(target.read_bytes()).hexdigest(), reports=len(selected), encoding='zip-deflate')
         old_paths = []
         for entry, _ in originals:
+            if entry.get('encoding') == 'zip' and entry['archive_member'] != entry['original_path']:
+                entry.setdefault('aliases', []).append(entry['published_path'] + '#' + entry['archive_member'])
             if entry.get('encoding') != 'zip':
                 old_paths.append(entry['published_path'])
                 entry.setdefault('aliases', []).append(entry['published_path'])
@@ -61,17 +69,10 @@ def bundle(phases):
             entry.pop('stored_bytes', None)
             entry.pop('stored_sha256', None)
         summarize(manifest)
-        manifest['contract'] = ('Original bytes and embedded historical paths remain unchanged. Identity/gzip entries have stored hashes; '
-            'ZIP bundles have a physical-file hash in bundles and each member has original_bytes/sha256. '
-            'Aliases resolve former published paths. Local archives are ignored and absent in a clone.')
+        manifest['contract'] = CONTRACT
         (ROOT / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
         for old in old_paths:
-            source = ROOT / old
-            destination = ROOT / 'archive' / 'bundled' / old
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            if destination.exists() and destination.read_bytes() != source.read_bytes():
-                raise FileExistsError(destination)
-            source.replace(destination)
+            (ROOT / old).unlink()
         print(json.dumps(dict(phase=phase, bundled_reports=len(selected), bundle_bytes=target.stat().st_size)))
 
 

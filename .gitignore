@@ -1,19 +1,17 @@
 __pycache__/
 *.py[cod]
 
-# Rebuilt CUDA containers, OptiX bridge and preserved pre-layout local caches
+# Rebuilt CUDA containers, OptiX bridge and downloaded model cache
 /build/
 
-# Existing local archive: exploratory runs, uncompressed originals, old local runs.
-# Covers archive/exploratory/, archive/originals/ and archive/local/ recursively.
+# Disposable outputs and legacy archive destinations; these need not exist.
 /results/archive/
 
-# Destinations for future local runs and restored data (may not exist yet).
 /results/local-*
 /results/local/
 /results/scratch/
 
 # Device-instance builds live in a TemporaryDirectory and leave no cubin here.
-# Tracked result layout: results/{phase12,...,phase19,eoss,maintenance}/
+# Tracked result layout: results/{phase12,...,phase19,eoss}/
 # and results/manifest.json; records.zip / .json.gz evidence is intentionally not ignored.
 # Fixtures, original JIT images and historical sources remain visible too.
