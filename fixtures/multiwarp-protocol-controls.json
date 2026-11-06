@@ -1,0 +1,334 @@
+{
+  "date": "2026-11-06",
+  "environment": "RTX3090 / SM86, driver535.309.01, CUDA12.1; GPU6, clocks unlocked",
+  "purpose": "Extracted protocol controls, not retained throughput matrices. Exact returns are checked per lane per iteration; final snapshots alone are insufficient.",
+  "expected_words": [
+    "a0000000",
+    "40dc0000",
+    "be000000",
+    "3f200000"
+  ],
+  "as_sha256": "715c99ef42c84709f9d0f91b6b458e253895981dec2ea4fa16a51cf56c7ab269",
+  "source_sha256": {
+    "bench.py": "11119619e548c24d5fd99be2f60c7bb6afedad2ebdcd12656bf45edbc350fe22",
+    "kernels/multiwarp_template.cu": "9bff89aa8c737710aa9dad86cca2a416ee095b0f455b679f897402a8f09c826c",
+    "src/cubin_builder.py": "ee1075f139a2828733b95aad7bb12a00e9389d4982676418df010d927ac5f203",
+    "src/cuda_driver.py": "a217a44068c9d78b43acb7918dc467238944afbfd6c27b83493789753e1c1dc4",
+    "src/mixed_timing.py": "e8a880fe87419be399e833a94684c06bb45cbfc99b395437594423e95eb82f5a",
+    "src/multiwarp.py": "a349dffe0016600ed660350e625c5b0467542b3088a1e0ab14af50783e48d275",
+    "src/project_paths.py": "b676f5b0e475c87610de07d47864baa62591821c95631f433646428f9f626300",
+    "src/sm86_fixture.py": "41f1ce7eff4f34560dbd7c04faadbaa9974c1051281a79e6bba52606adf23932",
+    "src/ttu_isa.py": "ce17b489ee5410ee36d8238eaca2b84d10fee575079f6dc33b21836a852449df",
+    "src/warp_timing.py": "2ea82a8ed4ef6d3f8964a76cef561fe72aa62884ab6d2a9f97d864d6a87a90f0",
+    "tools/run_multiwarp.py": "00a33fff1b34d53053e7726090d0a118990c32f609079911d8776c9cd3aee34a"
+  },
+  "sync_controls": [
+    {
+      "config": {
+        "warps": 8,
+        "iterations": 1,
+        "wait_lead": 0,
+        "consumer_delay": 0,
+        "wait_site": "consumer",
+        "ld_stall": 1,
+        "wait_mask": 2
+      },
+      "failures_including_checked_warmup": 2304,
+      "fatal_error": null,
+      "sample": {
+        "launch": "warmup-0",
+        "thread": 0,
+        "error_bits": "fdff0000",
+        "counter": 0,
+        "returned": [
+          "a0000000",
+          "40dc0000",
+          "be000000",
+          "3f200000"
+        ],
+        "gap_bits": "00000000",
+        "compute_bits": "00000000"
+      }
+    },
+    {
+      "config": {
+        "warps": 8,
+        "iterations": 1,
+        "wait_lead": 0,
+        "consumer_delay": 0,
+        "wait_site": "consumer",
+        "ld_stall": 2,
+        "wait_mask": 2
+      },
+      "failures_including_checked_warmup": 0,
+      "fatal_error": null,
+      "sample": null
+    },
+    {
+      "config": {
+        "warps": 8,
+        "iterations": 1,
+        "wait_lead": 0,
+        "consumer_delay": 0,
+        "ld_stall": 4,
+        "return_barrier": 2,
+        "wait_mask": 4
+      },
+      "failures_including_checked_warmup": 0,
+      "fatal_error": null,
+      "sample": null
+    },
+    {
+      "config": {
+        "warps": 8,
+        "iterations": 1,
+        "wait_lead": 0,
+        "consumer_delay": 0,
+        "ld_stall": 4,
+        "return_barrier": 2,
+        "wait_mask": 2
+      },
+      "failures_including_checked_warmup": 2304,
+      "fatal_error": null,
+      "sample": {
+        "launch": "warmup-0",
+        "thread": 0,
+        "error_bits": "fdff0000",
+        "counter": 0,
+        "returned": [
+          "a0000000",
+          "40dc0000",
+          "be000000",
+          "3f200000"
+        ],
+        "gap_bits": "00000000",
+        "compute_bits": "00000000"
+      }
+    }
+  ],
+  "admission": [
+    {
+      "variant": "split9",
+      "warps": 16,
+      "gap_fadd": 2048,
+      "peer_delay_fadd": 256,
+      "measured_launch": 2,
+      "holder_after_open": -169,
+      "gap_begin": 0,
+      "gap_end": 8229,
+      "holder_after_close": 8239,
+      "peer_markers_relative_to_gap_begin": [
+        {
+          "warp": 1,
+          "after_open": 859,
+          "after_close": 3923,
+          "after_wait": 4550
+        },
+        {
+          "warp": 2,
+          "after_open": 859,
+          "after_close": 4068,
+          "after_wait": 4730
+        },
+        {
+          "warp": 3,
+          "after_open": 859,
+          "after_close": 4321,
+          "after_wait": 4851
+        },
+        {
+          "warp": 4,
+          "after_open": 868,
+          "after_close": 4418,
+          "after_wait": 4906
+        },
+        {
+          "warp": 5,
+          "after_open": 832,
+          "after_close": 1962,
+          "after_wait": 2980
+        },
+        {
+          "warp": 6,
+          "after_open": 832,
+          "after_close": 2026,
+          "after_wait": 3192
+        },
+        {
+          "warp": 7,
+          "after_open": 832,
+          "after_close": 2081,
+          "after_wait": 3154
+        },
+        {
+          "warp": 8,
+          "after_open": 863,
+          "after_close": 3742,
+          "after_wait": 4460
+        },
+        {
+          "warp": 9,
+          "after_open": 843,
+          "after_close": 2011,
+          "after_wait": 3227
+        },
+        {
+          "warp": 10,
+          "after_open": 843,
+          "after_close": 2066,
+          "after_wait": 3220
+        },
+        {
+          "warp": 11,
+          "after_open": 843,
+          "after_close": 2098,
+          "after_wait": 3185
+        },
+        {
+          "warp": 12,
+          "after_open": 852,
+          "after_close": 1639,
+          "after_wait": 3172
+        },
+        {
+          "warp": 13,
+          "after_open": 854,
+          "after_close": 3601,
+          "after_wait": 4104
+        },
+        {
+          "warp": 14,
+          "after_open": 854,
+          "after_close": 4023,
+          "after_wait": 4744
+        },
+        {
+          "warp": 15,
+          "after_open": 854,
+          "after_close": 3642,
+          "after_wait": 4282
+        }
+      ],
+      "failures": 0,
+      "fatal_error": null
+    },
+    {
+      "variant": "split10",
+      "warps": 16,
+      "gap_fadd": 2048,
+      "peer_delay_fadd": 256,
+      "measured_launch": 2,
+      "holder_after_open": -193,
+      "gap_begin": 0,
+      "gap_end": 8232,
+      "holder_after_close": 8241,
+      "peer_markers_relative_to_gap_begin": [
+        {
+          "warp": 1,
+          "after_open": 835,
+          "after_close": 3339,
+          "after_wait": 4048
+        },
+        {
+          "warp": 2,
+          "after_open": 835,
+          "after_close": 3445,
+          "after_wait": 4213
+        },
+        {
+          "warp": 3,
+          "after_open": 835,
+          "after_close": 3667,
+          "after_wait": 4318
+        },
+        {
+          "warp": 4,
+          "after_open": 842,
+          "after_close": 3807,
+          "after_wait": 4331
+        },
+        {
+          "warp": 5,
+          "after_open": 808,
+          "after_close": 2109,
+          "after_wait": 2854
+        },
+        {
+          "warp": 6,
+          "after_open": 808,
+          "after_close": 1857,
+          "after_wait": 2397
+        },
+        {
+          "warp": 7,
+          "after_open": 808,
+          "after_close": 1922,
+          "after_wait": 2702
+        },
+        {
+          "warp": 8,
+          "after_open": 847,
+          "after_close": 3941,
+          "after_wait": 4409
+        },
+        {
+          "warp": 9,
+          "after_open": 819,
+          "after_close": 2120,
+          "after_wait": 2970
+        },
+        {
+          "warp": 10,
+          "after_open": 819,
+          "after_close": 1904,
+          "after_wait": 2645
+        },
+        {
+          "warp": 11,
+          "after_open": 819,
+          "after_close": 1971,
+          "after_wait": 2717
+        },
+        {
+          "warp": 12,
+          "after_open": 831,
+          "after_close": 3314,
+          "after_wait": 3965
+        },
+        {
+          "warp": 13,
+          "after_open": 830,
+          "after_close": 2111,
+          "after_wait": 2956
+        },
+        {
+          "warp": 14,
+          "after_open": 830,
+          "after_close": 2632,
+          "after_wait": 3135
+        },
+        {
+          "warp": 15,
+          "after_open": 830,
+          "after_close": 3525,
+          "after_wait": 4053
+        }
+      ],
+      "failures": 0,
+      "fatal_error": null
+    }
+  ],
+  "reproduction": {
+    "directory_rule": "Create a task-specific directory, pass its path as TASK_DIRECTORY, and clean it after reading the output.",
+    "common": "CUDA_VISIBLE_DEVICES=6 timeout 25s python3 bench.py run_multiwarp --launches 8 --warmup-seconds .2 --output TASK_DIRECTORY/report.json",
+    "sync": "Append --warps 8 --iterations 1 --wait-lead 0 --consumer-delay 0 and the ld_stall/wait_site/return_barrier/wait_mask flags listed per control; underscore config keys become hyphenated CLI flags. stall1 or mismatched dependency slots exit1 with immediate errors while final returns remain correct; matching controls exit0. No CUDA fault is expected.",
+    "admission": "Append --warps 16 --iterations 1 --variant split9 (or split10) --gap 2048 --gap-warps 1 --peer-delay 256 --trace; expect exit0. Check each peer marker against warp0 before_gap/after_gap."
+  },
+  "limits": [
+    "LD stall2 is sufficient only in the tested configurations; no hardware minimum or formal ABI is claimed.",
+    "The matching dependency wait establishes safe result consumption, not GO acceptance or CLOSE resource-release time.",
+    "Admission traces prove other requests start and finish during a held connection gap; they do not prove simultaneous residency of all requests or count internal tickets.",
+    "Trace timestamps and dependent FADDs are outside MF bodies; these controls do not test cross-warp instruction interleaving inside one fused body.",
+    "Unsafe multi-iteration loops may restore input before prior return writes complete and corrupt later queries. Single-request negative controls isolate the immediate-consumer error; identical-ray loops cannot alone exclude reuse of a prior iteration result."
+  ]
+}

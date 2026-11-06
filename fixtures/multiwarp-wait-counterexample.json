@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-06",
+  "device": "RTX 3090 / SM86, driver 535.309.01, CUDA 12.1",
+  "purpose": "Minimal extracted observation: the immediate return checker can see stale data although the final snapshot is correct. This does not establish an internal scoreboard mechanism.",
+  "as_sha256": "715c99ef42c84709f9d0f91b6b458e253895981dec2ea4fa16a51cf56c7ab269",
+  "group_sha256": "ced3108f52be2c8fd4fb811b988e5e71f81a4ccf70d8a6df0aaa9d2af66e6bbd",
+  "source_sha256": {
+    "kernels/multiwarp_template.cu": "9bff89aa8c737710aa9dad86cca2a416ee095b0f455b679f897402a8f09c826c",
+    "src/cubin_builder.py": "ee1075f139a2828733b95aad7bb12a00e9389d4982676418df010d927ac5f203",
+    "src/multiwarp.py": "0f2d49e592dc4d9fbfed4d250c8fe66fd86ecbb8d81beae0028ce21daf400375",
+    "src/sm86_fixture.py": "41f1ce7eff4f34560dbd7c04faadbaa9974c1051281a79e6bba52606adf23932",
+    "tools/run_multiwarp.py": "4ed0c9d88830bd0b974af265c51a1aeb8522f577265d00fc79a8444b2fca712c"
+  },
+  "reproduce": {
+    "command": "CUDA_VISIBLE_DEVICES=0 timeout 25s python3 bench.py run_multiwarp --warps 8 --group reduced --iterations 1 --launches 3 --warmup-seconds 0 --wait-lead 0 --consumer-delay 15 --output TASK_DIRECTORY/failure.json",
+    "directory_rule": "Create TASK_DIRECTORY under a task-specific temporary directory; do not write into the /tmp root.",
+    "expected_exit": 1,
+    "control": "Change --wait-lead 0 to --wait-lead 2; expect exit 0. No GPU fault is expected in either case."
+  },
+  "ray": [0.25, 0.25, -5, 0, 0, 0, 1, 100],
+  "expected_return_order": ["R72", "R73", "R32", "R33"],
+  "expected_words": ["a0000000", "40dc0000", "be000000", "3f200000"],
+  "failure_run": {
+    "gpu_index": 6,
+    "warps": 8,
+    "iterations": 1,
+    "launches": 3,
+    "wait_lead_nops": 0,
+    "consumer_delay": 15,
+    "failing_lane_snapshots": 384,
+    "fatal_error": null,
+    "launch0_lane_samples": [
+      {
+        "thread": 0,
+        "final_return": ["a0000000", "40dc0000", "be000000", "3f200000"],
+        "error_or_R88": "00000000",
+        "last_xor_R89": "00000000",
+        "remaining_iterations_R86": 0,
+        "virtual_smid_before_after": [0, 0]
+      },
+      {
+        "thread": 128,
+        "final_return": ["a0000000", "40dc0000", "be000000", "3f200000"],
+        "error_or_R88": "fdff0000",
+        "last_xor_R89": "7de80000",
+        "remaining_iterations_R86": 0,
+        "virtual_smid_before_after": [0, 0]
+      }
+    ],
+    "last_xor_interpretation": "7de80000 equals the original ray tmax word 42c80000 XOR expected v word 3f200000. The final v snapshot is correct."
+  },
+  "control_run": {
+    "gpu_index": 6,
+    "warps": 8,
+    "iterations": 1,
+    "launches": 3,
+    "wait_lead_nops": 2,
+    "consumer_delay": 15,
+    "failing_lane_snapshots": 0,
+    "fatal_error": null
+  },
+  "calibration": {
+    "gpu_index": 6,
+    "warps": 8,
+    "iterations": 32,
+    "recorded_launches": 8,
+    "warmup_seconds": 0.2,
+    "columns": ["group", "wait_lead_nops", "consumer_delay", "failing_lane_snapshots_including_warmup"],
+    "rows": [
+      ["none", 0, 0, 0], ["none", 1, 0, 0], ["none", 2, 0, 0],
+      ["none", 0, 15, 0], ["none", 2, 15, 0],
+      ["reduced", 0, 0, 1760], ["reduced", 1, 0, 0], ["reduced", 2, 0, 0],
+      ["reduced", 0, 15, 2272], ["reduced", 2, 15, 0],
+      ["expanded", 0, 0, 0], ["expanded", 1, 0, 0], ["expanded", 2, 0, 0],
+      ["expanded", 0, 15, 0], ["expanded", 2, 15, 0]
+    ],
+    "limit": "Counts depend on launches and warmup. One leading NOP passed this control; no minimal or universally sufficient delay is claimed."
+  },
+  "checker_negative_control": {
+    "change": "Flip bit0 in the expected R72 word used by the device checker while retaining the original request and host oracle.",
+    "warps": 8,
+    "iterations": 4,
+    "launches": 3,
+    "failing_lane_snapshots": 768,
+    "sample_error_or_R88": "00000001",
+    "final_return_correct": true
+  }
+}
