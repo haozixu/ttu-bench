@@ -22,7 +22,7 @@
 | src/sm86_fixture.py、minimal.py、cuda_driver.py | fixture知识、独立发射、Driver/ELF接口 |
 | src/optix_scene.py；kernels/scene_bridge.cpp、scene_oracle.cu | 同context生产AS builder和独立OptiX oracle |
 | src/instance_protocol.py、device_instance.py、parent_resume.py | instance解码、marker映射、设备父级恢复 |
-| src/warp_timing.py、mixed_timing.py | 单warp测量及普通工作包 |
+| src/warp_timing.py、mixed_timing.py、multiwarp.py | 单warp重叠、多warp同步/拆组、共同窗口、调度分组与返回控制 |
 | tools/run_*.py、validate_*.py | 对应实验/回归CLI，均通过bench.py调用 |
 | examples/renderer/ | mesh输入、软件BVH、三后端、CPU oracle、镜面和摘要计时 |
 | fixtures/ | 原始AS/JIT、父IAS场景、renderer最小反例 |

@@ -1,12 +1,12 @@
 # TTU：SM86微架构探索与小renderer
 
-在RTX3090 / GA102 / SM86上，用自研CUDA kernel直接发射TTU，研究RT与通用SM工作的交互。当前有独立指令helpers、几何协议验证、单warp异步重叠测量，以及CUDA软件BVH / 裸TTU / OptiX三后端renderer。长期可探索论文贡献，基础设施、复现和blog也是有效成果。
+在RTX3090 / GA102 / SM86上，用自研CUDA kernel直接发射TTU，研究RT与通用SM工作的交互。当前有独立指令helpers、几何协议验证、单warp异步重叠与多warp请求基线，以及CUDA软件BVH / 裸TTU / OptiX三后端renderer。长期可探索论文贡献，基础设施、复现和blog也是有效成果。
 
 当前范围：
 
 - 单GAS opaque triangle最近命中，一般ray/tmin/tmax、有限culling flags；Bunny含地面最大已测69,453面，不是硬件容量。
 - 平坦1–3静态instance、共享GAS、正行列式变换和0x21父级引用恢复；复杂IAS逆向暂挂。
-- 同warp的FADD、Tensor及global/shared读可隐藏部分TTU等待；尚无多warp饱和竞争或具体共享资源归因。
+- 同warp的FADD、Tensor及global/shared读可隐藏部分TTU等待；多warp已有返回同步、跨warp推进、共同窗口与SMSP分组干扰对照。七LD/CLOSE不变时返回选择仍影响吞吐，具体物理资源未定位。
 - renderer有单次地面镜面。Bunny四级固定视角矩阵仅res3/full通过，另两级存在掠射面的浮点求交残差，不能称为不支持该AS。
 
 ## 使用

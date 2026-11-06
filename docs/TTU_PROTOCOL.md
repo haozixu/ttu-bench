@@ -43,6 +43,8 @@ GO → LD.CLOSE[300] R72:R73, R32:R33
 
 TTUST寄存器对起点在绝对bits39:32、71:64；TTULD在bits23:16、71:64。每对内部相邻，原有效组含R2/R50/R54/R58，否定“必须4对齐”。CLOSE是绝对bit74，第二64-bit word的bit10。MF count是bits44:40。helper在 `src/ttu_isa.py`，固定知识在 `src/sm86_fixture.py`；不要从某次寄存器分配推导通用ABI。
 
+返回同步还依赖SASS调度字段：本fixture的TTULD写SB1，普通消费者用wait mask2等待。改写SB2/SB4后，等待必须随之改为4/16；没有等待或等错槽，即时消费者可读旧值而最终dump仍正确。13条组最后LD继承了原非末条的stall1；紧接wait前至少需要经校准的调度间隔，目前stall2在已测范围通过。CLOSE、MF结束都不能替代返回依赖等待；详见 [同步与跨warp对照](MEASUREMENTS.md#返回同步拆组与吞吐归因)。
+
 ## Ray、flags与triangle返回
 
 | 输入 | 寄存器 |

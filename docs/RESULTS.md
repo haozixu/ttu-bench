@@ -11,6 +11,8 @@
 | phase18–19 | 完整汇总矩阵、代表性重叠/对照配对、MF替换fault、HMMA即时消费者与夹具校准 |
 | eoss | 会话行为、CCTL超时、SM86/SM120静态比较 |
 | fixtures/renderer-counterexamples.json | tag4/6的关键word、两条数值失败的ray/triangle/结果 |
+| fixtures/multiwarp-wait-counterexample.json | 多warp即时检查错误而最终快照正确、LD到wait间隔正负对照 |
+| fixtures/multiwarp-protocol-controls.json | 返回依赖槽匹配、LD stall校准及保持连接时其他warp新请求推进的最小样本 |
 
 phase13–19的精选逐项报告统一放入各数据集records.zip，摘要、事件示例和资源信息可直接读；EoSS和独立fixture证据保持JSON/文本。原始JIT/AS、helpers和源码保留。不为常规renderer试跑打包发布；一个示例PNG留在renderer的assets目录，其余可按 [运行说明](../examples/renderer/README.md) 再生。
 

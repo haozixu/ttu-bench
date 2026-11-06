@@ -95,7 +95,7 @@ flags是给这次查询的规则：某些面要不要忽略、几何交点需不
 
 ## 5. SM与TTU怎样分工
 
-普通SM代码准备ray和AS引用，通过OPEN/MACROFUSE/ST/GO/LD.CLOSE请求TTU完成遍历/求交，再等待结果依赖。CLOSE不代表结果已经完成，同一个warp可以先做不依赖结果的计算。融合组也不必覆盖整个请求；它是否屏蔽抢占、怎样影响其他warp准入，尚未实测。
+普通SM代码准备ray和AS引用，通过OPEN/MACROFUSE/ST/GO/LD.CLOSE请求TTU完成遍历/求交，再等待结果依赖。CLOSE不代表结果已经完成，同一个warp可以先做不依赖结果的计算。等待藏在SASS指令控制字段里：LD标记返回依赖槽，消费者等待同一个槽；不需要显式建立共享内存mbarrier对象，但调度间隔也必须正确。融合组不必覆盖整个请求；已测合法拆组间隔内，其他warp仍可发起并完成请求。融合组内逐指令交错、抢占屏蔽尚未实测，细节见 [测量](MEASUREMENTS.md)。
 
 opaque单GAS的triangle最近命中可以一次GO返回；nonopaque候选或IAS instance事件可能需要SM处理后续工作。instance事件提供记录引用，SM读取逆变换，把世界ray变到child局部坐标，再查询child GAS。direction不重新归一化，使参数t在仿射变换下保持一致。
 
